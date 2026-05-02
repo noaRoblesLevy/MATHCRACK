@@ -1,7 +1,8 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import { useGameStore } from './store/gameStore'
 import { markRoomComplete, markBossComplete } from './hooks/useProgress'
+import { useInventory, rollLoot } from './hooks/useInventory'
 import kingdoms from './content/kingdoms.json'
 import { loadDungeon } from './content/loadDungeon'
 import OverworldMap from './components/OverworldMap'
@@ -20,11 +21,19 @@ export default function App() {
     startBoss, setBossResult, goToResult, goToKingdom, goToOverworld, updateStreak,
   } = useGameStore()
 
+  const {
+    inventory, focusMode, scholarActive,
+    addItem, useItem, toggleFocus, toggleScholar,
+  } = useInventory()
+
+  const [lootDrop, setLootDrop] = useState(null)
+
   useEffect(() => { updateStreak() }, [])
 
-  function handleSelectKingdom(id) {
-    setActiveKingdom(id)
-  }
+  const hintScrolls = inventory.find(i => i.type === 'hint-scroll')?.count ?? 0
+  const solutionOrbs = inventory.find(i => i.type === 'solution-orb')?.count ?? 0
+
+  function handleSelectKingdom(id) { setActiveKingdom(id) }
 
   function handleSelectDungeon(dungeonMeta) {
     const data = loadDungeon(dungeonMeta.file)
@@ -45,20 +54,29 @@ export default function App() {
     }
   }
 
-  function handleBossPass(correctCount) {
+  function handleBossPass() {
     addXP(75)
     markBossComplete(activeDungeon)
     setBossResult(true)
+    const drop = rollLoot(activeDungeonData?.lootTable ?? [])
+    setLootDrop(drop)
     goToResult()
   }
 
   function handleBossFail() {
     setBossResult(false)
+    setLootDrop(null)
     goToResult()
   }
 
   function handleRetry() {
     setActiveDungeon(activeDungeon, activeDungeonData)
+  }
+
+  function handleContinue() {
+    if (lootDrop) addItem(lootDrop)
+    setLootDrop(null)
+    goToKingdom()
   }
 
   const activeKingdomData = kingdoms.find((k) => k.id === activeKingdom)
@@ -91,6 +109,12 @@ export default function App() {
             key={currentRoom}
             room={activeDungeonData.rooms[currentRoom]}
             onComplete={handleRoomComplete}
+            hintScrolls={hintScrolls}
+            solutionOrbs={solutionOrbs}
+            focusMode={focusMode}
+            alwaysShowExplanation={scholarActive}
+            onUseScroll={() => useItem('hint-scroll')}
+            onUseSolutionOrb={() => useItem('solution-orb')}
           />
         </>
       )}
@@ -108,12 +132,21 @@ export default function App() {
           passed={bossResult === true}
           xpGained={lastXPGain}
           dungeonTitle={activeDungeonData?.title ?? ''}
-          onContinue={goToKingdom}
+          lootDrop={lootDrop}
+          onContinue={handleContinue}
           onRetry={handleRetry}
         />
       )}
 
-      {activeView !== 'overworld' && <DetailsPanel />}
+      {activeView !== 'overworld' && (
+        <DetailsPanel
+          inventory={inventory}
+          focusMode={focusMode}
+          scholarActive={scholarActive}
+          onToggleFocus={toggleFocus}
+          onToggleScholar={toggleScholar}
+        />
+      )}
     </div>
   )
 }

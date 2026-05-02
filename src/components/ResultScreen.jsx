@@ -1,9 +1,12 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useGameStore } from '../store/gameStore'
 import { getTitle, getXPToNextLevel } from '../hooks/useXP'
+import LootDrop from './LootDrop'
 
-export default function ResultScreen({ passed, xpGained, dungeonTitle, onContinue, onRetry }) {
+export default function ResultScreen({ passed, xpGained, dungeonTitle, lootDrop, onContinue, onRetry }) {
   const xp = useGameStore((s) => s.xp)
+  const [lootCollected, setLootCollected] = useState(false)
 
   return (
     <div style={{
@@ -32,7 +35,7 @@ export default function ResultScreen({ passed, xpGained, dungeonTitle, onContinu
             style={{
               padding: '1rem 2rem', background: 'var(--bg-mid)',
               border: '2px solid var(--gold)', borderRadius: 8,
-              marginBottom: '2rem', textAlign: 'center',
+              marginBottom: lootDrop ? '1rem' : '2rem', textAlign: 'center',
             }}
           >
             <div style={{ color: 'var(--gold)', fontSize: '1.5rem', fontWeight: 'bold' }}>
@@ -42,16 +45,23 @@ export default function ResultScreen({ passed, xpGained, dungeonTitle, onContinu
               {getTitle(xp)} · {getXPToNextLevel(xp) > 0 ? `${getXPToNextLevel(xp)} XP to next level` : 'MAX LEVEL'}
             </div>
           </motion.div>
-          <button
-            onClick={onContinue}
-            style={{
-              padding: '0.75rem 2.5rem', background: 'var(--violet)',
-              border: 'none', color: '#fff', borderRadius: 6,
-              cursor: 'pointer', fontSize: '1rem', fontFamily: 'var(--font)',
-            }}
-          >
-            Continue →
-          </button>
+
+          {lootDrop && !lootCollected && (
+            <LootDrop itemType={lootDrop} onCollect={() => setLootCollected(true)} />
+          )}
+
+          {(!lootDrop || lootCollected) && (
+            <button
+              onClick={onContinue}
+              style={{
+                padding: '0.75rem 2.5rem', background: 'var(--violet)',
+                border: 'none', color: '#fff', borderRadius: 6,
+                cursor: 'pointer', fontSize: '1rem', fontFamily: 'var(--font)',
+              }}
+            >
+              Continue →
+            </button>
+          )}
         </>
       ) : (
         <>
