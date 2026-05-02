@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson Room</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0d0a1a;
+    color: #e9d5ff;
+    font-family: 'Courier New', monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* TOP BAR */
+  .topbar {
+    background: #120d24;
+    border-bottom: 1px solid #3d2a6e;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .topbar-left .kingdom { color: #ffd700; font-size: 1rem; letter-spacing: 3px; font-weight: bold; }
+  .topbar-left .dungeon { color: #6b7280; font-size: 0.7rem; letter-spacing: 2px; margin-top: 4px; }
+  .topbar-right { text-align: right; }
+  .topbar-right .streak { color: #ff6b35; font-size: 0.85rem; }
+  .topbar-right .xp-hint { color: #a78bfa; font-size: 0.65rem; margin-top: 4px; }
+
+  /* ROOM DOTS */
+  .room-progress {
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .room-label { color: #4c1d95; font-size: 0.6rem; letter-spacing: 2px; margin-right: 6px; }
+  .dot {
+    width: 18px; height: 18px;
+    border-radius: 4px;
+    border: 1px solid #4c1d95;
+    background: #3d2a6e;
+    opacity: 0.4;
+  }
+  .dot.done { background: #7c3aed; border-color: #a78bfa; opacity: 1; }
+  .divider { flex: 1; height: 1px; background: #3d2a6e; }
+  .room-count { color: #a78bfa; font-size: 0.65rem; }
+
+  /* MAIN CONTENT */
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    gap: 32px;
+  }
+
+  /* QUESTION CARD */
+  .question-label {
+    color: #6b7280;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-align: center;
+  }
+  .question-card {
+    background: #120d24;
+    border: 1px solid #4c1d95;
+    border-radius: 16px;
+    padding: 48px 60px;
+    text-align: center;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 0 40px #4c1d9522;
+  }
+  .question-math {
+    color: #ffd700;
+    font-size: 2.8rem;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+  }
+  .question-steps {
+    color: #6b7280;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    line-height: 2;
+  }
+  .question-steps .highlight { color: #a78bfa; }
+
+  /* ANSWERS */
+  .answers {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    max-width: 700px;
+  }
+  .answer {
+    background: #1a0d2e;
+    border: 1px solid #3d2a6e;
+    border-radius: 12px;
+    padding: 22px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .answer:hover { border-color: #7c3aed; }
+  .answer.correct {
+    background: #0c1f12;
+    border: 2px solid #22c55e;
+    box-shadow: 0 0 20px #22c55e22;
+  }
+  .answer-letter {
+    color: #4c1d95;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    width: 32px;
+  }
+  .answer-value {
+    font-size: 1.6rem;
+    color: #c4b5fd;
+    letter-spacing: 2px;
+  }
+  .answer.correct .answer-value { color: #86efac; }
+  .answer-check { color: #22c55e; font-size: 1.2rem; width: 32px; text-align: right; }
+</style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="kingdom">⚔ VECTOR CAVERNS</div>
+      <div class="dungeon">DUNGEON 4 · REALM OF VECTORS · LINEAR ALGEBRA</div>
+    </div>
+    <div class="topbar-right">
+      <div class="streak">🔥 7 day streak</div>
+      <div class="xp-hint">+20 XP on correct answer</div>
+    </div>
+  </div>
+
+  <!-- ROOM PROGRESS -->
+  <div class="room-progress">
+    <span class="room-label">ROOM</span>
+    <div class="dot done"></div>
+    <div class="dot done"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="divider"></div>
+    <span class="room-count">2 / 5</span>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="question-label">COMPUTE THE FOLLOWING</div>
+
+    <div class="question-card">
+      <div class="question-math">[3, 4] · [2, −1]</div>
+      <div class="question-steps">
+        = (3 × 2) + (4 × −1)<br>
+        = 6 + (−4)<br>
+        = <span class="highlight">?</span>
+      </div>
+    </div>
+
+    <div class="answers">
+      <div class="answer">
+        <span class="answer-letter">A</span>
+        <span class="answer-value">2</span>
+        <span class="answer-check"></span>
+      </div>
+      <div class="answer correct">
+        <span class="answer-letter">B</span>
+        <span class="answer-value">10</span>
+        <span class="answer-check">✓</span>
+      </div>
+      <div class="answer">
+        <span class="answer-letter">C</span>
+        <span class="answer-value">14</span>
+        <span class="answer-check"></span>
+      </div>
+      <div class="answer">
+        <span class="answer-letter">D</span>
+        <span class="answer-value">−2</span>
+        <span class="answer-check"></span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

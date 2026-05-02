@@ -1,0 +1,81 @@
+{
+  "id": "calculus-01",
+  "title": "Function Foothills",
+  "kingdom": "calculus",
+  "dungeonNumber": 1,
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "What is the domain of f(x) = 1/x?",
+      "latex": "f(x) = \\frac{1}{x}",
+      "steps": ["\\text{Domain = all x where f(x) is defined}", "\\text{Division by zero is undefined}"],
+      "answers": ["All real numbers", "x > 0", "x \\neq 0", "x < 0"],
+      "correct": 2,
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "If f(x) = x², what is f(-3)?",
+      "latex": "f(x) = x^2, \\quad f(-3) = ?",
+      "steps": ["f(-3) = (-3)^2 = 9"],
+      "answers": ["-9", "6", "9", "-6"],
+      "correct": 2,
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which graph represents a function? (Vertical Line Test)",
+      "latex": "\\text{Each } x \\text{ maps to exactly one } y",
+      "steps": ["\\text{A relation is a function if no vertical line crosses it twice}"],
+      "answers": ["A circle", "A parabola opening upward", "A sideways parabola", "Two horizontal lines"],
+      "correct": 1,
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the range of f(x) = x²?",
+      "latex": "f(x) = x^2, \\quad \\text{Range} = ?",
+      "steps": ["x^2 \\geq 0 \\text{ for any real } x"],
+      "answers": ["All reals", "y \\geq 0", "y > 0", "y \\leq 0"],
+      "correct": 1,
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to evaluate g(f(2)) where f(x)=x+1, g(x)=x²:",
+      "items": ["Evaluate f(2) = 3", "Compute g(3) = 9", "Identify the inner function f", "Identify the outer function g"],
+      "correctOrder": [2, 3, 0, 1],
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "f(x) = √x. What is the domain?",
+        "latex": "f(x) = \\sqrt{x}",
+        "answers": ["All reals", "x > 0", "x \\geq 0", "x \\neq 0"],
+        "correct": 2,
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "g(x) = x³ − x. Is g even, odd, or neither?",
+        "latex": "g(x) = x^3 - x",
+        "answers": ["Even: g(-x) = g(x)", "Odd: g(-x) = -g(x)", "Neither", "Both"],
+        "correct": 1,
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "h(x) = |x|. What is h(-5)?",
+        "latex": "h(x) = |x|, \\quad h(-5) = ?",
+        "answers": ["-5", "0", "5", "25"],
+        "correct": 2,
+        "xp": 25
+      }
+    ],
+    "passMark": 2
+  },
+  "lootTable": []
+}

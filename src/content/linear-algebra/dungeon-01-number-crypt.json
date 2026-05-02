@@ -1,0 +1,81 @@
+{
+  "id": "linear-algebra-01",
+  "title": "The Number Crypt",
+  "kingdom": "linear-algebra",
+  "dungeonNumber": 1,
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Which of these is an integer?",
+      "latex": "\\text{Choose the integer:}",
+      "steps": [],
+      "answers": ["0.5", "\\sqrt{2}", "-7", "\\pi"],
+      "correct": 2,
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Where does -3 sit on the number line relative to -1?",
+      "latex": "\\text{Compare: } -3 \\text{ vs } -1",
+      "steps": ["\\text{Negative numbers: further left = smaller}"],
+      "answers": ["-3 > -1", "-3 = -1", "-3 < -1", "Cannot compare"],
+      "correct": 2,
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which set contains only rational numbers?",
+      "latex": "\\mathbb{Q} = \\left\\{\\frac{p}{q} \\mid p, q \\in \\mathbb{Z},\\, q \\neq 0\\right\\}",
+      "steps": ["\\text{A rational number can be written as a fraction of two integers}"],
+      "answers": ["\\{\\pi, e, \\sqrt{2}\\}", "\\{0.5, -3, \\tfrac{2}{7}\\}", "\\{\\sqrt{3}, 1.5\\}", "\\{\\pi, 0, 1\\}"],
+      "correct": 1,
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is |-8|?",
+      "latex": "|-8| = ?",
+      "steps": ["\\text{Absolute value = distance from 0}", "|-8| = 8"],
+      "answers": ["-8", "0", "8", "64"],
+      "correct": 2,
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these number sets from smallest to largest (fewest to most numbers):",
+      "items": ["Natural numbers", "Integers", "Rationals", "Reals"],
+      "correctOrder": [0, 1, 2, 3],
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Which statement is TRUE?",
+        "latex": "\\text{Every integer is rational.}",
+        "answers": ["True — integers fit p/q with q=1", "False — integers are not fractions", "True — but only positive integers", "False — some integers are irrational"],
+        "correct": 0,
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The number 0.333... (repeating) is:",
+        "latex": "0.\\overline{3} = \\frac{1}{3}",
+        "answers": ["Irrational, because it never ends", "Rational, because it repeats", "An integer", "Undefined"],
+        "correct": 1,
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which is true about real numbers?",
+        "latex": "\\mathbb{N} \\subset \\mathbb{Z} \\subset \\mathbb{Q} \\subset \\mathbb{R}",
+        "answers": ["All reals are rational", "All rationals are real", "No integers are real", "Reals exclude irrationals"],
+        "correct": 1,
+        "xp": 25
+      }
+    ],
+    "passMark": 2
+  },
+  "lootTable": []
+}

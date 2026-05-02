@@ -1,0 +1,84 @@
+<h2>Lesson Room Layout</h2>
+<p class="subtitle">What a question screen looks like mid-dungeon</p>
+
+<div class="cards">
+  <div class="card" data-choice="room-a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0d0a1a; padding:12px; font-family:'Courier New',monospace; min-height:200px;">
+
+      <!-- Top progress bar -->
+      <div style="display:flex; align-items:center; gap:6px; margin-bottom:10px;">
+        <div style="color:#c4b5fd; font-size:0.5rem; white-space:nowrap;">Room 3/5</div>
+        <div style="flex:1; background:#1a0d2e; height:6px; border-radius:3px; border:1px solid #3d2a6e;">
+          <div style="background:linear-gradient(90deg,#7c3aed,#a78bfa); height:100%; width:60%; border-radius:3px;"></div>
+        </div>
+        <div style="color:#ffd700; font-size:0.5rem;">+20 XP</div>
+      </div>
+
+      <!-- Question card -->
+      <div style="background:#120d24; border:1px solid #4c1d95; border-radius:6px; padding:10px; margin-bottom:8px;">
+        <div style="color:#9ca3af; font-size:0.45rem; letter-spacing:1px; margin-bottom:4px;">VECTOR CAVERNS · DUNGEON 4</div>
+        <div style="color:#e9d5ff; font-size:0.7rem; line-height:1.4;">What is the dot product of<br/>
+          <span style="color:#ffd700;">v = [3, 4]</span> and <span style="color:#a78bfa;">w = [2, -1]</span>?
+        </div>
+      </div>
+
+      <!-- Answer options -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px;">
+        <div style="background:#1a0d2e; border:1px solid #3d2a6e; border-radius:4px; padding:6px; text-align:center; color:#c4b5fd; font-size:0.6rem; cursor:pointer;">A · 2</div>
+        <div style="background:#2d1b4e; border:2px solid #7c3aed; border-radius:4px; padding:6px; text-align:center; color:#ffd700; font-size:0.6rem; cursor:pointer;">B · 10 ✓</div>
+        <div style="background:#1a0d2e; border:1px solid #3d2a6e; border-radius:4px; padding:6px; text-align:center; color:#c4b5fd; font-size:0.6rem; cursor:pointer;">C · 14</div>
+        <div style="background:#1a0d2e; border:1px solid #3d2a6e; border-radius:4px; padding:6px; text-align:center; color:#c4b5fd; font-size:0.6rem; cursor:pointer;">D · -2</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Style A — Card + Grid Answers</h3>
+      <p>Question in a dark card, 2×2 grid of answer buttons. Clean and fast to scan. Progress bar at top.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="room-b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0d0a1a; padding:12px; font-family:'Courier New',monospace; min-height:200px;">
+
+      <!-- Dungeon header with character -->
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+        <div>
+          <div style="color:#ffd700; font-size:0.55rem; letter-spacing:1px;">⚔ VECTOR CAVERNS</div>
+          <div style="display:flex; gap:3px; margin-top:2px;">
+            <div style="width:10px; height:10px; background:#7c3aed; border-radius:2px; border:1px solid #a78bfa;"></div>
+            <div style="width:10px; height:10px; background:#7c3aed; border-radius:2px; border:1px solid #a78bfa;"></div>
+            <div style="width:10px; height:10px; background:#4c1d95; border-radius:2px; border:1px solid #4c1d95; opacity:0.4;"></div>
+            <div style="width:10px; height:10px; background:#4c1d95; border-radius:2px; border:1px solid #4c1d95; opacity:0.4;"></div>
+            <div style="width:10px; height:10px; background:#4c1d95; border-radius:2px; border:1px solid #4c1d95; opacity:0.4;"></div>
+          </div>
+        </div>
+        <div style="background:#1a0d2e; border:1px solid #3d2a6e; border-radius:4px; padding:4px 8px;">
+          <div style="color:#ff6b35; font-size:0.45rem;">🔥 Streak: 7</div>
+        </div>
+      </div>
+
+      <!-- Big question area -->
+      <div style="background:#120d24; border:1px solid #4c1d95; border-radius:6px; padding:10px; margin-bottom:8px; text-align:center;">
+        <div style="color:#9ca3af; font-size:0.4rem; margin-bottom:6px;">COMPUTE THE FOLLOWING</div>
+        <div style="color:#ffd700; font-size:0.85rem; margin-bottom:4px;">[3, 4] · [2, -1]</div>
+        <div style="color:#6b7280; font-size:0.45rem;">= (3×2) + (4×-1) = ?</div>
+      </div>
+
+      <!-- Vertical answer list -->
+      <div style="display:flex; flex-direction:column; gap:3px;">
+        <div style="background:#1a0d2e; border:1px solid #3d2a6e; border-radius:4px; padding:5px 10px; color:#c4b5fd; font-size:0.55rem; display:flex; justify-content:space-between;">
+          <span>A</span><span>2</span>
+        </div>
+        <div style="background:#14082a; border:2px solid #22c55e; border-radius:4px; padding:5px 10px; color:#86efac; font-size:0.55rem; display:flex; justify-content:space-between;">
+          <span>B</span><span>10 ✓</span>
+        </div>
+        <div style="background:#1a0d2e; border:1px solid #3d2a6e; border-radius:4px; padding:5px 10px; color:#c4b5fd; font-size:0.55rem; display:flex; justify-content:space-between;">
+          <span>C</span><span>14</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Style B — Vertical + Step Hints</h3>
+      <p>Question shown with partial step breakdown. Vertical answer list. Room dots at top instead of progress bar. More guidance visible.</p>
+    </div>
+  </div>
+</div>

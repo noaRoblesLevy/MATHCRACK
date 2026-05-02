@@ -1,0 +1,50 @@
+<h2>What's your gamification style?</h2>
+<p class="subtitle">How should learning progress feel?</p>
+
+<div class="cards">
+  <div class="card" data-choice="duolingo" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: linear-gradient(135deg, #58cc02, #1cb0f6); padding: 20px; display:flex; flex-direction:column; gap:8px; align-items:center;">
+      <div style="font-size:2rem;">🔥 ⭐ ❤️</div>
+      <div style="color:white; font-weight:700; font-size:1.1rem;">Streaks & Lives</div>
+      <div style="display:flex; gap:6px;">
+        <div style="background:rgba(255,255,255,0.3); border-radius:8px; padding:4px 10px; color:white; font-size:0.8rem;">+10 XP</div>
+        <div style="background:rgba(255,255,255,0.3); border-radius:8px; padding:4px 10px; color:white; font-size:0.8rem;">Day 5 🔥</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Duolingo-style</h3>
+      <p>Daily streaks, XP points, lives/hearts system. Lose a life on wrong answers. Motivates daily habit formation. Lessons are short and punchy.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="brilliant" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: linear-gradient(135deg, #ff6b35, #f7c59f); padding: 20px; display:flex; flex-direction:column; gap:8px; align-items:center;">
+      <div style="font-size:2rem;">🧠 🔓 📈</div>
+      <div style="color:white; font-weight:700; font-size:1.1rem;">Mastery Paths</div>
+      <div style="display:flex; gap:6px;">
+        <div style="background:rgba(255,255,255,0.3); border-radius:8px; padding:4px 10px; color:white; font-size:0.8rem;">75% mastered</div>
+        <div style="background:rgba(255,255,255,0.3); border-radius:8px; padding:4px 10px; color:white; font-size:0.8rem;">Unlock next</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Brilliant-style</h3>
+      <p>Mastery-based progression. Unlock next topics by completing current ones. No lives — focus on understanding over speed. Deep conceptual problems.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="hybrid" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: linear-gradient(135deg, #667eea, #764ba2); padding: 20px; display:flex; flex-direction:column; gap:8px; align-items:center;">
+      <div style="font-size:2rem;">⚡ 🏆 🧩</div>
+      <div style="color:white; font-weight:700; font-size:1.1rem;">Hybrid RPG</div>
+      <div style="display:flex; gap:6px;">
+        <div style="background:rgba(255,255,255,0.3); border-radius:8px; padding:4px 10px; color:white; font-size:0.8rem;">Level 3</div>
+        <div style="background:rgba(255,255,255,0.3); border-radius:8px; padding:4px 10px; color:white; font-size:0.8rem;">+50 XP</div>
+        <div style="background:rgba(255,255,255,0.3); border-radius:8px; padding:4px 10px; color:white; font-size:0.8rem;">Boss 🔒</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Hybrid RPG-style</h3>
+      <p>XP + levels + achievements. Unlock "boss problems" after each topic. Progress map like a dungeon. Streaks optional, not punishing. Best of both worlds.</p>
+    </div>
+  </div>
+</div>
