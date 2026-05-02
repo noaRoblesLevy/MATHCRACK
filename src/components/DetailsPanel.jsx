@@ -2,8 +2,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useGameStore } from '../store/gameStore'
 import { getTitle, getXPToNextLevel, getTierProgress } from '../hooks/useXP'
+import InventoryBar from './InventoryBar'
 
-export default function DetailsPanel() {
+export default function DetailsPanel({ inventory, focusMode, scholarActive, onToggleFocus, onToggleScholar }) {
   const [open, setOpen] = useState(false)
   const xp = useGameStore((s) => s.xp)
   const streak = useGameStore((s) => s.streak)
@@ -37,9 +38,9 @@ export default function DetailsPanel() {
               initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
               style={{
-                position: 'fixed', top: 0, right: 0, bottom: 0, width: 280,
+                position: 'fixed', top: 0, right: 0, bottom: 0, width: 300,
                 background: 'var(--bg-mid)', borderLeft: '2px solid var(--border)',
-                padding: '2rem 1.5rem', zIndex: 101,
+                padding: '2rem 1.5rem', zIndex: 101, overflowY: 'auto',
               }}
             >
               <button
@@ -69,10 +70,19 @@ export default function DetailsPanel() {
                   }} />
                 </div>
               </div>
-              <div>
+              <div style={{ marginBottom: '1.5rem' }}>
                 <div style={{ color: 'var(--text-muted)', fontSize: '0.7rem', marginBottom: 4 }}>STREAK</div>
                 <div style={{ color: 'var(--violet-light)', fontSize: '1.1rem' }}>🔥 {streak} days</div>
               </div>
+              {inventory && (
+                <InventoryBar
+                  inventory={inventory}
+                  focusMode={focusMode}
+                  scholarActive={scholarActive}
+                  onToggleFocus={onToggleFocus}
+                  onToggleScholar={onToggleScholar}
+                />
+              )}
             </motion.div>
           </>
         )}
