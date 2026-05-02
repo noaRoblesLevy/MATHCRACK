@@ -8,36 +8,44 @@
       "type": "multiple-choice",
       "question": "What is the truth value of P ∧ Q when P=T, Q=F?",
       "latex": "P \\land Q, \\quad P = \\top,\\; Q = \\bot",
-      "steps": ["\\text{AND is true only when BOTH are true}"],
+      "steps": ["\\text{AND (∧) is true only when BOTH inputs are true}"],
       "answers": ["True", "False", "Undefined", "Depends on P"],
       "correct": 1,
+      "difficulty": 1,
+      "explanation": "P ∧ Q (AND) requires both P and Q to be true. Since Q is false here, P ∧ Q is false regardless of P. Think of it as: a chain is only as strong as its weakest link.",
       "xp": 10
     },
     {
       "type": "multiple-choice",
       "question": "What is the truth value of P ∨ Q when P=F, Q=F?",
       "latex": "P \\lor Q, \\quad P = \\bot,\\; Q = \\bot",
-      "steps": ["\\text{OR is true when AT LEAST ONE is true}"],
+      "steps": ["\\text{OR (∨) is true when AT LEAST ONE input is true}"],
       "answers": ["True", "False", "True only if both false", "Undefined"],
       "correct": 1,
+      "difficulty": 1,
+      "explanation": "P ∨ Q (OR) is false only when both P and Q are false. Since both are false here, P ∨ Q is false. If even one were true, the OR would be true.",
       "xp": 10
     },
     {
       "type": "multiple-choice",
       "question": "What is ¬(¬P) equivalent to?",
       "latex": "\\neg(\\neg P) = ?",
-      "steps": ["\\text{Double negation cancels out}"],
+      "steps": ["\\text{Negation flips truth value}", "\\text{Negating twice returns to original}"],
       "answers": ["¬P", "P", "False", "True"],
       "correct": 1,
+      "difficulty": 2,
+      "explanation": "¬ flips a truth value. ¬P is the opposite of P. ¬(¬P) flips it back — double negation cancels. If P is true, ¬P is false, ¬(¬P) is true again. This is the double negation law.",
       "xp": 10
     },
     {
       "type": "multiple-choice",
       "question": "P → Q is FALSE when:",
       "latex": "P \\Rightarrow Q \\text{ is false when...}",
-      "steps": ["\\text{Implication is false only when P is true and Q is false}"],
+      "steps": ["\\text{Implication is false ONLY when the premise is true but the conclusion is false}"],
       "answers": ["P=F, Q=T", "P=T, Q=T", "P=T, Q=F", "P=F, Q=F"],
       "correct": 2,
+      "difficulty": 2,
+      "explanation": "An implication P→Q is false only when P is true and Q is false — a true premise leading to a false conclusion is a broken promise. All other combinations (P false, or Q true) make the implication true.",
       "xp": 10
     },
     {
@@ -45,6 +53,8 @@
       "question": "Order the rows of the truth table for P ∧ Q:",
       "items": ["P=T, Q=T → T", "P=T, Q=F → F", "P=F, Q=T → F", "P=F, Q=F → F"],
       "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "Standard truth table order cycles P and Q through TT, TF, FT, FF. For AND: only the first row (both true) gives true. The remaining three rows all give false.",
       "xp": 20
     }
   ],
@@ -56,6 +66,8 @@
         "latex": "P \\Rightarrow Q \\equiv ?",
         "answers": ["Q → P", "¬P ∨ Q", "P ∧ ¬Q", "¬P → Q"],
         "correct": 1,
+        "difficulty": 1,
+        "explanation": "P→Q is equivalent to ¬P ∨ Q (if not P, then at least Q must save us). You can verify by checking all four T/F combinations — both expressions have identical truth tables. Q→P is the converse, not equivalent.",
         "xp": 25
       },
       {
@@ -64,6 +76,8 @@
         "latex": "\\neg(P \\land Q) = ?",
         "answers": ["¬P ∧ ¬Q", "¬P ∨ ¬Q", "P ∨ Q", "¬P → Q"],
         "correct": 1,
+        "difficulty": 2,
+        "explanation": "De Morgan's Law: ¬(P ∧ Q) = ¬P ∨ ¬Q. Negating an AND flips to OR and negates each part. Similarly ¬(P ∨ Q) = ¬P ∧ ¬Q. A helpful reading: 'not (both)' means 'at least one is not'.",
         "xp": 25
       },
       {
@@ -72,6 +86,8 @@
         "latex": "\\text{Tautology} = ?",
         "answers": ["Always false", "Sometimes true", "Always true", "Unprovable"],
         "correct": 2,
+        "difficulty": 3,
+        "explanation": "A tautology is a proposition that is true under every possible assignment of truth values to its variables. Example: P ∨ ¬P is always true. Its opposite — always false — is a contradiction. 'Sometimes true' describes a contingency.",
         "xp": 25
       }
     ],
