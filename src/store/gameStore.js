@@ -15,6 +15,7 @@ export const useGameStore = create(
       bossAnswers: [],
       lastXPGain: 0,
       bossResult: null,
+      trainingKingdom: null,
 
       addXP: (n) => set((s) => ({ xp: s.xp + n, lastXPGain: n })),
       setActiveKingdom: (id) => set({ activeKingdom: id, activeView: 'kingdom' }),
@@ -36,6 +37,10 @@ export const useGameStore = create(
           activeDungeonData: null,
           bossResult: null,
         }),
+      startTraining: (kingdomId) =>
+        set({ trainingKingdom: kingdomId, activeView: 'training' }),
+      stopTraining: () =>
+        set({ trainingKingdom: null, activeView: 'kingdom' }),
       updateStreak: () =>
         set((s) => {
           const today = new Date().toDateString()

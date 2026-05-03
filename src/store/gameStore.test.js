@@ -8,6 +8,7 @@ beforeEach(() => {
     activeView: 'overworld', activeKingdom: null,
     activeDungeon: null, activeDungeonData: null,
     currentRoom: 0, bossAnswers: [], lastXPGain: 0, bossResult: null,
+    trainingKingdom: null,
   })
 })
 
@@ -51,5 +52,24 @@ describe('goToOverworld', () => {
     useGameStore.setState({ activeView: 'lesson', activeKingdom: 'calculus' })
     act(() => useGameStore.getState().goToOverworld())
     expect(useGameStore.getState().activeView).toBe('overworld')
+  })
+})
+
+describe('startTraining', () => {
+  it('sets trainingKingdom and switches view to training', () => {
+    act(() => useGameStore.getState().startTraining('calculus'))
+    const { trainingKingdom, activeView } = useGameStore.getState()
+    expect(trainingKingdom).toBe('calculus')
+    expect(activeView).toBe('training')
+  })
+})
+
+describe('stopTraining', () => {
+  it('clears trainingKingdom and returns to kingdom view', () => {
+    useGameStore.setState({ trainingKingdom: 'calculus', activeView: 'training' })
+    act(() => useGameStore.getState().stopTraining())
+    const { trainingKingdom, activeView } = useGameStore.getState()
+    expect(trainingKingdom).toBeNull()
+    expect(activeView).toBe('kingdom')
   })
 })
