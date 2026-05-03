@@ -1,10 +1,10 @@
 import { isKingdomComplete } from '../hooks/useProgress'
 
 const NODES = [
-  { left: '12%', top: '62%', bg: '#2d0a5a', icon: '🏰' },
-  { left: '38%', top: '40%', bg: '#0a1e3f', icon: '🏯' },
-  { left: '63%', top: '52%', bg: '#0a2a14', icon: '🏛' },
-  { left: '82%', top: '32%', bg: '#3a0a0a', icon: '⛩' },
+  { left: '14%', top: '65%', bg: '#1e0a3f', accent: '#7c3aed', icon: '🏰', label: 'LINEAR ALGEBRA' },
+  { left: '38%', top: '42%', bg: '#0a1e3f', accent: '#2563eb', icon: '🏯', label: 'CALCULUS' },
+  { left: '62%', top: '55%', bg: '#0a2a14', accent: '#16a34a', icon: '🏛',  label: 'STATISTICS' },
+  { left: '82%', top: '35%', bg: '#3a0a0a', accent: '#dc2626', icon: '⛩',  label: 'DISCRETE MATH' },
 ]
 
 export default function OverworldMap({ kingdoms, onSelectKingdom }) {
@@ -14,63 +14,54 @@ export default function OverworldMap({ kingdoms, onSelectKingdom }) {
   }
 
   return (
-    <div style={{ position: 'fixed', inset: 0, overflow: 'hidden' }}>
+    <div style={{ position: 'fixed', inset: 0, overflow: 'hidden', background: '#07040f' }}>
 
-      {/* Tiled cursed-land ground */}
+      {/* Very subtle ground texture — low opacity so it doesn't dominate */}
       <div style={{
         position: 'absolute', inset: 0,
         backgroundImage: "url('/assets/tilesets/cursed-land/Ground.png')",
-        backgroundSize: '160px 160px',
+        backgroundSize: '192px 192px',
         imageRendering: 'pixelated',
+        opacity: 0.08,
       }} />
 
-      {/* Atmospheric gradient overlay */}
+      {/* Radial vignette to focus the eye on the map */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'linear-gradient(180deg,rgba(5,2,15,0.6) 0%,rgba(5,2,15,0.05) 45%,rgba(5,2,15,0.7) 100%)',
+        background: 'radial-gradient(ellipse 80% 70% at 48% 50%, transparent 30%, #07040f 100%)',
       }} />
 
-      {/* SVG path — viewBox 0-100 maps to % of container */}
+      {/* Faint path connecting nodes */}
       <svg
         style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }}
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
       >
         <path
-          d="M 12 62 C 22 54, 30 44, 38 40 S 56 46, 63 52 S 76 36, 82 32"
+          d="M 14 65 C 24 55, 30 46, 38 42 S 54 48, 62 55 S 76 38, 82 35"
           stroke="#ffd700"
-          strokeWidth="0.6"
-          strokeDasharray="2 1.4"
+          strokeWidth="0.5"
+          strokeDasharray="1.8 1.2"
           fill="none"
-          opacity="0.75"
+          opacity="0.5"
         />
       </svg>
 
-      {/* Animated decorations from asset packs */}
-      <img
-        src="/assets/knowledge-temple/Structures & Details/Brain Sphere 1 Gif.gif"
-        alt=""
-        style={{ position: 'absolute', bottom: 24, right: 32, width: 80, height: 80, imageRendering: 'pixelated', opacity: 0.8 }}
-      />
-      <img
-        src="/assets/crawling-depths/creatures/Eye 1 Gif.gif"
-        alt=""
-        style={{ position: 'absolute', bottom: 12, left: 24, width: 48, height: 48, imageRendering: 'pixelated', opacity: 0.55 }}
-      />
-      <img
-        src="/assets/crawling-depths/creatures/Amalgam 1 Gif.gif"
-        alt=""
-        style={{ position: 'absolute', top: 60, right: 60, width: 52, height: 52, imageRendering: 'pixelated', opacity: 0.35 }}
-      />
-
       {/* Title */}
       <div style={{
-        position: 'absolute', top: 24, left: '50%', transform: 'translateX(-50%)',
+        position: 'absolute', top: 32, left: '50%', transform: 'translateX(-50%)',
         color: '#ffd700', fontFamily: "'Courier New', monospace",
-        fontSize: '1.5rem', letterSpacing: '6px', whiteSpace: 'nowrap',
-        textShadow: '0 0 20px #ffd700, 0 0 50px #ffd70044',
+        fontSize: '1.6rem', letterSpacing: '8px', whiteSpace: 'nowrap',
+        textShadow: '0 0 24px #ffd70088',
       }}>
         ⚔ MATHCRACK
+      </div>
+      <div style={{
+        position: 'absolute', top: 70, left: '50%', transform: 'translateX(-50%)',
+        color: '#6d4aaa', fontFamily: "'Courier New', monospace",
+        fontSize: '0.6rem', letterSpacing: '4px', whiteSpace: 'nowrap',
+      }}>
+        CHOOSE YOUR KINGDOM
       </div>
 
       {/* Kingdom nodes */}
@@ -87,37 +78,62 @@ export default function OverworldMap({ kingdoms, onSelectKingdom }) {
               transform: 'translate(-50%, -50%)',
               textAlign: 'center',
               cursor: unlocked ? 'pointer' : 'default',
-              opacity: unlocked ? 1 : 0.3,
-              transition: 'filter 0.2s, transform 0.15s',
-              filter: unlocked ? 'none' : 'grayscale(1)',
+              transition: 'transform 0.15s',
             }}
-            onMouseEnter={e => { if (unlocked) e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1.12)' }}
-            onMouseLeave={e => { e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1)' }}
+            onMouseEnter={e => { if (unlocked) e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1.08)' }}
+            onMouseLeave={e => { e.currentTarget.style.transform = 'translate(-50%, -50%)' }}
           >
+            {/* Node icon box */}
             <div style={{
-              width: 64, height: 64,
-              background: unlocked ? node.bg : '#111',
-              border: `2px solid ${unlocked ? '#ffd700' : '#333'}`,
-              borderRadius: 6,
+              width: 72, height: 72,
+              background: unlocked ? node.bg : '#0e0b18',
+              border: `2px solid ${unlocked ? node.accent : '#2a1f40'}`,
+              borderRadius: 8,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontSize: '2rem',
-              boxShadow: unlocked ? '0 0 22px #ffd70066, inset 0 0 16px rgba(0,0,0,0.6)' : 'none',
-              imageRendering: 'pixelated',
+              fontSize: '2.2rem',
+              boxShadow: unlocked
+                ? `0 0 28px ${node.accent}55, 0 0 8px ${node.accent}33, inset 0 0 20px rgba(0,0,0,0.5)`
+                : 'none',
+              opacity: unlocked ? 1 : 0.25,
             }}>
               {unlocked ? node.icon : '🔒'}
             </div>
+
+            {/* Label */}
             <div style={{
-              color: unlocked ? '#ffd700' : '#444',
-              fontSize: '0.5rem', marginTop: 6,
+              color: unlocked ? '#ffd700' : '#3a2f50',
+              fontSize: '0.48rem', marginTop: 8,
               fontFamily: "'Courier New', monospace",
               letterSpacing: '2px',
-              textShadow: unlocked ? '0 0 10px #ffd70099' : 'none',
+              textShadow: unlocked ? '0 0 12px #ffd70077' : 'none',
             }}>
-              {k.subtitle.toUpperCase()}
+              {node.label}
+            </div>
+
+            {/* Subtitle */}
+            <div style={{
+              color: unlocked ? node.accent : '#2a2040',
+              fontSize: '0.4rem', marginTop: 3,
+              fontFamily: "'Courier New', monospace",
+              letterSpacing: '1px',
+              opacity: unlocked ? 0.8 : 0.4,
+            }}>
+              {k.dungeons.filter(d => !d.stub).length} DUNGEON{k.dungeons.filter(d => !d.stub).length !== 1 ? 'S' : ''} AVAILABLE
             </div>
           </div>
         )
       })}
+
+      {/* Single unobtrusive decoration — brain sphere bottom-right */}
+      <img
+        src="/assets/knowledge-temple/Structures & Details/Brain Sphere 1 Gif.gif"
+        alt=""
+        style={{
+          position: 'absolute', bottom: 20, right: 28,
+          width: 56, height: 56,
+          imageRendering: 'pixelated', opacity: 0.45,
+        }}
+      />
     </div>
   )
 }
