@@ -12,6 +12,7 @@ import BossFight from './components/BossFight'
 import ResultScreen from './components/ResultScreen'
 import DetailsPanel from './components/DetailsPanel'
 import HUD from './components/HUD'
+import TrainingGround from './components/TrainingGround'
 
 export default function App() {
   const {
@@ -19,6 +20,7 @@ export default function App() {
     currentRoom, lastXPGain, bossResult,
     addXP, setActiveKingdom, setActiveDungeon, advanceRoom,
     startBoss, setBossResult, goToResult, goToKingdom, goToOverworld, updateStreak,
+    startTraining,
   } = useGameStore()
 
   const {
@@ -93,7 +95,12 @@ export default function App() {
           dungeons={activeKingdomData.dungeons}
           onSelectDungeon={handleSelectDungeon}
           onBack={goToOverworld}
+          onTrain={() => startTraining(activeKingdom)}
         />
+      )}
+
+      {activeView === 'training' && (
+        <TrainingGround />
       )}
 
       {activeView === 'lesson' && activeDungeonData && (
