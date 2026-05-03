@@ -3,6 +3,10 @@
   "title": "Logic Gate",
   "kingdom": "discrete-math",
   "dungeonNumber": 1,
+  "lesson": {
+    "title": "Propositional Logic",
+    "body": "A proposition is a statement that is either true or false. ¬p is true when p is false. p ∧ q is true only when both p and q are true. p ∨ q is true when at least one is true. p → q (if p then q) is false only when p is true and q is false."
+  },
   "rooms": [
     {
       "type": "multiple-choice",

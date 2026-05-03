@@ -3,6 +3,10 @@
   "title": "The Number Crypt",
   "kingdom": "linear-algebra",
   "dungeonNumber": 1,
+  "lesson": {
+    "title": "Number Types",
+    "body": "An integer is any whole number with no decimal part: …, −2, −1, 0, 1, 2, … Rational numbers can be written as a fraction p/q. Irrational numbers (like √2 and π) cannot. The real number line contains both rational and irrational numbers."
+  },
   "rooms": [
     {
       "type": "multiple-choice",

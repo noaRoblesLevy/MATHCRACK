@@ -3,6 +3,10 @@
   "title": "Counting Cavern",
   "kingdom": "statistics",
   "dungeonNumber": 1,
+  "lesson": {
+    "title": "Counting & Combinatorics",
+    "body": "A permutation is an ordered arrangement: P(n,r) = n!/(n−r)!. A combination is an unordered selection: C(n,r) = n!/(r!(n−r)!). The multiplication rule: if event A has m outcomes and B has n outcomes, together they have m×n outcomes."
+  },
   "rooms": [
     {
       "type": "multiple-choice",

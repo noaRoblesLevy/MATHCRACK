@@ -3,6 +3,10 @@
   "title": "Function Foothills",
   "kingdom": "calculus",
   "dungeonNumber": 1,
+  "lesson": {
+    "title": "Functions",
+    "body": "A function maps every input x to exactly one output f(x). The domain is the set of valid inputs; the range is the set of possible outputs. A function is even if f(−x) = f(x) (symmetric about the y-axis) and odd if f(−x) = −f(x) (symmetric about the origin)."
+  },
   "rooms": [
     {
       "type": "multiple-choice",
