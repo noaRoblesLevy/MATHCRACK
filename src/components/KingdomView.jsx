@@ -1,6 +1,6 @@
 import { isDungeonComplete, isDungeonUnlocked } from '../hooks/useProgress'
 
-export default function KingdomView({ kingdomTitle, dungeons, onSelectDungeon, onBack }) {
+export default function KingdomView({ kingdomTitle, dungeons, onSelectDungeon, onBack, onTrain }) {
   const ids = dungeons.map((d) => d.id)
 
   return (
@@ -11,7 +11,19 @@ export default function KingdomView({ kingdomTitle, dungeons, onSelectDungeon, o
       >
         ← Map
       </button>
-      <h2 style={{ color: 'var(--gold)', marginBottom: '1.5rem' }}>{kingdomTitle}</h2>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+        <h2 style={{ color: 'var(--gold)', margin: 0 }}>{kingdomTitle}</h2>
+        <button
+          onClick={onTrain}
+          style={{
+            background: '#1a1040', border: '1px solid #7c3aed', borderRadius: 6,
+            color: '#c4b5fd', cursor: 'pointer', padding: '0.4rem 0.9rem',
+            fontSize: '0.85rem', fontWeight: 'bold',
+          }}
+        >
+          ⚔ Train
+        </button>
+      </div>
       <div style={{ display: 'grid', gap: '0.75rem' }}>
         {dungeons.map((d, i) => {
           const unlocked = isDungeonUnlocked(ids, i)
