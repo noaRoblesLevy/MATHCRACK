@@ -9,21 +9,19 @@
     "pdf": "/books/wang-algebra.pdf",
     "pages": 641,
     "units": [
-      {
-        "number": 1,
-        "title": "Arithmetic Properties",
-        "chapters": ["ch-01", "ch-02", "ch-03"]
-      },
-      {
-        "number": 2,
-        "title": "The Number System",
-        "chapters": ["ch-04", "ch-05", "ch-06", "ch-07", "ch-08", "ch-09", "ch-10"]
-      },
-      {
-        "number": 3,
-        "title": "Ratios, Proportions & Percent",
-        "chapters": ["ch-11", "ch-12", "ch-13"]
-      }
+      { "number": 1, "title": "Arithmetic Properties", "chapters": ["ch-01","ch-02","ch-03"] },
+      { "number": 2, "title": "The Number System", "chapters": ["ch-04","ch-05","ch-06","ch-07","ch-08","ch-09","ch-10"] },
+      { "number": 3, "title": "Ratios, Proportions & Percent", "chapters": ["ch-11","ch-12","ch-13","ch-14","ch-15","ch-16","ch-17","ch-18"] },
+      { "number": 4, "title": "Exponents & Algebraic Expressions", "chapters": ["ch-19","ch-20","ch-21","ch-22","ch-23"] },
+      { "number": 5, "title": "Linear Equations & Inequalities", "chapters": ["ch-24","ch-25","ch-26","ch-27","ch-28","ch-29","ch-30"] },
+      { "number": 6, "title": "Graphing Linear Equations & Inequalities", "chapters": ["ch-31","ch-32","ch-33","ch-34","ch-35","ch-36","ch-37","ch-38"] },
+      { "number": 7, "title": "Statistics & Probability", "chapters": ["ch-39","ch-40","ch-41","ch-42","ch-43","ch-44"] },
+      { "number": 8, "title": "Functions", "chapters": ["ch-45","ch-46","ch-47"] },
+      { "number": 9, "title": "Polynomial Operations", "chapters": ["ch-48","ch-49","ch-50","ch-51"] },
+      { "number": 10, "title": "Factoring Polynomials", "chapters": ["ch-52","ch-53","ch-54","ch-55","ch-56"] },
+      { "number": 11, "title": "Radicals", "chapters": ["ch-57","ch-58","ch-59","ch-60"] },
+      { "number": 12, "title": "Quadratic Equations", "chapters": ["ch-61","ch-62","ch-63","ch-64","ch-65","ch-66"] },
+      { "number": 13, "title": "Quadratic Functions", "chapters": ["ch-67","ch-68"] }
     ]
   },
   {
@@ -52,7 +50,7 @@
     "id": "ml-time-series",
     "title": "Machine Learning for Time Series",
     "author": "Krasser et al.",
-    "description": "Practical machine learning techniques applied to time series data in Python. Covers forecasting, anomaly detection, and deep learning approaches.",
+    "description": "Practical machine learning techniques applied to time series data in Python.",
     "icon": "📈",
     "color": "#a78bfa",
     "pdf": "/books/ml-time-series-python.pdf",
@@ -63,7 +61,7 @@
     "id": "tsa4",
     "title": "Time Series Analysis",
     "author": "Shumway & Stoffer",
-    "description": "The classic statistical treatment of time series — ARIMA, spectral analysis, state space models, and more.",
+    "description": "The classic statistical treatment of time series — ARIMA, spectral analysis, state space models.",
     "icon": "📉",
     "color": "#f97316",
     "pdf": "/books/tsa4-time-series-analysis.pdf",
@@ -74,7 +72,7 @@
     "id": "algo-trading",
     "title": "Algorithmic Trading: Winning Strategies",
     "author": "Ernie Chan",
-    "description": "Practical strategies for building algorithmic trading systems — mean reversion, momentum, risk management, and backtesting.",
+    "description": "Practical strategies for algorithmic trading — mean reversion, momentum, risk management, backtesting.",
     "icon": "⚡",
     "color": "#ef4444",
     "pdf": "/books/algorithmic-trading-strategies.pdf",

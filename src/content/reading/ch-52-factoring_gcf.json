@@ -1,0 +1,37 @@
+{
+  "id": "ch-52",
+  "chapterNumber": 52,
+  "unit": 10,
+  "unitTitle": "Factoring Polynomials",
+  "title": "Factoring Polynomials Using GCF",
+  "pages": "462-474",
+  "blocks": [
+    {
+      "type": "text",
+      "body": "Factoring is the reverse of distributing. Instead of multiplying out, you find what was multiplied together to get the expression."
+    },
+    {
+      "type": "definition",
+      "term": "Greatest Common Factor (GCF)",
+      "body": "The largest factor shared by all terms. To factor using GCF: find the GCF of all coefficients and the lowest power of any common variable. Factor it out."
+    },
+    {
+      "type": "rule",
+      "body": "Steps: (1) Find GCF of all terms. (2) Divide each term by the GCF. (3) Write as GCF x (remaining polynomial). Always check by distributing back."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "Factor 12x^3 - 8x^2 + 4x. GCF = 4x. Answer: 4x(3x^2 - 2x + 1). Check: 4x(3x^2) - 4x(2x) + 4x(1) = 12x^3 - 8x^2 + 4x. Correct."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "Factor 6a^2b - 9ab^2 + 3ab. GCF = 3ab. Answer: 3ab(2a - 3b + 1)."
+    },
+    {
+      "type": "note",
+      "body": "Always look for a GCF first, before trying any other factoring method. It simplifies the remaining expression and makes subsequent steps easier."
+    }
+  ]
+}

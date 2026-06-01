@@ -1,0 +1,32 @@
+{
+  "id": "ch-29",
+  "chapterNumber": 29,
+  "unit": 5,
+  "unitTitle": "Linear Equations & Inequalities",
+  "title": "Systems by Substitution",
+  "pages": "225-236",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "System of Linear Equations",
+      "body": "Two or more linear equations with the same variables. The solution is the set of values that satisfies ALL equations simultaneously — the point where the lines intersect."
+    },
+    {
+      "type": "rule",
+      "body": "Substitution Method: (1) Solve one equation for one variable. (2) Substitute that expression into the other equation. (3) Solve for the remaining variable. (4) Substitute back to find the first variable. (5) Check both original equations."
+    },
+    {
+      "type": "example",
+      "label": "Example",
+      "body": "Solve: y = 2x + 1 and 3x + y = 16. Substitute y = 2x + 1 into 3x + y = 16: 3x + (2x + 1) = 16. 5x + 1 = 16. 5x = 15. x = 3. Then y = 2(3) + 1 = 7. Solution: (3, 7)."
+    },
+    {
+      "type": "rule",
+      "body": "Types of solutions: One solution (lines intersect at one point). No solution (parallel lines — equations are inconsistent). Infinitely many solutions (same line — equations are dependent)."
+    },
+    {
+      "type": "note",
+      "body": "Substitution works best when one variable has a coefficient of 1 and is easy to isolate. If neither variable is easy to isolate, use elimination instead."
+    }
+  ]
+}

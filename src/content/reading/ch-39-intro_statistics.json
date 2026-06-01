@@ -1,0 +1,39 @@
+{
+  "id": "ch-39",
+  "chapterNumber": 39,
+  "unit": 7,
+  "unitTitle": "Statistics & Probability",
+  "title": "Introduction to Statistics",
+  "pages": "326-334",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Statistics",
+      "body": "The science of collecting, organizing, analyzing, and interpreting data."
+    },
+    {
+      "type": "definition",
+      "term": "Data",
+      "body": "Information, often numerical, collected through observation or measurement."
+    },
+    {
+      "type": "definition",
+      "term": "Population vs Sample",
+      "body": "A population is the entire group being studied. A sample is a subset of the population, used when studying the whole population is impractical. A random sample gives each member an equal chance of being chosen."
+    },
+    {
+      "type": "definition",
+      "term": "Categorical Data",
+      "body": "Data that falls into named groups or categories. Example: favorite color, type of pet."
+    },
+    {
+      "type": "definition",
+      "term": "Numerical Data",
+      "body": "Data that is measured or counted. Discrete: countable (number of siblings). Continuous: any value in a range (height, weight)."
+    },
+    {
+      "type": "note",
+      "body": "A biased sample does not represent the population well. Example: surveying only students in the math club about math opinions would over-represent math enthusiasts."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "ch-57",
+  "chapterNumber": 57,
+  "unit": 11,
+  "unitTitle": "Radicals",
+  "title": "Square Roots and Cube Roots",
+  "pages": "506-514",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Square Root",
+      "body": "The square root of n (written sqrt(n)) is the number that, when squared, equals n. sqrt(25) = 5 because 5^2 = 25. Every positive number has two square roots: positive and negative."
+    },
+    {
+      "type": "definition",
+      "term": "Perfect Square",
+      "body": "A number whose square root is a whole number. Examples: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100."
+    },
+    {
+      "type": "definition",
+      "term": "Cube Root",
+      "body": "The cube root of n (written as the cube root symbol or n^(1/3)) is the number that, when cubed, equals n. Cube root of 27 = 3 because 3^3 = 27. Cube root of -8 = -2 because (-2)^3 = -8."
+    },
+    {
+      "type": "rule",
+      "body": "Square roots of negative numbers are not real numbers. sqrt(-4) is not real. However, cube roots of negative numbers are real: cube root of -27 = -3."
+    },
+    {
+      "type": "example",
+      "label": "Examples",
+      "body": "sqrt(64) = 8. sqrt(144) = 12. cube root of 8 = 2. cube root of 125 = 5. sqrt(0.25) = 0.5. sqrt(1/9) = 1/3."
+    },
+    {
+      "type": "note",
+      "body": "On a calculator, sqrt(x) finds the principal (positive) square root. To find the negative root, add a minus sign: -sqrt(x)."
+    }
+  ]
+}

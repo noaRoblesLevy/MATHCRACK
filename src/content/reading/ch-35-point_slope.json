@@ -1,0 +1,33 @@
+{
+  "id": "ch-35",
+  "chapterNumber": 35,
+  "unit": 6,
+  "unitTitle": "Graphing Linear Equations & Inequalities",
+  "title": "Point-Slope Form",
+  "pages": "289-298",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Point-Slope Form",
+      "body": "y - y1 = m(x - x1), where m is the slope and (x1, y1) is a known point on the line. Useful when you know the slope and one point."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "Write the equation of a line with slope 3 passing through (2, 5). y - 5 = 3(x - 2). Can also write in slope-intercept: y = 3x - 1."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "Write the equation of the line through (-1, 4) and (3, -4). Slope = (-4-4)/(3-(-1)) = -8/4 = -2. y - 4 = -2(x - (-1)) -> y - 4 = -2(x + 1) -> y = -2x + 2."
+    },
+    {
+      "type": "rule",
+      "body": "To write the equation of a line through two points: (1) Find slope using m = (y2-y1)/(x2-x1). (2) Use point-slope form with either point. (3) Simplify to slope-intercept if needed."
+    },
+    {
+      "type": "note",
+      "body": "All three forms (standard, slope-intercept, point-slope) represent the same line. Choosing which form to use depends on what information is given."
+    }
+  ]
+}

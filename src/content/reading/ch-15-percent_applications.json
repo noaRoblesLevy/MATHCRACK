@@ -1,0 +1,51 @@
+{
+  "id": "ch-15",
+  "chapterNumber": 15,
+  "unit": 3,
+  "unitTitle": "Ratios, Proportions & Percent",
+  "title": "Percent Applications",
+  "pages": "107-122",
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "Finding What Percent One Number Is of Another"
+    },
+    {
+      "type": "rule",
+      "body": "To find what percent A is of B: divide A by B, then multiply by 100. Formula: Percent = (Part / Whole) x 100. Example: 18 is what % of 72? (18/72) x 100 = 25%."
+    },
+    {
+      "type": "heading",
+      "text": "Finding the Whole When a Part and Percent Are Known"
+    },
+    {
+      "type": "rule",
+      "body": "To find the whole: divide the part by the decimal form of the percent. Formula: Whole = Part / Percent. Example: 12 is 30% of what number? 12 / 0.30 = 40."
+    },
+    {
+      "type": "heading",
+      "text": "Percent Increase and Decrease"
+    },
+    {
+      "type": "rule",
+      "body": "Percent increase = (New - Original) / Original x 100. Percent decrease = (Original - New) / Original x 100. Example: price goes from $40 to $50. Percent increase = (10/40) x 100 = 25%."
+    },
+    {
+      "type": "example",
+      "label": "Example",
+      "body": "A shirt costs $80 and is discounted 20%. Discount = 20% x $80 = $16. Sale price = $80 - $16 = $64."
+    },
+    {
+      "type": "heading",
+      "text": "Sales Tax and Tips"
+    },
+    {
+      "type": "rule",
+      "body": "Total with tax = Original price x (1 + tax rate). Example: $50 item with 8% tax = $50 x 1.08 = $54. Tip: multiply the bill by the tip percent and add it on."
+    },
+    {
+      "type": "note",
+      "body": "A shortcut for discounts: multiply by (1 - discount rate). A 25% off item: multiply price by 0.75. For markups: multiply by (1 + markup rate)."
+    }
+  ]
+}

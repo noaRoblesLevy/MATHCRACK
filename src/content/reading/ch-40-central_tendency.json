@@ -1,0 +1,34 @@
+{
+  "id": "ch-40",
+  "chapterNumber": 40,
+  "unit": 7,
+  "unitTitle": "Statistics & Probability",
+  "title": "Measures of Central Tendency and Variation",
+  "pages": "335-342",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Mean",
+      "body": "The average. Sum all values and divide by the count. Example: mean of 3, 7, 8, 2, 5 = (3+7+8+2+5)/5 = 25/5 = 5."
+    },
+    {
+      "type": "definition",
+      "term": "Median",
+      "body": "The middle value when data is ordered. If there is an even count, the median is the average of the two middle values. Example: median of 2, 3, 5, 7, 8 = 5. Median of 2, 3, 7, 8 = (3+7)/2 = 5."
+    },
+    {
+      "type": "definition",
+      "term": "Mode",
+      "body": "The value that appears most often. A data set can have one mode, multiple modes, or no mode. Example: in 1, 2, 2, 3, 4, 4, 4, the mode is 4."
+    },
+    {
+      "type": "definition",
+      "term": "Range",
+      "body": "The difference between the maximum and minimum values. Measures spread. Example: range of 2, 5, 9, 14 = 14 - 2 = 12."
+    },
+    {
+      "type": "note",
+      "body": "Use the mean when data has no extreme outliers. Use the median when there are outliers (very large or small values that skew the mean). Use the mode for categorical data or to find the most common item."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "ch-68",
+  "chapterNumber": 68,
+  "unit": 13,
+  "unitTitle": "Quadratic Functions",
+  "title": "Solving Quadratic Equations by Graphing",
+  "pages": "611-618",
+  "blocks": [
+    {
+      "type": "text",
+      "body": "The solutions (roots) of ax^2 + bx + c = 0 are the x-intercepts of the parabola y = ax^2 + bx + c. Graphing gives a visual way to find or estimate solutions."
+    },
+    {
+      "type": "rule",
+      "body": "To solve by graphing: (1) Write the equation in standard form. (2) Graph y = ax^2 + bx + c. (3) Find where the parabola crosses the x-axis. Those x-values are the solutions."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "Solve x^2 - x - 6 = 0 by graphing. Graph y = x^2 - x - 6. The parabola crosses the x-axis at x = -2 and x = 3. Solutions: x = -2 and x = 3. Check: (-2)^2 - (-2) - 6 = 4+2-6=0. Correct."
+    },
+    {
+      "type": "rule",
+      "body": "Reading solutions from a graph: if the parabola touches (but does not cross) the x-axis, there is one solution. If it does not reach the x-axis, there are no real solutions."
+    },
+    {
+      "type": "note",
+      "body": "Graphing gives exact solutions only when the roots are integers or simple fractions. For irrational solutions (like 2 +/- sqrt(3)), use the quadratic formula for the exact answer and graphing for approximation."
+    }
+  ]
+}

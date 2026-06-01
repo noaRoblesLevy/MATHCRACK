@@ -1,0 +1,32 @@
+{
+  "id": "ch-47",
+  "chapterNumber": 47,
+  "unit": 8,
+  "unitTitle": "Functions",
+  "title": "Application of Functions",
+  "pages": "415-426",
+  "blocks": [
+    {
+      "type": "text",
+      "body": "Functions model real-world relationships where one quantity depends on another. The input is the independent variable; the output is the dependent variable."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "A car travels at 60 mph. Distance d as a function of time t: d(t) = 60t. Find distance after 2.5 hours: d(2.5) = 150 miles."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "A plumber charges $80 plus $50 per hour. Cost as a function of hours h: C(h) = 50h + 80. C(3) = 150 + 80 = $230."
+    },
+    {
+      "type": "rule",
+      "body": "Linear functions have the form f(x) = mx + b (constant rate of change). The graph is a straight line. Rate of change = slope = m."
+    },
+    {
+      "type": "note",
+      "body": "Always check the domain in context. For the plumber example, h >= 0 (negative hours make no sense). The domain is restricted by real-world constraints."
+    }
+  ]
+}

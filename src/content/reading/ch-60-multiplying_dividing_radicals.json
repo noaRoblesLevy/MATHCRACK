@@ -1,0 +1,32 @@
+{
+  "id": "ch-60",
+  "chapterNumber": 60,
+  "unit": 11,
+  "unitTitle": "Radicals",
+  "title": "Multiplying & Dividing Radicals",
+  "pages": "527-532",
+  "blocks": [
+    {
+      "type": "rule",
+      "body": "Multiplying radicals: sqrt(a) x sqrt(b) = sqrt(a x b). Multiply coefficients together, multiply radicands together, then simplify. Example: 3 sqrt(2) x 4 sqrt(5) = 12 sqrt(10)."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "sqrt(6) x sqrt(8) = sqrt(48) = 4 sqrt(3). OR: sqrt(6) x sqrt(8) = sqrt(2 x 3) x sqrt(4 x 2) = 2 sqrt(2) x sqrt(6) ... easier: sqrt(48) = sqrt(16 x 3) = 4 sqrt(3)."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "(2 sqrt(3))^2 = 4 x 3 = 12. (sqrt(5) + sqrt(2))(sqrt(5) - sqrt(2)) = 5 - 2 = 3 (difference of squares pattern)."
+    },
+    {
+      "type": "rule",
+      "body": "Dividing radicals: sqrt(a)/sqrt(b) = sqrt(a/b). Always rationalize the denominator (remove the radical from the denominator) by multiplying by the conjugate or the radical itself."
+    },
+    {
+      "type": "note",
+      "body": "Conjugate of (a + sqrt(b)) is (a - sqrt(b)). Multiplying by the conjugate eliminates the radical: (sqrt(3) + sqrt(2))(sqrt(3) - sqrt(2)) = 3 - 2 = 1."
+    }
+  ]
+}

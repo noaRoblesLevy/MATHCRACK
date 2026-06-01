@@ -1,0 +1,28 @@
+{
+  "id": "ch-30",
+  "chapterNumber": 30,
+  "unit": 5,
+  "unitTitle": "Linear Equations & Inequalities",
+  "title": "Systems by Elimination",
+  "pages": "237-246",
+  "blocks": [
+    {
+      "type": "rule",
+      "body": "Elimination Method: (1) Line up equations. (2) Multiply one or both equations so one variable has opposite coefficients. (3) Add the equations to eliminate that variable. (4) Solve for the remaining variable. (5) Substitute back to find the eliminated variable."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "Solve: 2x + 3y = 12 and 2x - y = 4. Subtract: (2x + 3y) - (2x - y) = 12 - 4. 4y = 8. y = 2. Then 2x + 6 = 12, 2x = 6, x = 3. Solution: (3, 2)."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "Solve: 3x + 2y = 16 and 5x - 4y = 8. Multiply first equation by 2: 6x + 4y = 32. Add to second: 11x = 40. x = 40/11... multiply first by 2 to get 4y terms to cancel."
+    },
+    {
+      "type": "note",
+      "body": "Choose elimination when both equations are in standard form (Ax + By = C). Choose substitution when one variable is already isolated. Both methods give the same answer."
+    }
+  ]
+}

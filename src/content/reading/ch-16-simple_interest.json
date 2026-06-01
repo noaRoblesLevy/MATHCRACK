@@ -1,0 +1,33 @@
+{
+  "id": "ch-16",
+  "chapterNumber": 16,
+  "unit": 3,
+  "unitTitle": "Ratios, Proportions & Percent",
+  "title": "Simple Interest",
+  "pages": "123-130",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Simple Interest",
+      "body": "Interest calculated only on the original principal (not on previously earned interest). Formula: I = P x r x t, where I = interest earned, P = principal (initial amount), r = annual interest rate (as a decimal), t = time in years."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "You invest $500 at 4% annual interest for 3 years. I = 500 x 0.04 x 3 = $60. Total = $500 + $60 = $560."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "A loan of $1,200 at 6% for 2.5 years. I = 1200 x 0.06 x 2.5 = $180."
+    },
+    {
+      "type": "rule",
+      "body": "You can rearrange I = Prt to find any variable: P = I/(rt), r = I/(Pt), t = I/(Pr). Example: how long to earn $90 interest on $1000 at 3%? t = 90 / (1000 x 0.03) = 3 years."
+    },
+    {
+      "type": "note",
+      "body": "Always convert the interest rate to a decimal before using the formula. 5% = 0.05. Also make sure time is in years — 6 months = 0.5 years."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "ch-28",
+  "chapterNumber": 28,
+  "unit": 5,
+  "unitTitle": "Linear Equations & Inequalities",
+  "title": "Rewriting Formulas",
+  "pages": "219-224",
+  "blocks": [
+    {
+      "type": "text",
+      "body": "Many real-world formulas have multiple variables. You can solve for any one variable by treating the others as constants and using algebra."
+    },
+    {
+      "type": "rule",
+      "body": "To solve a formula for a specific variable: isolate that variable on one side using the same steps as solving an equation. Example: solve d = rt for t. Divide both sides by r: t = d/r."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "Solve A = (1/2)bh for h. Multiply both sides by 2: 2A = bh. Divide by b: h = 2A/b."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "Solve P = 2l + 2w for w. Subtract 2l: P - 2l = 2w. Divide by 2: w = (P - 2l)/2."
+    },
+    {
+      "type": "example",
+      "label": "Example 3",
+      "body": "Solve C = (5/9)(F - 32) for F. Multiply by 9/5: (9/5)C = F - 32. Add 32: F = (9/5)C + 32."
+    },
+    {
+      "type": "note",
+      "body": "This skill is essential in science: rearranging V = IR for R, or E = mc^2 for m. The process is identical to solving any equation."
+    }
+  ]
+}

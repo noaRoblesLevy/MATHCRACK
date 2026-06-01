@@ -1,0 +1,32 @@
+{
+  "id": "ch-62",
+  "chapterNumber": 62,
+  "unit": 12,
+  "unitTitle": "Quadratic Equations",
+  "title": "Solving Quadratic Equations by Factoring",
+  "pages": "541-552",
+  "blocks": [
+    {
+      "type": "rule",
+      "body": "Zero Product Property: if A x B = 0, then A = 0 or B = 0. This is the basis of solving by factoring. If you can factor the quadratic into two binomials, set each equal to zero and solve."
+    },
+    {
+      "type": "rule",
+      "body": "Steps: (1) Write the equation in standard form (= 0). (2) Factor completely. (3) Set each factor equal to zero. (4) Solve each mini-equation. (5) Check solutions in the original equation."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "Solve x^2 - 7x + 12 = 0. Factor: (x-3)(x-4) = 0. Set each to zero: x-3=0 -> x=3; x-4=0 -> x=4. Solutions: x=3 and x=4."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "Solve 2x^2 + 5x - 3 = 0. Factor: (2x-1)(x+3) = 0. Solutions: x = 1/2 and x = -3."
+    },
+    {
+      "type": "note",
+      "body": "Always move everything to one side first. x^2 = 7x -> x^2 - 7x = 0 -> x(x-7) = 0 -> x = 0 or x = 7. Do not divide both sides by x (you would lose the x = 0 solution)."
+    }
+  ]
+}

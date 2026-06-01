@@ -1,0 +1,27 @@
+{
+  "id": "ch-36",
+  "chapterNumber": 36,
+  "unit": 6,
+  "unitTitle": "Graphing Linear Equations & Inequalities",
+  "title": "Solving Systems by Graphing",
+  "pages": "299-306",
+  "blocks": [
+    {
+      "type": "rule",
+      "body": "To solve a system by graphing: (1) Graph both lines on the same coordinate plane. (2) Find the intersection point. (3) The coordinates of the intersection are the solution."
+    },
+    {
+      "type": "example",
+      "label": "Example",
+      "body": "Solve: y = x + 1 and y = -x + 5. Graph both. Line 1 has slope 1, y-int 1. Line 2 has slope -1, y-int 5. They intersect at (2, 3). Solution: (2, 3). Check: 3 = 2+1 ✓ and 3 = -2+5 ✓."
+    },
+    {
+      "type": "rule",
+      "body": "Parallel lines (same slope, different y-intercepts) never intersect — no solution. Same line (identical equations) — infinitely many solutions."
+    },
+    {
+      "type": "note",
+      "body": "Graphing gives approximate solutions and is useful for visualizing the system. For exact answers, use substitution or elimination. Graphing is most reliable when the intersection is at integer coordinates."
+    }
+  ]
+}

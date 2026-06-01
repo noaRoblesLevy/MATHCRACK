@@ -1,0 +1,37 @@
+{
+  "id": "ch-22",
+  "chapterNumber": 22,
+  "unit": 4,
+  "unitTitle": "Exponents & Algebraic Expressions",
+  "title": "Evaluating Algebraic Expressions",
+  "pages": "163-168",
+  "blocks": [
+    {
+      "type": "text",
+      "body": "Evaluating an expression means substituting given values for the variables and calculating the result using the order of operations (PEMDAS)."
+    },
+    {
+      "type": "rule",
+      "body": "Steps: (1) Write the expression. (2) Substitute the given value(s) for each variable. (3) Simplify using PEMDAS."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "Evaluate 3x + 7 when x = 4. Substitute: 3(4) + 7 = 12 + 7 = 19."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "Evaluate 2a^2 - 3b when a = 3 and b = -2. Substitute: 2(3)^2 - 3(-2) = 2(9) + 6 = 18 + 6 = 24."
+    },
+    {
+      "type": "example",
+      "label": "Example 3",
+      "body": "Evaluate (x + y)^2 when x = 5 and y = -1. Substitute: (5 + (-1))^2 = (4)^2 = 16."
+    },
+    {
+      "type": "note",
+      "body": "Always use parentheses when substituting negative numbers to avoid sign errors. Write -3 as (-3), not just -3."
+    }
+  ]
+}

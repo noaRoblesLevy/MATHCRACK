@@ -1,0 +1,38 @@
+{
+  "id": "ch-41",
+  "chapterNumber": 41,
+  "unit": 7,
+  "unitTitle": "Statistics & Probability",
+  "title": "Displaying Data",
+  "pages": "343-362",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Dot Plot",
+      "body": "A number line with dots above values showing their frequency. Good for small data sets."
+    },
+    {
+      "type": "definition",
+      "term": "Histogram",
+      "body": "A bar graph where bars represent frequency of data in equal-width intervals (bins). Bars touch each other. Good for large data sets."
+    },
+    {
+      "type": "definition",
+      "term": "Box Plot (Box-and-Whisker)",
+      "body": "Shows five-number summary: minimum, Q1 (first quartile = 25th percentile), median, Q3 (third quartile = 75th percentile), and maximum. The box spans Q1 to Q3 (the Interquartile Range, IQR)."
+    },
+    {
+      "type": "definition",
+      "term": "Stem-and-Leaf Plot",
+      "body": "Displays individual data values using stems (tens digit) and leaves (ones digit). Example: 34, 37, 42 -> stem 3 leaves 4,7 and stem 4 leaf 2."
+    },
+    {
+      "type": "rule",
+      "body": "IQR = Q3 - Q1. The IQR measures the middle 50% of data. An outlier is typically a value more than 1.5 x IQR below Q1 or above Q3."
+    },
+    {
+      "type": "note",
+      "body": "Choose the display that best suits your data and question. Histograms show distribution shape. Box plots compare groups. Scatter plots show relationships between two variables."
+    }
+  ]
+}

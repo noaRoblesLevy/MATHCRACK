@@ -1,0 +1,38 @@
+{
+  "id": "ch-66",
+  "chapterNumber": 66,
+  "unit": 12,
+  "unitTitle": "Quadratic Equations",
+  "title": "The Discriminant and the Number of Solutions",
+  "pages": "579-586",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Discriminant",
+      "body": "The expression b^2 - 4ac, found under the radical in the quadratic formula. It tells you how many real solutions a quadratic equation has WITHOUT solving it."
+    },
+    {
+      "type": "rule",
+      "body": "If b^2 - 4ac > 0: TWO distinct real solutions (two x-intercepts on the graph). If b^2 - 4ac = 0: ONE real solution (the parabola just touches the x-axis). If b^2 - 4ac < 0: NO real solutions (parabola does not cross x-axis)."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "x^2 - 6x + 5 = 0. Discriminant = 36 - 20 = 16 > 0. Two real solutions."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "x^2 - 6x + 9 = 0. Discriminant = 36 - 36 = 0. One real solution (x = 3, a double root)."
+    },
+    {
+      "type": "example",
+      "label": "Example 3",
+      "body": "x^2 + x + 1 = 0. Discriminant = 1 - 4 = -3 < 0. No real solutions."
+    },
+    {
+      "type": "note",
+      "body": "The discriminant is a powerful preview tool. When designing real-world problems, you can use the discriminant to determine whether the scenario has valid mathematical solutions before solving completely."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "ch-43",
+  "chapterNumber": 43,
+  "unit": 7,
+  "unitTitle": "Statistics & Probability",
+  "title": "Compound Events",
+  "pages": "375-384",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Independent Events",
+      "body": "Two events where the outcome of one does not affect the other. Example: flipping a coin and rolling a die."
+    },
+    {
+      "type": "rule",
+      "body": "Multiplication Rule for Independent Events: P(A and B) = P(A) x P(B). Example: P(heads and rolling a 6) = 1/2 x 1/6 = 1/12."
+    },
+    {
+      "type": "definition",
+      "term": "Dependent Events",
+      "body": "Two events where the outcome of the first affects the probability of the second. Example: drawing cards without replacement."
+    },
+    {
+      "type": "rule",
+      "body": "For dependent events: P(A and B) = P(A) x P(B given A has occurred). Example: P(drawing two aces from a deck without replacement) = 4/52 x 3/51 = 12/2652 = 1/221."
+    },
+    {
+      "type": "rule",
+      "body": "Addition Rule: P(A or B) = P(A) + P(B) - P(A and B). If A and B are mutually exclusive (cannot both occur), P(A or B) = P(A) + P(B)."
+    },
+    {
+      "type": "note",
+      "body": "Mutually exclusive events cannot happen at the same time. Rolling a 3 and rolling a 5 are mutually exclusive. Drawing a heart and drawing a face card are NOT mutually exclusive (Jack of hearts)."
+    }
+  ]
+}

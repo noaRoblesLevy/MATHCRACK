@@ -1,0 +1,27 @@
+{
+  "id": "ch-18",
+  "chapterNumber": 18,
+  "unit": 3,
+  "unitTitle": "Ratios, Proportions & Percent",
+  "title": "Tables and Ratios",
+  "pages": "135-140",
+  "blocks": [
+    {
+      "type": "text",
+      "body": "Ratios can be read from tables of equivalent values. If a table shows a constant relationship between two quantities, you can use proportional reasoning to find missing values."
+    },
+    {
+      "type": "rule",
+      "body": "In a ratio table, all columns show equivalent ratios. Find the scale factor between a known column and the unknown column, then apply it. Example: if 3 items cost $12, the ratio is 3:12 = 1:4. 7 items cost 7 x 4 = $28."
+    },
+    {
+      "type": "example",
+      "label": "Example",
+      "body": "A car travels at a constant speed. In 2 hours it goes 90 miles. Complete the table for 5 hours. Rate = 90/2 = 45 mph. In 5 hours: 45 x 5 = 225 miles."
+    },
+    {
+      "type": "note",
+      "body": "A ratio table always represents a proportional relationship. When you plot the pairs (x, y) from a ratio table, the points always fall on a straight line through the origin (0, 0)."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "ch-44",
+  "chapterNumber": 44,
+  "unit": 7,
+  "unitTitle": "Statistics & Probability",
+  "title": "Permutations and Combinations",
+  "pages": "385-394",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Fundamental Counting Principle",
+      "body": "If one event has m outcomes and a second has n outcomes, together they have m x n outcomes. Extend to any number of events. Example: 3 shirts and 4 pants = 12 outfits."
+    },
+    {
+      "type": "definition",
+      "term": "Permutation",
+      "body": "An arrangement of items where ORDER matters. Formula: nPr = n! / (n-r)!. Example: how many ways to arrange 3 of 5 books? 5P3 = 5!/2! = 60."
+    },
+    {
+      "type": "definition",
+      "term": "Combination",
+      "body": "A selection of items where ORDER does NOT matter. Formula: nCr = n! / (r!(n-r)!). Example: choosing 3 students from 5 for a committee: 5C3 = 10."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "How many 3-digit PINs using digits 1-9 without repetition? Order matters -> permutation. 9P3 = 9 x 8 x 7 = 504."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "How many ways to choose 2 toppings from 8? Order does not matter -> combination. 8C2 = (8 x 7)/(2 x 1) = 28."
+    },
+    {
+      "type": "note",
+      "body": "Key question: does order matter? If rearranging gives a different outcome (like different PINs), use permutations. If rearranging gives the same thing (like same pizza toppings), use combinations."
+    }
+  ]
+}

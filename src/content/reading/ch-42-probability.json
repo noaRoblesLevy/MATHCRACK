@@ -1,0 +1,37 @@
+{
+  "id": "ch-42",
+  "chapterNumber": 42,
+  "unit": 7,
+  "unitTitle": "Statistics & Probability",
+  "title": "Probability",
+  "pages": "363-374",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Probability",
+      "body": "A number between 0 and 1 (or 0% and 100%) that measures how likely an event is to occur. P = 0 means impossible, P = 1 means certain."
+    },
+    {
+      "type": "rule",
+      "body": "Theoretical Probability: P(event) = (number of favorable outcomes) / (total number of equally likely outcomes). Example: P(rolling a 3 on a die) = 1/6."
+    },
+    {
+      "type": "rule",
+      "body": "Experimental Probability: P(event) = (number of times event occurred) / (total number of trials). Based on actual results rather than theory."
+    },
+    {
+      "type": "definition",
+      "term": "Complement",
+      "body": "The complement of event A is \"not A\" — all outcomes that are not A. P(not A) = 1 - P(A). Example: P(not rolling a 3) = 1 - 1/6 = 5/6."
+    },
+    {
+      "type": "example",
+      "label": "Example",
+      "body": "A bag has 3 red, 5 blue, 2 green marbles. P(blue) = 5/10 = 1/2. P(not blue) = 1 - 1/2 = 1/2. P(red or green) = 5/10 = 1/2."
+    },
+    {
+      "type": "note",
+      "body": "All probabilities in a sample space sum to 1. The sample space is the set of all possible outcomes."
+    }
+  ]
+}

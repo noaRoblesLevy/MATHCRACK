@@ -1,0 +1,28 @@
+{
+  "id": "ch-37",
+  "chapterNumber": 37,
+  "unit": 6,
+  "unitTitle": "Graphing Linear Equations & Inequalities",
+  "title": "Graphing Linear Inequalities",
+  "pages": "307-314",
+  "blocks": [
+    {
+      "type": "rule",
+      "body": "To graph a linear inequality: (1) Replace the inequality with \"=\" and graph the boundary line. (2) Use a SOLID line for >= or <=. Use a DASHED line for > or <. (3) Test a point (usually the origin) — if it satisfies the inequality, shade that side. If not, shade the other side."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "Graph y > 2x - 3. Draw dashed line y = 2x - 3. Test (0,0): 0 > -3? Yes. Shade above the line."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "Graph y <= -x + 4. Draw solid line y = -x + 4. Test (0,0): 0 <= 4? Yes. Shade below the line (including the line itself)."
+    },
+    {
+      "type": "note",
+      "body": "The shaded region is the solution set — every point in it satisfies the inequality. Points on a dashed boundary line are NOT solutions."
+    }
+  ]
+}

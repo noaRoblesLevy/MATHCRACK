@@ -1,0 +1,35 @@
+{
+  "id": "ch-56",
+  "chapterNumber": 56,
+  "unit": 10,
+  "unitTitle": "Factoring Polynomials",
+  "title": "Factoring Using Special Formulas",
+  "pages": "495-504",
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "Difference of Two Squares"
+    },
+    {
+      "type": "rule",
+      "body": "a^2 - b^2 = (a+b)(a-b). Both terms must be perfect squares and there is subtraction. Example: x^2 - 25 = (x+5)(x-5). 4x^2 - 9 = (2x+3)(2x-3)."
+    },
+    {
+      "type": "heading",
+      "text": "Perfect Square Trinomials"
+    },
+    {
+      "type": "rule",
+      "body": "a^2 + 2ab + b^2 = (a+b)^2. a^2 - 2ab + b^2 = (a-b)^2. Example: x^2 + 6x + 9 = (x+3)^2. x^2 - 10x + 25 = (x-5)^2."
+    },
+    {
+      "type": "example",
+      "label": "Examples",
+      "body": "x^2 - 49 = (x+7)(x-7). 9y^2 - 1 = (3y+1)(3y-1). x^2 + 8x + 16 = (x+4)^2. 4x^2 - 12x + 9 = (2x-3)^2."
+    },
+    {
+      "type": "note",
+      "body": "To check if a trinomial is a perfect square: the first and last terms must be perfect squares, and the middle term must be twice the product of their square roots. x^2 + 6x + 9: sqrt(x^2)=x, sqrt(9)=3, 2(x)(3)=6x. Yes!"
+    }
+  ]
+}

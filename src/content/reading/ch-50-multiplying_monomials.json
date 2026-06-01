@@ -1,0 +1,37 @@
+{
+  "id": "ch-50",
+  "chapterNumber": 50,
+  "unit": 9,
+  "unitTitle": "Polynomial Operations",
+  "title": "Multiplying & Dividing Monomials",
+  "pages": "445-452",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Monomial",
+      "body": "A polynomial with exactly one term. Examples: 5, 3x, -2x^2y, 7ab^3."
+    },
+    {
+      "type": "rule",
+      "body": "To multiply monomials: multiply the coefficients, then multiply the variables using the product rule for exponents. Example: (4x^2y)(3xy^3) = 12x^3y^4."
+    },
+    {
+      "type": "rule",
+      "body": "To divide monomials: divide the coefficients, then divide variables using the quotient rule. Example: 12x^5y^3 / 4x^2y = 3x^3y^2."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "(-3a^2b)(5ab^4) = -15a^3b^5."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "24m^6n^3 / 8m^2n = 3m^4n^2."
+    },
+    {
+      "type": "note",
+      "body": "When the exponent result is negative, rewrite using the negative exponent rule: x^(-n) = 1/x^n. Example: x^2 / x^5 = x^(-3) = 1/x^3."
+    }
+  ]
+}

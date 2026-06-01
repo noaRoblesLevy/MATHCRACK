@@ -1,0 +1,33 @@
+{
+  "id": "ch-17",
+  "chapterNumber": 17,
+  "unit": 3,
+  "unitTitle": "Ratios, Proportions & Percent",
+  "title": "Percent Rate of Change",
+  "pages": "131-134",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Percent Rate of Change",
+      "body": "How much a quantity increases or decreases, expressed as a percentage of the original value. Positive = percent increase. Negative = percent decrease."
+    },
+    {
+      "type": "rule",
+      "body": "Percent rate of change = ((New Value - Original Value) / Original Value) x 100. If the result is positive, it is a percent increase. If negative, it is a percent decrease."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "Population goes from 4,000 to 5,200. Change = 1,200. Rate = (1200/4000) x 100 = 30% increase."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "Stock price falls from $80 to $60. Change = -20. Rate = (-20/80) x 100 = -25%. This is a 25% decrease."
+    },
+    {
+      "type": "note",
+      "body": "Always use the ORIGINAL value as the denominator, not the new value. This is the most common mistake with percent change problems."
+    }
+  ]
+}

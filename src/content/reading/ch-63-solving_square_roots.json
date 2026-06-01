@@ -1,0 +1,33 @@
+{
+  "id": "ch-63",
+  "chapterNumber": 63,
+  "unit": 12,
+  "unitTitle": "Quadratic Equations",
+  "title": "Solving Quadratic Equations by Taking Square Roots",
+  "pages": "553-560",
+  "blocks": [
+    {
+      "type": "rule",
+      "body": "If x^2 = k, then x = sqrt(k) or x = -sqrt(k) (written as x = +/- sqrt(k)). This method works best when there is no x-term (b = 0)."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "Solve x^2 = 49. x = +/- 7. Solutions: x = 7 and x = -7."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "Solve 3x^2 - 48 = 0. Add 48: 3x^2 = 48. Divide by 3: x^2 = 16. x = +/- 4."
+    },
+    {
+      "type": "example",
+      "label": "Example 3",
+      "body": "Solve (x + 2)^2 = 25. x + 2 = +/- 5. Case 1: x + 2 = 5, so x = 3. Case 2: x + 2 = -5, so x = -7."
+    },
+    {
+      "type": "note",
+      "body": "If k < 0 (e.g., x^2 = -9), there is no real solution because no real number squared gives a negative number."
+    }
+  ]
+}

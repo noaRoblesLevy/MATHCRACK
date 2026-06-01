@@ -1,0 +1,28 @@
+{
+  "id": "ch-61",
+  "chapterNumber": 61,
+  "unit": 12,
+  "unitTitle": "Quadratic Equations",
+  "title": "Introduction to Quadratic Equations",
+  "pages": "534-540",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Quadratic Equation",
+      "body": "An equation of the form ax^2 + bx + c = 0, where a is not 0. The highest power of x is 2. Examples: x^2 - 5x + 6 = 0, 2x^2 + 3x - 2 = 0."
+    },
+    {
+      "type": "definition",
+      "term": "Standard Form",
+      "body": "ax^2 + bx + c = 0. Coefficient a is the leading coefficient; c is the constant. Always rewrite a quadratic in standard form before solving."
+    },
+    {
+      "type": "rule",
+      "body": "Solutions (roots) of a quadratic: a quadratic equation can have 2 real solutions, 1 real solution (repeated), or 0 real solutions (complex). The discriminant b^2 - 4ac determines which case."
+    },
+    {
+      "type": "note",
+      "body": "Quadratics arise in area problems, projectile motion, and optimization. They are the next step beyond linear equations. Methods to solve: factoring, square roots, completing the square, quadratic formula."
+    }
+  ]
+}

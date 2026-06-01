@@ -1,0 +1,39 @@
+{
+  "id": "ch-21",
+  "chapterNumber": 21,
+  "unit": 4,
+  "unitTitle": "Exponents & Algebraic Expressions",
+  "title": "Expressions",
+  "pages": "155-162",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Variable",
+      "body": "A letter that represents an unknown number. Examples: x, y, n, a."
+    },
+    {
+      "type": "definition",
+      "term": "Algebraic Expression",
+      "body": "A combination of numbers, variables, and operations — but NO equal sign. Examples: 3x + 5, 2a - 7, x^2 + 3x - 1."
+    },
+    {
+      "type": "definition",
+      "term": "Term",
+      "body": "A single number, variable, or product of numbers and variables. In 3x + 5 - 2y, the terms are 3x, 5, and -2y. The coefficient of 3x is 3."
+    },
+    {
+      "type": "definition",
+      "term": "Constant",
+      "body": "A term with no variable. It has a fixed value. In 3x + 7, the constant is 7."
+    },
+    {
+      "type": "rule",
+      "body": "Writing expressions from words: \"sum\" = +, \"difference\" = -, \"product\" = x, \"quotient\" = /. \"5 more than a number\" = n + 5. \"Twice a number decreased by 3\" = 2n - 3. \"The product of 4 and a number\" = 4n."
+    },
+    {
+      "type": "example",
+      "label": "Examples",
+      "body": "\"A number divided by 6\" = n/6. \"Three times the sum of x and 4\" = 3(x + 4). \"8 less than twice a number\" = 2n - 8."
+    }
+  ]
+}

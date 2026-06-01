@@ -1,0 +1,42 @@
+{
+  "id": "ch-24",
+  "chapterNumber": 24,
+  "unit": 5,
+  "unitTitle": "Linear Equations & Inequalities",
+  "title": "Introduction to Equations",
+  "pages": "176-184",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Equation",
+      "body": "A mathematical statement that two expressions are equal, shown with an \"=\" sign. Example: 2x + 3 = 11. The goal is to find the value of the variable that makes it true."
+    },
+    {
+      "type": "definition",
+      "term": "Solution",
+      "body": "The value of the variable that makes the equation true. To check: substitute the value back in and verify both sides are equal."
+    },
+    {
+      "type": "rule",
+      "body": "Properties of Equality: whatever you do to one side of an equation, you must do to the other. Addition, subtraction, multiplication, and division all preserve equality."
+    },
+    {
+      "type": "rule",
+      "body": "To isolate the variable, use inverse operations: addition undoes subtraction, multiplication undoes division. Work backwards from the variable — undo the last operation first."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "x + 8 = 15. Subtract 8 from both sides: x = 7. Check: 7 + 8 = 15. True."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "3x = 21. Divide both sides by 3: x = 7. Check: 3(7) = 21. True."
+    },
+    {
+      "type": "note",
+      "body": "An equation with no solution (like 0 = 5) is called a contradiction. An equation that is always true (like 0 = 0 after simplification) is an identity — every number is a solution."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "ch-64",
+  "chapterNumber": 64,
+  "unit": 12,
+  "unitTitle": "Quadratic Equations",
+  "title": "Solving Quadratic Equations by Completing the Square",
+  "pages": "561-572",
+  "blocks": [
+    {
+      "type": "text",
+      "body": "Completing the square converts any quadratic into the form (x + h)^2 = k, which can then be solved using square roots."
+    },
+    {
+      "type": "rule",
+      "body": "Steps for x^2 + bx + c = 0: (1) Move c to the right side. (2) Add (b/2)^2 to both sides. (3) Factor the left side as (x + b/2)^2. (4) Take square roots of both sides. (5) Solve for x."
+    },
+    {
+      "type": "example",
+      "label": "Example",
+      "body": "Solve x^2 + 6x + 5 = 0. Move constant: x^2 + 6x = -5. Add (6/2)^2 = 9: x^2 + 6x + 9 = 4. Factor: (x+3)^2 = 4. Square root: x+3 = +/- 2. Solutions: x = -1 and x = -5."
+    },
+    {
+      "type": "rule",
+      "body": "If the leading coefficient a is not 1, first divide ALL terms by a. Example: 2x^2 + 8x - 10 = 0 -> x^2 + 4x - 5 = 0, then complete the square."
+    },
+    {
+      "type": "note",
+      "body": "Completing the square is the method used to derive the quadratic formula. It works for any quadratic, but is most efficient when b is even (so b/2 is an integer)."
+    }
+  ]
+}

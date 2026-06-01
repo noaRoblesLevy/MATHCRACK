@@ -1,0 +1,38 @@
+{
+  "id": "ch-67",
+  "chapterNumber": 67,
+  "unit": 13,
+  "unitTitle": "Quadratic Functions",
+  "title": "Graphing Quadratic Functions",
+  "pages": "588-610",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Quadratic Function",
+      "body": "A function of the form f(x) = ax^2 + bx + c (a not 0). Its graph is a U-shaped curve called a parabola."
+    },
+    {
+      "type": "definition",
+      "term": "Vertex",
+      "body": "The highest or lowest point of the parabola. The x-coordinate of the vertex is x = -b/(2a). Substitute back to find y. The vertex is a minimum if a > 0 (opens up), maximum if a < 0 (opens down)."
+    },
+    {
+      "type": "definition",
+      "term": "Axis of Symmetry",
+      "body": "The vertical line x = -b/(2a) that passes through the vertex, dividing the parabola into two mirror-image halves."
+    },
+    {
+      "type": "rule",
+      "body": "To graph a parabola: (1) Find the axis of symmetry: x = -b/2a. (2) Find the vertex. (3) Find y-intercept (set x=0). (4) Find one or two other points. (5) Reflect points across the axis of symmetry. (6) Draw the smooth curve."
+    },
+    {
+      "type": "example",
+      "label": "Example",
+      "body": "Graph y = x^2 - 4x + 3. Axis: x = 4/2 = 2. Vertex: y = 4 - 8 + 3 = -1. Vertex: (2,-1). y-intercept: (0,3). x-intercepts: factor -> (x-1)(x-3)=0, so (1,0) and (3,0). Parabola opens upward (a=1>0)."
+    },
+    {
+      "type": "note",
+      "body": "The x-intercepts of the quadratic function are the solutions to the quadratic equation. A parabola with no x-intercepts has a negative discriminant."
+    }
+  ]
+}

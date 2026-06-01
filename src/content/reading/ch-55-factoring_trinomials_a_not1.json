@@ -1,0 +1,32 @@
+{
+  "id": "ch-55",
+  "chapterNumber": 55,
+  "unit": 10,
+  "unitTitle": "Factoring Polynomials",
+  "title": "Factoring Trinomials When a is Not 1",
+  "pages": "491-494",
+  "blocks": [
+    {
+      "type": "text",
+      "body": "For trinomials ax^2 + bx + c where a is not 1, use the AC method (also called factoring by grouping)."
+    },
+    {
+      "type": "rule",
+      "body": "AC Method: (1) Multiply a x c. (2) Find two numbers that multiply to ac and add to b. (3) Rewrite the middle term using these two numbers. (4) Factor by grouping."
+    },
+    {
+      "type": "example",
+      "label": "Example",
+      "body": "Factor 2x^2 + 7x + 3. ac = 6. Need: multiply to 6, add to 7: 1 and 6. Rewrite: 2x^2 + x + 6x + 3. Group: x(2x+1) + 3(2x+1) = (x+3)(2x+1). Check: 2x^2 + x + 6x + 3 = 2x^2 + 7x + 3. Correct."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "Factor 3x^2 - 10x + 8. ac = 24. Need: multiply to 24, add to -10: -4 and -6. Rewrite: 3x^2 - 4x - 6x + 8. Group: x(3x-4) - 2(3x-4) = (x-2)(3x-4)."
+    },
+    {
+      "type": "note",
+      "body": "Trial and error is another method: try factor pairs of a and c and check if they give the correct middle term using FOIL. The AC method is more systematic."
+    }
+  ]
+}

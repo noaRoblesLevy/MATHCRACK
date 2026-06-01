@@ -1,0 +1,37 @@
+{
+  "id": "ch-34",
+  "chapterNumber": 34,
+  "unit": 6,
+  "unitTitle": "Graphing Linear Equations & Inequalities",
+  "title": "Slope-Intercept Form",
+  "pages": "277-288",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Slope-Intercept Form",
+      "body": "y = mx + b, where m is the slope and b is the y-intercept (the y-value where the line crosses the y-axis)."
+    },
+    {
+      "type": "rule",
+      "body": "To graph y = mx + b: (1) Plot the y-intercept (0, b). (2) Use the slope m = rise/run to find the next point. (3) Draw the line through both points."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "Graph y = (2/3)x - 4. y-intercept: (0, -4). Slope 2/3 means up 2, right 3: next point is (3, -2). Draw the line."
+    },
+    {
+      "type": "rule",
+      "body": "To write the equation from slope and y-intercept: substitute m and b directly into y = mx + b. Example: slope = -1/2, y-intercept = 3. Equation: y = -1/2 x + 3."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "Write equation of line with slope 4 passing through (0, -7). y = 4x - 7."
+    },
+    {
+      "type": "note",
+      "body": "Any linear equation can be rewritten in slope-intercept form by solving for y. Example: 3x + 2y = 8 -> 2y = -3x + 8 -> y = -3/2 x + 4. Now slope = -3/2, y-intercept = 4."
+    }
+  ]
+}

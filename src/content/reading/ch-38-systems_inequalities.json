@@ -1,0 +1,27 @@
+{
+  "id": "ch-38",
+  "chapterNumber": 38,
+  "unit": 6,
+  "unitTitle": "Graphing Linear Equations & Inequalities",
+  "title": "Solving Systems of Inequalities by Graphing",
+  "pages": "315-324",
+  "blocks": [
+    {
+      "type": "text",
+      "body": "The solution to a system of linear inequalities is the region where the shading from all inequalities overlaps."
+    },
+    {
+      "type": "rule",
+      "body": "To solve a system of inequalities by graphing: (1) Graph each inequality on the same plane (with correct line type and shading). (2) Identify the overlapping shaded region. (3) This region is the solution set."
+    },
+    {
+      "type": "example",
+      "label": "Example",
+      "body": "Graph the system: y > x - 2 and y <= 3. Draw dashed line y = x - 2, shade above it. Draw solid line y = 3, shade below it. The solution is the overlap: above y = x - 2 AND below (or on) y = 3."
+    },
+    {
+      "type": "note",
+      "body": "If there is no overlapping region, the system has no solution. Check by picking a test point — it must satisfy ALL inequalities in the system simultaneously."
+    }
+  ]
+}

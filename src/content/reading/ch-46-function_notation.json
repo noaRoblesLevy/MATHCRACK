@@ -1,0 +1,33 @@
+{
+  "id": "ch-46",
+  "chapterNumber": 46,
+  "unit": 8,
+  "unitTitle": "Functions",
+  "title": "Function Notation",
+  "pages": "407-414",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Function Notation",
+      "body": "f(x) (read \"f of x\") is a way of naming functions. It means the output of function f when the input is x. f(x) is the same as y."
+    },
+    {
+      "type": "rule",
+      "body": "To evaluate f(a): substitute a for every x in the function formula. Example: if f(x) = 3x - 2, then f(5) = 3(5) - 2 = 13. f(-1) = 3(-1) - 2 = -5."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "f(x) = x^2 + 2x. Find f(3): f(3) = 9 + 6 = 15. Find f(-2): f(-2) = 4 + (-4) = 0."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "g(x) = 2x + 1. Find g(a + 1): g(a+1) = 2(a+1) + 1 = 2a + 2 + 1 = 2a + 3."
+    },
+    {
+      "type": "note",
+      "body": "f(x), g(x), h(x) are all common names for functions, but you can use any letter. The letter in parentheses is always the input variable."
+    }
+  ]
+}

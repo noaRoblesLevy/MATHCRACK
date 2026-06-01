@@ -1,0 +1,28 @@
+{
+  "id": "ch-65",
+  "chapterNumber": 65,
+  "unit": 12,
+  "unitTitle": "Quadratic Equations",
+  "title": "Solving Quadratic Equations with the Quadratic Formula",
+  "pages": "573-578",
+  "blocks": [
+    {
+      "type": "rule",
+      "body": "The Quadratic Formula: for ax^2 + bx + c = 0, x = (-b +/- sqrt(b^2 - 4ac)) / 2a. This formula works for ANY quadratic equation, always."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "Solve 2x^2 + 3x - 2 = 0. a=2, b=3, c=-2. x = (-3 +/- sqrt(9 + 16)) / 4 = (-3 +/- 5) / 4. x = 1/2 or x = -2."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "Solve x^2 - 4x + 1 = 0. a=1, b=-4, c=1. x = (4 +/- sqrt(16-4)) / 2 = (4 +/- sqrt(12)) / 2 = (4 +/- 2 sqrt(3)) / 2 = 2 +/- sqrt(3)."
+    },
+    {
+      "type": "note",
+      "body": "Memorize the quadratic formula: \"negative b, plus or minus square root of b squared minus 4ac, all over 2a.\" It is one of the most important formulas in algebra."
+    }
+  ]
+}

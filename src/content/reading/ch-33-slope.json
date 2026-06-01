@@ -1,0 +1,37 @@
+{
+  "id": "ch-33",
+  "chapterNumber": 33,
+  "unit": 6,
+  "unitTitle": "Graphing Linear Equations & Inequalities",
+  "title": "Slope of a Line",
+  "pages": "263-276",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Slope",
+      "body": "The measure of steepness and direction of a line. Often called \"rise over run.\" Formula: m = (y2 - y1) / (x2 - x1), where (x1,y1) and (x2,y2) are any two points on the line."
+    },
+    {
+      "type": "rule",
+      "body": "Positive slope: line rises from left to right. Negative slope: line falls from left to right. Zero slope: horizontal line. Undefined slope: vertical line (division by zero)."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "Find slope of line through (2, 3) and (6, 11). m = (11-3)/(6-2) = 8/4 = 2."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "Find slope of line through (-1, 4) and (3, -2). m = (-2-4)/(3-(-1)) = -6/4 = -3/2."
+    },
+    {
+      "type": "rule",
+      "body": "Parallel lines have equal slopes. Perpendicular lines have slopes that are negative reciprocals of each other (m1 x m2 = -1). Example: slope 2/3 and slope -3/2 are perpendicular."
+    },
+    {
+      "type": "note",
+      "body": "Always subtract in the same order: (y2 - y1) and (x2 - x1). Do not mix up the order. Also, slope is the same no matter which two points you choose on the same line."
+    }
+  ]
+}

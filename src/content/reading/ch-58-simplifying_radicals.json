@@ -1,0 +1,31 @@
+{
+  "id": "ch-58",
+  "chapterNumber": 58,
+  "unit": 11,
+  "unitTitle": "Radicals",
+  "title": "Simplifying Radicals",
+  "pages": "515-520",
+  "blocks": [
+    {
+      "type": "rule",
+      "body": "A radical is simplified when: no perfect square factor remains under the radical, no fractions under the radical, no radicals in the denominator."
+    },
+    {
+      "type": "rule",
+      "body": "To simplify sqrt(n): find the largest perfect square factor of n. Split, take the square root of the perfect square part. Example: sqrt(72) = sqrt(36 x 2) = 6 sqrt(2)."
+    },
+    {
+      "type": "example",
+      "label": "Examples",
+      "body": "sqrt(50) = sqrt(25 x 2) = 5 sqrt(2). sqrt(98) = 7 sqrt(2). sqrt(12) = 2 sqrt(3). sqrt(75) = 5 sqrt(3)."
+    },
+    {
+      "type": "rule",
+      "body": "Rationalizing the denominator: multiply numerator and denominator by the radical in the denominator. Example: 3/sqrt(5) = 3 sqrt(5)/5."
+    },
+    {
+      "type": "note",
+      "body": "Product rule: sqrt(a x b) = sqrt(a) x sqrt(b). Quotient rule: sqrt(a/b) = sqrt(a)/sqrt(b). These only work when a >= 0 and b > 0."
+    }
+  ]
+}

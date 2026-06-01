@@ -1,0 +1,37 @@
+{
+  "id": "ch-26",
+  "chapterNumber": 26,
+  "unit": 5,
+  "unitTitle": "Linear Equations & Inequalities",
+  "title": "Solving One-Variable Inequalities",
+  "pages": "195-205",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Inequality",
+      "body": "A statement that two expressions are not equal — one is greater or less than the other. Symbols: > (greater than), < (less than), >= (greater than or equal to), <= (less than or equal to)."
+    },
+    {
+      "type": "rule",
+      "body": "Solve inequalities like equations, with ONE key exception: when you multiply or divide both sides by a NEGATIVE number, FLIP the inequality sign. Example: -2x > 6. Divide by -2 and flip: x < -3."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "3x + 5 > 14. Subtract 5: 3x > 9. Divide by 3: x > 3. Solution: all numbers greater than 3."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "-4x <= 20. Divide by -4 and FLIP sign: x >= -5."
+    },
+    {
+      "type": "rule",
+      "body": "Graphing on a number line: open circle (o) for > or < (does not include the endpoint). Closed circle (•) for >= or <= (includes the endpoint). Shade the direction of solutions."
+    },
+    {
+      "type": "note",
+      "body": "The solution to an inequality is a range of values, not a single value. \"x > 3\" means infinitely many solutions: 4, 5, 3.1, 1000, etc."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "ch-19",
+  "chapterNumber": 19,
+  "unit": 4,
+  "unitTitle": "Exponents & Algebraic Expressions",
+  "title": "Exponents",
+  "pages": "142-148",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Exponent",
+      "body": "An exponent tells how many times to multiply the base by itself. In b^n, b is the base and n is the exponent (or power). Example: 2^5 = 2 x 2 x 2 x 2 x 2 = 32."
+    },
+    {
+      "type": "heading",
+      "text": "Laws of Exponents"
+    },
+    {
+      "type": "rule",
+      "body": "Product Rule: b^m x b^n = b^(m+n). When multiplying same bases, ADD exponents. Example: x^3 x x^4 = x^7."
+    },
+    {
+      "type": "rule",
+      "body": "Quotient Rule: b^m / b^n = b^(m-n). When dividing same bases, SUBTRACT exponents. Example: x^6 / x^2 = x^4."
+    },
+    {
+      "type": "rule",
+      "body": "Power Rule: (b^m)^n = b^(m x n). When raising a power to a power, MULTIPLY exponents. Example: (x^3)^4 = x^12."
+    },
+    {
+      "type": "rule",
+      "body": "Zero Exponent: b^0 = 1 for any b not equal to 0. Example: 7^0 = 1, x^0 = 1."
+    },
+    {
+      "type": "rule",
+      "body": "Negative Exponent: b^(-n) = 1/b^n. A negative exponent means take the reciprocal. Example: 2^(-3) = 1/2^3 = 1/8."
+    },
+    {
+      "type": "example",
+      "label": "Examples",
+      "body": "3^4 = 81. (2x^2)^3 = 8x^6. x^5 / x^2 = x^3. (ab)^3 = a^3 b^3."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ch-59",
+  "chapterNumber": 59,
+  "unit": 11,
+  "unitTitle": "Radicals",
+  "title": "Adding & Subtracting Radicals",
+  "pages": "521-526",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Like Radicals",
+      "body": "Radical terms with the same radicand (number under the radical) and the same index. Like terms: 3 sqrt(5) and 7 sqrt(5). Unlike: 3 sqrt(2) and 3 sqrt(5)."
+    },
+    {
+      "type": "rule",
+      "body": "Only like radicals can be added or subtracted. Combine coefficients and keep the radical. Example: 3 sqrt(7) + 5 sqrt(7) = 8 sqrt(7). 9 sqrt(2) - 4 sqrt(2) = 5 sqrt(2)."
+    },
+    {
+      "type": "rule",
+      "body": "Always simplify radicals first, then check for like terms. Example: sqrt(12) + sqrt(27) = 2 sqrt(3) + 3 sqrt(3) = 5 sqrt(3)."
+    },
+    {
+      "type": "example",
+      "label": "Example",
+      "body": "2 sqrt(18) - sqrt(8) + 3 sqrt(50). Simplify: 6 sqrt(2) - 2 sqrt(2) + 15 sqrt(2) = 19 sqrt(2)."
+    },
+    {
+      "type": "note",
+      "body": "sqrt(3) + sqrt(5) cannot be simplified — they are unlike radicals. Do not confuse radical addition with multiplication: sqrt(3) x sqrt(5) = sqrt(15)."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "ch-14",
+  "chapterNumber": 14,
+  "unit": 3,
+  "unitTitle": "Ratios, Proportions & Percent",
+  "title": "Percent",
+  "pages": "98-106",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Percent",
+      "body": "Percent means \"per hundred.\" The symbol % represents hundredths. 45% means 45 out of 100, or 45/100 = 0.45."
+    },
+    {
+      "type": "rule",
+      "body": "Converting percent to decimal: move the decimal point two places LEFT (divide by 100). Example: 35% = 0.35, 7% = 0.07, 150% = 1.50."
+    },
+    {
+      "type": "rule",
+      "body": "Converting decimal to percent: move the decimal point two places RIGHT (multiply by 100). Example: 0.6 = 60%, 0.025 = 2.5%, 1.3 = 130%."
+    },
+    {
+      "type": "rule",
+      "body": "Converting percent to fraction: write the percent over 100 and simplify. Example: 25% = 25/100 = 1/4. 60% = 60/100 = 3/5."
+    },
+    {
+      "type": "heading",
+      "text": "Finding a Percent of a Number"
+    },
+    {
+      "type": "rule",
+      "body": "To find a percent of a number: convert the percent to a decimal, then multiply. Formula: Part = Percent x Whole. Example: 30% of 80 = 0.30 x 80 = 24."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "What is 15% of 200? 0.15 x 200 = 30."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "What is 8% of 45? 0.08 x 45 = 3.6."
+    },
+    {
+      "type": "note",
+      "body": "The three percent problems: (1) Find the part: Part = % x Whole. (2) Find the percent: % = Part / Whole. (3) Find the whole: Whole = Part / %."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "ch-49",
+  "chapterNumber": 49,
+  "unit": 9,
+  "unitTitle": "Polynomial Operations",
+  "title": "Multiplying & Dividing Exponents",
+  "pages": "437-444",
+  "blocks": [
+    {
+      "type": "rule",
+      "body": "Product Rule: x^a x x^b = x^(a+b). Add exponents when multiplying like bases. Example: x^3 x x^5 = x^8."
+    },
+    {
+      "type": "rule",
+      "body": "Quotient Rule: x^a / x^b = x^(a-b). Subtract exponents when dividing like bases. Example: x^7 / x^3 = x^4."
+    },
+    {
+      "type": "rule",
+      "body": "Power of a Power: (x^a)^b = x^(ab). Multiply exponents. Example: (x^3)^4 = x^12."
+    },
+    {
+      "type": "rule",
+      "body": "Power of a Product: (xy)^n = x^n y^n. Apply the exponent to each factor. Example: (2x^2)^3 = 8x^6."
+    },
+    {
+      "type": "rule",
+      "body": "Power of a Quotient: (x/y)^n = x^n / y^n. Example: (a/b)^4 = a^4/b^4."
+    },
+    {
+      "type": "example",
+      "label": "Examples",
+      "body": "(3x^2)(4x^5) = 12x^7. (2a^3b)^2 = 4a^6b^2. 15x^8 / 5x^3 = 3x^5."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ch-20",
+  "chapterNumber": 20,
+  "unit": 4,
+  "unitTitle": "Exponents & Algebraic Expressions",
+  "title": "Scientific Notation",
+  "pages": "149-154",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Scientific Notation",
+      "body": "A way to write very large or very small numbers as a product of a number between 1 and 10, and a power of 10. Form: a x 10^n, where 1 <= a < 10. Example: 3,400,000 = 3.4 x 10^6."
+    },
+    {
+      "type": "rule",
+      "body": "To convert to scientific notation: move the decimal so one non-zero digit is to the left. Count moves = exponent. Move left = positive exponent (large number). Move right = negative exponent (small number). Example: 0.00045 = 4.5 x 10^(-4)."
+    },
+    {
+      "type": "rule",
+      "body": "To convert from scientific notation to standard form: move the decimal in the direction indicated by the sign of the exponent. Positive exponent = move right. Example: 6.2 x 10^4 = 62,000."
+    },
+    {
+      "type": "example",
+      "label": "Examples",
+      "body": "93,000,000 = 9.3 x 10^7. 0.0000056 = 5.6 x 10^(-6). 2.4 x 10^3 = 2,400. 1.7 x 10^(-2) = 0.017."
+    },
+    {
+      "type": "note",
+      "body": "When multiplying in scientific notation: multiply the coefficients and add the exponents. (3 x 10^4)(2 x 10^5) = 6 x 10^9. If the result is not in proper form, adjust."
+    }
+  ]
+}
