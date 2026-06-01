@@ -1,0 +1,47 @@
+{
+  "id": "ch-03",
+  "chapterNumber": 3,
+  "unit": 1,
+  "unitTitle": "Arithmetic Properties",
+  "title": "Order of Operations",
+  "pages": "17-23",
+  "blocks": [
+    {
+      "type": "text",
+      "body": "When an expression has multiple operations, follow a strict order or you will get the wrong answer. The memory trick is PEMDAS."
+    },
+    {
+      "type": "definition",
+      "term": "PEMDAS",
+      "body": "Parentheses first, then Exponents, then Multiplication and Division (left to right), then Addition and Subtraction (left to right). Also remembered as: Please Excuse My Dear Aunt Sally."
+    },
+    {
+      "type": "rule",
+      "body": "Step 1 - Parentheses: simplify everything inside brackets first. Step 2 - Exponents: evaluate powers and roots. Step 3 - Multiply/Divide: work left to right. Step 4 - Add/Subtract: work left to right."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "2 + 3 x 4 = 2 + 12 = 14. Multiplication happens before addition. (NOT 5 x 4 = 20.)"
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "(2 + 3) x 4 = 5 x 4 = 20. Parentheses change the order - add first, then multiply."
+    },
+    {
+      "type": "example",
+      "label": "Example 3",
+      "body": "2^2 + 4 / 2 - 1 = 4 + 2 - 1 = 5. Exponent first, then division, then subtract."
+    },
+    {
+      "type": "example",
+      "label": "Example 4",
+      "body": "3 + 4 x (6 - 2)^2 / 8 = 3 + 4 x 16 / 8 = 3 + 8 = 11."
+    },
+    {
+      "type": "note",
+      "body": "Multiplication and division have equal priority - do whichever comes first LEFT to RIGHT. Never do all multiplication before all division."
+    }
+  ]
+}

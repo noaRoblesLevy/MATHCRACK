@@ -1,0 +1,47 @@
+{
+  "id": "ch-13",
+  "chapterNumber": 13,
+  "unit": 3,
+  "unitTitle": "Ratios, Proportions & Percent",
+  "title": "Proportion",
+  "pages": "89-97",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Proportion",
+      "body": "A statement that two ratios are equal: a/b = c/d. Example: 1/2 = 3/6 is a proportion because both equal 0.5."
+    },
+    {
+      "type": "rule",
+      "body": "Cross-Multiplication: If a/b = c/d, then a x d = b x c. This is the key tool for solving proportions. Cross multiply to eliminate fractions, then solve for the unknown."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "Solve: x/3 = 4/6. Cross multiply: 6x = 12. Divide by 6: x = 2."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "Solve: 5/8 = 15/x. Cross multiply: 5x = 120. Divide by 5: x = 24."
+    },
+    {
+      "type": "heading",
+      "text": "Using Proportions to Solve Problems"
+    },
+    {
+      "type": "example",
+      "label": "Example 3",
+      "body": "If 4 apples cost $1.20, how much do 10 apples cost? Set up: 4/1.20 = 10/x. Cross multiply: 4x = 12. x = $3.00."
+    },
+    {
+      "type": "example",
+      "label": "Example 4",
+      "body": "Map scale: 1 inch = 50 miles. Two cities are 3.5 inches apart. Distance = ? Set up: 1/50 = 3.5/x -> x = 175 miles."
+    },
+    {
+      "type": "note",
+      "body": "Always label your proportion with units. Make sure you have the same type of quantity in the same position on both sides."
+    }
+  ]
+}

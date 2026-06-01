@@ -1,0 +1,139 @@
+{
+  "id": "arith-03",
+  "title": "The PEMDAS Pyramid",
+  "kingdom": "arithmetic",
+  "dungeonNumber": 3,
+  "lesson": {
+    "title": "Order of Operations (PEMDAS)",
+    "body": "When an expression has multiple operations, you must follow a strict order: **P**arentheses first, then **E**xponents, then **M**ultiplication and **D**ivision (left to right), then **A**ddition and **S**ubtraction (left to right). The memory trick is PEMDAS (sometimes called BODMAS or GEMDAS). For example, 2 + 3 × 4 = 2 + 12 = 14 — NOT 20 — because multiplication is done before addition."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Evaluate: 2 + 3 × 4",
+      "latex": "2 + 3 \\times 4",
+      "steps": [
+        "\\text{Multiplication before addition: } 3 \\times 4 = 12",
+        "2 + 12 = 14"
+      ],
+      "answers": ["20", "14", "24", "10"],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "By PEMDAS, multiplication comes before addition. So compute 3 × 4 = 12 first, then add 2 to get 14. If you added first (2 + 3 = 5) and then multiplied (5 × 4 = 20), that would be wrong — you skipped the order rule.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Evaluate: (5 + 3)² ÷ 4",
+      "latex": "(5 + 3)^2 \\div 4",
+      "steps": [
+        "\\text{Parentheses: } 5 + 3 = 8",
+        "\\text{Exponent: } 8^2 = 64",
+        "\\text{Division: } 64 \\div 4 = 16"
+      ],
+      "answers": ["36", "64", "16", "8"],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "P first: 5 + 3 = 8. E next: 8² = 64. D last: 64 ÷ 4 = 16. A common error is computing 5 + 3² first (without parentheses that would give 5 + 9 = 14), but the parentheses force the addition to happen before the exponent.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Evaluate: 10 - 2 × 3 + 1",
+      "latex": "10 - 2 \\times 3 + 1",
+      "steps": [
+        "\\text{Multiplication first: } 2 \\times 3 = 6",
+        "\\text{Left to right: } 10 - 6 = 4",
+        "4 + 1 = 5"
+      ],
+      "answers": ["25", "5", "3", "17"],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Multiply first: 2 × 3 = 6. The expression becomes 10 − 6 + 1. Now addition and subtraction are done left to right: 10 − 6 = 4, then 4 + 1 = 5. Doing left-to-right only (10 − 2 = 8, 8 × 3 = 24...) would violate PEMDAS.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Evaluate: 3 + 4² ÷ (6 - 2)",
+      "latex": "3 + 4^2 \\div (6 - 2)",
+      "steps": [
+        "\\text{Parentheses: } 6 - 2 = 4",
+        "\\text{Exponent: } 4^2 = 16",
+        "\\text{Division: } 16 \\div 4 = 4",
+        "\\text{Addition: } 3 + 4 = 7"
+      ],
+      "answers": ["7", "49", "11", "19"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Step by step: parentheses (6−2=4), exponent (4²=16), division (16÷4=4), addition (3+4=7). Note the exponent applies to the 4 that is already written, not to the result of the parentheses. Working carefully step by step prevents errors.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Put the PEMDAS steps in the correct order to evaluate: 2 × (1 + 3)² − 5",
+      "items": [
+        "Subtract: 32 − 5 = 27",
+        "Parentheses: 1 + 3 = 4",
+        "Multiply: 2 × 16 = 32",
+        "Exponent: 4² = 16"
+      ],
+      "correctOrder": [1, 3, 2, 0],
+      "difficulty": 3,
+      "explanation": "The order must be P → E → M → S: first resolve the parentheses (1+3=4), then the exponent (4²=16), then multiply (2×16=32), then subtract (32−5=27). Skipping the exponent step or multiplying before resolving the parentheses gives the wrong answer.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Evaluate: 5 × 2² - (3 + 1) ÷ 2",
+        "latex": "5 \\times 2^2 - (3 + 1) \\div 2",
+        "steps": [
+          "\\text{Parentheses: } 3 + 1 = 4",
+          "\\text{Exponent: } 2^2 = 4",
+          "\\text{Multiply: } 5 \\times 4 = 20",
+          "\\text{Divide: } 4 \\div 2 = 2",
+          "\\text{Subtract: } 20 - 2 = 18"
+        ],
+        "answers": ["18", "16", "20", "8"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "P: (3+1)=4. E: 2²=4. M: 5×4=20. D: 4÷2=2. S: 20−2=18. Both the exponent and the parentheses must be resolved before the multiplication and division respectively. The subtraction is always last because it's the lowest-priority operation remaining.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which expression equals 17?",
+        "latex": "\\text{Which equals } 17?",
+        "steps": [
+          "\\text{Test each option using PEMDAS.}",
+          "3 + 2 \\times 7 = 3 + 14 = 17 \\checkmark"
+        ],
+        "answers": ["(3 + 2) \\times 7", "3 + 2 \\times 7", "3 \\times 2 + 7", "3^2 + 7"],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "3 + 2 × 7: multiply first (2×7=14), then add (3+14=17). Check the others: (3+2)×7 = 5×7 = 35; 3×2+7 = 6+7 = 13; 3²+7 = 9+7 = 16. Only 3 + 2 × 7 gives 17, showing how parentheses and operation order dramatically change results.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Evaluate: 18 ÷ 3 × 2 + 1",
+        "latex": "18 \\div 3 \\times 2 + 1",
+        "steps": [
+          "\\text{Division and multiplication left to right:}",
+          "18 \\div 3 = 6",
+          "6 \\times 2 = 12",
+          "12 + 1 = 13"
+        ],
+        "answers": ["4", "13", "7", "3"],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "Multiplication and division have equal priority, so work left to right: 18 ÷ 3 = 6 first, then 6 × 2 = 12, then add 1 = 13. A common mistake is doing 3 × 2 first (getting 18 ÷ 6 + 1 = 4), but left-to-right order is required when operations share a priority level.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2
+  },
+  "lootTable": []
+}

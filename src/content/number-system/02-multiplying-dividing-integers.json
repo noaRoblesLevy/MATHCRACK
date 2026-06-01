@@ -1,0 +1,138 @@
+{
+  "id": "numsys-02",
+  "title": "The Sign Sanctum",
+  "kingdom": "number-system",
+  "dungeonNumber": 2,
+  "lesson": {
+    "title": "Multiplying & Dividing Integers",
+    "body": "The sign rules for multiplication and division are simple: **same signs → positive result; different signs → negative result**. So (−3) × (−4) = +12 and (−3) × 4 = −12. The same rule applies to division: (−20) ÷ (−4) = +5 and (−20) ÷ 4 = −5. When multiplying more than two negatives, count them: an **even** number of negatives gives a positive product; an **odd** number gives a negative product."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "What is (-6) × (-7)?",
+      "latex": "(-6) \\times (-7) = ?",
+      "steps": [
+        "\\text{Same signs (both negative) } \\Rightarrow \\text{ positive result}",
+        "6 \\times 7 = 42",
+        "(-6) \\times (-7) = +42"
+      ],
+      "answers": ["-42", "-13", "42", "13"],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "When two numbers have the same sign, their product is positive. (−6) × (−7) = +42. Multiply the absolute values (6 × 7 = 42) and assign a positive sign. A common error is always making the result negative when negatives are involved.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is 5 × (-9)?",
+      "latex": "5 \\times (-9) = ?",
+      "steps": [
+        "\\text{Different signs (one positive, one negative) } \\Rightarrow \\text{ negative result}",
+        "5 \\times 9 = 45",
+        "5 \\times (-9) = -45"
+      ],
+      "answers": ["45", "-4", "-45", "4"],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "Positive × negative = negative. Multiply the absolute values: 5 × 9 = 45, then apply the negative sign to get −45. Think of it as 5 groups of debt (−9): you owe 45 total.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is (-36) ÷ (-4)?",
+      "latex": "(-36) \\div (-4) = ?",
+      "steps": [
+        "\\text{Same signs } \\Rightarrow \\text{ positive result}",
+        "36 \\div 4 = 9",
+        "(-36) \\div (-4) = +9"
+      ],
+      "answers": ["-9", "9", "-40", "40"],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Same signs (both negative) → positive quotient. 36 ÷ 4 = 9, so (−36) ÷ (−4) = +9. Division follows the exact same sign rules as multiplication. The answer is NOT −9, because a negative divided by a negative is positive.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Evaluate: (-2)³",
+      "latex": "(-2)^3 = ?",
+      "steps": [
+        "(-2)^3 = (-2) \\times (-2) \\times (-2)",
+        "(-2) \\times (-2) = 4 \\quad \\text{(same signs)}",
+        "4 \\times (-2) = -8 \\quad \\text{(different signs)}"
+      ],
+      "answers": ["-8", "8", "-6", "6"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "(−2)³ = (−2)(−2)(−2). First pair: (−2)(−2) = +4. Then 4 × (−2) = −8. Three negatives = odd count = negative result. Note: −2³ (without parentheses) means −(2³) = −8 too, but for a different reason — be careful with parentheses placement.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Sort these products from most negative to most positive:",
+      "items": [
+        "(-4) × (-5) = 20",
+        "(-4) × 5 = -20",
+        "3 × (-7) = -21",
+        "3 × 7 = 21"
+      ],
+      "correctOrder": [2, 1, 0, 3],
+      "difficulty": 2,
+      "explanation": "−21 < −20 < 20 < 21. Different signs produce negative products; same signs produce positive products. The magnitude is determined by multiplying absolute values, and the sign is determined by the sign rule.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "What is the sign of (-1) × (-1) × (-1) × (-1) × (-1)?",
+        "latex": "(-1)^5 = ?",
+        "steps": [
+          "\\text{Count negatives: 5 (odd number)}",
+          "\\text{Odd number of negatives } \\Rightarrow \\text{ negative product}",
+          "(-1)^5 = -1"
+        ],
+        "answers": ["Positive (+1)", "Negative (-1)", "Zero", "Undefined"],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "An odd number of negative factors gives a negative product. Here there are 5 negative factors, so (−1)^5 = −1. If there were 4 or 6 factors (even), the result would be +1. This pattern is fundamental for understanding powers of negative numbers.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "If x = -4, find x² - 2x.",
+        "latex": "x^2 - 2x \\text{ where } x = -4",
+        "steps": [
+          "x^2 = (-4)^2 = 16",
+          "-2x = -2 \\times (-4) = 8",
+          "16 + 8 = 24"
+        ],
+        "answers": ["8", "24", "-24", "0"],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "Substitute x = −4: (−4)² − 2(−4) = 16 − (−8) = 16 + 8 = 24. Two key sign rules apply: (−4)² = +16 (even power, positive), and −2 × (−4) = +8 (different signs... wait: negative × negative = positive). Be careful to apply both.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Evaluate: (-3) × 4 ÷ (-2) × (-1)",
+        "latex": "(-3) \\times 4 \\div (-2) \\times (-1)",
+        "steps": [
+          "\\text{Left to right (× and ÷ same priority):}",
+          "(-3) \\times 4 = -12",
+          "-12 \\div (-2) = 6",
+          "6 \\times (-1) = -6"
+        ],
+        "answers": ["-6", "6", "-24", "24"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Multiply and divide left to right: (−3)×4 = −12; (−12)÷(−2) = +6 (same signs); 6×(−1) = −6 (different signs). The sign flips three times: neg, pos, neg. Tracking each operation's sign separately is key — don't try to count all negatives at once when mixed with division.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2
+  },
+  "lootTable": []
+}

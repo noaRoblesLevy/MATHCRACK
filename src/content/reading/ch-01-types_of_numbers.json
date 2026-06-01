@@ -1,0 +1,71 @@
+{
+  "id": "ch-01",
+  "chapterNumber": 1,
+  "unit": 1,
+  "unitTitle": "Arithmetic Properties",
+  "title": "Types of Numbers",
+  "pages": "2-8",
+  "blocks": [
+    {
+      "type": "text",
+      "body": "All numbers can be classified into various categories. Here are the categories most often used in mathematics, from smallest to largest set."
+    },
+    {
+      "type": "definition",
+      "term": "Natural Numbers",
+      "body": "The set of all positive whole numbers starting at 1. Also called counting numbers. Examples: 1, 2, 3, 4, 5, ..."
+    },
+    {
+      "type": "definition",
+      "term": "Whole Numbers",
+      "body": "The set of all natural numbers and 0. Examples: 0, 1, 2, 3, 4, 5, ..."
+    },
+    {
+      "type": "definition",
+      "term": "Integers",
+      "body": "The set of all whole numbers, including negative natural numbers. Examples: ..., -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, ..."
+    },
+    {
+      "type": "definition",
+      "term": "Rational Numbers",
+      "body": "The set of all numbers that can be written by dividing one integer by another — any number expressible as a fraction p/q where q ≠ 0. Examples: 1/2, 0.3 (= 1/3), -8 (= -8/1), 3.27 (= 327/100). Natural numbers, whole numbers, and integers are all rational numbers."
+    },
+    {
+      "type": "definition",
+      "term": "Irrational Numbers",
+      "body": "Numbers that cannot be written as a fraction of two integers. As decimals, they go on forever without repeating. Examples: √5 = 2.2360679..., π = 3.141592653... Note: 0.25 is NOT irrational because it terminates. 0.34715715... is NOT irrational because its digits repeat."
+    },
+    {
+      "type": "definition",
+      "term": "Real Numbers",
+      "body": "The set of all numbers on a number line — includes all rational and irrational numbers. Examples: 8, -19, 0, 3/2, √47, π. The symbol ℝ is used to represent the real numbers."
+    },
+    {
+      "type": "rule",
+      "body": "The sets nest inside each other: Natural ⊂ Whole ⊂ Integer ⊂ Rational ⊂ Real. Irrational numbers are real but not rational. So every integer is rational, and every rational number is real — but not the other way around."
+    },
+    {
+      "type": "example",
+      "label": "Classifying Numbers",
+      "body": "24 → natural, whole, integer, rational, real. | 0 → whole, integer, rational, real. | 2/3 → rational, real. | 6.675 → rational, real. | √5 → irrational, real. | -2 → integer, rational, real."
+    },
+    {
+      "type": "heading",
+      "text": "Terminating vs. Repeating Decimals"
+    },
+    {
+      "type": "definition",
+      "term": "Terminating Decimal",
+      "body": "A decimal that ends (has a finite number of digits). All terminating decimals are rational. Example: 0.25, 3.5, 12.008"
+    },
+    {
+      "type": "definition",
+      "term": "Repeating Decimal",
+      "body": "A decimal that goes on infinitely, but with one or more digits repeating. All repeating decimals are rational. A bar over the digits shows what repeats. Examples: 1/3 = 0.3̄ = 0.333..., 9/7 = 1.285714̄ = 1.285714285714..."
+    },
+    {
+      "type": "note",
+      "body": "The key difference between rational and irrational decimals: rational decimals either stop OR repeat. Irrational decimals never stop AND never repeat (like π = 3.14159265...)."
+    }
+  ]
+}

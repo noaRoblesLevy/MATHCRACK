@@ -1,0 +1,46 @@
+{
+  "id": "ch-04",
+  "chapterNumber": 4,
+  "unit": 2,
+  "unitTitle": "The Number System",
+  "title": "Adding Integers",
+  "pages": "24-31",
+  "blocks": [
+    {
+      "type": "text",
+      "body": "Integers include all whole numbers and their negatives. Adding them requires attention to sign."
+    },
+    {
+      "type": "definition",
+      "term": "Absolute Value",
+      "body": "The distance of a number from zero on the number line. Always non-negative. Written |n|. Examples: |5| = 5, |-5| = 5, |0| = 0."
+    },
+    {
+      "type": "rule",
+      "body": "Same Sign Rule: When adding two numbers with the same sign, add the absolute values and keep the sign. Examples: 4 + 6 = 10, (-4) + (-6) = -10."
+    },
+    {
+      "type": "rule",
+      "body": "Different Sign Rule: When adding numbers with different signs, subtract the smaller absolute value from the larger, and keep the sign of the number with the larger absolute value. Example: -8 + 3 = -5 (because |-8| > |3|, keep the negative)."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "-5 + (-3): same signs (both negative) -> add absolute values: 5 + 3 = 8 -> answer is -8."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "7 + (-10): different signs -> |10| > |7| -> subtract: 10 - 7 = 3 -> keep negative sign -> -3."
+    },
+    {
+      "type": "example",
+      "label": "Example 3",
+      "body": "-4 + 9: different signs -> |9| > |4| -> subtract: 9 - 4 = 5 -> keep positive sign -> 5."
+    },
+    {
+      "type": "note",
+      "body": "Think of a number line: positive means move right, negative means move left. Adding a negative is the same as moving left."
+    }
+  ]
+}

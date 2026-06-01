@@ -1,0 +1,38 @@
+{
+  "id": "ch-05",
+  "chapterNumber": 5,
+  "unit": 2,
+  "unitTitle": "The Number System",
+  "title": "Subtracting Integers",
+  "pages": "32-38",
+  "blocks": [
+    {
+      "type": "rule",
+      "body": "Key Rule: Subtracting an integer is the same as adding its opposite. a - b = a + (-b). Always convert subtraction to addition of the opposite, then use the addition rules."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "7 - 3 = 7 + (-3) = 4."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "7 - (-3) = 7 + 3 = 10. Subtracting a negative is the same as adding a positive."
+    },
+    {
+      "type": "example",
+      "label": "Example 3",
+      "body": "-5 - 4 = -5 + (-4) = -9. Both negative, same sign -> add absolute values, keep negative."
+    },
+    {
+      "type": "example",
+      "label": "Example 4",
+      "body": "-2 - (-8) = -2 + 8 = 6."
+    },
+    {
+      "type": "note",
+      "body": "The phrase \"keep, change, change\" helps: KEEP the first number, CHANGE subtraction to addition, CHANGE the sign of the second number. Then use the addition rules."
+    }
+  ]
+}

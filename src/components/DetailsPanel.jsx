@@ -17,11 +17,20 @@ export default function DetailsPanel({ inventory, focusMode, scholarActive, onTo
       <button
         onClick={() => setOpen(true)}
         style={{
-          position: 'fixed', bottom: '1.5rem', right: '1.5rem',
-          background: 'var(--violet)', border: 'none', color: '#fff',
-          padding: '0.6rem 1.2rem', borderRadius: 6,
-          cursor: 'pointer', fontSize: '0.9rem', fontFamily: 'var(--font)',
+          position: 'fixed',
+          bottom: 'calc(var(--nav-height) + 0.75rem)',
+          right: '1rem',
+          background: 'var(--bg-elevated)',
+          border: '1px solid var(--border-strong)',
+          color: 'var(--text-muted)',
+          padding: '0.45rem 0.85rem',
+          borderRadius: 8,
+          cursor: 'pointer',
+          fontSize: '0.72rem',
+          fontFamily: 'var(--font-mono)',
           zIndex: 99,
+          backdropFilter: 'blur(8px)',
+          letterSpacing: '0.5px',
         }}
       >
         Stats ▲
@@ -38,7 +47,7 @@ export default function DetailsPanel({ inventory, focusMode, scholarActive, onTo
               initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
               style={{
-                position: 'fixed', top: 0, right: 0, bottom: 0, width: 300,
+                position: 'fixed', top: 0, right: 0, bottom: 0, width: 'min(300px, 100vw)',
                 background: 'var(--bg-mid)', borderLeft: '2px solid var(--border)',
                 padding: '2rem 1.5rem', zIndex: 101, overflowY: 'auto',
               }}

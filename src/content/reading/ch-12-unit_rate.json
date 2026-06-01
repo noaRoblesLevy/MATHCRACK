@@ -1,0 +1,38 @@
+{
+  "id": "ch-12",
+  "chapterNumber": 12,
+  "unit": 3,
+  "unitTitle": "Ratios, Proportions & Percent",
+  "title": "Unit Rate",
+  "pages": "83-88",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Rate",
+      "body": "A ratio that compares two quantities with different units. Examples: miles per hour, dollars per pound, heartbeats per minute."
+    },
+    {
+      "type": "definition",
+      "term": "Unit Rate",
+      "body": "A rate where the second quantity is 1. To find a unit rate, divide the first quantity by the second. Example: 150 miles in 3 hours -> 150 / 3 = 50 miles per hour."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "A pack of 6 pens costs $4.50. Unit price = $4.50 / 6 = $0.75 per pen."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "A runner completes 400 meters in 50 seconds. Unit rate = 400 / 50 = 8 meters per second."
+    },
+    {
+      "type": "note",
+      "body": "Unit rates make comparisons easy. Brand A: $0.75/pen vs Brand B: $0.80/pen -> Brand A is a better deal."
+    },
+    {
+      "type": "rule",
+      "body": "To convert between rates, multiply by a conversion factor (a fraction equal to 1). Example: 60 miles/hour x (5280 feet/mile) = 316,800 feet/hour."
+    }
+  ]
+}

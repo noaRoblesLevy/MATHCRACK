@@ -1,0 +1,49 @@
+{
+  "id": "ch-08",
+  "chapterNumber": 8,
+  "unit": 2,
+  "unitTitle": "The Number System",
+  "title": "Adding & Subtracting Fractions",
+  "pages": "51-57",
+  "blocks": [
+    {
+      "type": "rule",
+      "body": "To add or subtract fractions they must share a common denominator. If they already do, add or subtract the numerators and keep the denominator. Example: 3/8 + 1/8 = 4/8 = 1/2."
+    },
+    {
+      "type": "definition",
+      "term": "Least Common Denominator (LCD)",
+      "body": "The smallest number that both denominators divide into evenly. Find it to add or subtract fractions with different denominators."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "1/4 + 1/6. LCD of 4 and 6 = 12. Convert: 1/4 = 3/12, 1/6 = 2/12. Add: 3/12 + 2/12 = 5/12."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "5/6 - 1/4. LCD = 12. Convert: 5/6 = 10/12, 1/4 = 3/12. Subtract: 10/12 - 3/12 = 7/12."
+    },
+    {
+      "type": "heading",
+      "text": "Adding Mixed Numbers"
+    },
+    {
+      "type": "rule",
+      "body": "Add whole parts together. Add fraction parts together. If the fraction sum is improper, convert and carry. Example: 2 and 3/4 + 1 and 1/2 = 2 and 3/4 + 1 and 2/4 = 3 and 5/4 = 4 and 1/4."
+    },
+    {
+      "type": "heading",
+      "text": "Subtracting Mixed Numbers"
+    },
+    {
+      "type": "rule",
+      "body": "Subtract fractions first. If the top fraction is smaller, borrow 1 from the whole number part. Example: 3 and 1/4 - 1 and 3/4. Borrow: 3 and 1/4 = 2 and 5/4. Then: 2 and 5/4 - 1 and 3/4 = 1 and 2/4 = 1 and 1/2."
+    },
+    {
+      "type": "note",
+      "body": "Always simplify your final answer. Divide numerator and denominator by their GCF. Example: 6/8 = 3/4."
+    }
+  ]
+}

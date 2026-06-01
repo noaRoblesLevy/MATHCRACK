@@ -1,0 +1,33 @@
+{
+  "id": "ch-09",
+  "chapterNumber": 9,
+  "unit": 2,
+  "unitTitle": "The Number System",
+  "title": "Adding & Subtracting Decimals",
+  "pages": "59-66",
+  "blocks": [
+    {
+      "type": "rule",
+      "body": "To add or subtract decimals: line up the decimal points vertically, fill missing places with zeros, then add or subtract normally. Bring the decimal point straight down into the answer."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "3.25 + 1.7: write as 3.25 + 1.70, then add to get 4.95."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "5.3 - 2.48: write as 5.30 - 2.48 = 2.82. Fill in the zero so digits align."
+    },
+    {
+      "type": "example",
+      "label": "Example 3",
+      "body": "Add 0.5, 1.25, and 3: write 0.50 + 1.25 + 3.00 = 4.75."
+    },
+    {
+      "type": "note",
+      "body": "Lining up the decimal points ensures you add digits of the same place value - tenths with tenths, hundredths with hundredths, etc."
+    }
+  ]
+}

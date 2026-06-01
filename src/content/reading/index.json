@@ -1,0 +1,95 @@
+[
+  {
+    "id": "wang-algebra",
+    "title": "Pre-Algebra & Algebra 1",
+    "author": "Jason Wang",
+    "description": "Clear notes on every key concept — definitions, rules, and worked examples. The primary reference for this course.",
+    "icon": "📗",
+    "color": "#34d399",
+    "pdf": "/books/wang-algebra.pdf",
+    "pages": 641,
+    "units": [
+      {
+        "number": 1,
+        "title": "Arithmetic Properties",
+        "chapters": ["ch-01", "ch-02", "ch-03"]
+      },
+      {
+        "number": 2,
+        "title": "The Number System",
+        "chapters": ["ch-04", "ch-05", "ch-06", "ch-07", "ch-08", "ch-09", "ch-10"]
+      },
+      {
+        "number": 3,
+        "title": "Ratios, Proportions & Percent",
+        "chapters": ["ch-11", "ch-12", "ch-13"]
+      }
+    ]
+  },
+  {
+    "id": "degroot-stats",
+    "title": "Probability & Statistics",
+    "author": "DeGroot & Schervish",
+    "description": "The rigorous academic treatment of probability and statistics. Covers distributions, estimation, hypothesis testing, and Bayesian methods.",
+    "icon": "📘",
+    "color": "#60a5fa",
+    "pdf": "/books/degroot-probability-statistics.pdf",
+    "pages": 744,
+    "units": []
+  },
+  {
+    "id": "mckinney-python",
+    "title": "Python for Data Analysis",
+    "author": "Wes McKinney",
+    "description": "The definitive guide to pandas, NumPy, and data wrangling in Python. Essential for working with real datasets.",
+    "icon": "🐍",
+    "color": "#fbbf24",
+    "pdf": "/books/mckinney-python-data-analysis.pdf",
+    "pages": 550,
+    "units": []
+  },
+  {
+    "id": "ml-time-series",
+    "title": "Machine Learning for Time Series",
+    "author": "Krasser et al.",
+    "description": "Practical machine learning techniques applied to time series data in Python. Covers forecasting, anomaly detection, and deep learning approaches.",
+    "icon": "📈",
+    "color": "#a78bfa",
+    "pdf": "/books/ml-time-series-python.pdf",
+    "pages": 450,
+    "units": []
+  },
+  {
+    "id": "tsa4",
+    "title": "Time Series Analysis",
+    "author": "Shumway & Stoffer",
+    "description": "The classic statistical treatment of time series — ARIMA, spectral analysis, state space models, and more.",
+    "icon": "📉",
+    "color": "#f97316",
+    "pdf": "/books/tsa4-time-series-analysis.pdf",
+    "pages": 594,
+    "units": []
+  },
+  {
+    "id": "algo-trading",
+    "title": "Algorithmic Trading: Winning Strategies",
+    "author": "Ernie Chan",
+    "description": "Practical strategies for building algorithmic trading systems — mean reversion, momentum, risk management, and backtesting.",
+    "icon": "⚡",
+    "color": "#ef4444",
+    "pdf": "/books/algorithmic-trading-strategies.pdf",
+    "pages": 320,
+    "units": []
+  },
+  {
+    "id": "quant-trading",
+    "title": "Quantitative Trading",
+    "author": "Ernie Chan",
+    "description": "How to build your own algorithmic trading business — from strategy research to live execution.",
+    "icon": "💹",
+    "color": "#ec4899",
+    "pdf": "/books/chan-quantitative-trading.pdf",
+    "pages": 228,
+    "units": []
+  }
+]

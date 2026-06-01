@@ -1,0 +1,137 @@
+{
+  "id": "numsys-05",
+  "title": "The Decimal Depths",
+  "kingdom": "number-system",
+  "dungeonNumber": 5,
+  "lesson": {
+    "title": "Decimal Operations",
+    "body": "Decimals are numbers with digits after a decimal point, representing parts of a whole (tenths, hundredths, thousandths, etc.). To **add or subtract** decimals, line up the decimal points and add zeros as placeholders if needed. To **multiply** decimals, multiply as if they were whole numbers, then count the total decimal places in both factors and place the decimal point that many places from the right in the product. To **divide** decimals, move the decimal in the divisor to make it a whole number, then move the decimal in the dividend the same number of places. For example, 2.4 ÷ 0.3 = 24 ÷ 3 = 8."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Add: 3.45 + 1.6",
+      "latex": "3.45 + 1.6 = ?",
+      "steps": [
+        "\\text{Line up decimal points; pad with zero:}",
+        "\\phantom{+}3.45",
+        "+1.60",
+        "= 5.05"
+      ],
+      "answers": ["4.05", "4.45", "5.05", "5.5"],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "Line up the decimal points vertically: 3.45 and 1.60 (add a trailing zero to keep columns aligned). Add column by column right to left: 5+0=5, 4+6=10 (write 0 carry 1), 3+1+1=5, giving 5.05. The most common error is misaligning the decimal points, which causes the tenths to combine with the hundredths.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Subtract: 7.2 - 4.85",
+      "latex": "7.2 - 4.85 = ?",
+      "steps": [
+        "7.20 - 4.85 \\quad \\text{(add placeholder zero)}",
+        "\\text{Borrow as needed:}",
+        "7.20 - 4.85 = 2.35"
+      ],
+      "answers": ["2.35", "3.35", "2.65", "3.65"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Pad 7.2 to 7.20 so both numbers have the same number of decimal places. Subtract column by column: 0−5 requires borrowing → 10−5=5 and borrow 1 from the tenths; 1−8 (after borrowing) requires borrowing again → 11−8=3; 6 (after borrowing) −4=2; 7−4=2... wait, 7−4=3? Redo: 7.20−4.85: hundredths 0−5→borrow→10−5=5; tenths (2−1)−8→borrow→11−8=3; ones 6−4=2. Answer: 2.35.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Multiply: 0.4 × 0.7",
+      "latex": "0.4 \\times 0.7 = ?",
+      "steps": [
+        "\\text{Multiply ignoring decimals: } 4 \\times 7 = 28",
+        "\\text{Count decimal places: 0.4 has 1, 0.7 has 1, total = 2}",
+        "\\text{Place decimal 2 places from right: } 0.28"
+      ],
+      "answers": ["2.8", "0.028", "0.28", "28"],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "Multiply 4 × 7 = 28 (ignore decimals temporarily). The factors have 1 + 1 = 2 decimal places total, so the product has 2 decimal places: 0.28. Intuition check: each factor is less than 1, so the product should be less than both factors — 0.28 < 0.4 ✓.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Divide: 6.3 ÷ 0.9",
+      "latex": "6.3 \\div 0.9 = ?",
+      "steps": [
+        "\\text{Multiply both by 10 to remove the decimal in divisor:}",
+        "6.3 \\div 0.9 = 63 \\div 9 = 7"
+      ],
+      "answers": ["0.7", "70", "7", "0.07"],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Move the decimal in the divisor (0.9) one place right to make it a whole number (9). Move the decimal in the dividend (6.3) the same one place right: 63. Now divide: 63 ÷ 9 = 7. Multiplying both numbers by the same power of 10 keeps the ratio (and quotient) unchanged.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to compute 1.2 × 3.45:",
+      "items": [
+        "Count decimal places: 1 + 2 = 3 total",
+        "Multiply as whole numbers: 12 × 345 = 4140",
+        "Place decimal 3 places from right: 4.140 = 4.14",
+        "Ignore decimal points temporarily"
+      ],
+      "correctOrder": [3, 1, 0, 2],
+      "difficulty": 2,
+      "explanation": "Process: ignore decimals (treat as 12 and 345), multiply whole numbers (12×345=4140), count decimal places in both factors (1+2=3), then insert the decimal 3 places from the right in the product (4.140 = 4.14). The trailing zero is dropped since it adds no value after the decimal.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A bag of apples costs $3.49 and a loaf of bread costs $2.75. What is the total cost?",
+        "latex": "3.49 + 2.75 = ?",
+        "steps": [
+          "\\phantom{+}3.49",
+          "+2.75",
+          "= 6.24"
+        ],
+        "answers": ["$5.24", "$6.14", "$6.24", "$5.14"],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "Line up the decimal points: 3.49 + 2.75. Hundredths: 9+5=14, write 4 carry 1. Tenths: 4+7+1=12, write 2 carry 1. Ones: 3+2+1=6. Total: $6.24. Decimal alignment is critical — misaligning by one column would give a wildly wrong answer.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A car travels 54.6 miles on 2.4 gallons of gas. What is the miles per gallon?",
+        "latex": "54.6 \\div 2.4 = ?",
+        "steps": [
+          "\\text{Multiply both by 10: } 546 \\div 24",
+          "546 \\div 24 = 22.75",
+          "\\text{Check: } 22.75 \\times 2.4 = 54.6 \\checkmark"
+        ],
+        "answers": ["22.75 mpg", "2.275 mpg", "227.5 mpg", "0.044 mpg"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Move the decimal one place in both 54.6 and 2.4 to get 546 ÷ 24. Long divide: 24 × 22 = 528; 546 − 528 = 18; bring down a 0 → 180; 24 × 7 = 168; 180−168=12; bring down 0 → 120; 24×5=120. Result: 22.75 mpg. Alternatively estimate: ~55 ÷ 2.5 ≈ 22, confirming 22.75 is reasonable.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Evaluate: 0.5² + 1.2 × 0.3 - 0.04",
+        "latex": "0.5^2 + 1.2 \\times 0.3 - 0.04",
+        "steps": [
+          "\\text{Exponent: } 0.5^2 = 0.25",
+          "\\text{Multiply: } 1.2 \\times 0.3 = 0.36",
+          "\\text{Add then subtract: } 0.25 + 0.36 - 0.04 = 0.57"
+        ],
+        "answers": ["0.57", "0.53", "0.61", "0.49"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Apply PEMDAS with decimals: E first: 0.5²=0.25; M: 1.2×0.3=0.36 (2 decimal places total, so 36 → 0.36); then left to right: 0.25+0.36=0.61; 0.61−0.04=0.57. Combining PEMDAS rules with decimal placement rules is the key challenge here.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2
+  },
+  "lootTable": []
+}

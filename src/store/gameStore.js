@@ -19,14 +19,26 @@ export const useGameStore = create(
 
       addXP: (n) => set((s) => ({ xp: s.xp + n, lastXPGain: n })),
       setActiveKingdom: (id) => set({ activeKingdom: id, activeView: 'kingdom' }),
+
+      // Load dungeon data and show study screen first
+      startStudy: (id, data) =>
+        set({ activeDungeon: id, activeDungeonData: data, activeView: 'study' }),
+
+      // From study screen → start the actual quiz
+      startLesson: () =>
+        set({ currentRoom: 0, activeView: 'lesson' }),
+
       setActiveDungeon: (id, data) =>
         set({ activeDungeon: id, activeDungeonData: data, currentRoom: 0, activeView: 'lesson' }),
+
       advanceRoom: () => set((s) => ({ currentRoom: s.currentRoom + 1 })),
       startBoss: () => set({ activeView: 'boss', bossAnswers: [] }),
       recordBossAnswer: (correct) =>
         set((s) => ({ bossAnswers: [...s.bossAnswers, correct] })),
       setBossResult: (passed) => set({ bossResult: passed }),
       goToResult: () => set({ activeView: 'result' }),
+      goToProfile: () => set({ activeView: 'profile' }),
+      goToLibrary: () => set({ activeView: 'library' }),
       goToKingdom: () =>
         set({ activeView: 'kingdom', activeDungeon: null, activeDungeonData: null, bossResult: null }),
       goToOverworld: () =>

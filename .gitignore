@@ -2,3 +2,6 @@ node_modules/
 dist/
 .superpowers/
 *.stackdump
+
+# PDFs — copyrighted, too large for git. Add manually to public/books/
+public/books/

@@ -1,0 +1,27 @@
+{
+  "id": "ch-02",
+  "chapterNumber": 2,
+  "unit": 1,
+  "unitTitle": "Arithmetic Properties",
+  "title": "Algebraic Properties",
+  "pages": "9-16",
+  "blocks": [
+    { "type": "text", "body": "Algebraic properties are rules that hold true for all numbers. Understanding them lets you rearrange and simplify expressions confidently." },
+    { "type": "heading", "text": "Commutative Properties" },
+    { "type": "rule", "body": "Commutative Property of Addition: a + b = b + a. The order of addition doesn't matter. Example: 3 + 5 = 5 + 3 = 8." },
+    { "type": "rule", "body": "Commutative Property of Multiplication: a × b = b × a. The order of multiplication doesn't matter. Example: 4 × 7 = 7 × 4 = 28." },
+    { "type": "note", "body": "\"To commute\" means to move around. The Commutative Properties work only for addition and multiplication — NOT for subtraction or division. 5 - 3 ≠ 3 - 5." },
+    { "type": "heading", "text": "Associative Properties" },
+    { "type": "rule", "body": "Associative Property of Addition: (a + b) + c = a + (b + c). How you group numbers when adding doesn't change the sum. Example: (1 + 2) + 5 = 1 + (2 + 5) = 8." },
+    { "type": "rule", "body": "Associative Property of Multiplication: (a × b) × c = a × (b × c). How you group numbers when multiplying doesn't change the product. Example: (2 × 3) × 5 = 2 × (3 × 5) = 30." },
+    { "type": "note", "body": "Commutative = changing the ORDER. Associative = changing the GROUPING. Both work only for addition and multiplication." },
+    { "type": "heading", "text": "Distributive Property" },
+    { "type": "rule", "body": "Distributive Property: a(b + c) = a×b + a×c. Multiplying a number by a sum equals the sum of multiplying by each addend separately. Example: 3(4 + 5) = 3×4 + 3×5 = 12 + 15 = 27. Also works with subtraction: a(b - c) = ab - ac." },
+    { "type": "heading", "text": "Identity Properties" },
+    { "type": "rule", "body": "Identity Property of Addition: a + 0 = a. Adding 0 to any number leaves it unchanged. 0 is the additive identity. Example: 7 + 0 = 7." },
+    { "type": "rule", "body": "Identity Property of Multiplication: a × 1 = a. Multiplying any number by 1 leaves it unchanged. 1 is the multiplicative identity. Example: 9 × 1 = 9." },
+    { "type": "heading", "text": "Inverse Properties" },
+    { "type": "rule", "body": "Inverse Property of Addition: a + (-a) = 0. Every number has an opposite (additive inverse) that sums to zero. Example: 5 + (-5) = 0." },
+    { "type": "rule", "body": "Inverse Property of Multiplication: a × (1/a) = 1, for a ≠ 0. Every non-zero number has a reciprocal that multiplies to 1. Example: 3 × (1/3) = 1." }
+  ]
+}

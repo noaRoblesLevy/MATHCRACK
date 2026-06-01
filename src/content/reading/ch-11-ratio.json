@@ -1,0 +1,37 @@
+{
+  "id": "ch-11",
+  "chapterNumber": 11,
+  "unit": 3,
+  "unitTitle": "Ratios, Proportions & Percent",
+  "title": "Ratio",
+  "pages": "76-82",
+  "blocks": [
+    {
+      "type": "definition",
+      "term": "Ratio",
+      "body": "A comparison of two quantities using division. Can be written three ways: \"a to b\", a:b, or a/b. Example: 3 apples and 5 oranges -> ratio of apples to oranges is 3:5."
+    },
+    {
+      "type": "note",
+      "body": "Order matters. The ratio of apples to oranges (3:5) is different from the ratio of oranges to apples (5:3)."
+    },
+    {
+      "type": "rule",
+      "body": "Always simplify ratios to lowest terms by dividing both parts by their greatest common factor (GCF). Example: 6:9 = 2:3 (divided both by 3)."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "A class has 14 boys and 16 girls. Ratio of boys to girls = 14:16 = 7:8. Ratio of girls to total = 16:30 = 8:15."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "Simplify 15:25. GCF = 5. Answer: 3:5."
+    },
+    {
+      "type": "note",
+      "body": "Ratios can compare part-to-part (boys:girls) or part-to-whole (boys:total students). Be clear about which type you are using."
+    }
+  ]
+}

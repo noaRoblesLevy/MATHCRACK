@@ -1,0 +1,27 @@
+{
+  "id": "ch-06",
+  "chapterNumber": 6,
+  "unit": 2,
+  "unitTitle": "The Number System",
+  "title": "Multiplying & Dividing Integers",
+  "pages": "37-44",
+  "blocks": [
+    {
+      "type": "rule",
+      "body": "Sign rules for multiplication and division: (+) x (+) = (+), (-) x (-) = (+), (+) x (-) = (-), (-) x (+) = (-). Same signs give a positive result; different signs give a negative result."
+    },
+    {
+      "type": "example",
+      "label": "Examples",
+      "body": "5 x 4 = 20. (-5) x (-4) = 20. 5 x (-4) = -20. (-5) x 4 = -20. 12 / 3 = 4. (-12) / (-3) = 4. 12 / (-3) = -4."
+    },
+    {
+      "type": "note",
+      "body": "An even number of negative signs in a product gives a positive result. An odd number of negatives gives a negative. Example: (-2) x (-3) x (-4) = -24 (three negatives = odd = negative)."
+    },
+    {
+      "type": "rule",
+      "body": "Division follows the same sign rules as multiplication. Dividing by a number is the same as multiplying by its reciprocal, so the sign rules are identical."
+    }
+  ]
+}

@@ -1,108 +1,178 @@
 [
   {
-    "id": "linear-algebra",
-    "title": "The Realm of Vectors",
-    "subtitle": "Linear Algebra",
+    "id": "arithmetic",
+    "title": "Arithmetic & Number Types",
+    "subtitle": "Unit 1 — The Foundation",
+    "icon": "🔢",
+    "color": "#f97316",
     "dungeons": [
-      { "id": "linear-algebra-01", "title": "The Number Crypt", "file": "linear-algebra/dungeon-01-number-crypt.json" },
-      { "id": "linear-algebra-02", "title": "The Equation Vault", "stub": true },
-      { "id": "linear-algebra-03", "title": "Coordinate Sanctum", "stub": true },
-      { "id": "linear-algebra-04", "title": "Vector Caverns", "stub": true },
-      { "id": "linear-algebra-05", "title": "Vector Operations", "stub": true },
-      { "id": "linear-algebra-06", "title": "The Matrix Gate", "stub": true },
-      { "id": "linear-algebra-07", "title": "Matrix Operations", "stub": true },
-      { "id": "linear-algebra-08", "title": "The System Labyrinth", "stub": true },
-      { "id": "linear-algebra-09", "title": "Gaussian Fortress", "stub": true },
-      { "id": "linear-algebra-10", "title": "Determinant Depths", "stub": true },
-      { "id": "linear-algebra-11", "title": "The Vector Space", "stub": true },
-      { "id": "linear-algebra-12", "title": "Basis & Dimension Crypts", "stub": true },
-      { "id": "linear-algebra-13", "title": "Transformation Tower", "stub": true },
-      { "id": "linear-algebra-14", "title": "Eigenvalue Abyss", "stub": true },
-      { "id": "linear-algebra-15", "title": "Diagonalization Domain", "stub": true },
-      { "id": "linear-algebra-16", "title": "Orthogonality Halls", "stub": true },
-      { "id": "linear-algebra-17", "title": "The SVD Spire", "stub": true },
-      { "id": "linear-algebra-18", "title": "Master's Vault", "stub": true }
+      { "id": "arith-01", "title": "Types of Numbers", "file": "arithmetic/01-number-types.json" },
+      { "id": "arith-02", "title": "Algebraic Properties", "file": "arithmetic/02-algebraic-properties.json" },
+      { "id": "arith-03", "title": "Order of Operations (PEMDAS)", "file": "arithmetic/03-order-of-operations.json" }
     ]
   },
   {
-    "id": "calculus",
-    "title": "The Calculus Keep",
-    "subtitle": "Calculus",
+    "id": "number-system",
+    "title": "The Number System",
+    "subtitle": "Unit 2 — Integers, Fractions & Decimals",
+    "icon": "➕",
+    "color": "#eab308",
     "dungeons": [
-      { "id": "calculus-01", "title": "Function Foothills", "file": "calculus/dungeon-01-function-foothills.json" },
-      { "id": "calculus-02", "title": "The Limit Hollow", "stub": true },
-      { "id": "calculus-03", "title": "Continuity Catacombs", "stub": true },
-      { "id": "calculus-04", "title": "Derivative Den", "stub": true },
-      { "id": "calculus-05", "title": "Differentiation Rules", "stub": true },
-      { "id": "calculus-06", "title": "Chain Rule Crypt", "stub": true },
-      { "id": "calculus-07", "title": "Applications Citadel", "stub": true },
-      { "id": "calculus-08", "title": "Integral Vault", "stub": true },
-      { "id": "calculus-09", "title": "Antiderivative Alcove", "stub": true },
-      { "id": "calculus-10", "title": "The FTC Stronghold", "stub": true },
-      { "id": "calculus-11", "title": "Integration Techniques", "stub": true },
-      { "id": "calculus-12", "title": "Infinite Spire", "stub": true },
-      { "id": "calculus-13", "title": "Taylor's Tower", "stub": true },
-      { "id": "calculus-14", "title": "Multivariable Maze", "stub": true },
-      { "id": "calculus-15", "title": "Partial Derivative Pass", "stub": true },
-      { "id": "calculus-16", "title": "Optimization Outpost", "stub": true },
-      { "id": "calculus-17", "title": "Multiple Integral Mines", "stub": true },
-      { "id": "calculus-18", "title": "Vector Calculus Vaults", "stub": true },
-      { "id": "calculus-19", "title": "ODE Observatory", "stub": true },
-      { "id": "calculus-20", "title": "Master's Lair", "stub": true }
+      { "id": "numsys-01", "title": "Adding & Subtracting Integers", "file": "number-system/01-adding-subtracting-integers.json" },
+      { "id": "numsys-02", "title": "Multiplying & Dividing Integers", "file": "number-system/02-multiplying-dividing-integers.json" },
+      { "id": "numsys-03", "title": "Fractions: Multiply & Divide", "file": "number-system/03-fractions-multiply-divide.json" },
+      { "id": "numsys-04", "title": "Fractions: Add & Subtract", "file": "number-system/04-fractions-add-subtract.json" },
+      { "id": "numsys-05", "title": "Decimal Operations", "file": "number-system/05-decimal-operations.json" }
     ]
   },
   {
-    "id": "statistics",
-    "title": "The Statistics Sanctum",
-    "subtitle": "Statistics & Probability",
+    "id": "ratios-percent",
+    "title": "Ratios, Proportions & Percent",
+    "subtitle": "Unit 3 — Rates & Comparisons",
+    "icon": "📊",
+    "color": "#84cc16",
     "dungeons": [
-      { "id": "statistics-01", "title": "Counting Cavern", "file": "statistics/dungeon-01-counting-cavern.json" },
-      { "id": "statistics-02", "title": "Probability Pit", "stub": true },
-      { "id": "statistics-03", "title": "Conditional Crypt", "stub": true },
-      { "id": "statistics-04", "title": "Bayes' Bastion", "stub": true },
-      { "id": "statistics-05", "title": "Random Variable Ridge", "stub": true },
-      { "id": "statistics-06", "title": "Expected Value Enclave", "stub": true },
-      { "id": "statistics-07", "title": "Discrete Distributions", "stub": true },
-      { "id": "statistics-08", "title": "Continuous Domains", "stub": true },
-      { "id": "statistics-09", "title": "The Normal Nexus", "stub": true },
-      { "id": "statistics-10", "title": "CLT Citadel", "stub": true },
-      { "id": "statistics-11", "title": "Estimation Enclave", "stub": true },
-      { "id": "statistics-12", "title": "Confidence Corridor", "stub": true },
-      { "id": "statistics-13", "title": "Hypothesis Halls", "stub": true },
-      { "id": "statistics-14", "title": "Testing Temple", "stub": true },
-      { "id": "statistics-15", "title": "Regression Ruins", "stub": true },
-      { "id": "statistics-16", "title": "Multiple Regression Maze", "stub": true },
-      { "id": "statistics-17", "title": "Bayesian Battlements", "stub": true },
-      { "id": "statistics-18", "title": "Markov Monastery", "stub": true },
-      { "id": "statistics-19", "title": "Information Inferno", "stub": true },
-      { "id": "statistics-20", "title": "Master's Oracle", "stub": true }
+      { "id": "ratio-01", "title": "Ratios & Unit Rate", "stub": true },
+      { "id": "ratio-02", "title": "Proportions", "stub": true },
+      { "id": "ratio-03", "title": "Percent", "stub": true },
+      { "id": "ratio-04", "title": "Percent Applications", "stub": true },
+      { "id": "ratio-05", "title": "Simple Interest & Percent Change", "stub": true }
     ]
   },
   {
-    "id": "discrete-math",
-    "title": "The Discrete Dungeon",
-    "subtitle": "Discrete Mathematics",
+    "id": "exponents-expressions",
+    "title": "Exponents & Expressions",
+    "subtitle": "Unit 4 — Powers & Algebra Basics",
+    "icon": "⚡",
+    "color": "#10b981",
     "dungeons": [
-      { "id": "discrete-math-01", "title": "Logic Gate", "file": "discrete-math/dungeon-01-logic-gate.json" },
-      { "id": "discrete-math-02", "title": "Predicate Passage", "stub": true },
-      { "id": "discrete-math-03", "title": "Proof Pit", "stub": true },
-      { "id": "discrete-math-04", "title": "Induction Lair", "stub": true },
-      { "id": "discrete-math-05", "title": "Set Sanctum", "stub": true },
-      { "id": "discrete-math-06", "title": "Relation Realm", "stub": true },
-      { "id": "discrete-math-07", "title": "Function Fields", "stub": true },
-      { "id": "discrete-math-08", "title": "Counting Crypt", "stub": true },
-      { "id": "discrete-math-09", "title": "Combinatorics Castle", "stub": true },
-      { "id": "discrete-math-10", "title": "Number Theory Nexus", "stub": true },
-      { "id": "discrete-math-11", "title": "Modular Maze", "stub": true },
-      { "id": "discrete-math-12", "title": "Cryptography Crypt", "stub": true },
-      { "id": "discrete-math-13", "title": "Graph Grotto", "stub": true },
-      { "id": "discrete-math-14", "title": "Tree Tunnels", "stub": true },
-      { "id": "discrete-math-15", "title": "Algorithm Alcove", "stub": true },
-      { "id": "discrete-math-16", "title": "Recurrence Ridge", "stub": true },
-      { "id": "discrete-math-17", "title": "Automata Arena", "stub": true },
-      { "id": "discrete-math-18", "title": "Grammar Graveyard", "stub": true },
-      { "id": "discrete-math-19", "title": "Complexity Citadel", "stub": true },
-      { "id": "discrete-math-20", "title": "Master's Sanctum", "stub": true }
+      { "id": "exp-01", "title": "Exponents", "stub": true },
+      { "id": "exp-02", "title": "Scientific Notation", "stub": true },
+      { "id": "exp-03", "title": "Writing & Evaluating Expressions", "stub": true },
+      { "id": "exp-04", "title": "Combining Like Terms", "stub": true }
+    ]
+  },
+  {
+    "id": "linear-equations",
+    "title": "Linear Equations & Inequalities",
+    "subtitle": "Unit 5 — Solving for Unknowns",
+    "icon": "⚖",
+    "color": "#06b6d4",
+    "dungeons": [
+      { "id": "lin-01", "title": "Introduction to Equations", "file": "linear-equations/01-intro-equations.json" },
+      { "id": "lin-02", "title": "Solving One-Variable Equations", "stub": true },
+      { "id": "lin-03", "title": "Inequalities", "stub": true },
+      { "id": "lin-04", "title": "Compound Inequalities", "stub": true },
+      { "id": "lin-05", "title": "Rewriting Formulas", "stub": true },
+      { "id": "lin-06", "title": "Systems by Substitution", "stub": true },
+      { "id": "lin-07", "title": "Systems by Elimination", "stub": true }
+    ]
+  },
+  {
+    "id": "graphing",
+    "title": "Graphing Lines",
+    "subtitle": "Unit 6 — Coordinate Plane & Slope",
+    "icon": "📈",
+    "color": "#3b82f6",
+    "dungeons": [
+      { "id": "graph-01", "title": "Points & Lines", "stub": true },
+      { "id": "graph-02", "title": "Slope of a Line", "stub": true },
+      { "id": "graph-03", "title": "Slope-Intercept Form", "stub": true },
+      { "id": "graph-04", "title": "Point-Slope Form", "stub": true },
+      { "id": "graph-05", "title": "Graphing Systems", "stub": true },
+      { "id": "graph-06", "title": "Graphing Inequalities", "stub": true }
+    ]
+  },
+  {
+    "id": "stats-probability",
+    "title": "Statistics & Probability",
+    "subtitle": "Unit 7 — Data & Chance",
+    "icon": "🎲",
+    "color": "#8b5cf6",
+    "dungeons": [
+      { "id": "stat-01", "title": "Introduction to Statistics", "file": "stats-probability/01-intro-statistics.json" },
+      { "id": "stat-02", "title": "Mean, Median, Mode & Range", "stub": true },
+      { "id": "stat-03", "title": "Displaying Data", "stub": true },
+      { "id": "stat-04", "title": "Probability", "stub": true },
+      { "id": "stat-05", "title": "Compound Events", "stub": true },
+      { "id": "stat-06", "title": "Permutations & Combinations", "stub": true }
+    ]
+  },
+  {
+    "id": "functions",
+    "title": "Functions",
+    "subtitle": "Unit 8 — Input, Output & Rules",
+    "icon": "🔁",
+    "color": "#a855f7",
+    "dungeons": [
+      { "id": "func-01", "title": "Relations & Functions", "file": "functions/01-relations-functions.json" },
+      { "id": "func-02", "title": "Function Notation", "stub": true },
+      { "id": "func-03", "title": "Applications of Functions", "stub": true }
+    ]
+  },
+  {
+    "id": "polynomials",
+    "title": "Polynomial Operations",
+    "subtitle": "Unit 9 — Working with Polynomials",
+    "icon": "🧮",
+    "color": "#ec4899",
+    "dungeons": [
+      { "id": "poly-01", "title": "Adding & Subtracting Polynomials", "stub": true },
+      { "id": "poly-02", "title": "Multiplying & Dividing Exponents", "stub": true },
+      { "id": "poly-03", "title": "Multiplying Polynomials (FOIL)", "stub": true }
+    ]
+  },
+  {
+    "id": "factoring",
+    "title": "Factoring Polynomials",
+    "subtitle": "Unit 10 — Reverse Distribution",
+    "icon": "🔍",
+    "color": "#f43f5e",
+    "dungeons": [
+      { "id": "fact-01", "title": "Factoring Using GCF", "stub": true },
+      { "id": "fact-02", "title": "Factoring by Grouping", "stub": true },
+      { "id": "fact-03", "title": "Factoring Trinomials (a = 1)", "stub": true },
+      { "id": "fact-04", "title": "Factoring Trinomials (a ≠ 1)", "stub": true },
+      { "id": "fact-05", "title": "Special Factoring Formulas", "stub": true }
+    ]
+  },
+  {
+    "id": "radicals",
+    "title": "Radicals & Roots",
+    "subtitle": "Unit 11 — Square Roots & Beyond",
+    "icon": "√",
+    "color": "#ef4444",
+    "dungeons": [
+      { "id": "rad-01", "title": "Square Roots & Cube Roots", "stub": true },
+      { "id": "rad-02", "title": "Simplifying Radicals", "stub": true },
+      { "id": "rad-03", "title": "Radical Operations", "stub": true }
+    ]
+  },
+  {
+    "id": "quadratics",
+    "title": "Quadratic Equations",
+    "subtitle": "Unit 12 — Solving ax² + bx + c = 0",
+    "icon": "🌊",
+    "color": "#dc2626",
+    "dungeons": [
+      { "id": "quad-01", "title": "Introduction to Quadratics", "stub": true },
+      { "id": "quad-02", "title": "Solving by Factoring", "stub": true },
+      { "id": "quad-03", "title": "Solving by Square Roots", "stub": true },
+      { "id": "quad-04", "title": "Completing the Square", "stub": true },
+      { "id": "quad-05", "title": "The Quadratic Formula", "stub": true },
+      { "id": "quad-06", "title": "The Discriminant", "stub": true }
+    ]
+  },
+  {
+    "id": "quadratic-functions",
+    "title": "Quadratic Functions",
+    "subtitle": "Unit 13 — Parabolas & Graphing",
+    "icon": "🔮",
+    "color": "#991b1b",
+    "dungeons": [
+      { "id": "qfunc-01", "title": "Graphing Parabolas", "stub": true },
+      { "id": "qfunc-02", "title": "Vertex & Axis of Symmetry", "stub": true },
+      { "id": "qfunc-03", "title": "Solving Quadratics by Graphing", "stub": true }
     ]
   }
 ]

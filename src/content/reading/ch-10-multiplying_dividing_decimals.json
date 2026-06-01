@@ -1,0 +1,45 @@
+{
+  "id": "ch-10",
+  "chapterNumber": 10,
+  "unit": 2,
+  "unitTitle": "The Number System",
+  "title": "Multiplying & Dividing Decimals",
+  "pages": "67-74",
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "Multiplying Decimals"
+    },
+    {
+      "type": "rule",
+      "body": "Multiply as if the decimal points do not exist. Count the total decimal places in both factors. Place the decimal point that many places from the right in the product."
+    },
+    {
+      "type": "example",
+      "label": "Example",
+      "body": "2.3 x 1.4: multiply 23 x 14 = 322. Total decimal places = 1 + 1 = 2. Answer: 3.22."
+    },
+    {
+      "type": "heading",
+      "text": "Dividing Decimals"
+    },
+    {
+      "type": "rule",
+      "body": "To divide by a decimal: move the decimal in the divisor right to make it a whole number. Move the decimal in the dividend the same number of places right. Then divide normally."
+    },
+    {
+      "type": "example",
+      "label": "Example 1",
+      "body": "4.5 / 0.5 -> move both one place right -> 45 / 5 = 9."
+    },
+    {
+      "type": "example",
+      "label": "Example 2",
+      "body": "6.24 / 0.3 -> move both one place right -> 62.4 / 3 = 20.8."
+    },
+    {
+      "type": "note",
+      "body": "To divide a decimal by a whole number, divide normally and bring the decimal point straight up into the quotient. Example: 6.36 / 3 = 2.12."
+    }
+  ]
+}
