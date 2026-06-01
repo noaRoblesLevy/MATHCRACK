@@ -1,0 +1,14 @@
+{
+  "name": "MATHCRACK",
+  "short_name": "MATHCRACK",
+  "description": "Pre-Algebra & Algebra 1 — study, quiz, and track your progress.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#040811",
+  "theme_color": "#040811",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
