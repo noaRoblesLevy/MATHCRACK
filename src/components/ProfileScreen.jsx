@@ -1,6 +1,7 @@
 import { useGameStore } from '../store/gameStore'
 import { getTitle, getXPToNextLevel, getTierProgress } from '../hooks/useXP'
 import { useTheme } from '../hooks/useTheme'
+import { useAuth, signOut } from '../hooks/useAuth'
 
 const TIERS = [
   { title: 'Apprentice',  icon: '🎒', xp: 0,    next: 100,  color: '#60a5fa', desc: 'Just starting your journey' },
@@ -31,6 +32,7 @@ export default function ProfileScreen() {
   const currentTitle = getTitle(xp)
   const toNext = getXPToNextLevel(xp)
   const { isDark, toggle: toggleTheme } = useTheme()
+  const { user, isGuest } = useAuth()
   const progress = getTierProgress(xp)
   const currentIdx = TIERS.findIndex(t => t.title === currentTitle)
   const current = TIERS[currentIdx]
@@ -212,6 +214,43 @@ export default function ProfileScreen() {
               </div>
             )
           })}
+        </div>
+
+        {/* Account section */}
+        <div style={{
+          marginTop: '1.5rem',
+          background: 'var(--bg-card)',
+          border: '1px solid var(--border)',
+          borderRadius: 12,
+          padding: '1rem',
+        }}>
+          <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.56rem', letterSpacing: '2px', marginBottom: '0.75rem' }}>
+            ACCOUNT
+          </div>
+          {user ? (
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem' }}>
+              <div>
+                <div style={{ fontSize: '0.82rem', color: 'var(--text)', marginBottom: '0.15rem' }}>{user.email}</div>
+                <div style={{ fontSize: '0.65rem', color: 'var(--correct)' }}>✓ Synced across devices</div>
+              </div>
+              <button
+                onClick={signOut}
+                style={{
+                  background: 'var(--bg-elevated)', border: '1px solid var(--border)',
+                  borderRadius: 8, color: 'var(--text-muted)',
+                  cursor: 'pointer', padding: '0.4rem 0.85rem',
+                  fontSize: '0.75rem', fontFamily: 'var(--font-mono)',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                Sign Out
+              </button>
+            </div>
+          ) : (
+            <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
+              Guest mode — progress saved on this device only.
+            </div>
+          )}
         </div>
       </div>
     </div>

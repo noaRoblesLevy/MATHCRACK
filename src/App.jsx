@@ -4,6 +4,7 @@ import { useGameStore } from './store/gameStore'
 import { markRoomComplete, markBossComplete } from './hooks/useProgress'
 import { useInventory, rollLoot } from './hooks/useInventory'
 import { useTheme } from './hooks/useTheme'
+import { useAuth, signOut, loadCloudProgress, saveCloudProgress } from './hooks/useAuth'
 import kingdoms from './content/kingdoms.json'
 import { loadDungeon } from './content/loadDungeon'
 import OverworldMap from './components/OverworldMap'
@@ -19,6 +20,7 @@ import ProfileScreen from './components/ProfileScreen'
 import LibraryScreen from './components/LibraryScreen'
 import ReaderScreen from './components/ReaderScreen'
 import BottomNav from './components/BottomNav'
+import LoginScreen from './components/LoginScreen'
 
 const FOCUSED_VIEWS = new Set(['lesson', 'boss'])
 
@@ -32,16 +34,50 @@ export default function App() {
   } = useGameStore()
 
   const { inventory, focusMode, scholarActive, addItem, useItem, toggleFocus, toggleScholar } = useInventory()
-  useTheme() // applies theme to <html> on mount
+  useTheme()
+  const { user, loading: authLoading, isGuest } = useAuth()
+  const [guestMode, setGuestMode] = useState(false)
   const [lootDrop, setLootDrop] = useState(null)
   const [openChapter, setOpenChapter] = useState(null)
 
   useEffect(() => { updateStreak() }, [])
 
+  // When a user logs in, pull their cloud progress and merge
+  useEffect(() => {
+    if (!user) return
+    loadCloudProgress(user.id).then(data => {
+      if (!data) return
+      // Use whichever has more XP (cloud or local)
+      const store = useGameStore.getState()
+      if (data.xp > store.xp) {
+        useGameStore.setState({ xp: data.xp, streak: data.streak, lastVisit: data.last_visit })
+      }
+    })
+  }, [user?.id])
+
+  // Save to cloud after XP changes
+  const xp = useGameStore(s => s.xp)
+  const streak = useGameStore(s => s.streak)
+  const lastVisit = useGameStore(s => s.lastVisit)
+  useEffect(() => {
+    if (!user) return
+    saveCloudProgress(user.id, { xp, streak, last_visit: lastVisit })
+  }, [xp, streak, user?.id])
+
   const hintScrolls = inventory.find(i => i.type === 'hint-scroll')?.count ?? 0
   const solutionOrbs = inventory.find(i => i.type === 'solution-orb')?.count ?? 0
   const activeKingdomData = kingdoms.find(k => k.id === activeKingdom)
   const showNav = !FOCUSED_VIEWS.has(activeView)
+
+  // Show login screen until authenticated or guest mode chosen
+  if (!isGuest && authLoading) return (
+    <div style={{ minHeight:'100vh', background:'var(--bg-deep)', display:'flex', alignItems:'center', justifyContent:'center' }}>
+      <div style={{ fontFamily:'var(--font-mono)', color:'var(--text-muted)', fontSize:'0.75rem', letterSpacing:'2px' }}>LOADING...</div>
+    </div>
+  )
+  if (!isGuest && !user && !guestMode) return (
+    <LoginScreen onGuest={() => setGuestMode(true)} />
+  )
 
   function handleSelectDungeon(dungeonMeta) {
     const data = loadDungeon(dungeonMeta.file)
