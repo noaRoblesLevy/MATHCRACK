@@ -22,20 +22,24 @@ export default function OverworldMap({ kingdoms, onSelectKingdom }) {
     }}>
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '1.75rem', width: '100%', maxWidth: 520 }}>
-        <h1 style={{
-          fontFamily: 'var(--font-mono)',
-          color: 'var(--blue)',
-          fontSize: 'clamp(1.3rem, 5.5vw, 2rem)',
-          letterSpacing: '6px',
-          textShadow: '0 0 40px var(--blue-glow)',
-          marginBottom: '0.3rem',
-        }}>
-          MATHCRACK
-        </h1>
+        {/* Logo mark + wordmark */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', marginBottom: '0.4rem' }}>
+          <img src="/logo.svg" alt="" style={{ width: 40, height: 40 }} />
+          <h1 style={{
+            fontFamily: 'var(--font-mono)',
+            color: 'var(--blue)',
+            fontSize: 'clamp(1.4rem, 6vw, 2.1rem)',
+            letterSpacing: '5px',
+            textShadow: '0 0 40px var(--blue-glow)',
+            lineHeight: 1,
+          }}>
+            MATHCRACK
+          </h1>
+        </div>
         <p style={{
           fontFamily: 'var(--font-mono)',
           color: 'var(--text-muted)',
-          fontSize: '0.6rem',
+          fontSize: '0.58rem',
           letterSpacing: '3px',
         }}>
           PRE-ALGEBRA &amp; ALGEBRA 1

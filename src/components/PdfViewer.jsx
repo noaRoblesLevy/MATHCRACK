@@ -7,10 +7,13 @@ export default function PdfViewer({ book, onBack }) {
       flexDirection: 'column',
       zIndex: 300,
     }}>
-      {/* Toolbar */}
+      {/* Toolbar — padded for iPhone notch */}
       <div style={{
         display: 'flex', alignItems: 'center', gap: '0.75rem',
-        padding: '0.65rem 0.875rem',
+        paddingTop: 'calc(0.65rem + env(safe-area-inset-top))',
+        paddingBottom: '0.65rem',
+        paddingLeft: '0.875rem',
+        paddingRight: '0.875rem',
         background: 'var(--bg-mid)',
         borderBottom: '1px solid var(--border)',
         flexShrink: 0,
@@ -21,15 +24,13 @@ export default function PdfViewer({ book, onBack }) {
             background: 'none', border: 'none', cursor: 'pointer',
             color: 'var(--text-muted)', fontSize: '0.8rem',
             display: 'flex', alignItems: 'center', gap: '0.4rem',
-            padding: '0.3rem 0.5rem',
-            borderRadius: 6,
+            padding: '0.3rem 0.5rem', borderRadius: 6, minHeight: 44,
           }}
         >
           ← Back
         </button>
 
         <div style={{ width: 1, height: 18, background: 'var(--border)' }} />
-
         <span style={{ fontSize: '1.1rem', lineHeight: 1 }}>{book.icon}</span>
 
         <div style={{ flex: 1, minWidth: 0 }}>
@@ -61,15 +62,9 @@ export default function PdfViewer({ book, onBack }) {
         </a>
       </div>
 
-      {/* PDF iframe */}
       <iframe
         src={book.pdf}
-        style={{
-          flex: 1,
-          border: 'none',
-          width: '100%',
-          display: 'block',
-        }}
+        style={{ flex: 1, border: 'none', width: '100%', display: 'block' }}
         title={book.title}
       />
     </div>
