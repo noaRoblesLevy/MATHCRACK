@@ -87,3 +87,14 @@ body {
 :root {
   --nav-height: calc(58px + env(safe-area-inset-bottom));
 }
+
+@keyframes xpFloat {
+  0%   { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+  20%  { opacity: 1; transform: translateX(-50%) translateY(-8px) scale(1.1); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-56px) scale(0.9); }
+}
+
+@keyframes hintPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(96,165,250,0.7); }
+  50%       { box-shadow: 0 0 0 6px rgba(96,165,250,0); }
+}

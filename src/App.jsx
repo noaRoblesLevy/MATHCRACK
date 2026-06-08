@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import './App.css'
 import { useGameStore } from './store/gameStore'
 import { markRoomComplete, markBossComplete } from './hooks/useProgress'
@@ -121,89 +122,102 @@ export default function App() {
     goToLibrary()
   }
 
+  const transitionKey = activeView + (openChapter ? '-reader' : '')
+
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg-deep)' }}>
 
-      {activeView === 'overworld' && (
-        <OverworldMap kingdoms={kingdoms} onSelectKingdom={id => setActiveKingdom(id)} />
-      )}
+      <AnimatePresence mode="sync">
+        <motion.div
+          key={transitionKey}
+          initial={{ opacity: 0, x: 10 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -10 }}
+          transition={{ duration: 0.18, ease: 'easeOut' }}
+          style={{ minHeight: '100vh' }}
+        >
+          {activeView === 'overworld' && (
+            <OverworldMap kingdoms={kingdoms} onSelectKingdom={id => setActiveKingdom(id)} />
+          )}
 
-      {activeView === 'profile' && <ProfileScreen />}
+          {activeView === 'profile' && <ProfileScreen />}
 
-      {activeView === 'library' && !openChapter && (
-        <LibraryScreen onOpenChapter={handleOpenChapter} />
-      )}
+          {activeView === 'library' && !openChapter && (
+            <LibraryScreen onOpenChapter={handleOpenChapter} />
+          )}
 
-      {activeView === 'library' && openChapter && (
-        <ReaderScreen
-          chapter={openChapter}
-          onBack={() => setOpenChapter(null)}
-        />
-      )}
+          {activeView === 'library' && openChapter && (
+            <ReaderScreen
+              chapter={openChapter}
+              onBack={() => setOpenChapter(null)}
+            />
+          )}
 
-      {activeView === 'kingdom' && activeKingdomData && (
-        <KingdomView
-          kingdom={activeKingdomData}
-          onSelectDungeon={handleSelectDungeon}
-          onBack={goToOverworld}
-          onTrain={() => startTraining(activeKingdom)}
-        />
-      )}
+          {activeView === 'kingdom' && activeKingdomData && (
+            <KingdomView
+              kingdom={activeKingdomData}
+              onSelectDungeon={handleSelectDungeon}
+              onBack={goToOverworld}
+              onTrain={() => startTraining(activeKingdom)}
+            />
+          )}
 
-      {activeView === 'study' && activeDungeonData && (
-        <StudyScreen
-          dungeon={activeDungeonData}
-          subjectTitle={activeKingdomData?.title ?? ''}
-          subjectColor={activeKingdomData?.color ?? 'var(--blue)'}
-          onStart={startLesson}
-          onBack={goToKingdom}
-        />
-      )}
+          {activeView === 'study' && activeDungeonData && (
+            <StudyScreen
+              dungeon={activeDungeonData}
+              subjectTitle={activeKingdomData?.title ?? ''}
+              subjectColor={activeKingdomData?.color ?? 'var(--blue)'}
+              onStart={startLesson}
+              onBack={goToKingdom}
+            />
+          )}
 
-      {activeView === 'training' && <TrainingGround />}
+          {activeView === 'training' && <TrainingGround />}
 
-      {activeView === 'lesson' && activeDungeonData && (
-        <>
-          <HUD
-            dungeonTitle={activeDungeonData.title}
-            kingdom={activeKingdomData?.title ?? ''}
-            xpReward={activeDungeonData.rooms[currentRoom]?.xp ?? 10}
-            currentRoom={currentRoom}
-            totalRooms={activeDungeonData.rooms.length}
-            onBack={goToKingdom}
-          />
-          <LessonRoom
-            key={currentRoom}
-            room={activeDungeonData.rooms[currentRoom]}
-            onComplete={handleRoomComplete}
-            hintScrolls={hintScrolls}
-            solutionOrbs={solutionOrbs}
-            focusMode={focusMode}
-            alwaysShowExplanation={scholarActive}
-            onUseScroll={() => useItem('hint-scroll')}
-            onUseSolutionOrb={() => useItem('solution-orb')}
-          />
-        </>
-      )}
+          {activeView === 'lesson' && activeDungeonData && (
+            <>
+              <HUD
+                dungeonTitle={activeDungeonData.title}
+                kingdom={activeKingdomData?.title ?? ''}
+                xpReward={activeDungeonData.rooms[currentRoom]?.xp ?? 10}
+                currentRoom={currentRoom}
+                totalRooms={activeDungeonData.rooms.length}
+                onBack={goToKingdom}
+              />
+              <LessonRoom
+                key={currentRoom}
+                room={activeDungeonData.rooms[currentRoom]}
+                onComplete={handleRoomComplete}
+                hintScrolls={hintScrolls}
+                solutionOrbs={solutionOrbs}
+                focusMode={focusMode}
+                alwaysShowExplanation={scholarActive}
+                onUseScroll={() => useItem('hint-scroll')}
+                onUseSolutionOrb={() => useItem('solution-orb')}
+              />
+            </>
+          )}
 
-      {activeView === 'boss' && activeDungeonData?.boss && (
-        <BossFight
-          boss={activeDungeonData.boss}
-          onPass={handleBossPass}
-          onFail={handleBossFail}
-        />
-      )}
+          {activeView === 'boss' && activeDungeonData?.boss && (
+            <BossFight
+              boss={activeDungeonData.boss}
+              onPass={handleBossPass}
+              onFail={handleBossFail}
+            />
+          )}
 
-      {activeView === 'result' && (
-        <ResultScreen
-          passed={bossResult === true}
-          xpGained={lastXPGain}
-          dungeonTitle={activeDungeonData?.title ?? ''}
-          lootDrop={lootDrop}
-          onContinue={handleContinue}
-          onRetry={() => setActiveDungeon(activeDungeon, activeDungeonData)}
-        />
-      )}
+          {activeView === 'result' && (
+            <ResultScreen
+              passed={bossResult === true}
+              xpGained={lastXPGain}
+              dungeonTitle={activeDungeonData?.title ?? ''}
+              lootDrop={lootDrop}
+              onContinue={handleContinue}
+              onRetry={() => setActiveDungeon(activeDungeon, activeDungeonData)}
+            />
+          )}
+        </motion.div>
+      </AnimatePresence>
 
       {!FOCUSED_VIEWS.has(activeView) &&
         activeView !== 'overworld' &&

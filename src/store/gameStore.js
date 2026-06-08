@@ -7,6 +7,7 @@ export const useGameStore = create(
       xp: 0,
       streak: 0,
       lastVisit: null,
+      hasSeenHint: false,
       activeView: 'overworld',
       activeKingdom: null,
       activeDungeon: null,
@@ -53,6 +54,7 @@ export const useGameStore = create(
         set({ trainingKingdom: kingdomId, activeView: 'training' }),
       stopTraining: () =>
         set({ trainingKingdom: null, activeView: 'kingdom' }),
+      dismissHint: () => set({ hasSeenHint: true }),
       updateStreak: () =>
         set((s) => {
           const today = new Date().toDateString()
@@ -66,7 +68,7 @@ export const useGameStore = create(
     }),
     {
       name: 'mathcrack-game',
-      partialize: (s) => ({ xp: s.xp, streak: s.streak, lastVisit: s.lastVisit }),
+      partialize: (s) => ({ xp: s.xp, streak: s.streak, lastVisit: s.lastVisit, hasSeenHint: s.hasSeenHint }),
     }
   )
 )

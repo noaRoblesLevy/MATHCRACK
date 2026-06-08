@@ -1,4 +1,5 @@
 const KEY = 'mathcrack_progress'
+const READ_KEY = 'mathcrack_chapters_read'
 
 export function getProgress() {
   try { return JSON.parse(localStorage.getItem(KEY) || '{}') } catch { return {} }
@@ -27,10 +28,26 @@ export function isDungeonComplete(dungeonId) {
   return !!d && d.rooms.length >= 5 && d.bossComplete === true
 }
 
-export function isDungeonUnlocked(ids, index) {
-  return index === 0 || isDungeonComplete(ids[index - 1])
+// All lessons and subjects are freely accessible
+export function isDungeonUnlocked() {
+  return true
 }
 
 export function isKingdomComplete(ids) {
   return ids.every((id) => isDungeonComplete(id))
+}
+
+// Chapter read tracking
+export function getReadChapters() {
+  try { return JSON.parse(localStorage.getItem(READ_KEY) || '{}') } catch { return {} }
+}
+
+export function markChapterRead(chapterId) {
+  const r = getReadChapters()
+  r[chapterId] = true
+  localStorage.setItem(READ_KEY, JSON.stringify(r))
+}
+
+export function isChapterRead(chapterId) {
+  return !!getReadChapters()[chapterId]
 }

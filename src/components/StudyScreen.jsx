@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import MathDisplay from './MathDisplay'
 
 function renderBody(text) {
@@ -9,10 +10,8 @@ function renderBody(text) {
   )
 }
 
-const DIFF_LABEL = { 1: 'Easy', 2: 'Medium', 3: 'Hard' }
-const DIFF_COLOR = { 1: 'var(--correct)', 2: 'var(--gold)', 3: 'var(--danger)' }
-
 export default function StudyScreen({ dungeon, subjectTitle, subjectColor = 'var(--blue)', onStart, onBack }) {
+  const [showNotes, setShowNotes] = useState(false)
   const lesson = dungeon?.lesson
   const rooms = dungeon?.rooms ?? []
 
@@ -32,9 +31,9 @@ export default function StudyScreen({ dungeon, subjectTitle, subjectColor = 'var
           style={{
             background: 'none', border: 'none', cursor: 'pointer',
             color: 'var(--text-muted)', fontSize: '0.8rem',
-            marginBottom: '1.1rem',
+            marginBottom: '1.1rem', minHeight: 44,
             display: 'flex', alignItems: 'center', gap: '0.4rem',
-            padding: 0, fontFamily: 'var(--font-ui)',
+            padding: '0 0', fontFamily: 'var(--font-ui)',
           }}
         >
           ← {subjectTitle}
@@ -47,7 +46,7 @@ export default function StudyScreen({ dungeon, subjectTitle, subjectColor = 'var
           borderLeft: `3px solid ${subjectColor}`,
           borderRadius: 12,
           padding: '1.1rem 1rem',
-          marginBottom: '1rem',
+          marginBottom: '1.25rem',
         }}>
           <div style={{
             fontFamily: 'var(--font-mono)',
@@ -56,7 +55,7 @@ export default function StudyScreen({ dungeon, subjectTitle, subjectColor = 'var
             letterSpacing: '2px',
             marginBottom: '0.4rem',
           }}>
-            STUDY GUIDE
+            LESSON · {rooms.length} QUESTIONS
           </div>
           <h2 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text)', marginBottom: '0.1rem' }}>
             {lesson?.title ?? dungeon?.title}
@@ -64,95 +63,102 @@ export default function StudyScreen({ dungeon, subjectTitle, subjectColor = 'var
           <p style={{ color: 'var(--text-muted)', fontSize: '0.7rem' }}>{dungeon?.title}</p>
         </div>
 
-        {/* Lesson body */}
+        {/* Study notes panel */}
         {lesson?.body && (
-          <div style={{
-            background: 'var(--bg-card)',
-            border: '1px solid var(--border)',
-            borderRadius: 12,
-            padding: '1.25rem 1.1rem',
-            marginBottom: '1rem',
-            lineHeight: 1.85,
-            fontSize: '0.92rem',
-            color: 'var(--text-muted)',
-          }}>
-            <p>{renderBody(lesson.body)}</p>
-          </div>
-        )}
-
-        {/* Quiz preview */}
-        <div style={{
-          background: 'var(--bg-card)',
-          border: '1px solid var(--border)',
-          borderRadius: 12,
-          padding: '1rem',
-          marginBottom: '1.25rem',
-        }}>
-          <div style={{
-            fontFamily: 'var(--font-mono)',
-            color: 'var(--text-muted)',
-            fontSize: '0.56rem',
-            letterSpacing: '2px',
-            marginBottom: '0.85rem',
-          }}>
-            QUIZ PREVIEW — {rooms.length} QUESTIONS
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
-            {rooms.map((r, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
-                <div style={{
-                  width: 20, height: 20, borderRadius: '50%', flexShrink: 0,
-                  background: `${subjectColor}12`,
-                  border: `1px solid ${subjectColor}35`,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '0.58rem', color: subjectColor,
-                }}>
-                  {i + 1}
-                </div>
-                <span style={{ flex: 1, fontSize: '0.82rem', color: 'var(--text)', lineHeight: 1.4 }}>
-                  {r.question}
-                </span>
-                <span style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '0.5rem',
-                  color: DIFF_COLOR[r.difficulty] ?? 'var(--text-muted)',
-                  background: `${DIFF_COLOR[r.difficulty] ?? 'var(--text-muted)'}12`,
-                  border: `1px solid ${DIFF_COLOR[r.difficulty] ?? 'var(--text-muted)'}30`,
-                  padding: '2px 6px', borderRadius: 4,
-                  whiteSpace: 'nowrap', flexShrink: 0,
-                  letterSpacing: '0.5px',
-                }}>
-                  {DIFF_LABEL[r.difficulty] ?? '?'}
+          <>
+            <button
+              onClick={() => setShowNotes(n => !n)}
+              style={{
+                width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                padding: '0.75rem 1rem', minHeight: 48,
+                background: showNotes ? `${subjectColor}08` : 'var(--bg-card)',
+                border: `1px solid ${showNotes ? subjectColor + '30' : 'var(--border)'}`,
+                borderRadius: showNotes ? '10px 10px 0 0' : 10,
+                cursor: 'pointer', marginBottom: showNotes ? 0 : '0.5rem',
+                transition: 'background 0.15s',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <span style={{ fontSize: '0.9rem' }}>📖</span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--text)', letterSpacing: '0.5px' }}>
+                  Study Notes
                 </span>
               </div>
-            ))}
-          </div>
-        </div>
+              <span style={{
+                color: 'var(--text-muted)', fontSize: '0.8rem',
+                transform: showNotes ? 'rotate(90deg)' : 'none',
+                display: 'inline-block', transition: 'transform 0.2s',
+              }}>›</span>
+            </button>
 
-        {/* Start button */}
-        <button
-          onClick={onStart}
-          style={{
-            width: '100%',
-            padding: '0.95rem',
-            background: subjectColor,
-            border: 'none',
-            borderRadius: 12,
-            color: '#fff',
-            fontSize: '0.95rem',
-            fontFamily: 'var(--font-mono)',
-            cursor: 'pointer',
-            letterSpacing: '1px',
-            fontWeight: 'bold',
-            boxShadow: `0 0 24px ${subjectColor}40`,
-            transition: 'opacity 0.15s, box-shadow 0.15s',
-          }}
-          onMouseEnter={e => { e.currentTarget.style.opacity = '0.9' }}
-          onMouseLeave={e => { e.currentTarget.style.opacity = '1' }}
-        >
-          Start Quiz →
-        </button>
+            {showNotes && (
+              <div style={{
+                background: 'var(--bg-card)',
+                border: `1px solid ${subjectColor}20`,
+                borderTop: 'none',
+                borderRadius: '0 0 10px 10px',
+                padding: '1.1rem 1rem',
+                marginBottom: '0.5rem',
+                lineHeight: 1.85,
+                fontSize: '0.92rem',
+                color: 'var(--text-muted)',
+              }}>
+                <p>{renderBody(lesson.body)}</p>
+              </div>
+            )}
+          </>
+        )}
+
+        {/* Action buttons */}
+        <div style={{ display: 'flex', gap: '0.6rem', marginTop: '0.75rem' }}>
+          {lesson?.body && (
+            <button
+              onClick={() => setShowNotes(n => !n)}
+              style={{
+                flex: 1,
+                padding: '0.95rem',
+                minHeight: 52,
+                background: 'var(--bg-card)',
+                border: `1px solid ${subjectColor}30`,
+                borderRadius: 12,
+                color: subjectColor,
+                fontSize: '0.85rem',
+                fontFamily: 'var(--font-mono)',
+                cursor: 'pointer',
+                letterSpacing: '0.5px',
+                transition: 'background 0.15s',
+              }}
+              onMouseEnter={e => e.currentTarget.style.background = `${subjectColor}0c`}
+              onMouseLeave={e => e.currentTarget.style.background = 'var(--bg-card)'}
+            >
+              {showNotes ? 'Hide Notes' : '📖 Notes'}
+            </button>
+          )}
+
+          <button
+            onClick={onStart}
+            style={{
+              flex: lesson?.body ? 2 : 1,
+              padding: '0.95rem',
+              minHeight: 52,
+              background: subjectColor,
+              border: 'none',
+              borderRadius: 12,
+              color: '#fff',
+              fontSize: '0.95rem',
+              fontFamily: 'var(--font-mono)',
+              cursor: 'pointer',
+              letterSpacing: '1px',
+              fontWeight: 'bold',
+              boxShadow: `0 0 24px ${subjectColor}40`,
+              transition: 'opacity 0.15s',
+            }}
+            onMouseEnter={e => e.currentTarget.style.opacity = '0.9'}
+            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+          >
+            Start Quiz →
+          </button>
+        </div>
       </div>
     </div>
   )

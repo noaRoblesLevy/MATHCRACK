@@ -1,3 +1,6 @@
+import { useEffect } from 'react'
+import { markChapterRead } from '../hooks/useProgress'
+
 const BLOCK_STYLES = {
   definition: {
     border: 'var(--blue)',
@@ -124,6 +127,10 @@ function Block({ block }) {
 }
 
 export default function ReaderScreen({ chapter, onBack }) {
+  useEffect(() => {
+    if (chapter?.id) markChapterRead(chapter.id)
+  }, [chapter?.id])
+
   if (!chapter) return null
 
   return (

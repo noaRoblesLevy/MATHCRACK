@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import libraryIndex from '../content/reading/index.json'
 import PdfViewer from './PdfViewer'
+import { isChapterRead, getReadChapters } from '../hooks/useProgress'
 
 const allChapters = import.meta.glob('../content/reading/ch-*.json', { eager: true })
 
@@ -15,41 +16,46 @@ function getChapter(chId) {
 function ChapterRow({ chapterId, color, onOpen }) {
   const chapter = getChapter(chapterId)
   if (!chapter) return null
+  const read = isChapterRead(chapter.id)
 
   return (
     <button
       onClick={() => onOpen(chapter)}
       style={{
         display: 'flex', alignItems: 'center', gap: '0.65rem',
-        padding: '0.6rem 0.875rem',
-        background: 'var(--bg-card)',
-        border: '1px solid var(--border)',
+        padding: '0.65rem 0.875rem',
+        minHeight: 48,
+        background: read ? `${color}06` : 'var(--bg-card)',
+        border: `1px solid ${read ? color + '20' : 'var(--border)'}`,
         borderRadius: 8,
         cursor: 'pointer',
         textAlign: 'left',
         width: '100%',
         transition: 'background 0.1s',
       }}
-      onMouseEnter={e => e.currentTarget.style.background = 'var(--bg-elevated)'}
-      onMouseLeave={e => e.currentTarget.style.background = 'var(--bg-card)'}
+      onMouseEnter={e => e.currentTarget.style.background = read ? `${color}10` : 'var(--bg-elevated)'}
+      onMouseLeave={e => e.currentTarget.style.background = read ? `${color}06` : 'var(--bg-card)'}
     >
       <div style={{
-        width: 22, height: 22, borderRadius: '50%', flexShrink: 0,
-        background: `${color}14`,
-        border: `1px solid ${color}35`,
+        width: 24, height: 24, borderRadius: '50%', flexShrink: 0,
+        background: read ? `${color}20` : `${color}14`,
+        border: `1px solid ${read ? color + '50' : color + '35'}`,
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         fontFamily: 'var(--font-mono)',
         fontSize: '0.58rem', color,
       }}>
-        {chapter.chapterNumber}
+        {read ? '✓' : chapter.chapterNumber}
       </div>
-      <span style={{ fontSize: '0.84rem', color: 'var(--text)', flex: 1 }}>
+      <span style={{ fontSize: '0.84rem', color: read ? 'var(--text-muted)' : 'var(--text)', flex: 1 }}>
         {chapter.title}
       </span>
       <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.6rem', flexShrink: 0 }}>
         p.{chapter.pages}
       </span>
-      <span style={{ color: 'var(--text-muted)', fontSize: '0.8rem', flexShrink: 0 }}>›</span>
+      {read
+        ? <span style={{ color, fontSize: '0.6rem', fontFamily: 'var(--font-mono)', flexShrink: 0 }}>✓</span>
+        : <span style={{ color: 'var(--text-muted)', fontSize: '0.8rem', flexShrink: 0 }}>›</span>
+      }
     </button>
   )
 }
@@ -57,10 +63,19 @@ function ChapterRow({ chapterId, color, onOpen }) {
 export default function LibraryScreen({ onOpenChapter }) {
   const [expandedBook, setExpandedBook] = useState(libraryIndex[0]?.id ?? null)
   const [pdfBook, setPdfBook] = useState(null)
+  const [, forceUpdate] = useState(0)
+
+  function handleOpenChapter(chapter) {
+    onOpenChapter(chapter)
+    // re-render after returning from reader to reflect updated read state
+    setTimeout(() => forceUpdate(n => n + 1), 100)
+  }
 
   if (pdfBook) {
     return <PdfViewer book={pdfBook} onBack={() => setPdfBook(null)} />
   }
+
+  const readChapters = getReadChapters()
 
   return (
     <div className="page-with-nav" style={{
@@ -87,6 +102,11 @@ export default function LibraryScreen({ onOpenChapter }) {
           const isOpen = expandedBook === book.id
           const hasChapters = book.units?.some(u => u.chapters?.length > 0)
           const totalChapters = (book.units ?? []).reduce((n, u) => n + (u.chapters?.length ?? 0), 0)
+          const readCount = (book.units ?? []).reduce((n, u) =>
+            n + (u.chapters ?? []).filter(chId => {
+              const ch = getChapter(chId)
+              return ch && readChapters[ch.id]
+            }).length, 0)
 
           return (
             <div key={book.id} style={{ marginBottom: '0.6rem' }}>
@@ -107,6 +127,7 @@ export default function LibraryScreen({ onOpenChapter }) {
                   style={{
                     display: 'flex', alignItems: 'center', gap: '0.875rem',
                     padding: '0.9rem 1rem',
+                    minHeight: 64,
                     cursor: hasChapters ? 'pointer' : 'default',
                   }}
                 >
@@ -117,8 +138,13 @@ export default function LibraryScreen({ onOpenChapter }) {
                     </div>
                     <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>
                       {book.author}
-                      {totalChapters > 0 && ` · ${totalChapters} chapters with notes`}
-                      {book.pages && ` · ${book.pages} pages`}
+                      {totalChapters > 0 && (
+                        <span style={{ marginLeft: '0.4rem' }}>
+                          · <span style={{ color: readCount > 0 ? book.color : 'var(--text-muted)' }}>
+                            {readCount}/{totalChapters} read
+                          </span>
+                        </span>
+                      )}
                     </div>
                   </div>
                   {hasChapters && (
@@ -135,17 +161,14 @@ export default function LibraryScreen({ onOpenChapter }) {
                 </div>
 
                 {/* Action buttons */}
-                <div style={{
-                  display: 'flex', gap: '0.5rem',
-                  padding: '0 1rem 0.9rem',
-                }}>
+                <div style={{ display: 'flex', gap: '0.5rem', padding: '0 1rem 0.9rem' }}>
                   {book.pdf && (
                     <button
                       onClick={() => setPdfBook(book)}
                       style={{
                         flex: 1,
                         display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem',
-                        padding: '0.5rem',
+                        padding: '0.6rem', minHeight: 44,
                         background: `${book.color}14`,
                         border: `1px solid ${book.color}35`,
                         borderRadius: 8,
@@ -169,7 +192,7 @@ export default function LibraryScreen({ onOpenChapter }) {
                       style={{
                         flex: 1,
                         display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem',
-                        padding: '0.5rem',
+                        padding: '0.6rem', minHeight: 44,
                         background: 'var(--bg-elevated)',
                         border: '1px solid var(--border)',
                         borderRadius: 8,
@@ -215,7 +238,7 @@ export default function LibraryScreen({ onOpenChapter }) {
                             key={chId}
                             chapterId={chId}
                             color={book.color}
-                            onOpen={onOpenChapter}
+                            onOpen={handleOpenChapter}
                           />
                         ))}
                       </div>

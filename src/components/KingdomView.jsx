@@ -88,10 +88,9 @@ export default function KingdomView({ kingdom, onSelectDungeon, onBack, onTrain 
         {/* Lessons */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
           {dungeons.map((d, i) => {
-            const unlocked = isDungeonUnlocked(ids, i)
             const complete = isDungeonComplete(d.id)
             const isStub = !!d.stub
-            const clickable = unlocked && !isStub
+            const clickable = !isStub
 
             return (
               <div
@@ -99,22 +98,22 @@ export default function KingdomView({ kingdom, onSelectDungeon, onBack, onTrain 
                 onClick={() => clickable && onSelectDungeon(d)}
                 style={{
                   display: 'flex', alignItems: 'center', gap: '0.75rem',
-                  padding: '0.75rem 0.875rem',
+                  padding: '0.875rem 0.875rem',
+                  minHeight: 56,
                   background: complete
                     ? `linear-gradient(135deg, ${color}08, var(--bg-card))`
-                    : unlocked ? 'var(--bg-card)' : 'var(--bg-mid)',
+                    : 'var(--bg-card)',
                   border: `1px solid ${complete ? color + '30' : 'var(--border)'}`,
                   borderRadius: 9,
                   cursor: clickable ? 'pointer' : 'default',
-                  opacity: unlocked ? 1 : 0.28,
                   transition: 'background 0.12s',
                 }}
                 onMouseEnter={e => { if (clickable) e.currentTarget.style.background = `linear-gradient(135deg, ${color}10, var(--bg-elevated))` }}
-                onMouseLeave={e => { e.currentTarget.style.background = complete ? `linear-gradient(135deg, ${color}08, var(--bg-card))` : unlocked ? 'var(--bg-card)' : 'var(--bg-mid)' }}
+                onMouseLeave={e => { e.currentTarget.style.background = complete ? `linear-gradient(135deg, ${color}08, var(--bg-card))` : 'var(--bg-card)' }}
               >
                 {/* Step bubble */}
                 <div style={{
-                  width: 26, height: 26, borderRadius: '50%', flexShrink: 0,
+                  width: 28, height: 28, borderRadius: '50%', flexShrink: 0,
                   background: complete ? `${color}18` : 'transparent',
                   border: `1px solid ${complete ? color + '60' : 'var(--border)'}`,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -129,17 +128,18 @@ export default function KingdomView({ kingdom, onSelectDungeon, onBack, onTrain 
                   flex: 1,
                   fontSize: '0.875rem',
                   fontWeight: 500,
-                  color: complete ? 'var(--correct)' : unlocked ? 'var(--text)' : 'var(--text-muted)',
+                  color: complete ? 'var(--correct)' : 'var(--text)',
                   minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
                 }}>
                   {d.title}
                 </span>
 
                 <span style={{ flexShrink: 0, fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                  {complete ? <span style={{ color: 'var(--correct)' }}>✓</span>
-                    : !unlocked ? '⌀'
-                    : isStub ? <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '1px', color: 'var(--text-muted)' }}>SOON</span>
-                    : '›'}
+                  {complete
+                    ? <span style={{ color: 'var(--correct)' }}>✓</span>
+                    : isStub
+                      ? <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '1px' }}>SOON</span>
+                      : '›'}
                 </span>
               </div>
             )

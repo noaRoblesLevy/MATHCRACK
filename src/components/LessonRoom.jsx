@@ -3,9 +3,10 @@ import { AnimatePresence } from 'framer-motion'
 import MathDisplay from './MathDisplay'
 import MistakeModal from './MistakeModal'
 
-function MultipleChoice({ room, onWrong, onCorrect, solutionRevealed }) {
+function MultipleChoice({ room, onWrong, onCorrect, solutionRevealed, resetKey }) {
   const [selected, setSelected] = useState(null)
 
+  // resetKey change resets selected via key on parent, but we also reset here
   function handleSelect(idx) {
     if (selected !== null) return
     setSelected(idx)
@@ -13,7 +14,7 @@ function MultipleChoice({ room, onWrong, onCorrect, solutionRevealed }) {
     setTimeout(() => {
       if (correct) onCorrect(room.xp)
       else onWrong()
-    }, 600)
+    }, 500)
   }
 
   return (
@@ -47,7 +48,6 @@ function MultipleChoice({ room, onWrong, onCorrect, solutionRevealed }) {
               cursor: selected === null ? 'pointer' : 'default',
               textAlign: 'left',
               fontSize: '0.95rem',
-              fontFamily: 'var(--font)',
               display: 'flex', alignItems: 'center', gap: '0.85rem',
               transition: 'background 0.25s, border-color 0.25s',
               minHeight: 52,
@@ -123,7 +123,7 @@ function DragAndDrop({ room, onWrong, onCorrect }) {
               color: 'var(--text)',
               userSelect: 'none',
               display: 'flex', alignItems: 'center', gap: '0.75rem',
-              fontSize: '0.9rem',
+              fontSize: '0.9rem', minHeight: 52,
             }}
           >
             <span style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>⠿</span>
@@ -135,11 +135,11 @@ function DragAndDrop({ room, onWrong, onCorrect }) {
         onClick={handleSubmit}
         disabled={submitted}
         style={{
-          padding: '0.9rem 2rem',
+          padding: '0.9rem 2rem', minHeight: 52,
           background: submitted ? 'var(--bg-elevated)' : 'var(--purple)',
           border: 'none', color: '#fff', borderRadius: 10,
           cursor: submitted ? 'default' : 'pointer',
-          fontSize: '1rem', fontFamily: 'var(--font)', width: '100%',
+          fontSize: '1rem', width: '100%',
         }}
       >
         Submit Order
@@ -158,31 +158,43 @@ export default function LessonRoom({
   const [showModal, setShowModal] = useState(false)
   const [solutionRevealed, setSolutionRevealed] = useState(false)
   const [pendingComplete, setPendingComplete] = useState(null)
+  const [wrongCount, setWrongCount] = useState(0)
+  const [resetKey, setResetKey] = useState(0)
+  const [xpPop, setXpPop] = useState(null)
 
   const correctAnswerText = room.type === 'multiple-choice'
     ? room.answers[room.correct]
     : 'See the correct order above'
 
   function handleCorrect(xp) {
+    setXpPop(xp)
+    setTimeout(() => setXpPop(null), 1100)
     if (alwaysShowExplanation) {
       setPendingComplete({ xp, correct: true })
       setShowModal(true)
     } else {
-      onComplete(xp, true)
+      setTimeout(() => onComplete(xp, true), 500)
     }
   }
 
   function handleWrong() {
+    const newCount = wrongCount + 1
+    setWrongCount(newCount)
     setPendingComplete({ xp: 0, correct: false })
     setShowModal(true)
   }
 
-  function handleDismiss() {
+  function handleRetry() {
     setShowModal(false)
-    if (pendingComplete) {
-      onComplete(pendingComplete.xp, pendingComplete.correct)
-      setPendingComplete(null)
-    }
+    setPendingComplete(null)
+    setResetKey(k => k + 1)
+  }
+
+  function handleAdvance() {
+    setShowModal(false)
+    const pc = pendingComplete
+    setPendingComplete(null)
+    onComplete(pc?.xp ?? 0, pc?.correct ?? false)
   }
 
   function handleUseScroll() {
@@ -197,13 +209,35 @@ export default function LessonRoom({
 
   const visibleSteps = (room.steps ?? []).slice(0, revealedSteps)
   const hasMoreSteps = revealedSteps < (room.steps?.length ?? 0)
+  const canRetry = wrongCount <= 1
 
   return (
     <div style={{
       padding: '1.25rem 1rem 6rem',
       maxWidth: 620,
       margin: '0 auto',
+      position: 'relative',
     }}>
+      {/* XP float animation */}
+      {xpPop !== null && (
+        <div style={{
+          position: 'fixed',
+          top: '38%',
+          left: '50%',
+          fontFamily: 'var(--font-mono)',
+          color: 'var(--correct)',
+          fontSize: '1.6rem',
+          fontWeight: 'bold',
+          animation: 'xpFloat 1.1s ease-out forwards',
+          pointerEvents: 'none',
+          zIndex: 300,
+          textShadow: '0 0 20px rgba(52,211,153,0.6)',
+          letterSpacing: '1px',
+        }}>
+          +{xpPop} XP
+        </div>
+      )}
+
       {/* Question */}
       <div style={{
         background: 'var(--bg-card)',
@@ -256,12 +290,12 @@ export default function LessonRoom({
               onClick={handleUseScroll}
               disabled={hintScrolls === 0}
               style={{
-                padding: '0.5rem 1rem',
+                padding: '0.5rem 1rem', minHeight: 44,
                 background: hintScrolls > 0 ? 'var(--bg-elevated)' : 'var(--bg-card)',
                 border: `1px solid ${hintScrolls > 0 ? 'var(--gold)' : 'var(--border)'}`,
                 color: hintScrolls > 0 ? 'var(--gold)' : 'var(--text-muted)',
                 borderRadius: 8, cursor: hintScrolls > 0 ? 'pointer' : 'not-allowed',
-                fontSize: '0.8rem', fontFamily: 'var(--font)',
+                fontSize: '0.8rem',
               }}
             >
               📜 Hint ({hintScrolls})
@@ -271,11 +305,11 @@ export default function LessonRoom({
             <button
               onClick={handleUseSolutionOrb}
               style={{
-                padding: '0.5rem 1rem',
+                padding: '0.5rem 1rem', minHeight: 44,
                 background: 'var(--bg-elevated)',
                 border: '1px solid var(--purple)',
                 color: 'var(--purple)', borderRadius: 8, cursor: 'pointer',
-                fontSize: '0.8rem', fontFamily: 'var(--font)',
+                fontSize: '0.8rem',
               }}
             >
               🔮 Solution ({solutionOrbs})
@@ -284,9 +318,10 @@ export default function LessonRoom({
         </div>
       )}
 
-      {/* Answer UI */}
+      {/* Answer UI — key forces remount on retry */}
       {room.type === 'multiple-choice' && (
         <MultipleChoice
+          key={resetKey}
           room={room}
           onCorrect={handleCorrect}
           onWrong={handleWrong}
@@ -294,7 +329,7 @@ export default function LessonRoom({
         />
       )}
       {room.type === 'drag-and-drop' && (
-        <DragAndDrop room={room} onCorrect={handleCorrect} onWrong={handleWrong} />
+        <DragAndDrop key={resetKey} room={room} onCorrect={handleCorrect} onWrong={handleWrong} />
       )}
 
       <AnimatePresence>
@@ -302,7 +337,9 @@ export default function LessonRoom({
           <MistakeModal
             explanation={room.explanation ?? 'Review the material and try again.'}
             correctAnswer={correctAnswerText}
-            onDismiss={handleDismiss}
+            canRetry={canRetry}
+            onRetry={handleRetry}
+            onDismiss={handleAdvance}
           />
         )}
       </AnimatePresence>
