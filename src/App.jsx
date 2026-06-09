@@ -6,7 +6,9 @@ import { markRoomComplete, markBossComplete } from './hooks/useProgress'
 import { useInventory, rollLoot } from './hooks/useInventory'
 import { useTheme } from './hooks/useTheme'
 import { useAuth, signOut, loadCloudProgress, saveCloudProgress } from './hooks/useAuth'
-import kingdoms from './content/kingdoms.json'
+import kingdomsData from './content/kingdoms.json'
+const courses = kingdomsData.courses
+const kingdoms = courses.flatMap(c => c.subjects)
 import { loadDungeon } from './content/loadDungeon'
 import OverworldMap from './components/OverworldMap'
 import KingdomView from './components/KingdomView'
@@ -201,7 +203,7 @@ export default function App() {
           style={{ minHeight: '100vh' }}
         >
           {activeView === 'overworld' && (
-            <OverworldMap kingdoms={kingdoms} onSelectKingdom={id => setActiveKingdom(id)} premiumCardsUnlocked={premiumCardsUnlocked} />
+            <OverworldMap courses={courses} kingdoms={kingdoms} onSelectKingdom={id => setActiveKingdom(id)} premiumCardsUnlocked={premiumCardsUnlocked} />
           )}
 
           {activeView === 'profile' && <ProfileScreen isDark={isDark} onToggleTheme={toggleTheme} />}

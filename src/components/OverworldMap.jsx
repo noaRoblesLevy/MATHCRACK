@@ -20,7 +20,7 @@ function streakMessage(streak) {
   return `🔥 Day ${streak} — welcome back.`
 }
 
-export default function OverworldMap({ kingdoms, onSelectKingdom, premiumCardsUnlocked = false }) {
+export default function OverworldMap({ courses = [], kingdoms = [], onSelectKingdom, premiumCardsUnlocked = false }) {
   const xp = useGameStore(s => s.xp)
   const streak = useGameStore(s => s.streak)
   const hasSeenHint = useGameStore(s => s.hasSeenHint)
@@ -234,141 +234,181 @@ export default function OverworldMap({ kingdoms, onSelectKingdom, premiumCardsUn
           )}
         </AnimatePresence>
 
-        {/* Subject list */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-          {kingdoms.map((k, i) => {
-            const complete = isKingdomComplete(k.dungeons.map(d => d.id))
-            const available = k.dungeons.filter(d => !d.stub).length
-            const completed = k.dungeons.filter(d => !d.stub && isDungeonComplete(d.id)).length
-            const color = k.color ?? 'var(--blue)'
-            const isFirst = i === 0 && !hasSeenHint
+        {/* Course sections */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+          {courses.map((course, courseIdx) => {
+            const courseSubjects = course.subjects ?? []
+            if (courseSubjects.length === 0) return null
+
+            // global subject index for step numbering (across all courses)
+            const subjectOffset = courses
+              .slice(0, courseIdx)
+              .reduce((acc, c) => acc + (c.subjects?.length ?? 0), 0)
 
             return (
-              <div key={k.id} style={{ position: 'relative' }}>
-                {isFirst && (
-                  <div style={{
-                    position: 'absolute',
-                    right: -4, top: '50%',
-                    transform: 'translateY(-50%)',
-                    zIndex: 10,
-                    display: 'flex', alignItems: 'center', gap: '0.4rem',
-                    pointerEvents: 'none',
-                  }}>
-                    <span style={{
-                      fontFamily: 'var(--font-mono)',
-                      color: 'var(--blue)',
-                      fontSize: '0.5rem',
-                      letterSpacing: '1px',
-                      whiteSpace: 'nowrap',
-                    }}>START HERE</span>
-                    <div style={{
-                      width: 8, height: 8, borderRadius: '50%',
-                      background: 'var(--blue)',
-                      animation: 'hintPulse 1.4s ease-in-out infinite',
-                      flexShrink: 0,
-                    }} />
-                  </div>
-                )}
-
-                <button
-                  onClick={() => handleSelect(k.id)}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.75rem',
-                    padding: '0.875rem 0.9rem',
-                    minHeight: 64,
-                    background: complete && premiumCardsUnlocked
-                      ? `linear-gradient(135deg, ${color}18 0%, ${color}08 50%, var(--bg-card) 100%)`
-                      : `linear-gradient(135deg, ${color}08 0%, var(--bg-card) 50%)`,
-                    border: `1px solid ${complete ? (premiumCardsUnlocked ? color + '60' : color + '40') : 'var(--border)'}`,
-                    borderLeft: `${complete && premiumCardsUnlocked ? '3px' : '2px'} solid ${complete ? (premiumCardsUnlocked ? color : 'var(--correct)') : color}`,
-                    borderRadius: 10,
-                    cursor: 'pointer',
-                    textAlign: 'left',
-                    width: '100%',
-                    transition: 'background 0.15s, box-shadow 0.15s',
-                    boxShadow: complete && premiumCardsUnlocked ? `0 0 12px ${color}20` : 'none',
-                  }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.background = `linear-gradient(135deg, ${color}12 0%, var(--bg-elevated) 60%)`
-                    e.currentTarget.style.boxShadow = `0 0 0 1px ${color}25`
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.background = `linear-gradient(135deg, ${color}08 0%, var(--bg-card) 50%)`
-                    e.currentTarget.style.boxShadow = 'none'
-                  }}
-                >
-                  {/* Step number */}
-                  <div style={{
-                    width: 32, height: 32, borderRadius: '50%', flexShrink: 0,
-                    background: `${color}15`,
-                    border: `1px solid ${complete ? 'var(--correct)' : color + '60'}`,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+              <div key={course.id}>
+                {/* Course header */}
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  marginBottom: '0.6rem',
+                  paddingBottom: '0.4rem',
+                  borderBottom: `1px solid ${course.color}30`,
+                }}>
+                  <span style={{ fontSize: '1rem', lineHeight: 1 }}>{course.icon}</span>
+                  <span style={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '0.7rem', fontWeight: 'bold',
-                    color: complete ? 'var(--correct)' : color,
+                    color: course.color,
+                    fontSize: '0.6rem',
+                    letterSpacing: '2px',
+                    fontWeight: 'bold',
+                    textTransform: 'uppercase',
                   }}>
-                    {complete ? '✓' : String(i + 1).padStart(2, '0')}
-                  </div>
+                    {course.title}
+                  </span>
+                </div>
 
-                  {/* Text + progress */}
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{
-                      color: complete ? 'var(--correct)' : 'var(--text)',
-                      fontSize: '0.88rem',
-                      fontWeight: 600,
-                      marginBottom: '0.15rem',
-                      whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
-                    }}>
-                      {k.title}
-                    </div>
-                    <div style={{
-                      color: 'var(--text-muted)',
-                      fontSize: '0.63rem',
-                      whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
-                      marginBottom: available > 0 && completed > 0 ? '0.35rem' : 0,
-                    }}>
-                      {k.subtitle}
-                    </div>
-                    {available > 0 && completed > 0 && (
-                      <div style={{ background: 'var(--border)', borderRadius: 2, height: 2 }}>
-                        <div style={{
-                          background: complete ? 'var(--correct)' : color,
-                          borderRadius: 2,
-                          height: 2,
-                          width: `${(completed / available) * 100}%`,
-                          boxShadow: `0 0 4px ${complete ? 'var(--correct)' : color}`,
-                          transition: 'width 0.5s ease',
-                        }} />
+                {/* Subjects within this course */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  {courseSubjects.map((k, i) => {
+                    const globalIdx = subjectOffset + i
+                    const complete = isKingdomComplete(k.dungeons.map(d => d.id))
+                    const available = k.dungeons.filter(d => !d.stub).length
+                    const completed = k.dungeons.filter(d => !d.stub && isDungeonComplete(d.id)).length
+                    const color = k.color ?? 'var(--blue)'
+                    const isFirst = globalIdx === 0 && !hasSeenHint
+
+                    return (
+                      <div key={k.id} style={{ position: 'relative' }}>
+                        {isFirst && (
+                          <div style={{
+                            position: 'absolute',
+                            right: -4, top: '50%',
+                            transform: 'translateY(-50%)',
+                            zIndex: 10,
+                            display: 'flex', alignItems: 'center', gap: '0.4rem',
+                            pointerEvents: 'none',
+                          }}>
+                            <span style={{
+                              fontFamily: 'var(--font-mono)',
+                              color: 'var(--blue)',
+                              fontSize: '0.5rem',
+                              letterSpacing: '1px',
+                              whiteSpace: 'nowrap',
+                            }}>START HERE</span>
+                            <div style={{
+                              width: 8, height: 8, borderRadius: '50%',
+                              background: 'var(--blue)',
+                              animation: 'hintPulse 1.4s ease-in-out infinite',
+                              flexShrink: 0,
+                            }} />
+                          </div>
+                        )}
+
+                        <button
+                          onClick={() => handleSelect(k.id)}
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.75rem',
+                            padding: '0.875rem 0.9rem',
+                            minHeight: 64,
+                            background: complete && premiumCardsUnlocked
+                              ? `linear-gradient(135deg, ${color}18 0%, ${color}08 50%, var(--bg-card) 100%)`
+                              : `linear-gradient(135deg, ${color}08 0%, var(--bg-card) 50%)`,
+                            border: `1px solid ${complete ? (premiumCardsUnlocked ? color + '60' : color + '40') : 'var(--border)'}`,
+                            borderLeft: `${complete && premiumCardsUnlocked ? '3px' : '2px'} solid ${complete ? (premiumCardsUnlocked ? color : 'var(--correct)') : color}`,
+                            borderRadius: 10,
+                            cursor: 'pointer',
+                            textAlign: 'left',
+                            width: '100%',
+                            transition: 'background 0.15s, box-shadow 0.15s',
+                            boxShadow: complete && premiumCardsUnlocked ? `0 0 12px ${color}20` : 'none',
+                          }}
+                          onMouseEnter={e => {
+                            e.currentTarget.style.background = `linear-gradient(135deg, ${color}12 0%, var(--bg-elevated) 60%)`
+                            e.currentTarget.style.boxShadow = `0 0 0 1px ${color}25`
+                          }}
+                          onMouseLeave={e => {
+                            e.currentTarget.style.background = `linear-gradient(135deg, ${color}08 0%, var(--bg-card) 50%)`
+                            e.currentTarget.style.boxShadow = 'none'
+                          }}
+                        >
+                          {/* Step number */}
+                          <div style={{
+                            width: 32, height: 32, borderRadius: '50%', flexShrink: 0,
+                            background: `${color}15`,
+                            border: `1px solid ${complete ? 'var(--correct)' : color + '60'}`,
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            fontFamily: 'var(--font-mono)',
+                            fontSize: '0.7rem', fontWeight: 'bold',
+                            color: complete ? 'var(--correct)' : color,
+                          }}>
+                            {complete ? '✓' : String(globalIdx + 1).padStart(2, '0')}
+                          </div>
+
+                          {/* Text + progress */}
+                          <div style={{ flex: 1, minWidth: 0 }}>
+                            <div style={{
+                              color: complete ? 'var(--correct)' : 'var(--text)',
+                              fontSize: '0.88rem',
+                              fontWeight: 600,
+                              marginBottom: '0.15rem',
+                              whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
+                            }}>
+                              {k.title}
+                            </div>
+                            <div style={{
+                              color: 'var(--text-muted)',
+                              fontSize: '0.63rem',
+                              whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
+                              marginBottom: available > 0 && completed > 0 ? '0.35rem' : 0,
+                            }}>
+                              {k.subtitle}
+                            </div>
+                            {available > 0 && completed > 0 && (
+                              <div style={{ background: 'var(--border)', borderRadius: 2, height: 2 }}>
+                                <div style={{
+                                  background: complete ? 'var(--correct)' : color,
+                                  borderRadius: 2,
+                                  height: 2,
+                                  width: `${(completed / available) * 100}%`,
+                                  boxShadow: `0 0 4px ${complete ? 'var(--correct)' : color}`,
+                                  transition: 'width 0.5s ease',
+                                }} />
+                              </div>
+                            )}
+                          </div>
+
+                          {/* Badge */}
+                          <div style={{ flexShrink: 0, textAlign: 'right' }}>
+                            {complete ? (
+                              <span style={{
+                                fontFamily: 'var(--font-mono)',
+                                color: 'var(--correct)',
+                                fontSize: '0.48rem',
+                                letterSpacing: '1.5px',
+                              }}>DONE</span>
+                            ) : available === 0 ? (
+                              <span style={{
+                                fontFamily: 'var(--font-mono)',
+                                color: 'var(--text-muted)',
+                                border: '1px solid var(--border)',
+                                borderRadius: 4,
+                                padding: '1px 5px',
+                                fontSize: '0.48rem',
+                                letterSpacing: '1px',
+                              }}>soon</span>
+                            ) : (
+                              <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>›</span>
+                            )}
+                          </div>
+                        </button>
                       </div>
-                    )}
-                  </div>
-
-                  {/* Badge */}
-                  <div style={{ flexShrink: 0, textAlign: 'right' }}>
-                    {complete ? (
-                      <span style={{
-                        fontFamily: 'var(--font-mono)',
-                        color: 'var(--correct)',
-                        fontSize: '0.48rem',
-                        letterSpacing: '1.5px',
-                      }}>DONE</span>
-                    ) : available === 0 ? (
-                      <span style={{
-                        fontFamily: 'var(--font-mono)',
-                        color: 'var(--text-muted)',
-                        border: '1px solid var(--border)',
-                        borderRadius: 4,
-                        padding: '1px 5px',
-                        fontSize: '0.48rem',
-                        letterSpacing: '1px',
-                      }}>soon</span>
-                    ) : (
-                      <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>›</span>
-                    )}
-                  </div>
-                </button>
+                    )
+                  })}
+                </div>
               </div>
             )
           })}
