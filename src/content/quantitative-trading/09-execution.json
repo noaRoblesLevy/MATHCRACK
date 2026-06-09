@@ -1,0 +1,96 @@
+{
+  "id": "qt-09",
+  "title": "Market Microstructure & Execution",
+  "kingdom": "quantitative-trading",
+  "dungeonNumber": 9,
+  "lesson": {
+    "title": "Market Microstructure & Execution",
+    "body": "The bid-ask spread is the difference between the best ask (lowest sell price) and best bid (highest buy price). Market impact is the price movement caused by a trade itself. TWAP (time-weighted average price) and VWAP (volume-weighted average price) are execution benchmarks that slice large orders over time to minimize impact. Limit orders reduce transaction costs but risk non-execution."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "The bid-ask spread represents an immediate cost of:",
+      "latex": "\\text{Cost} = \\frac{\\text{Ask} - \\text{Bid}}{2} \\text{ per side}",
+      "answers": ["Half the spread per trade (for a round trip: the full spread)", "The full spread per trade", "The ask price alone", "Zero cost if using limit orders"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Crossing the spread costs approximately half the spread per side (from mid-price). A round-trip buy+sell costs approximately the full spread.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Market impact refers to:",
+      "answers": ["Price movement caused by your own order (buying pushes price up, selling pushes it down)", "Macro news impact on price", "The broker commission", "Overnight gap risk"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Market impact: a large buy order consumes available liquidity at lower prices, pushing the execution price up. This is the primary cost for institutional-size orders.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "VWAP execution aims to trade at the:",
+      "answers": ["Volume-weighted average price of the day, blending in with normal market volume", "Open price", "Close price", "Best bid or ask at order entry"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "VWAP slices an order proportionally to expected intraday volume, aiming to achieve a price close to the day's volume-weighted average. It minimizes visible impact.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these execution methods from most aggressive (high impact) to least aggressive:",
+      "items": ["Market order: immediate execution at best available price", "Limit order: passive, wait for price to come to you", "TWAP/VWAP: algorithmic slicing over time", "Dark pool: hidden block trade"],
+      "correctOrder": [0, 2, 3, 1],
+      "difficulty": 3,
+      "explanation": "Market orders are most aggressive (immediate impact). VWAP/TWAP algos spread impact over time. Dark pools hide size. Limit orders are most passive (no guaranteed fill).",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Adverse selection in limit order trading means:",
+      "answers": ["Your limit orders get filled only when the price has moved against you", "The market maker always profits", "Market orders are cheaper than limit orders", "Your orders are never filled"],
+      "correct": 0,
+      "difficulty": 3,
+      "explanation": "Adverse selection: informed traders know when to 'pick off' limit orders. Your buy limit order gets hit when informed sellers know prices will drop further — you buy just before a decline.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Market Maker",
+    "taunt": "You pay my spread. I profit from your urgency. Every trade costs you.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "The Amihud illiquidity ratio = |R_t| / Volume_t measures:",
+        "answers": ["How much price moves per unit of trading volume (higher = less liquid)", "Market impact in dollars", "Bid-ask spread width", "Volume relative to average"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "High Amihud ratio: small volume moves prices a lot → illiquid. Low Amihud: large volume needed to move prices → liquid. Used to screen for liquid tradeable assets."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Implementation shortfall measures:",
+        "answers": ["The difference between the decision price and the actual executed price", "The broker commission only", "The spread cost only", "VWAP benchmark slippage"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Implementation shortfall = (executed price − decision price) × shares. It captures all trading costs: spread, delay cost, market impact, and opportunity cost of unexecuted orders."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "For a quantitative strategy with high turnover, the most critical execution concern is:",
+        "answers": ["Transaction costs consuming alpha — strategies viable on paper may not survive real costs", "Counterparty risk", "Settlement timing", "Currency exposure"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "High-turnover strategies (daily rebalancing, mean reversion) can have alpha of 0.5-1.5 bps/day. A realistic bid-ask + impact cost of 1-2 bps can erase the entire edge."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

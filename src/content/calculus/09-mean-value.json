@@ -1,0 +1,98 @@
+{
+  "id": "calc-09",
+  "title": "Mean Value Theorem",
+  "kingdom": "calculus",
+  "dungeonNumber": 9,
+  "lesson": {
+    "title": "Mean Value Theorem",
+    "body": "The Mean Value Theorem (MVT) states: if f is continuous on [a,b] and differentiable on (a,b), then there exists c ∈ (a,b) such that f'(c) = [f(b)−f(a)]/(b−a). Geometrically, the tangent line at c is parallel to the secant line. Rolle's Theorem is the special case f(a) = f(b) → f'(c) = 0."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "The Mean Value Theorem guarantees some c in (a,b) with f'(c) equal to:",
+      "latex": "f'(c) = \\frac{f(b) - f(a)}{b - a}",
+      "answers": ["[f(b) − f(a)] / (b − a)", "f(b) − f(a)", "[a + b] / 2", "f'(a) + f'(b)"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "The MVT guarantees a point where the instantaneous rate equals the average rate over [a,b].",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For f(x) = x² on [0, 2], the value c guaranteed by the MVT satisfies f'(c) = ?",
+      "latex": "f'(c) = \\frac{f(2) - f(0)}{2 - 0} = \\frac{4 - 0}{2} = 2",
+      "steps": ["f'(c) = 2c = 2 \\implies c = 1"],
+      "answers": ["c = 1", "c = 0", "c = 2", "c = 1/2"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Average rate = (4−0)/(2−0) = 2. f'(x) = 2x = 2 → c = 1. Indeed c = 1 ∈ (0,2).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Rolle's Theorem is a special case of the MVT. Its additional hypothesis (beyond MVT's) is:",
+      "answers": ["f(a) = f(b)", "f'(a) = f'(b)", "f(a) = 0", "f is twice differentiable"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Rolle's Theorem adds f(a) = f(b), which makes the average rate zero, so f'(c) = 0 for some c in (a,b).",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the logical implications for a function on [a,b]:",
+      "items": ["f increasing on (a,b) iff f'(x) > 0 on (a,b)", "f'(x) > 0 implies f is increasing (by MVT)", "Critical points: f'(c) = 0 or f'(c) DNE", "Test sign of f' on each interval between critical points"],
+      "correctOrder": [2, 0, 1, 3],
+      "difficulty": 3,
+      "explanation": "Find critical points first, then test sign of f' on each interval to determine increasing/decreasing behavior.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "f is concave up on an interval if:",
+      "answers": ["f''(x) > 0 on the interval", "f'(x) > 0 on the interval", "f''(x) < 0 on the interval", "f has a local minimum"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Concave up (bowl shape) ↔ f'' > 0. Concave down (arch shape) ↔ f'' < 0.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Mean Value Tyrant",
+    "taunt": "Somewhere in the interval, you touched the average. Prove it.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "If f'(x) = 0 for all x in (a,b), then by the MVT:",
+        "answers": ["f is constant on (a,b)", "f = 0 on (a,b)", "f is linear on (a,b)", "f has no critical points"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "MVT: for any x₁, x₂ ∈ (a,b), f(x₂)−f(x₁) = f'(c)(x₂−x₁) = 0. So f(x₁) = f(x₂) for all pairs → f is constant."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A car's speed at t=0 is 0 and at t=3 is 90 mph. The MVT guarantees that at some t ∈ (0,3):",
+        "answers": ["The acceleration was exactly 30 mph/hr", "The speed was exactly 45 mph", "The car was at rest", "The speed exceeded 90 mph"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "MVT applied to velocity: average acceleration = (90−0)/3 = 30 mph/hr = f'(c) for some c ∈ (0,3)."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "An inflection point at x = c requires:",
+        "answers": ["f''(c) = 0 AND f'' changes sign at c", "f'(c) = 0", "f''(c) = 0 only", "f(c) is a local extremum"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "f''(c) = 0 is necessary but not sufficient. The second derivative must actually change sign at c for an inflection point."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

@@ -1,0 +1,99 @@
+{
+  "id": "py-07",
+  "title": "Pandas Basics",
+  "kingdom": "python",
+  "dungeonNumber": 7,
+  "lesson": {
+    "title": "Pandas Basics",
+    "body": "Pandas provides two core data structures: Series (labeled 1D array) and DataFrame (labeled 2D table). Create them with pd.Series() and pd.DataFrame(). Key exploration methods: .head(), .tail(), .info(), .describe(), .shape. Access columns with df['col'] or df.col. Use .dtypes to check types and .value_counts() for categorical summaries."
+  },
+  "rooms": [
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to create a DataFrame from a dict:",
+      "code": "import pandas as pd\ndata = {'name': ['Alice', 'Bob'], 'age': [25, 30]}\ndf = pd.___(data)",
+      "answers": ["DataFrame", "Series", "read_csv", "array"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "pd.DataFrame(dict) creates a DataFrame where dict keys become column names and values become column data.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does df.info() display?",
+      "answers": ["Column names, non-null counts, and data types", "First 5 rows only", "Summary statistics (mean, std)", "Memory usage only"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "df.info() prints: index dtype, column names, number of non-null values, dtypes per column, and memory usage. Essential for a first look at a new dataset.",
+      "xp": 10
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to get summary statistics:",
+      "code": "import pandas as pd\ndf = pd.DataFrame({'score': [85, 92, 78, 95, 88]})\nstats = df.___() ",
+      "answers": ["describe", "info", "head", "value_counts"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "df.describe() returns count, mean, std, min, 25th/50th/75th percentile, and max for all numeric columns.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the difference between df['col'] and df.col?",
+      "answers": ["Both work but df['col'] is safer — column names with spaces or method names require bracket notation", "df.col is faster", "They produce different outputs", "df.col doesn't exist"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "df.col fails if column name contains spaces or conflicts with a DataFrame method name (e.g., 'count', 'mean'). Always use df['col'] for safety.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps for initial DataFrame exploration:",
+      "items": ["df.head() — preview first 5 rows", "df.info() — column types and null counts", "df.describe() — numeric statistics", "df.value_counts() — frequency of categorical values"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 1,
+      "explanation": "Exploration order: visual preview → data types check → numeric summaries → categorical counts. This systematic approach prevents missing data quality issues.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The KeyError",
+    "taunt": "The column you seek does not exist. Check your spelling.",
+    "questions": [
+      {
+        "type": "fill-blank",
+        "question": "Complete the code to select multiple columns:",
+        "code": "import pandas as pd\ndf = pd.DataFrame({'a': [1,2], 'b': [3,4], 'c': [5,6]})\nsubset = df[___]",
+        "answers": ["['a', 'b']", "('a', 'b')", "'a', 'b'", "['a':'b']"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "To select multiple columns, pass a list of column names: df[['col1', 'col2']]. The double bracket returns a DataFrame; single bracket returns a Series."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What does df.shape return for a DataFrame with 100 rows and 5 columns?",
+        "answers": ["(100, 5)", "[100, 5]", "500", "(5, 100)"],
+        "correct": 0,
+        "difficulty": 1,
+        "explanation": "df.shape returns a tuple (rows, columns). Always rows first, columns second — consistent with NumPy convention."
+      },
+      {
+        "type": "fill-blank",
+        "question": "Complete the code to count unique values in a column:",
+        "code": "import pandas as pd\ndf = pd.DataFrame({'city': ['NYC', 'LA', 'NYC', 'Chicago', 'LA']})\ncounts = df['city'].___() ",
+        "answers": ["value_counts", "unique", "nunique", "count"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Series.value_counts() returns a Series with values as index and their counts as values, sorted descending. Use .unique() for just the unique values, .nunique() for the count."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

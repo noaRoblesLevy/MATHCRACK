@@ -1,0 +1,100 @@
+{
+  "id": "py-10",
+  "title": "Data Cleaning",
+  "kingdom": "python",
+  "dungeonNumber": 10,
+  "lesson": {
+    "title": "Data Cleaning",
+    "body": "Real data is messy. Key cleaning operations: df.isnull() detects missing values, df.dropna() removes them, df.fillna(value) fills them. df.duplicated() and df.drop_duplicates() handle duplicate rows. String operations use df['col'].str.method(). Type conversion: pd.to_datetime(), pd.to_numeric(). Apply custom functions with .apply() (row/column) or .map() (element-wise on Series)."
+  },
+  "rooms": [
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to fill missing values with the column mean:",
+      "code": "import pandas as pd\nimport numpy as np\ndf = pd.DataFrame({'score': [85, np.nan, 90, np.nan, 75]})\ndf['score'] = df['score'].___( df['score'].mean())",
+      "answers": ["fillna(", "dropna(", "replace(", "interpolate("],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Series.fillna(value) replaces NaN with the specified value. Common strategy: fill with mean (numeric) or mode (categorical).",
+      "xp": 10
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to remove rows with any missing value:",
+      "code": "import pandas as pd\nimport numpy as np\ndf = pd.DataFrame({'a':[1,np.nan,3],'b':[4,5,np.nan]})\ncleaned = df.___() ",
+      "answers": ["dropna", "fillna", "isnull", "notna"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "df.dropna() removes rows where ANY column has NaN (default). Use dropna(subset=['col']) to only check specific columns, or dropna(how='all') to only drop if ALL are NaN.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does df.isnull().sum() return?",
+      "answers": ["The count of missing values per column", "True/False for each cell", "Total number of NaN values in the DataFrame", "Rows with at least one NaN"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "df.isnull() returns a boolean DataFrame. .sum() adds up True values (treating True=1) per column, giving the count of NaN per column.",
+      "xp": 10
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to convert a string column to datetime:",
+      "code": "import pandas as pd\ndf = pd.DataFrame({'date': ['2023-01-15', '2023-02-20']})\ndf['date'] = pd.___( df['date'])",
+      "answers": ["to_datetime(", "Timestamp(", "datetime(", "parse_dates("],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "pd.to_datetime(series) converts string representations of dates to pandas datetime64 dtype, enabling .dt accessor for date components.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the standard data cleaning pipeline:",
+      "items": ["Check missing values: df.isnull().sum()", "Handle missing: fillna() or dropna()", "Fix dtypes: pd.to_datetime(), pd.to_numeric()", "Remove duplicates: df.drop_duplicates()"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Standard cleaning order: audit → handle missing → fix types → dedup. Always start with understanding what's wrong before fixing it.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The NaN Specter",
+    "taunt": "I hide in your data. Averages computed with me are lies. Ignore me at your peril.",
+    "questions": [
+      {
+        "type": "fill-blank",
+        "question": "Complete the code to strip whitespace from a string column:",
+        "code": "import pandas as pd\ndf = pd.DataFrame({'name': ['  Alice  ', ' Bob', 'Carol ']})\ndf['name'] = df['name'].str.___() ",
+        "answers": ["strip", "lstrip", "rstrip", "replace"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Series.str.strip() removes leading and trailing whitespace. .str accessor provides vectorized string methods for the entire Series."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "df.apply(func, axis=1) applies func to:",
+        "answers": ["Each row (axis=1 means apply along columns for each row)", "Each column", "Each cell individually", "Only the first row"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "axis=1 means the function receives each row as a Series. axis=0 (default) applies to each column as a Series."
+      },
+      {
+        "type": "fill-blank",
+        "question": "Complete the code to convert 'price' column to numeric, coercing errors to NaN:",
+        "code": "import pandas as pd\ndf = pd.DataFrame({'price': ['10.5', '20', 'N/A', '15.0']})\ndf['price'] = pd.to_numeric(df['price'], errors='___')",
+        "answers": ["coerce", "ignore", "raise", "replace"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "errors='coerce' converts non-numeric values to NaN instead of raising an error. errors='raise' (default) raises ValueError. errors='ignore' returns the original value."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

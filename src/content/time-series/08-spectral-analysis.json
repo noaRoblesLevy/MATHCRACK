@@ -1,0 +1,101 @@
+{
+  "id": "ts-08",
+  "title": "Spectral Analysis",
+  "kingdom": "time-series",
+  "dungeonNumber": 8,
+  "lesson": {
+    "title": "Spectral Analysis",
+    "body": "Spectral analysis represents a time series in the frequency domain. The spectral density f(ω) decomposes variance across frequencies ω ∈ [0, π]. A peak at frequency ω = 2π/s indicates a cycle of period s. The periodogram is the sample estimate of the spectral density. Dominant frequencies correspond to the most important periodic components in the data."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "A spectral density with a peak at ω = π/6 corresponds to a cycle of period:",
+      "latex": "s = \\frac{2\\pi}{\\omega} = \\frac{2\\pi}{\\pi/6} = 12",
+      "steps": ["s = 2\\pi / \\omega = 2\\pi / (\\pi/6) = 12 \\text{ time units}"],
+      "answers": ["12 (e.g., months in a year for monthly data)", "6", "π/6", "2π"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Period s = 2π/ω = 2π/(π/6) = 12. A peak at this frequency indicates annual seasonality in monthly data.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The spectral density is related to the autocovariance function by:",
+      "latex": "f(\\omega) = \\frac{1}{2\\pi}\\sum_{h=-\\infty}^{\\infty} \\gamma(h) e^{-i\\omega h}",
+      "answers": ["The Fourier transform of the ACVF", "The derivative of the ACF", "The squared ACF", "The integral of the PACF"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "The spectral density is the Fourier transform of the autocovariance function. Conversely, ACVF is the inverse Fourier transform of f(ω).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For white noise ε_t ~ WN(0, σ²), the spectral density is:",
+      "latex": "f(\\omega) = \\frac{\\sigma^2}{2\\pi} \\text{ for all } \\omega",
+      "answers": ["Flat (constant) across all frequencies", "Peaked at ω = 0", "Peaked at ω = π", "Zero everywhere"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "White noise has equal variance at all frequencies — a flat spectrum. This is why it is called 'white' (like white light containing all frequencies equally).",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps for spectral analysis of a time series:",
+      "items": ["Ensure series is stationary (difference if needed)", "Compute periodogram: I(ω) = |Σx_t e^{-iωt}|²/n", "Smooth periodogram to estimate spectral density", "Identify dominant frequencies (peaks in spectrum)"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "Stationarity first, then periodogram, smooth it (periodogram is inconsistent), then interpret peaks.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The spectral density of an AR(1) process x_t = φx_{t-1} + ε_t is:",
+      "latex": "f(\\omega) = \\frac{\\sigma_\\varepsilon^2/2\\pi}{1 + \\phi^2 - 2\\phi\\cos(\\omega)}",
+      "answers": ["Peaked near ω=0 for positive φ (low-frequency dominance)", "Peaked at ω=π for positive φ", "Flat (white noise)", "Peaked at ω=π/2"],
+      "correct": 0,
+      "difficulty": 3,
+      "explanation": "Positive AR(1): low frequencies dominate (slow mean reversion, long memory). Negative AR(1): high frequencies dominate (fast oscillation).",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Frequency Phantom",
+    "taunt": "In the time domain you see chaos. In frequency, hidden order is revealed.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "The periodogram I(ωⱼ) at Fourier frequencies is an inconsistent estimator of the spectral density because:",
+        "answers": ["Its variance does not decrease as n grows", "It converges to zero", "It is biased by definition", "It requires stationarity"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "The periodogram's variance stays at f(ω)² regardless of sample size — it is too noisy. Smoothing (kernel, tapering) is needed for consistent estimation."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The total area under the spectral density (integrated over [0, π]) equals:",
+        "latex": "\\int_0^\\pi f(\\omega)\\, d\\omega = \\gamma(0)/2",
+        "answers": ["γ(0)/2 = Var(x_t)/2", "Var(x_t)", "0", "∞"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "The variance Var(x_t) = γ(0) equals the total area ∫_{-π}^{π} f(ω)dω = 2∫_0^π f(ω)dω, so each half equals γ(0)/2."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Seasonality at period s in a time series appears in the spectrum as:",
+        "answers": ["Peaks at frequencies ω = 2πk/s for k = 1, 2, ..., s/2", "A trough at ω = 2π/s", "No discernible pattern", "A peak only at ω = 0"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Seasonal frequencies are harmonics: 2π/s, 4π/s, 6π/s, ... Multiple peaks appear, with the fundamental at 2π/s typically strongest."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

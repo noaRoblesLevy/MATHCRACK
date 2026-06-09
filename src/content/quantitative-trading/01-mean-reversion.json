@@ -1,0 +1,96 @@
+{
+  "id": "qt-01",
+  "title": "Mean Reversion & Stationarity",
+  "kingdom": "quantitative-trading",
+  "dungeonNumber": 1,
+  "lesson": {
+    "title": "Mean Reversion & Stationarity",
+    "body": "A mean-reverting series is stationary — it oscillates around a long-run mean and deviations decay over time. The Ornstein-Uhlenbeck process dX = θ(μ−X)dt + σdW is a continuous-time mean-reverting model with mean reversion speed θ. The half-life of mean reversion is ln(2)/θ. The ADF test checks whether a financial series is mean-reverting."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "A stock price time series that mean-reverts is:",
+      "answers": ["Stationary — it oscillates around a fixed level", "A random walk", "Always increasing", "Non-stationary by definition"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Mean reversion implies stationarity: the series tends to return to its mean. Most raw stock prices are non-stationary; some spreads are mean-reverting.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "In the Ornstein-Uhlenbeck process dX = θ(μ−X)dt + σdW, larger θ means:",
+      "answers": ["Faster mean reversion (shorter half-life)", "Slower mean reversion", "Higher volatility", "No mean reversion"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "θ is the speed of mean reversion. Half-life = ln(2)/θ. Large θ → fast reversion → shorter half-life → more trading opportunities.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The half-life of mean reversion tells traders:",
+      "answers": ["How long it typically takes to revert halfway to the mean — sets the trade holding period", "The maximum profit from the trade", "When to size positions", "The Sharpe ratio of the strategy"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Half-life ≈ ln(2)/θ. A half-life of 5 days suggests positions should be held about 5 days and definitely closed before 3-4 half-lives.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to test whether a spread is mean-reverting:",
+      "items": ["Run ADF test on the spread series", "Check ADF p-value (< 0.05 → reject unit root → stationary)", "Estimate half-life from AR(1) coefficient", "Assess tradability: is half-life short enough?"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "ADF test → stationarity verdict → estimate half-life from φ̂ in Δy_t = φy_{t-1} + ε_t → assess if strategy is practical.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The Hurst exponent H < 0.5 indicates:",
+      "answers": ["Mean-reverting behavior (anti-persistent)", "Trending behavior", "Random walk (H = 0.5)", "Long memory"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "H < 0.5: mean-reverting (anti-persistent). H = 0.5: random walk. H > 0.5: trending (persistent, long memory).",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Trending Market",
+    "taunt": "You expect a return to the mean. But what if I never return?",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "The ADF test for mean reversion regresses Δy_t = α + βy_{t-1} + ε_t. H₀ is rejected (mean-reverting) when:",
+        "latex": "H_0: \\beta = 0 \\text{ (unit root)}, \\quad H_1: \\beta < 0",
+        "answers": ["β < 0 significantly (t-statistic below ADF critical value)", "β > 0 significantly", "β = 0 exactly", "R² > 0.5"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "ADF H₀: β=0 (random walk). We want to reject H₀, finding β < 0 (the series gets pulled back to the mean)."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "If the ADF test for a series fails to reject the unit root (p=0.4), a trader should:",
+        "answers": ["Not trade this series as a mean-reversion strategy", "Enter a large mean-reversion position", "Double check with Hurst exponent only", "Proceed — p-value isn't relevant for trading"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Failing to reject a unit root means the spread may be a random walk, not mean-reverting. Trading mean-reversion on a random walk will lose money over time."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "An O-U process with half-life of 120 trading days is generally:",
+        "answers": ["Too slow for most systematic traders (6 months holding required)", "Ideal for high-frequency mean reversion", "Always unprofitable", "Suitable for daily rebalancing"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "A 120-day half-life requires holding positions for months. Capital is tied up, transaction costs accumulate, and the strategy has few signal-to-noise cycles per year."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

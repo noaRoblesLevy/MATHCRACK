@@ -1,0 +1,109 @@
+{
+  "id": "py-03",
+  "title": "OOP & Modules",
+  "kingdom": "python",
+  "dungeonNumber": 3,
+  "lesson": {
+    "title": "OOP & Modules",
+    "body": "Object-oriented programming in Python uses classes to bundle data and behavior. The __init__ method initializes instance attributes and self refers to the instance itself. Inheritance lets a child class reuse and extend a parent class using the class Child(Parent) syntax. Python's standard library provides powerful modules like os, sys, json, and datetime; third-party packages are installed via pip and imported with import."
+  },
+  "rooms": [
+    {
+      "type": "fill-blank",
+      "question": "Complete the class definition so that Dog('Rex') stores the name correctly:",
+      "code": "class Dog:\n    def ___(self, name):\n        self.name = name\n\nd = Dog('Rex')\nprint(d.name)",
+      "answers": ["__init__", "__new__", "__str__", "__repr__"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "__init__ is the initializer method called automatically when an instance is created. It sets up instance attributes.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does this code print?\n\nclass Animal:\n    def speak(self):\n        return 'Generic sound'\n\nclass Cat(Animal):\n    def speak(self):\n        return 'Meow'\n\nc = Cat()\nprint(c.speak())",
+      "answers": ["Generic sound", "Meow", "AttributeError", "None"],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Cat overrides the speak() method from Animal. Python's method resolution order finds Cat.speak() first, so 'Meow' is returned.",
+      "xp": 10
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the import to read a JSON file using the standard library:",
+      "code": "import ___\n\nwith open('data.json') as f:\n    data = json.load(f)",
+      "answers": ["json", "csv", "pickle", "io"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "The json module is part of Python's standard library and provides json.load() to parse a JSON file into a Python dict.",
+      "xp": 10
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to get the current working directory using os:",
+      "code": "import os\ncurrent = os.___()\nprint(current)",
+      "answers": ["getcwd", "listdir", "getenv", "path"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "os.getcwd() returns the current working directory as a string. It is the os equivalent of the shell command pwd.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these steps to correctly define a child class that calls the parent constructor:",
+      "items": ["class Child(Parent):", "def __init__(self, x, y):", "super().__init__(x)", "self.y = y"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "First declare the class inheriting from Parent, then define __init__, then call super().__init__() to initialize the parent's attributes, then set the child-specific attribute.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Import Error",
+    "taunt": "No module named 'your_knowledge'. Install it with pip install study_harder!",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "What does super().__init__() do inside a child class?",
+        "answers": [
+          "Creates a new parent instance",
+          "Calls the parent class's __init__ method",
+          "Deletes the child instance",
+          "Returns the parent class"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "super() returns a proxy that delegates method calls to the parent class. super().__init__() runs the parent's initializer to set up inherited attributes."
+      },
+      {
+        "type": "fill-blank",
+        "question": "Complete the code to parse a date string into a datetime object:",
+        "code": "from datetime import datetime\ndt = datetime.___(\"2024-01-15\", \"%Y-%m-%d\")\nprint(dt.year)",
+        "answers": ["strptime", "strftime", "fromisoformat", "now"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "datetime.strptime() parses a string into a datetime object using a format code. strftime() does the reverse — formats a datetime into a string."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What is the correct way to import only the sqrt function from the math module?",
+        "answers": [
+          "import math.sqrt",
+          "from math import sqrt",
+          "include math.sqrt",
+          "using math import sqrt"
+        ],
+        "correct": 1,
+        "difficulty": 1,
+        "explanation": "from math import sqrt imports only the sqrt name into the current namespace. import math.sqrt is invalid Python syntax."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

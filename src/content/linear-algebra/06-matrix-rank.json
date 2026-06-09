@@ -1,0 +1,111 @@
+{
+  "id": "linalg-06",
+  "title": "Rank, Nullspace & Column Space",
+  "kingdom": "linear-algebra",
+  "dungeonNumber": 6,
+  "lesson": {
+    "title": "Rank, Nullspace & Column Space",
+    "body": "The column space of a matrix A is the span of its columns, which represents all vectors Ax can equal. The null space (kernel) of A is the set of all solutions to Ax = 0. The rank of A equals the dimension of its column space, which equals the number of pivot positions. The Rank-Nullity Theorem states: rank(A) + nullity(A) = n, where n is the number of columns."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "The null space of a matrix A consists of:",
+      "latex": "\\text{Nul}(A) = \\{\\mathbf{x} : A\\mathbf{x} = \\mathbf{0}\\}",
+      "steps": ["Set up the homogeneous system Ax = 0 and solve for x."],
+      "answers": ["All vectors x such that Ax = 0", "All vectors in the column space of A", "The pivot columns of A", "All solutions to Ax = b for some b"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "The null space (kernel) of A is the solution set of the homogeneous equation Ax = 0.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A 4×6 matrix A has rank 3. What is its nullity?",
+      "latex": "\\text{rank}(A) + \\text{nullity}(A) = n = 6",
+      "steps": ["By the Rank-Nullity Theorem: nullity = n - rank = 6 - 3."],
+      "answers": ["3", "4", "2", "6"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "By the Rank-Nullity Theorem: nullity(A) = n - rank(A) = 6 - 3 = 3.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The column space of A is a subspace of which space?",
+      "latex": "\\text{Col}(A) \\subseteq ?",
+      "steps": ["A has m rows, so Ax \\in \\mathbb{R}^m for any x."],
+      "answers": ["Rᵐ (where m is the number of rows)", "Rⁿ (where n is the number of columns)", "The null space of A", "Rʳ where r is the rank"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Each column of A is in Rᵐ (m rows), so Col(A) is a subspace of Rᵐ.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The system Ax = b is consistent if and only if:",
+      "latex": "A\\mathbf{x} = \\mathbf{b} \\text{ is consistent iff}",
+      "steps": ["b must be reachable as a linear combination of A's columns."],
+      "answers": ["b is in the column space of A", "b is in the null space of A", "rank(A) = n (number of columns)", "A is a square matrix"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Ax = b means b = x₁a₁ + ... + xₙaₙ, a linear combination of A's columns. So Ax = b is consistent iff b ∈ Col(A).",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to find a basis for the null space of A (row reduce and solve Ax = 0):",
+      "items": [
+        "Row reduce A to RREF to identify pivot and free variables",
+        "Write the augmented system [A | 0]",
+        "Express each basic (pivot) variable in terms of free variables",
+        "Write x as a linear combination of vectors, one per free variable — these form the null space basis"
+      ],
+      "correctOrder": [1, 0, 2, 3],
+      "difficulty": 3,
+      "explanation": "Set up the homogeneous augmented system, row reduce, identify free variables, express basic variables in terms of them, then write the parametric solution.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Rank Specter",
+    "taunt": "Your column space collapses. Your rank is zero. You are nothing!",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A 5×5 matrix A has rank 5. What can you conclude?",
+        "latex": "\\text{rank}(A) = 5,\\quad A \\text{ is } 5\\times 5",
+        "answers": ["A is invertible and Ax = b has a unique solution for every b", "Ax = 0 has infinitely many solutions", "nullity(A) = 5", "The column space of A is not all of R⁵"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "If a square n×n matrix has rank n, it is full rank, hence invertible, and Ax = b has a unique solution for every b ∈ Rⁿ."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which statement about a matrix A with nullity(A) = 0 is true?",
+        "latex": "\\text{nullity}(A) = 0 \\implies \\text{Nul}(A) = \\{\\mathbf{0}\\}",
+        "answers": ["The only solution to Ax = 0 is x = 0", "A has no pivot columns", "A is a zero matrix", "rank(A) = 0"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Nullity 0 means the null space contains only the zero vector, so Ax = 0 has no nontrivial solutions — the columns of A are linearly independent."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "For an m×n matrix A with m < n, what is the maximum possible rank?",
+        "latex": "A \\text{ is } m \\times n,\\quad m < n",
+        "answers": ["m", "n", "m + n", "mn"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Rank equals the number of pivot positions. There can be at most one pivot per row, so rank(A) ≤ min(m, n) = m when m < n."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

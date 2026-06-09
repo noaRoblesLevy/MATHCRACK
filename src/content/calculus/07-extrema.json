@@ -1,0 +1,99 @@
+{
+  "id": "calc-07",
+  "title": "Extrema & Critical Points",
+  "kingdom": "calculus",
+  "dungeonNumber": 7,
+  "lesson": {
+    "title": "Extrema & Critical Points",
+    "body": "A critical point of f is where f'(c) = 0 or f'(c) is undefined. The First Derivative Test: if f' changes from + to − at c, then c is a local maximum; if − to +, a local minimum. The Second Derivative Test: if f'(c) = 0 and f''(c) > 0, then c is a local minimum; if f''(c) < 0, a local maximum. Absolute extrema on [a,b] occur at critical points or endpoints."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "A critical point of f is a value c where:",
+      "answers": ["f'(c) = 0 or f'(c) does not exist", "f(c) = 0", "f''(c) = 0", "f(c) is the largest value"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Critical points include where the derivative equals zero (horizontal tangent) or is undefined.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Find the critical points of f(x) = x³ − 3x.",
+      "latex": "f'(x) = 3x^2 - 3 = 3(x^2 - 1) = 0",
+      "steps": ["f'(x) = 3x^2 - 3 = 0", "x^2 = 1 \\implies x = \\pm 1"],
+      "answers": ["x = 1 and x = −1", "x = 0", "x = 3 and x = −3", "x = 0 and x = 3"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Set f'(x) = 3x² − 3 = 0 → x² = 1 → x = ±1.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For f(x) = −x² + 4x, the second derivative test at x = 2 gives:",
+      "latex": "f'(x) = -2x + 4 = 0 \\implies x = 2, \\quad f''(x) = -2",
+      "steps": ["f''(2) = -2 < 0 \\implies \\text{local maximum}"],
+      "answers": ["Local maximum at x = 2", "Local minimum at x = 2", "Inflection point at x = 2", "Inconclusive"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "f''(2) = −2 < 0, so f is concave down at x=2, confirming a local maximum.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the closed interval method to find absolute extrema on [a,b]:",
+      "items": ["Find all critical points of f in (a,b)", "Evaluate f at each critical point", "Evaluate f at the endpoints a and b", "Compare all values: largest is max, smallest is min"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Absolute extrema on a closed interval occur either at critical points or endpoints — evaluate all candidates and compare.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "If f'(x) > 0 on (a, b), then f is:",
+      "answers": ["Increasing on (a, b)", "Decreasing on (a, b)", "Concave up on (a, b)", "Has a maximum at some c in (a, b)"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Positive derivative ↔ increasing function. Negative derivative ↔ decreasing.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Critical Point",
+    "taunt": "At my peak, the slope is zero. But am I maximum or minimum? Prove it.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "f(x) = x⁴ has a critical point at x = 0 with f''(0) = 0. This means the second derivative test is:",
+        "answers": ["Inconclusive — check the first derivative test instead", "Confirms a minimum since f(0) = 0", "Confirms an inflection point", "Confirms a maximum"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "When f''(c) = 0, the second derivative test is inconclusive. Use the first derivative test: f'(x) = 4x³ changes from − to + at 0, confirming a minimum."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The absolute maximum of f(x) = x³ − 3x on [0, 2] is:",
+        "answers": ["2 (at x = 2)", "0 (at x = 0)", "−2 (at x = 1)", "All equal"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Critical points: f'=3x²−3=0 → x=1 (in [0,2]). Values: f(0)=0, f(1)=−2, f(2)=2. Absolute max is 2 at x=2."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "An inflection point of f occurs where:",
+        "answers": ["f'' changes sign (concavity changes)", "f' = 0", "f'' = 0 necessarily", "f has a local extremum"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "An inflection point is where f'' changes sign (concavity switches). f''=0 is necessary but not sufficient — f'' must change sign."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

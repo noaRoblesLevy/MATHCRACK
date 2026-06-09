@@ -1,0 +1,97 @@
+{
+  "id": "linalg-11",
+  "title": "Diagonalization",
+  "kingdom": "linear-algebra",
+  "dungeonNumber": 11,
+  "lesson": {
+    "title": "Diagonalization",
+    "body": "A matrix A is diagonalizable if A = PDP⁻¹ where D is diagonal (containing eigenvalues) and P has eigenvectors as columns. A is diagonalizable if and only if it has n linearly independent eigenvectors. Once diagonalized, computing matrix powers is easy: Aⁿ = PDⁿP⁻¹, where Dⁿ just raises each diagonal entry to the n-th power."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "In A = PDP⁻¹, the diagonal entries of D are:",
+      "answers": ["The eigenvalues of A", "The eigenvectors of A", "The diagonal entries of A", "The pivots from row reduction"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "D is the diagonal matrix of eigenvalues, and P is the matrix whose columns are the corresponding eigenvectors.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A n×n matrix is definitely diagonalizable if it has:",
+      "answers": ["n distinct eigenvalues", "All positive eigenvalues", "det(A) = 1", "All diagonal entries equal"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "n distinct eigenvalues guarantee n linearly independent eigenvectors, ensuring diagonalizability. The converse is not always true.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "If A = PDP⁻¹, what is A⁵?",
+      "latex": "A^5 = PD^5P^{-1}",
+      "steps": ["A^5 = (PDP^{-1})^5 = PD^5P^{-1}", "D^5 \\text{ just raises each diagonal entry to the 5th power}"],
+      "answers": ["PD⁵P⁻¹", "P⁵D⁵(P⁻¹)⁵", "5PDP⁻¹", "PD·5·P⁻¹"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Powers of a diagonalized matrix: Aⁿ = PDⁿP⁻¹. This is the main reason to diagonalize — easy computation of powers.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to diagonalize matrix A:",
+      "items": ["Find all eigenvalues from det(A − λI) = 0", "Find eigenvectors for each eigenvalue", "Form P (columns = eigenvectors) and D (diagonal = eigenvalues)", "Verify A = PDP⁻¹"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "Eigenvalues first, then eigenvectors, then assemble P and D, then verify.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "When is a matrix NOT diagonalizable?",
+      "answers": ["When it does not have n linearly independent eigenvectors", "When all eigenvalues are distinct", "When det(A) ≠ 0", "When it is symmetric"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "A defective matrix has fewer linearly independent eigenvectors than its size (e.g., [[1,1],[0,1]] has only one independent eigenvector for λ=1).",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Diagonal Demon",
+    "taunt": "I reduce all complexity to a diagonal. Nothing can hide in my basis.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "If A = PDP⁻¹ and D has eigenvalues 2 and 3, what is det(A)?",
+        "answers": ["6", "5", "1", "Cannot be determined"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "det(A) = det(PDP⁻¹) = det(D) = product of eigenvalues = 2·3 = 6."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The Spectral Theorem states that every real symmetric matrix A is:",
+        "answers": ["Orthogonally diagonalizable: A = QDQᵀ where Q is orthogonal", "Always has eigenvalue 0", "Diagonalizable with complex eigenvalues", "Equal to its transpose squared"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Spectral Theorem: symmetric A = QDQᵀ with Q orthogonal (Q⁻¹ = Qᵀ) and D real diagonal. Eigenvectors for distinct eigenvalues are orthogonal."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "If A = PDP⁻¹ and all eigenvalues |λᵢ| < 1, then Aⁿ as n→∞ approaches:",
+        "answers": ["The zero matrix", "The identity matrix I", "P", "D"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Aⁿ = PDⁿP⁻¹. If all |λᵢ| < 1, then Dⁿ → 0, so Aⁿ → PDP⁻¹·0 = 0. This has applications in Markov chains and stability analysis."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

@@ -1,0 +1,96 @@
+{
+  "id": "ts-06",
+  "title": "ARIMA & Differencing",
+  "kingdom": "time-series",
+  "dungeonNumber": 6,
+  "lesson": {
+    "title": "ARIMA & Differencing",
+    "body": "ARIMA(p, d, q) extends ARMA to non-stationary series by applying d rounds of differencing: ∇x_t = x_t − x_{t-1}. First differencing removes linear trends; second differencing removes quadratic. The unit root test (ADF test) formally tests whether differencing is needed. Seasonal ARIMA SARIMA(p,d,q)(P,D,Q)_s adds seasonal differencing and seasonal AR/MA terms."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "What does the 'd' in ARIMA(p, d, q) represent?",
+      "answers": ["The number of times the series is differenced", "The number of AR terms", "The number of MA terms", "The seasonal period"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "d is the integration order — number of differences needed to achieve stationarity. d=1 handles linear trends, d=2 handles quadratic.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The first difference ∇x_t is defined as:",
+      "latex": "\\nabla x_t = x_t - x_{t-1}",
+      "answers": ["x_t − x_{t-1}", "x_t + x_{t-1}", "x_t · x_{t-1}", "x_t / x_{t-1}"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "First differencing removes the trend. If x_t has a linear trend, ∇x_t is stationary.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The Augmented Dickey-Fuller (ADF) test has null hypothesis:",
+      "answers": ["The series has a unit root (is non-stationary)", "The series is stationary", "The series is normally distributed", "The series has no trend"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "ADF H₀: unit root exists (non-stationary). If we reject H₀ (p-value < α), the series is likely stationary and doesn't need differencing.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the Box-Jenkins methodology for ARIMA modeling:",
+      "items": ["Check stationarity (ADF test), difference if needed", "Identify p, q from ACF/PACF of differenced series", "Estimate parameters (MLE)", "Diagnostic check: residuals should be white noise"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "Box-Jenkins: make stationary → identify orders → estimate → diagnose. Iterate if residuals are not white noise.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A SARIMA(1,1,1)(1,1,1)_12 model is appropriate for:",
+      "answers": ["Monthly data with both trend and annual seasonality", "Daily data with no pattern", "Data with only linear trend", "Data that is already stationary"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "SARIMA with d=1 and D=1 handles both trend (regular differencing) and yearly seasonality (seasonal differencing at period 12 for monthly data).",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The ARIMA Daemon",
+    "taunt": "You cannot model me without first making me stationary. Difference me. I dare you.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "After fitting ARIMA, the residuals should resemble:",
+        "answers": ["White noise: uncorrelated, mean zero", "AR(1) process", "The original series", "Normally distributed with large variance"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Good ARIMA residuals behave like white noise — no remaining autocorrelation. The Ljung-Box test formally checks this."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "An ARIMA(0,1,0) model is equivalent to:",
+        "answers": ["A random walk: x_t = x_{t-1} + ε_t", "White noise", "AR(1) with φ=0.5", "MA(1)"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "ARIMA(0,1,0): no AR, 1 difference, no MA. That means ∇x_t = ε_t, i.e. x_t = x_{t-1} + ε_t — the random walk."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The information criteria AIC penalizes model complexity to avoid overfitting. Prefer the model with:",
+        "answers": ["Lower AIC", "Higher AIC", "AIC = 0", "AIC equal to log-likelihood"],
+        "correct": 0,
+        "difficulty": 1,
+        "explanation": "AIC = −2logL + 2k. Lower is better — it trades off fit (log-likelihood) against complexity (number of parameters k)."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

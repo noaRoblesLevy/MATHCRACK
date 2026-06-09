@@ -1,0 +1,104 @@
+{
+  "id": "calc-08",
+  "title": "Optimization",
+  "kingdom": "calculus",
+  "dungeonNumber": 8,
+  "lesson": {
+    "title": "Optimization",
+    "body": "Applied optimization uses calculus to find the maximum or minimum of a real-world quantity. The strategy: identify the quantity to optimize (objective function), express it in terms of one variable using any constraint, then find critical points. Always verify whether a critical point is a maximum or minimum, and check the domain for endpoint considerations."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "You have 100 m of fencing for a rectangular enclosure against a wall (no fencing needed on the wall side). The width is w and length along the wall is ℓ. The objective function for area is:",
+      "latex": "A = w \\cdot \\ell = w(100 - 2w)",
+      "steps": ["\\text{Constraint: } 2w + \\ell = 100 \\implies \\ell = 100 - 2w", "A(w) = w(100 - 2w) = 100w - 2w^2"],
+      "answers": ["A(w) = 100w − 2w²", "A(w) = 100w − w²", "A(w) = 50w − w²", "A(w) = w² + 100"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "With constraint 2w + ℓ = 100, substitute ℓ = 100−2w into A = wℓ to get A(w) = 100w − 2w².",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Continuing from above, the width w that maximizes area is:",
+      "latex": "A'(w) = 100 - 4w = 0 \\implies w = 25",
+      "steps": ["A'(w) = 100 - 4w = 0", "w = 25 \\text{ m, } \\ell = 50 \\text{ m, } A_{max} = 1250 \\text{ m}^2"],
+      "answers": ["w = 25 m", "w = 50 m", "w = 100 m", "w = 33.3 m"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "A'(w) = 100 − 4w = 0 → w = 25. Maximum area = 25·50 = 1250 m².",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A box with square base of side x and no top has surface area 300 cm². Volume is V = x²h. Express V as a function of x alone.",
+      "latex": "S = x^2 + 4xh = 300 \\implies h = \\frac{300 - x^2}{4x}",
+      "steps": ["V = x^2 h = x^2 \\cdot \\frac{300 - x^2}{4x} = \\frac{x(300 - x^2)}{4}"],
+      "answers": ["V(x) = x(300 − x²)/4", "V(x) = 300x − x³", "V(x) = x²(300−x)/4", "V(x) = (300−x²)/4"],
+      "correct": 0,
+      "difficulty": 3,
+      "explanation": "From surface area constraint h = (300−x²)/(4x). Substitute: V = x²·h = x(300−x²)/4.",
+      "xp": 20
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the general optimization strategy:",
+      "items": ["Identify quantity to maximize/minimize", "Write it as a function of one variable using constraints", "Find critical points (set derivative to zero)", "Use 2nd derivative test or endpoints to confirm max/min"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Optimization: define objective, reduce to one variable, differentiate and find critical points, verify the type of extremum.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Among all rectangles with perimeter P, which has maximum area?",
+      "answers": ["The square (all sides equal)", "The rectangle with 2:1 aspect ratio", "The rectangle with 3:1 aspect ratio", "A very long thin rectangle"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Given P = 2(x+y), maximize A = xy subject to x+y = P/2. By AM-GM, A = x(P/2−x) is maximized when x = y = P/4 — a square.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Optimizer",
+    "taunt": "There is always a maximum. There is always a minimum. Find them.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "The minimum distance from the point (3, 0) to the parabola y = x² occurs at x =",
+        "latex": "D^2 = (x-3)^2 + x^4",
+        "answers": ["x ≈ 1 (found by solving 4x³ + 2x − 6 = 0)", "x = 0", "x = 3", "x = √3"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Minimize D² = (x−3)² + x⁴. Set d(D²)/dx = 2(x−3) + 4x³ = 0. Numerically x ≈ 1 is the solution."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A manufacturer's revenue R(q) = 50q − q² and cost C(q) = 100 + 10q. Profit-maximizing quantity is:",
+        "latex": "\\pi(q) = R(q) - C(q) = -q^2 + 40q - 100",
+        "answers": ["q = 20", "q = 50", "q = 10", "q = 40"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "π = R − C = −q² + 40q − 100. π'(q) = −2q + 40 = 0 → q = 20. π''= −2 < 0 confirms maximum."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A cylindrical can with volume V = πr²h must minimize surface area S = 2πr² + 2πrh. The optimal ratio h/r is:",
+        "latex": "\\text{At optimal: } h = 2r",
+        "answers": ["h/r = 2", "h/r = 1", "h/r = π", "h/r = 4"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Substitute h = V/(πr²) into S, minimize with respect to r. Setting dS/dr = 0 gives r³ = V/(2π), which implies h = 2r at the optimum."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

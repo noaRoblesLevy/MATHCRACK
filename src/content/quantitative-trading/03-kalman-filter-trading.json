@@ -1,0 +1,95 @@
+{
+  "id": "qt-03",
+  "title": "Kalman Filter for Pairs Trading",
+  "kingdom": "quantitative-trading",
+  "dungeonNumber": 3,
+  "lesson": {
+    "title": "Kalman Filter for Pairs Trading",
+    "body": "The Kalman filter can estimate a dynamic hedge ratio β_t that adapts over time. Treat y_t = β_t·x_t + ε_t with β_t evolving as a random walk: β_t = β_{t-1} + δ_t. Each new observation updates the hedge ratio estimate and its uncertainty. The resulting spread y_t − β̂_t·x_t is more stationary than one using a static β."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Why use a Kalman filter hedge ratio instead of static OLS for pairs trading?",
+      "answers": ["It adapts to regime changes in the relationship between the two assets", "It produces a higher Sharpe ratio by definition", "It requires less historical data", "It avoids the need for cointegration testing"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "A dynamic hedge ratio via Kalman filter tracks structural changes (regime shifts, fundamental changes) that a static OLS estimate would miss.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "In the Kalman filter pairs trading model, the state x_t represents:",
+      "answers": ["The dynamic hedge ratio β_t", "The stock price", "The spread itself", "The position size"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "We model: y_t = β_t·x_t + ε_t with β_t as the hidden state. The Kalman filter estimates β_t recursively from new price observations.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The Kalman filter transition variance δ² (variance of β_t − β_{t-1}) controls:",
+      "answers": ["How quickly the hedge ratio can change (higher δ² = more flexible β_t)", "The trading signal threshold", "The position holding period", "The correlation between assets"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Large δ² allows β_t to change rapidly (adaptive but noisy). Small δ² keeps β_t nearly constant (stable but slow to adapt). This is a tuning parameter.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the Kalman filter pairs trading signal generation:",
+      "items": ["At each time t, observe y_t and x_t", "Kalman filter updates hedge ratio estimate β̂_t", "Compute spread e_t = y_t − β̂_t·x_t", "Generate z-score from e_t; trade when |z| > threshold"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "Online processing: new prices → update β̂_t via Kalman → compute spread → compute z-score → trade signal.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The Kalman filter's estimate uncertainty P_t (error covariance) is useful for trading because:",
+      "answers": ["It provides a dynamic threshold — trade when signal is large relative to uncertainty", "It determines the position size directly", "It measures market risk", "It replaces the need for a stop-loss"],
+      "correct": 0,
+      "difficulty": 3,
+      "explanation": "When P_t is large (uncertain hedge ratio), the spread signal is less reliable. Some implementations use P_t to scale entry thresholds adaptively.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Kalman Trader",
+    "taunt": "Your hedge ratio is stale. Mine adapts every second.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Initializing the Kalman filter for pairs trading requires choosing:",
+        "answers": ["Initial β₀ estimate and uncertainty P₀, plus measurement noise R and transition noise Q", "Only the entry threshold", "The number of trading days to look back", "The stock tickers only"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Kalman filter requires: β₀ (initial state), P₀ (initial uncertainty), Q (how fast β changes), R (measurement noise). These can be set by hand or via EM algorithm."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A limitation of the Kalman filter pairs trading approach is:",
+        "answers": ["Sensitivity to initialization and hyperparameters Q and R", "It cannot be used with daily data", "It requires normally distributed returns", "It can only trade one pair at a time"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "The performance depends heavily on Q and R. Incorrectly tuned parameters can lead to over-adapting (too noisy) or under-adapting (too slow to change)."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "In a Kalman filter pairs trade, if the filter's hedge ratio estimate suddenly shifts by 3 standard deviations, a trader should:",
+        "answers": ["Reassess whether the pair is still cointegrated before trading", "Immediately double the position", "Exit all positions and shutdown the strategy", "Ignore it — the filter always self-corrects"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "A sudden large shift in β̂_t may indicate a regime change or data error. Prudent risk management: pause trading, verify cointegration is still valid, check for corporate actions."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

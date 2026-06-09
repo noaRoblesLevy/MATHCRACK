@@ -1,0 +1,100 @@
+{
+  "id": "py-06",
+  "title": "NumPy Linear Algebra",
+  "kingdom": "python",
+  "dungeonNumber": 6,
+  "lesson": {
+    "title": "NumPy Linear Algebra",
+    "body": "NumPy provides linear algebra via numpy.linalg. Key functions: np.dot() for matrix multiplication, np.linalg.inv() for matrix inverse, np.linalg.eig() for eigenvalues/vectors, np.linalg.solve(A, b) for solving Ax=b (preferred over inv), and np.linalg.det() for determinant. For matrix multiplication in Python 3.5+, use the @ operator."
+  },
+  "rooms": [
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to solve the linear system Ax = b:",
+      "code": "import numpy as np\nA = np.array([[2, 1], [1, 3]])\nb = np.array([5, 10])\nx = np.linalg.___(A, b)",
+      "answers": ["solve", "inv", "dot", "lstsq"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "np.linalg.solve(A, b) is preferred over np.linalg.inv(A) @ b because it is numerically more stable and efficient.",
+      "xp": 10
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to compute eigenvalues and eigenvectors:",
+      "code": "import numpy as np\nA = np.array([[4, 2], [1, 3]])\nvalues, vectors = np.linalg.___(A)",
+      "answers": ["eig", "svd", "qr", "norm"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "np.linalg.eig(A) returns (eigenvalues, eigenvectors). Each column of vectors is an eigenvector corresponding to the same-index eigenvalue.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does the @ operator do in NumPy?",
+      "answers": ["Matrix multiplication (same as np.matmul)", "Element-wise multiplication", "Broadcasting addition", "String formatting"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "The @ operator (PEP 465, Python 3.5+) performs matrix multiplication: C = A @ B is equivalent to np.matmul(A, B). Do not confuse with * which is element-wise.",
+      "xp": 10
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to compute the determinant:",
+      "code": "import numpy as np\nA = np.array([[3, 1], [2, 4]])\nd = np.linalg.___(A)",
+      "answers": ["det", "trace", "norm", "matrix_rank"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "np.linalg.det(A) computes the determinant. For [[3,1],[2,4]]: det = 3*4 - 1*2 = 10.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these NumPy linalg operations from most to least numerically stable:",
+      "items": ["np.linalg.solve(A, b) — direct solve", "np.linalg.lstsq(A, b) — least squares", "np.linalg.inv(A) @ b — explicit inverse", "np.linalg.det(A) followed by Cramer's rule"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "solve() uses LU decomposition, more stable than explicit inversion. lstsq() handles rank-deficient systems. Explicit inverse accumulates floating-point errors. Cramer's rule is numerically terrible for large n.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Singular Matrix",
+    "taunt": "I have no inverse. Your solve() will crash. Handle me carefully.",
+    "questions": [
+      {
+        "type": "fill-blank",
+        "question": "Complete the code to compute the matrix rank:",
+        "code": "import numpy as np\nA = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nr = np.linalg.___(A)",
+        "answers": ["matrix_rank", "rank", "det", "trace"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "np.linalg.matrix_rank(A) returns the rank. For this matrix rank=2 (rows are linearly dependent — row3 = 2*row2 - row1)."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What is the output of np.linalg.norm(np.array([3, 4]))?",
+        "answers": ["5.0", "7.0", "12.0", "3.5"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Default norm is the L2 (Euclidean) norm: √(3² + 4²) = √(9+16) = √25 = 5.0."
+      },
+      {
+        "type": "fill-blank",
+        "question": "Complete the SVD decomposition:",
+        "code": "import numpy as np\nA = np.array([[1, 2], [3, 4], [5, 6]])\nU, S, Vt = np.linalg.___(A)",
+        "answers": ["svd", "eig", "qr", "cholesky"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "np.linalg.svd(A) returns U (left singular vectors), S (singular values), Vt (right singular vectors transposed). A = U @ np.diag(S) @ Vt."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

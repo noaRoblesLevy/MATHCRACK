@@ -1,0 +1,98 @@
+{
+  "id": "ts-05",
+  "title": "MA & ARMA Models",
+  "kingdom": "time-series",
+  "dungeonNumber": 5,
+  "lesson": {
+    "title": "MA & ARMA Models",
+    "body": "A moving average model MA(q) is x_t = ε_t + θ₁ε_{t-1} + ... + θ_qε_{t-q}. Unlike AR, MA(q) is always stationary. It is invertible when roots of 1 + θ₁z + ... + θ_qzᵠ lie outside the unit circle. The ARMA(p,q) combines both: x_t = Σφᵢx_{t-i} + ε_t + Σθⱼε_{t-j}. The ACF of MA(q) cuts off after lag q; the PACF tails off."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "The ACF of an MA(q) process is:",
+      "answers": ["Nonzero for lags 1 to q, zero for lags > q (cuts off)", "Geometric decay for all lags", "Always zero", "Cuts off after lag p"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "MA(q) ACF cuts off after lag q — this is the key pattern to identify MA order. PACF tails off geometrically.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For MA(1): x_t = ε_t + θε_{t-1}, the variance is:",
+      "latex": "\\text{Var}(x_t) = \\sigma_\\varepsilon^2(1 + \\theta^2)",
+      "steps": ["\\text{Var}(x_t) = \\text{Var}(\\varepsilon_t) + \\theta^2 \\text{Var}(\\varepsilon_{t-1}) = \\sigma_\\varepsilon^2(1 + \\theta^2)"],
+      "answers": ["σ²_ε(1 + θ²)", "σ²_ε/(1 − θ²)", "σ²_ε·(1 + θ)", "σ²_ε"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Since ε_t and ε_{t-1} are independent: Var(x_t) = σ²_ε + θ²σ²_ε = σ²_ε(1+θ²).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Invertibility of an MA process is important because:",
+      "answers": ["It allows the process to be written as an AR(∞) representation", "It ensures stationarity", "It guarantees unique parameter estimates", "It makes the ACF decay faster"],
+      "correct": 0,
+      "difficulty": 3,
+      "explanation": "An invertible MA can be inverted to an infinite AR: ε_t = x_t − θ₁x_{t-1} − θ₁²x_{t-2} − ... This enables forecasting from observed values.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For an ARMA(1,1): x_t = φx_{t-1} + ε_t + θε_{t-1}, the ACF:",
+      "answers": ["Decays geometrically at rate φ for lags ≥ 2, with a different value at lag 1", "Cuts off after lag 1", "Is zero for all lags > 1", "Decays at rate θ"],
+      "correct": 0,
+      "difficulty": 3,
+      "explanation": "The MA component affects only lag 1; for h ≥ 2, ρ(h) = φρ(h-1) — geometric decay at rate φ. The ARMA signature is a mixed ACF.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the model identification steps using ACF and PACF patterns:",
+      "items": ["Plot sample ACF and PACF of the series", "Check if ACF cuts off → MA(q) candidate", "Check if PACF cuts off → AR(p) candidate", "If both tail off, consider ARMA(p,q)"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Box-Jenkins identification: plot, check ACF cutoff (MA), PACF cutoff (AR), both tail off (ARMA).",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Moving Average",
+    "taunt": "I smooth your shocks. Each past error echoes in me, then fades.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "An MA(1) model θ and the MA(1) model with parameter 1/θ both generate:",
+        "answers": ["The same ACF (non-identifiability without invertibility constraint)", "Different ACFs", "The same PACF only", "Different variances"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "θ and 1/θ produce the same ACF at lag 1: ρ(1) = θ/(1+θ²). Invertibility |θ| < 1 selects the unique parameterization."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "For MA(q), the one-step forecast x̂_{T+1|T} is:",
+        "latex": "\\hat{x}_{T+1|T} = \\theta_1 \\hat{\\varepsilon}_T + \\theta_2 \\hat{\\varepsilon}_{T-1} + \\cdots",
+        "answers": ["θ₁ε̂_T + θ₂ε̂_{T-1} + ... + θ_q ε̂_{T-q+1}", "0 (MA has no memory beyond q steps)", "ε̂_T", "θ₁x_T"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "The forecast uses estimated past innovations (residuals). Beyond q steps, all forecasts revert to zero (the process mean when μ=0)."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which plot is most diagnostic for distinguishing AR(p) from MA(q)?",
+        "answers": ["ACF and PACF together", "Periodogram", "Histogram of residuals", "Time plot only"],
+        "correct": 0,
+        "difficulty": 1,
+        "explanation": "ACF vs PACF is the classic Box-Jenkins identification tool: ACF cutoff → MA, PACF cutoff → AR, both tail off → ARMA."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

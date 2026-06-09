@@ -1,0 +1,101 @@
+{
+  "id": "linalg-10",
+  "title": "Eigenvalues & Eigenvectors",
+  "kingdom": "linear-algebra",
+  "dungeonNumber": 10,
+  "lesson": {
+    "title": "Eigenvalues & Eigenvectors",
+    "body": "A nonzero vector v is an eigenvector of matrix A with eigenvalue λ if Av = λv. To find eigenvalues, solve the characteristic equation det(A − λI) = 0. For each eigenvalue λ, the eigenspace is the null space of (A − λI). Eigenvalues encode fundamental scaling properties of linear transformations and are essential in PCA, differential equations, and quantum mechanics."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "For a square matrix A, eigenvalue λ satisfies:",
+      "latex": "\\det(A - \\lambda I) = 0",
+      "answers": ["det(A − λI) = 0", "det(A) = λ", "Av = λ for all v", "tr(A) = λ"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "The characteristic equation det(A − λI) = 0 gives all eigenvalues. It's a polynomial of degree n in λ.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What are the eigenvalues of A = [[3, 0], [0, 5]]?",
+      "latex": "\\det\\begin{pmatrix}3-\\lambda & 0 \\\\ 0 & 5-\\lambda\\end{pmatrix} = (3-\\lambda)(5-\\lambda) = 0",
+      "steps": ["\\lambda_1 = 3, \\quad \\lambda_2 = 5"],
+      "answers": ["λ = 3 and λ = 5", "λ = 8 and λ = 15", "λ = 0 and λ = 1", "λ = 3 only"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "For a diagonal matrix, the eigenvalues are the diagonal entries.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "If v is an eigenvector of A with eigenvalue λ, then A²v = ?",
+      "latex": "A^2 v = \\lambda^2 v",
+      "steps": ["A^2 v = A(Av) = A(\\lambda v) = \\lambda (Av) = \\lambda^2 v"],
+      "answers": ["λ²v", "2λv", "λv²", "λ²A"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Applying A twice: A²v = A(Av) = A(λv) = λ(Av) = λ(λv) = λ²v.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to find eigenvectors of A after finding eigenvalue λ:",
+      "items": ["Form the matrix A − λI", "Row-reduce (A − λI) to RREF", "Identify free variables (these parametrize the eigenspace)", "Write the eigenvector(s) in terms of free variables"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "The eigenspace is the null space of (A − λI). Row reduce to find the null space, then express it parametrically.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The sum of all eigenvalues of A equals:",
+      "latex": "\\sum \\lambda_i = \\text{tr}(A)",
+      "answers": ["tr(A) (the trace)", "det(A)", "rank(A)", "0"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "The sum of eigenvalues equals the trace (sum of diagonal entries), and the product equals the determinant.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Eigenlich",
+    "taunt": "I transform you. But along my eigendirections, only scaling occurs.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A real symmetric matrix has which property for its eigenvalues?",
+        "answers": ["All eigenvalues are real", "All eigenvalues are positive", "All eigenvalues are distinct", "All eigenvalues are zero"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Real symmetric matrices always have real eigenvalues (Spectral Theorem). Eigenvalues are positive iff the matrix is positive definite."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The characteristic polynomial of a 3×3 matrix has degree:",
+        "answers": ["3", "2", "6", "9"],
+        "correct": 0,
+        "difficulty": 1,
+        "explanation": "det(A − λI) for an n×n matrix gives a degree-n polynomial in λ (the characteristic polynomial)."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "If A has eigenvalue λ = 0, then:",
+        "answers": ["A is singular (det = 0)", "A = 0", "A has no inverse and no null space", "All solutions to Ax=b are unique"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "λ = 0 means det(A − 0·I) = det(A) = 0, so A is singular. There exists a nonzero v with Av = 0."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

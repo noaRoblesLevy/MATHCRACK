@@ -1,0 +1,99 @@
+{
+  "id": "py-01",
+  "title": "Python Data Types",
+  "kingdom": "python",
+  "dungeonNumber": 1,
+  "lesson": {
+    "title": "Python Data Types",
+    "body": "Python's core data types include int, float, str, bool, and None, each serving distinct roles in programs. Collections like lists (mutable, ordered), tuples (immutable, ordered), dicts (key-value pairs), and sets (unordered, unique) allow you to structure data. Understanding mutability — whether an object can change after creation — is crucial for avoiding bugs. The built-in type() function reveals an object's type at runtime."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "What does this code print?\n\nx = [1, 2, 3]\ny = x\ny.append(4)\nprint(x)",
+      "answers": ["[1, 2, 3]", "[1, 2, 3, 4]", "[4]", "TypeError"],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Lists are mutable. y = x does not copy the list — both variables point to the same object, so appending to y also changes x.",
+      "xp": 10
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to check the type of a variable:",
+      "code": "x = 3.14\nprint(___(x))",
+      "answers": ["type", "isinstance", "id", "repr"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "type(x) returns the type object of x. For 3.14 it returns <class 'float'>.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which of these is immutable in Python?",
+      "answers": ["list", "dict", "tuple", "set"],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "Tuples are immutable — once created, their elements cannot be changed. Lists, dicts, and sets are all mutable.",
+      "xp": 10
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to create a set from a list (removing duplicates):",
+      "code": "nums = [1, 2, 2, 3, 3, 3]\nunique = ___(nums)\nprint(unique)",
+      "answers": ["set", "list", "tuple", "dict"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "set() constructs a set from any iterable, automatically removing duplicate values.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these Python types from most to least memory-efficient for storing the integer 42:",
+      "items": ["bool (True/False only)", "int (arbitrary precision)", "float (64-bit)", "str '42' (Unicode chars)"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "bool is a subclass of int using 1 bit logically; int stores arbitrary integers compactly; float uses 64 bits for precision; str stores each character as Unicode code points, making it the heaviest for a simple number.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Type Error",
+    "taunt": "You dare mix strings with integers? I am born from every failed concatenation!",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "What does this code print?\n\nprint(type(True) == type(1))",
+        "answers": ["True", "False", "TypeError", "None"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "In Python, bool is a subclass of int. type(True) returns <class 'bool'> and type(1) returns <class 'int'> — these are NOT equal, so the result is False. Wait — bool is NOT the same as int: type(True) == bool, type(1) == int, so bool != int. The correct answer is False.",
+        "passMark": 2
+      },
+      {
+        "type": "fill-blank",
+        "question": "Complete the code to safely convert a string to int, returning 0 if conversion fails:",
+        "code": "def safe_int(s):\n    try:\n        return ___(s)\n    except ValueError:\n        return 0",
+        "answers": ["int", "float", "str", "bool"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "int(s) converts a string to integer and raises ValueError if the string is not a valid integer literal."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What is the result of: len({'a': 1, 'b': 2, 'a': 3})?",
+        "answers": ["3", "2", "1", "KeyError"],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "Dict keys must be unique. When 'a' appears twice, the second value overwrites the first. The final dict is {'a': 3, 'b': 2}, so len() returns 2."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

@@ -1,0 +1,101 @@
+{
+  "id": "prob-07",
+  "title": "Binomial Distribution",
+  "kingdom": "probability",
+  "dungeonNumber": 7,
+  "lesson": {
+    "title": "Binomial Distribution",
+    "body": "The Binomial distribution models the number of successes in n independent Bernoulli trials, each with success probability p. If X ~ Binomial(n, p), the probability of exactly k successes is P(X=k) = C(n,k)·p^k·(1-p)^(n-k). The mean is E[X] = np and the variance is Var(X) = np(1-p)."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "What are the two parameters of the Binomial distribution?",
+      "answers": ["n (trials) and p (success probability)", "μ (mean) and σ (std dev)", "λ (rate) and k (count)", "α (shape) and β (scale)"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Binomial(n, p) is parameterized by n (number of trials) and p (probability of success on each trial).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A fair coin is flipped 6 times. What is P(X = 4) where X counts heads?",
+      "latex": "P(X=4) = \\binom{6}{4}(0.5)^4(0.5)^2",
+      "steps": ["\\binom{6}{4} = 15", "P(X=4) = 15 \\cdot (0.5)^6 = 15/64"],
+      "answers": ["15/64 ≈ 0.234", "6/64 ≈ 0.094", "1/64 ≈ 0.016", "20/64 ≈ 0.313"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "C(6,4)·(0.5)^4·(0.5)^2 = 15·(1/64) = 15/64 ≈ 0.234.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For X ~ Binomial(20, 0.3), what is the variance?",
+      "latex": "\\text{Var}(X) = np(1-p)",
+      "steps": ["\\text{Var}(X) = 20 \\cdot 0.3 \\cdot 0.7 = 4.2"],
+      "answers": ["4.2", "6", "2.049", "0.21"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Var(X) = np(1-p) = 20·0.3·0.7 = 4.2. The standard deviation is √4.2 ≈ 2.049.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to compute P(X ≥ 1) for X ~ Binomial(5, 0.2):",
+      "items": ["Recognize P(X≥1) = 1 − P(X=0)", "Compute P(X=0) = (0.8)^5", "Evaluate (0.8)^5 = 0.328", "Subtract: 1 − 0.328 = 0.672"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "Use the complement rule: P(X≥1) = 1 − P(X=0) = 1 − (0.8)^5 ≈ 0.672.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "When does the Binomial distribution approximate a Normal distribution?",
+      "answers": ["When n is large and p is not too close to 0 or 1", "When p = 0.5 exactly", "When n < 30", "When np < 5"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "By the CLT, Binomial(n,p) ≈ Normal(np, np(1-p)) when n is large and np ≥ 5 and n(1-p) ≥ 5.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Bernoulli Knight",
+    "taunt": "Each trial you face is independent. Fail one, and the others care nothing for your suffering.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A manufacturing process has a 5% defect rate. In a batch of 100 items, what is E[number of defects]?",
+        "answers": ["5", "0.05", "50", "95"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "E[X] = np = 100 · 0.05 = 5 defects expected."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "For X ~ Binomial(n, p), what happens to the distribution as p → 0 while λ = np is held constant?",
+        "latex": "\\lim_{n \\to \\infty, p \\to 0, np = \\lambda} \\text{Binomial}(n,p)",
+        "answers": ["It converges to Poisson(λ)", "It converges to Normal(λ, λ)", "It converges to Uniform(0, λ)", "It diverges"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "The Poisson distribution is the limit of Binomial(n,p) as n→∞, p→0 with np=λ fixed — the Poisson approximation."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The PMF of Binomial(n, p) satisfies P(X=k)/P(X=k-1) = ?",
+        "latex": "\\frac{P(X=k)}{P(X=k-1)} = ?",
+        "answers": ["(n-k+1)p / (k(1-p))", "p / (1-p)", "n·p / k", "k·p / (n-k)"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "The recursive ratio is [(n-k+1)/k]·[p/(1-p)], which shows the PMF increases until k < (n+1)p and decreases after."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

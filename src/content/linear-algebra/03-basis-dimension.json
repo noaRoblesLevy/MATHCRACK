@@ -1,0 +1,111 @@
+{
+  "id": "linalg-03",
+  "title": "Basis & Dimension",
+  "kingdom": "linear-algebra",
+  "dungeonNumber": 3,
+  "lesson": {
+    "title": "Basis & Dimension",
+    "body": "A basis for a vector space V is a set of vectors that is both linearly independent and spans V. The dimension of V is the number of vectors in any basis — this number is unique. The standard basis for Rⁿ consists of the unit vectors eᵢ (1 in position i, 0 elsewhere). The rank of a matrix equals the dimension of its column space, which equals the number of pivot positions in its row-reduced form."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "What is the dimension of the standard vector space R⁴?",
+      "latex": "\\dim(\\mathbb{R}^4) = ?",
+      "steps": ["The standard basis of \\mathbb{R}^4 is \\{\\mathbf{e}_1, \\mathbf{e}_2, \\mathbf{e}_3, \\mathbf{e}_4\\}"],
+      "answers": ["4", "2", "8", "16"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "R⁴ has the standard basis {e₁, e₂, e₃, e₄} consisting of 4 vectors, so dim(R⁴) = 4.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which of the following sets is a basis for R²?",
+      "latex": "\\text{Candidate bases for }\\mathbb{R}^2",
+      "steps": ["A basis must be linearly independent and span \\mathbb{R}^2."],
+      "answers": ["{(1, 0), (0, 1)}", "{(1, 1), (2, 2)}", "{(1, 0), (0, 1), (1, 1)}", "{(0, 0), (1, 0)}"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "The standard basis {(1,0),(0,1)} is linearly independent and spans R². The second set is dependent, the third has too many vectors, and the fourth contains the zero vector.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The vectors v₁ = (1, 0, 1), v₂ = (0, 1, 0) form a basis for which space?",
+      "latex": "\\text{span}\\{(1,0,1),(0,1,0)\\}",
+      "steps": ["These 2 vectors are linearly independent, so they span a 2-dimensional subspace of \\mathbb{R}^3."],
+      "answers": ["A 2-dimensional subspace (plane) of R³", "All of R³", "A 1-dimensional subspace (line) of R³", "The zero subspace"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Two linearly independent vectors in R³ span a 2-dimensional subspace — a plane through the origin.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The coordinate vector of w = 3e₁ - 2e₂ + e₃ with respect to the standard basis of R³ is:",
+      "latex": "[\\mathbf{w}]_{\\mathcal{E}} = ?",
+      "steps": ["Express w as a linear combination of e_1, e_2, e_3 and read off the coefficients."],
+      "answers": ["(3, -2, 1)", "(-2, 3, 1)", "(1, -2, 3)", "(3, 2, -1)"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "The coordinates with respect to the standard basis are simply the components of w: (3, -2, 1).",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to determine if {v₁, v₂, v₃} is a basis for R³:",
+      "items": [
+        "Form the matrix A = [v₁ | v₂ | v₃] as columns",
+        "Row reduce A to check for 3 pivot positions",
+        "Verify the set is linearly independent (no free variables)",
+        "Conclude it is a basis if and only if det(A) ≠ 0"
+      ],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "First form the matrix of columns, row reduce to count pivots, verify independence (no free variables), then confirm basis status via nonzero determinant.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Dimension Wraith",
+    "taunt": "In infinite dimensions, your finite reasoning crumbles to dust!",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "The set of all polynomials of degree at most 2 forms a vector space. What is its dimension?",
+        "latex": "P_2 = \\{a_0 + a_1 x + a_2 x^2 : a_i \\in \\mathbb{R}\\}",
+        "answers": ["3", "2", "∞", "1"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "P₂ has basis {1, x, x²} consisting of 3 elements, so dim(P₂) = 3."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "If a set of 4 vectors spans R³, can it be a basis for R³?",
+        "latex": "\\dim(\\mathbb{R}^3) = 3",
+        "answers": ["No, a basis must have exactly dim(V) = 3 vectors", "Yes, any spanning set is a basis", "Yes, if the vectors are nonzero", "No, because R³ cannot be spanned by 4 vectors"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "A basis must be both linearly independent and spanning. A set of 4 vectors in R³ must be linearly dependent (since dim(R³) = 3), so it cannot be a basis."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "If V has dimension n and S = {v₁, ..., vₙ} is a linearly independent set in V, then:",
+        "latex": "\\dim(V) = n,\\quad |S| = n",
+        "answers": ["S is automatically a basis for V", "S spans V but may not be a basis", "S must be extended to a basis", "S is not necessarily a basis"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "In a finite-dimensional vector space, any linearly independent set with exactly dim(V) elements is automatically a basis — it must also span V."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

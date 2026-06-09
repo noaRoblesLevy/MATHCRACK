@@ -1,0 +1,100 @@
+{
+  "id": "py-11",
+  "title": "Reshaping Data",
+  "kingdom": "python",
+  "dungeonNumber": 11,
+  "lesson": {
+    "title": "Reshaping Data",
+    "body": "Data often needs reshaping between wide and long formats. pd.melt() converts wide to long (unpivots), df.pivot_table() converts long to wide (pivots). .stack() pivots columns to rows; .unstack() does the reverse. Wide format has one row per entity with multiple columns for time or categories; long format has one row per observation. Long format is preferred for most statistical analysis."
+  },
+  "rooms": [
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to convert wide format to long format:",
+      "code": "import pandas as pd\ndf = pd.DataFrame({'id':[1,2],'score_math':[80,90],'score_eng':[75,85]})\nlong = pd.___(df, id_vars=['id'], var_name='subject', value_name='score')",
+      "answers": ["melt(", "pivot(", "stack(", "unstack("],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "pd.melt() unpivots (wide → long): id_vars stay as identifier columns, var_name names the new category column, value_name names the value column.",
+      "xp": 10
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to create a pivot table of mean scores by student and subject:",
+      "code": "import pandas as pd\ndf = pd.DataFrame({'student':['A','A','B','B'],'subject':['Math','Eng','Math','Eng'],'score':[80,75,90,85]})\ntable = df.pivot_table(values='score', index='student', columns='subject', aggfunc=___)",
+      "answers": ["'mean'", "'sum'", "np.mean", "None"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "pivot_table() aggregates data: index=rows, columns=columns, values=what to aggregate, aggfunc=how. This is the pivot equivalent of a spreadsheet pivot table.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "When should you use long format over wide format?",
+      "answers": ["For statistical analysis, machine learning, and plotting with libraries like seaborn", "For display and reporting", "When the number of time periods is small", "When each entity has exactly one observation"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Long format (tidy data) is preferred for analysis: one observation per row, one variable per column. Most Python ML and stats libraries (seaborn, statsmodels) expect this format.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order wide-to-long and long-to-wide operations correctly:",
+      "items": ["Wide format: one row per entity, multiple observation columns", "pd.melt() → converts wide to long", "Long format: one row per observation", "df.pivot_table() → converts long to wide"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Wide → melt → Long → pivot_table → Wide. The two operations are inverses of each other.",
+      "xp": 20
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to reset the index after groupby:",
+      "code": "import pandas as pd\ndf = pd.DataFrame({'dept':['A','B','A'],'val':[1,2,3]})\nresult = df.groupby('dept').sum().___() ",
+      "answers": ["reset_index", "set_index", "reindex", "drop_index"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "After groupby().sum(), the group key ('dept') becomes the index. .reset_index() promotes it back to a regular column, giving a flat DataFrame.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Reshape Demon",
+    "taunt": "Your data is wide where it should be long. Your MultiIndex confuses you.",
+    "questions": [
+      {
+        "type": "fill-blank",
+        "question": "Complete the code to stack column levels into row index:",
+        "code": "import pandas as pd\ndf = pd.DataFrame({'A':[1,2],'B':[3,4]}, index=['x','y'])\nstacked = df.___() ",
+        "answers": ["stack", "melt", "unstack", "pivot"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "df.stack() moves the innermost column level to become the innermost row level (creates a MultiIndex Series). df.unstack() is the inverse."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A MultiIndex DataFrame can be accessed at the outer level with:",
+        "answers": ["df.loc['outer_key']", "df.iloc[0, :]", "df['outer_key']['inner_key']", "df.xs('outer_key')"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "df.loc['outer_key'] or df.xs('outer_key') select the outer level of a MultiIndex. Both work; xs() is more explicit about cross-section selection."
+      },
+      {
+        "type": "fill-blank",
+        "question": "Complete the code to add a new computed column:",
+        "code": "import pandas as pd\ndf = pd.DataFrame({'price':[100,200,150],'qty':[2,3,1]})\ndf['revenue'] = df['price'] ___ df['qty']",
+        "answers": ["*", "+", "-", "/"],
+        "correct": 0,
+        "difficulty": 1,
+        "explanation": "Revenue = price × quantity. Pandas Series support element-wise arithmetic with *, +, -, / operators directly."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

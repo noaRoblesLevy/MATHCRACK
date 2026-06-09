@@ -1,0 +1,111 @@
+{
+  "id": "linalg-04",
+  "title": "Matrix Operations",
+  "kingdom": "linear-algebra",
+  "dungeonNumber": 4,
+  "lesson": {
+    "title": "Matrix Operations",
+    "body": "Matrices support addition (component-wise, same dimensions), scalar multiplication, and matrix multiplication (AB where columns of B must equal rows of A). Matrix multiplication is associative but generally NOT commutative: AB ≠ BA. The transpose Aᵀ is obtained by reflecting across the main diagonal. The identity matrix I satisfies AI = IA = A for any compatible matrix A."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Given A = [[1,2],[3,4]] and B = [[5,6],[7,8]], what is A + B?",
+      "latex": "A + B = \\begin{pmatrix}1&2\\\\3&4\\end{pmatrix} + \\begin{pmatrix}5&6\\\\7&8\\end{pmatrix}",
+      "steps": ["Add element-wise: (A+B)_{ij} = a_{ij} + b_{ij}"],
+      "answers": ["[[6,8],[10,12]]", "[[5,12],[21,32]]", "[[4,-4],[-4,-4]]", "[[1,2],[3,4]]"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Matrix addition is element-wise: (1+5, 2+6, 3+7, 4+8) = [[6,8],[10,12]].",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Compute the (1,1) entry of AB where A = [[1,2],[3,4]] and B = [[1,0],[0,1]].",
+      "latex": "(AB)_{11} = \\sum_k A_{1k}B_{k1}",
+      "steps": ["(AB)_{11} = A_{11}B_{11} + A_{12}B_{21} = 1(1) + 2(0)"],
+      "answers": ["1", "3", "2", "4"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "B is the identity matrix, so AB = A. The (1,1) entry of A is 1.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For which pair of matrices is it guaranteed that AB = BA?",
+      "latex": "AB = BA \\text{ (when?)}",
+      "steps": ["Matrix multiplication is generally non-commutative. Exceptions: I, scalar multiples of I, or A and its own powers."],
+      "answers": ["A = I (identity) and B = any square matrix", "A and B are any two 2×2 matrices", "A and B are both diagonal matrices with distinct entries", "A and B are square matrices of different sizes"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "The identity matrix I commutes with every square matrix of the same size: IA = AI = A. In general AB ≠ BA.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "If A is a 3×4 matrix and B is a 4×2 matrix, what is the size of AB?",
+      "latex": "A_{3\\times 4} \\cdot B_{4\\times 2} = ?",
+      "steps": ["The product A_{m\\times k} \\cdot B_{k\\times n} has dimensions m \\times n."],
+      "answers": ["3×2", "4×4", "3×4", "2×3"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "A is 3×4 and B is 4×2. The product AB is 3×2 (inner dimensions 4 must match; outer dimensions give result size).",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to compute AB for A = [[2,1],[0,3]] and B = [[1,4],[2,-1]]:",
+      "items": [
+        "Compute first row of AB: [2(1)+1(2), 2(4)+1(-1)] = [4, 7]",
+        "Identify dimensions: A is 2×2, B is 2×2, so AB is 2×2",
+        "Compute second row of AB: [0(1)+3(2), 0(4)+3(-1)] = [6, -3]",
+        "Write result: AB = [[4,7],[6,-3]]"
+      ],
+      "correctOrder": [1, 0, 2, 3],
+      "difficulty": 3,
+      "explanation": "First verify compatibility, then compute each row by taking dot products of A's rows with B's columns.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Non-Commutative",
+    "taunt": "Reverse the order and watch your entire solution unravel!",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "If A is an m×n matrix, what is the size of Aᵀ?",
+        "latex": "A^\\top \\text{ has size } ?",
+        "answers": ["n×m", "m×n", "m×m", "n×n"],
+        "correct": 0,
+        "difficulty": 1,
+        "explanation": "The transpose Aᵀ is obtained by swapping rows and columns, so an m×n matrix becomes n×m."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Given A = [[1,2],[3,4]], what is (Aᵀ)ᵀ?",
+        "latex": "(A^\\top)^\\top = ?",
+        "answers": ["A itself = [[1,2],[3,4]]", "[[1,3],[2,4]]", "[[4,3],[2,1]]", "[[4,2],[3,1]]"],
+        "correct": 0,
+        "difficulty": 1,
+        "explanation": "Transposing twice returns the original matrix: (Aᵀ)ᵀ = A."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which property of matrix multiplication is correct?",
+        "latex": "\\text{Properties of matrix multiplication}",
+        "answers": ["A(BC) = (AB)C (associativity)", "AB = BA (commutativity)", "(A+B)C = AC + BC fails in general", "A(B+C) = AB + AC fails in general"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Matrix multiplication is associative: A(BC) = (AB)C always holds. It is NOT commutative in general, but IS distributive over addition."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

@@ -74,6 +74,123 @@ function MultipleChoice({ room, onWrong, onCorrect, solutionRevealed, resetKey }
   )
 }
 
+function FillBlank({ room, onWrong, onCorrect, solutionRevealed, resetKey }) {
+  const [selected, setSelected] = useState(null)
+
+  function handleSelect(idx) {
+    if (selected !== null) return
+    setSelected(idx)
+    const correct = idx === room.correct
+    setTimeout(() => {
+      if (correct) onCorrect(room.xp)
+      else onWrong()
+    }, 500)
+  }
+
+  // Render code with the blank highlighted
+  const parts = (room.code ?? '').split('___')
+
+  return (
+    <div style={{ marginTop: '1.25rem' }}>
+      {/* Code block */}
+      <div style={{
+        background: '#0a0f1e',
+        border: '1px solid var(--border-strong)',
+        borderRadius: 10,
+        padding: '1rem 1.1rem',
+        fontFamily: 'var(--font-mono)',
+        fontSize: '0.88rem',
+        lineHeight: 1.8,
+        color: '#e2e8f0',
+        marginBottom: '1.1rem',
+        whiteSpace: 'pre-wrap',
+        overflowX: 'auto',
+      }}>
+        {parts.map((part, i) => (
+          <span key={i}>
+            {part}
+            {i < parts.length - 1 && (
+              <span style={{
+                background: selected !== null
+                  ? (selected === room.correct ? 'rgba(52,211,153,0.25)' : 'rgba(248,113,113,0.2)')
+                  : 'rgba(96,165,250,0.2)',
+                border: `1px solid ${selected !== null
+                  ? (selected === room.correct ? 'var(--correct)' : 'var(--danger)')
+                  : 'var(--blue)'}`,
+                borderRadius: 4,
+                padding: '1px 8px',
+                color: selected !== null
+                  ? (selected === room.correct ? 'var(--correct)' : 'var(--danger)')
+                  : 'var(--blue)',
+                minWidth: 40,
+                display: 'inline-block',
+                textAlign: 'center',
+              }}>
+                {selected !== null ? room.answers[room.correct] : '___'}
+              </span>
+            )}
+          </span>
+        ))}
+      </div>
+
+      {/* Answer chips */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        {room.answers.map((a, i) => {
+          const isCorrect = i === room.correct
+          const isSelected = i === selected
+          const revealed = selected !== null || solutionRevealed
+
+          let bg = 'var(--bg-card)'
+          let border = 'var(--border)'
+          let labelColor = 'var(--text-muted)'
+
+          if (solutionRevealed && isCorrect) { bg = 'var(--correct-dim)'; border = 'var(--correct)'; labelColor = 'var(--correct)' }
+          if (revealed) {
+            if (isCorrect) { bg = 'var(--correct-dim)'; border = 'var(--correct)'; labelColor = 'var(--correct)' }
+            else if (isSelected) { bg = 'var(--danger-bg)'; border = 'var(--danger)'; labelColor = 'var(--danger)' }
+          }
+
+          return (
+            <button
+              key={i}
+              onClick={() => handleSelect(i)}
+              style={{
+                padding: '0.75rem 1rem',
+                border: `1.5px solid ${border}`,
+                borderRadius: 8,
+                background: bg,
+                color: 'var(--text)',
+                cursor: selected === null ? 'pointer' : 'default',
+                textAlign: 'left',
+                display: 'flex', alignItems: 'center', gap: '0.75rem',
+                transition: 'background 0.25s, border-color 0.25s',
+                minHeight: 44,
+              }}
+            >
+              <span style={{ color: labelColor, minWidth: '1.4rem', fontWeight: 'bold', fontSize: '0.8rem' }}>
+                {['A', 'B', 'C', 'D'][i]}
+              </span>
+              <code style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.88rem',
+                background: 'rgba(255,255,255,0.04)',
+                padding: '2px 6px',
+                borderRadius: 4,
+              }}>{a}</code>
+              {revealed && isCorrect && (
+                <span style={{ marginLeft: 'auto', color: 'var(--correct)', fontSize: '1rem' }}>✓</span>
+              )}
+              {revealed && isSelected && !isCorrect && (
+                <span style={{ marginLeft: 'auto', color: 'var(--danger)', fontSize: '1rem' }}>✗</span>
+              )}
+            </button>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
 function DragAndDrop({ room, onWrong, onCorrect }) {
   const [order, setOrder] = useState(() => room.items.map((_, i) => i))
   const [dragging, setDragging] = useState(null)
@@ -197,7 +314,7 @@ export default function LessonRoom({
   const [resetKey, setResetKey] = useState(0)
   const [xpPop, setXpPop] = useState(null)
 
-  const correctAnswerText = room.type === 'multiple-choice'
+  const correctAnswerText = room.type === 'multiple-choice' || room.type === 'fill-blank'
     ? room.answers[room.correct]
     : 'See the correct order above'
 
@@ -356,6 +473,15 @@ export default function LessonRoom({
       {/* Answer UI — key forces remount on retry */}
       {room.type === 'multiple-choice' && (
         <MultipleChoice
+          key={resetKey}
+          room={room}
+          onCorrect={handleCorrect}
+          onWrong={handleWrong}
+          solutionRevealed={solutionRevealed}
+        />
+      )}
+      {room.type === 'fill-blank' && (
+        <FillBlank
           key={resetKey}
           room={room}
           onCorrect={handleCorrect}

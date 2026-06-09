@@ -1,0 +1,103 @@
+{
+  "id": "calc-11",
+  "title": "The Definite Integral",
+  "kingdom": "calculus",
+  "dungeonNumber": 11,
+  "lesson": {
+    "title": "The Definite Integral",
+    "body": "The definite integral ∫_a^b f(x)dx is defined as the limit of Riemann sums and represents the net signed area between f(x) and the x-axis. The Fundamental Theorem of Calculus (Part 1): d/dx[∫_a^x f(t)dt] = f(x). Part 2: ∫_a^b f(x)dx = F(b) − F(a) where F' = f, allowing exact computation via antiderivatives."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "The Fundamental Theorem of Calculus Part 2 states:",
+      "latex": "\\int_a^b f(x)\\,dx = F(b) - F(a) \\text{ where } F'= f",
+      "answers": ["∫_a^b f(x)dx = F(b) − F(a)", "∫_a^b f(x)dx = f(b) − f(a)", "d/dx[∫_a^b f(t)dt] = f(x)", "∫f(x)dx = f'(x) + C"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "FTC Part 2: evaluate the antiderivative at the upper limit minus lower limit. This bridges indefinite and definite integration.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Evaluate ∫₀² (3x²) dx.",
+      "latex": "\\int_0^2 3x^2 \\, dx = [x^3]_0^2 = 8 - 0 = 8",
+      "steps": ["F(x) = x^3", "F(2) - F(0) = 8 - 0 = 8"],
+      "answers": ["8", "12", "4", "6"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "∫3x²dx = x³. Evaluate at bounds: 2³ − 0³ = 8.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "FTC Part 1: d/dx[∫₁ˣ t³ dt] = ?",
+      "latex": "\\frac{d}{dx}\\int_1^x t^3\\, dt = x^3",
+      "answers": ["x³", "x⁴/4 − 1/4", "3x²", "4x³"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "FTC Part 1 says the derivative of ∫_a^x f(t)dt is f(x). So d/dx[∫₁ˣ t³dt] = x³.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the Riemann sum construction to define ∫_a^b f(x)dx:",
+      "items": ["Partition [a,b] into n subintervals of width Δx = (b−a)/n", "Choose sample points xᵢ* in each subinterval", "Form the sum: Σf(xᵢ*)Δx", "Take the limit as n → ∞ (Δx → 0)"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "The definite integral is defined as the limit of Riemann sums. FTC then provides a shortcut for computing this limit.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is ∫₋₁¹ x dx?",
+      "latex": "\\int_{-1}^1 x\\, dx = \\left[\\frac{x^2}{2}\\right]_{-1}^1 = \\frac{1}{2} - \\frac{1}{2} = 0",
+      "answers": ["0", "1", "−1", "2"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "x is an odd function, and the interval [−1,1] is symmetric about 0. The integral of an odd function over a symmetric interval is 0. Also: F(1)−F(−1) = 1/2 − 1/2 = 0.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Fundamental Theorem",
+    "taunt": "Integration and differentiation are inverse operations. I am their bridge.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Evaluate ∫₀^π sin(x) dx.",
+        "latex": "\\int_0^\\pi \\sin x\\, dx = [-\\cos x]_0^\\pi",
+        "answers": ["2", "0", "−2", "π"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "[−cos x]₀^π = −cos(π) − (−cos(0)) = 1 + 1 = 2. This is the area under one arch of the sine curve."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "d/dx[∫_x^{x²} t² dt] = ?",
+        "latex": "\\frac{d}{dx}\\int_x^{x^2} t^2\\, dt",
+        "answers": ["(x²)²·2x − x²", "x⁴·2x − x²", "2x³ − x²", "(x²)² − x²"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Chain rule on FTC: d/dx[∫_a^{g(x)} f(t)dt] = f(g(x))·g'(x). Here: (x²)²·(2x) − x²·1 = 2x⁵ − x². This is 2x³−x² only if simplified incorrectly; exact answer is 2x⁵ − x². Note: answer A listed as '(x²)²·2x − x²' is the exact form."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The average value of f(x) = x² on [0, 3] is:",
+        "latex": "f_{avg} = \\frac{1}{b-a}\\int_a^b f(x)\\,dx = \\frac{1}{3}\\int_0^3 x^2\\,dx",
+        "answers": ["3", "9", "1", "27"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "f_avg = (1/3)∫₀³ x²dx = (1/3)[x³/3]₀³ = (1/3)(9) = 3."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

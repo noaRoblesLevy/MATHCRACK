@@ -1,0 +1,100 @@
+{
+  "id": "py-12",
+  "title": "Data Visualization",
+  "kingdom": "python",
+  "dungeonNumber": 12,
+  "lesson": {
+    "title": "Data Visualization",
+    "body": "Matplotlib is the foundation: fig, ax = plt.subplots() creates a figure with axes. Seaborn builds on matplotlib with statistical plots: sns.histplot(), sns.scatterplot(), sns.boxplot(), sns.heatmap(). Pandas DataFrames have a built-in .plot() method. Key customization: ax.set_title(), ax.set_xlabel(), ax.set_ylabel(), plt.legend(), plt.tight_layout()."
+  },
+  "rooms": [
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to create a figure with axes:",
+      "code": "import matplotlib.pyplot as plt\nfig, ax = plt.___(figsize=(10, 6))\nax.plot([1,2,3],[4,5,6])\nplt.show()",
+      "answers": ["subplots(", "figure(", "axes(", "plot("],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "plt.subplots() is the standard way to create a Figure and one or more Axes. Returns (fig, ax) or (fig, axes_array) for multiple subplots.",
+      "xp": 10
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to create a seaborn scatter plot:",
+      "code": "import seaborn as sns\nimport pandas as pd\ndf = pd.DataFrame({'x':[1,2,3],'y':[4,5,6],'group':['A','B','A']})\nsns.___(data=df, x='x', y='y', hue='group')",
+      "answers": ["scatterplot(", "lineplot(", "histplot(", "boxplot("],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "sns.scatterplot(data=df, x=..., y=..., hue=...) creates a scatter plot with color-coded groups. The hue parameter automatically adds a legend.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "When should you use sns.heatmap()?",
+      "answers": ["To visualize a correlation matrix or 2D grid of values", "For time series data", "For single variable distributions", "For comparing medians across groups"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Heatmaps visualize matrix-like data with color. Most commonly used with df.corr() to show pairwise correlations between numerical features.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to create a publication-quality plot:",
+      "items": ["fig, ax = plt.subplots(figsize=(10,6))", "ax.plot(x, y) or sns.lineplot()", "ax.set_title(); ax.set_xlabel(); ax.set_ylabel()", "plt.tight_layout(); plt.savefig('fig.png', dpi=300)"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Create axes → draw data → label → save. tight_layout() prevents label clipping. dpi=300 gives high-resolution output.",
+      "xp": 20
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to plot a correlation heatmap:",
+      "code": "import seaborn as sns\nimport pandas as pd\ndf = pd.DataFrame({'a':[1,2,3],'b':[3,2,1],'c':[1,3,2]})\nsns.___( df.corr(), annot=True, fmt='.2f')",
+      "answers": ["heatmap(", "clustermap(", "pairplot(", "scatterplot("],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "sns.heatmap(df.corr()) visualizes the correlation matrix. annot=True shows numeric values; fmt='.2f' formats to 2 decimal places.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Unlabeled Axis",
+    "taunt": "Your plot has no title, no axis labels, and no legend. No one knows what they're looking at.",
+    "questions": [
+      {
+        "type": "fill-blank",
+        "question": "Complete the code to create 2 side-by-side subplots:",
+        "code": "import matplotlib.pyplot as plt\nfig, axes = plt.subplots(1, ___, figsize=(12, 5))",
+        "answers": ["2", "1", "3", "0"],
+        "correct": 0,
+        "difficulty": 1,
+        "explanation": "plt.subplots(1, 2) creates 1 row, 2 columns of axes. Returns (fig, axes) where axes is an array of 2 Axes objects."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What is the key difference between plt.show() and plt.savefig()?",
+        "answers": ["show() displays in notebook/window; savefig() writes to disk — call savefig() BEFORE show() or plt.close()", "savefig() shows in window; show() saves", "They are equivalent", "show() only works in Jupyter"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "show() renders and clears the figure. If you call show() before savefig(), you save an empty figure. Always save before showing."
+      },
+      {
+        "type": "fill-blank",
+        "question": "Complete the code to add a legend to a plot:",
+        "code": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax.plot([1,2,3],[4,5,6], label='Line A')\nax.plot([1,2,3],[6,5,4], label='Line B')\nax.___()",
+        "answers": ["legend", "show", "grid", "xlabel"],
+        "correct": 0,
+        "difficulty": 1,
+        "explanation": "ax.legend() displays the legend using the label= parameter set on each plot. You can also pass loc='upper right' etc. to control placement."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

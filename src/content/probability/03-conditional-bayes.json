@@ -1,0 +1,159 @@
+{
+  "id": "prob-03",
+  "title": "Conditional Probability & Bayes",
+  "kingdom": "probability",
+  "dungeonNumber": 3,
+  "lesson": {
+    "title": "Conditional Probability & Bayes",
+    "body": "The conditional probability of A given B is P(A|B) = P(A∩B)/P(B), defined when P(B) > 0. The multiplication rule P(A∩B) = P(A|B)·P(B) extends to chains of events. The law of total probability states P(A) = Σᵢ P(A|Bᵢ)P(Bᵢ) for any partition {Bᵢ} of Ω. Bayes' theorem inverts conditional probabilities: P(B|A) = P(A|B)P(B) / P(A), which is the foundation of Bayesian inference."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "P(A ∩ B) = 0.12 and P(B) = 0.4. What is P(A | B)?",
+      "latex": "P(A \\mid B) = \\frac{P(A \\cap B)}{P(B)}",
+      "steps": [
+        "Substitute the given values into the definition.",
+        "P(A \\mid B) = 0.12 / 0.4"
+      ],
+      "answers": [
+        "0.30",
+        "0.48",
+        "0.052",
+        "0.12"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "P(A|B) = P(A∩B)/P(B) = 0.12/0.4 = 0.30.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A card is drawn from a standard 52-card deck. Given that the card is red, what is the probability it is a heart?",
+      "latex": "P(\\text{Heart} \\mid \\text{Red}) = \\frac{P(\\text{Heart} \\cap \\text{Red})}{P(\\text{Red})}",
+      "steps": [
+        "Hearts are red, so Heart \\cap Red = Heart. There are 13 hearts.",
+        "There are 26 red cards total."
+      ],
+      "answers": [
+        "1/2",
+        "1/4",
+        "13/52",
+        "1/13"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "All hearts are red, so P(Heart ∩ Red) = 13/52. P(Red) = 26/52. Thus P(Heart|Red) = (13/52)/(26/52) = 13/26 = 1/2.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A disease affects 1% of the population. A test is 95% sensitive (P(+|disease) = 0.95) and 90% specific (P(−|no disease) = 0.90). Using Bayes' theorem, what is P(disease | +)?",
+      "latex": "P(D \\mid +) = \\frac{P(+ \\mid D)\\,P(D)}{P(+ \\mid D)\\,P(D)+P(+ \\mid D^c)\\,P(D^c)}",
+      "steps": [
+        "P(D)=0.01,\\;P(+|D)=0.95,\\;P(+|D^c)=1-0.90=0.10",
+        "Numerator: 0.95 \\times 0.01 = 0.0095",
+        "Denominator: 0.0095 + 0.10 \\times 0.99 = 0.0095 + 0.099 = 0.1085"
+      ],
+      "answers": [
+        "\\approx 0.0876",
+        "\\approx 0.95",
+        "\\approx 0.50",
+        "\\approx 0.01"
+      ],
+      "correct": 0,
+      "difficulty": 3,
+      "explanation": "P(D|+) = (0.95×0.01) / (0.95×0.01 + 0.10×0.99) = 0.0095/0.1085 ≈ 0.0876. Despite a 95% sensitivity, the low prevalence means most positives are false alarms.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Events A and B are independent. Which equation must hold?",
+      "latex": "A \\perp B \\iff P(A \\cap B) = ?",
+      "steps": [
+        "Independence means knowing B gives no information about A.",
+        "So P(A|B) = P(A), and the multiplication rule simplifies."
+      ],
+      "answers": [
+        "P(A \\cap B) = P(A)\\,P(B)",
+        "P(A \\cap B) = P(A) + P(B)",
+        "P(A \\mid B) = P(B)",
+        "P(A \\cap B) = 0"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "By definition, A and B are independent if and only if P(A ∩ B) = P(A)·P(B). This is equivalent to P(A|B) = P(A) whenever P(B) > 0.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to apply Bayes' theorem correctly when computing P(B₁ | A) given a partition {B₁, B₂, B₃}:",
+      "items": [
+        "Compute P(A) = \\sum_i P(A|B_i)P(B_i)  [law of total probability]",
+        "Identify prior probabilities P(B_i) and likelihoods P(A|B_i)",
+        "Divide: P(B_1|A) = P(A|B_1)P(B_1) / P(A)",
+        "Compute numerator P(A|B_1)P(B_1)"
+      ],
+      "correctOrder": [1, 0, 3, 2],
+      "difficulty": 3,
+      "explanation": "Step 1: gather the priors and likelihoods. Step 2: use total probability to find P(A). Step 3: compute the numerator. Step 4: divide to get the posterior P(B₁|A).",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Reverend Bayes",
+    "taunt": "Your prior is worthless and your likelihood is fiction. Update your beliefs — or perish!",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A bag contains 3 red and 2 blue balls. Two balls are drawn without replacement. Given that the first ball is red, what is P(second ball is blue)?",
+        "latex": "P(B_2 = \\text{blue} \\mid B_1 = \\text{red})",
+        "answers": [
+          "2/4 = 1/2",
+          "2/5",
+          "3/5",
+          "1/5"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "After drawing one red ball, 4 balls remain: 2 red and 2 blue. So P(second is blue | first is red) = 2/4 = 1/2."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "P(A) = 0.5, P(B|A) = 0.6, P(B|Aᶜ) = 0.2. Compute P(A|B) using Bayes' theorem.",
+        "latex": "P(A \\mid B) = \\frac{P(B \\mid A)P(A)}{P(B \\mid A)P(A)+P(B \\mid A^c)P(A^c)}",
+        "answers": [
+          "0.75",
+          "0.60",
+          "0.30",
+          "0.50"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "P(B) = 0.6×0.5 + 0.2×0.5 = 0.3 + 0.1 = 0.4. P(A|B) = (0.6×0.5)/0.4 = 0.3/0.4 = 0.75."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Factory A produces 60% of widgets; factory B produces 40%. The defect rate is 2% from A and 5% from B. A randomly chosen widget is defective. What is the probability it came from factory B?",
+        "latex": "P(B \\mid D) = \\frac{P(D \\mid B)P(B)}{P(D \\mid A)P(A)+P(D \\mid B)P(B)}",
+        "answers": [
+          "0.625",
+          "0.375",
+          "0.400",
+          "0.500"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "P(D) = 0.02×0.6 + 0.05×0.4 = 0.012 + 0.020 = 0.032. P(B|D) = (0.05×0.4)/0.032 = 0.020/0.032 = 0.625. Despite B being the minority producer, its higher defect rate means a defective widget is more likely to have come from B."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

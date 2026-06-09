@@ -1,0 +1,143 @@
+{
+  "id": "ts-02",
+  "title": "Stationarity",
+  "kingdom": "time-series",
+  "dungeonNumber": 2,
+  "lesson": {
+    "title": "Stationarity",
+    "body": "A time series is strictly stationary if the joint distribution of any collection of observations is invariant to time shifts. The practically useful weaker condition is covariance (weak) stationarity: the mean E[x_t] = μ is constant, the autocovariance γ(h) = Cov(x_{t+h}, x_t) depends only on the lag h and not on t, and the variance γ(0) is finite. The autocorrelation function (ACF) is ρ(h) = γ(h)/γ(0), which normalises autocovariance to [-1, 1]. Non-stationary series with trends or time-varying variance violate these conditions and require transformation (differencing, log) before standard ARMA modelling."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "A weakly stationary process requires which of the following?",
+      "steps": ["List the three conditions: mean, autocovariance, variance."],
+      "answers": [
+        "Constant mean, autocovariance depending only on lag h, finite variance",
+        "Normal marginal distribution at every time point",
+        "Autocovariance equal to zero for all lags h > 0",
+        "Constant mean and strictly increasing variance"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Weak (covariance) stationarity requires: (1) E[x_t] = μ for all t, (2) Cov(x_{t+h}, x_t) = γ(h) depends only on h, and (3) γ(0) < ∞. Normality is not required; that would be Gaussian stationarity.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The autocovariance at lag h is defined as γ(h) = Cov(x_{t+h}, x_t). What is γ(0)?",
+      "latex": "\\gamma(h) = \\mathrm{Cov}(x_{t+h}, x_t)",
+      "steps": ["Set h = 0: Cov(x_t, x_t) = ?"],
+      "answers": [
+        "Var(x_t), the variance of the series",
+        "0, because a variable is uncorrelated with itself at lag 0",
+        "ρ(0), the autocorrelation at lag 0",
+        "The mean μ of the series"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "γ(0) = Cov(x_t, x_t) = Var(x_t). It is the variance of the series. ρ(0) = γ(0)/γ(0) = 1 by definition, but γ(0) itself is the variance, not 1.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For a weakly stationary series, the ACF is ρ(h) = γ(h)/γ(0). Which property must ρ always satisfy?",
+      "latex": "\\rho(h) = \\frac{\\gamma(h)}{\\gamma(0)}",
+      "steps": ["Consider the symmetry property: γ(h) = γ(-h)."],
+      "answers": [
+        "ρ(h) = ρ(-h) (the ACF is symmetric around lag 0)",
+        "ρ(h) is strictly decreasing as h increases",
+        "ρ(h) ≥ 0 for all h",
+        "ρ(h) → ∞ as h → ∞"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "By definition γ(h) = Cov(x_{t+h}, x_t) = Cov(x_t, x_{t+h}) = γ(-h), so ρ(h) = ρ(-h). The ACF is not required to be positive or monotonically decreasing; it can oscillate and can be negative.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these series from most stationary to least stationary (i.e., from requiring the fewest transformations to achieve stationarity):",
+      "items": [
+        "I(2) series — needs second differencing",
+        "White noise ε_t — already stationary",
+        "I(1) random walk — needs first differencing",
+        "Trend-stationary series — needs trend removal"
+      ],
+      "correctOrder": [1, 3, 2, 0],
+      "difficulty": 3,
+      "explanation": "White noise is already stationary and needs nothing. A trend-stationary series needs only detrending. An I(1) random walk needs one difference. An I(2) series needs two differences and is the furthest from stationarity.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A random walk x_t = x_{t-1} + ε_t with ε_t ~ WN(0, σ²) and x_0 = 0. What is Var(x_t)?",
+      "latex": "x_t = x_{t-1} + \\varepsilon_t, \\quad x_0 = 0",
+      "steps": ["Unroll: x_t = ε_t + ε_{t-1} + ... + ε_1. Use independence of ε_i."],
+      "answers": [
+        "tσ², which grows without bound",
+        "σ², constant",
+        "0, because increments are white noise",
+        "σ²/t, decreasing in t"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "x_t = Σ_{i=1}^{t} ε_i. Since ε_i are uncorrelated, Var(x_t) = tσ². This grows without bound, violating the constant variance requirement of stationarity. This is why a random walk is non-stationary.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Non-Stationary Phantom",
+    "taunt": "My mean drifts, my variance explodes. No model can tame a process with no fixed anchor in time.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Which of the following processes is weakly stationary?",
+        "answers": [
+          "x_t = 0.5x_{t-1} + ε_t with |0.5| < 1",
+          "x_t = x_{t-1} + ε_t (random walk)",
+          "x_t = t + ε_t (deterministic linear trend plus noise)",
+          "x_t = t·ε_t (time-scaled white noise)"
+        ],
+        "correct": 0,
+        "difficulty": 1,
+        "explanation": "An AR(1) with |φ| < 1 is covariance stationary: its mean is zero, variance is σ²/(1−φ²) (finite and constant), and autocovariance depends only on lag. The random walk has variance tσ² (non-constant). The trend model has E[x_t] = t (non-constant mean). The scaled noise has variance t²σ² (non-constant)."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "For a stationary process, γ(h) = Cov(x_{t+h}, x_t). Which statement about the autocovariance function is FALSE?",
+        "latex": "\\gamma(h) = \\mathrm{Cov}(x_{t+h}, x_t)",
+        "answers": [
+          "γ(h) must be positive for all h > 0",
+          "γ(0) ≥ |γ(h)| for all h",
+          "γ(h) = γ(-h) for all h",
+          "γ(0) equals the variance of the process"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "γ(h) can be negative — an oscillating series (e.g., AR(1) with φ < 0) has negative autocovariances at odd lags. The true statements: γ(0) ≥ |γ(h)| (by Cauchy-Schwarz), γ is symmetric, and γ(0) = Var(x_t)."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A series has constant mean but its variance doubles every year. Is it weakly stationary?",
+        "answers": [
+          "No — weak stationarity requires constant variance (finite γ(0) independent of t)",
+          "Yes — constant mean is the only requirement for weak stationarity",
+          "Yes — if the mean is constant the series can be made stationary by standardisation",
+          "No — but only because the autocovariance is not defined"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Weak stationarity requires BOTH a constant mean AND that γ(h) = Cov(x_{t+h}, x_t) depends only on h (not t). If variance grows over time, γ(0, t) = Var(x_t) depends on t, violating the second condition. Constant mean alone is not sufficient."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

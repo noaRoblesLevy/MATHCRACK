@@ -1,0 +1,97 @@
+{
+  "id": "ts-11",
+  "title": "ARCH & GARCH Models",
+  "kingdom": "time-series",
+  "dungeonNumber": 11,
+  "lesson": {
+    "title": "ARCH & GARCH Models",
+    "body": "Financial return series often exhibit volatility clustering: large shocks are followed by large shocks. ARCH(q) models this with conditional variance σ²_t = α₀ + Σαᵢε²_{t-i}. GARCH(1,1) adds a lagged variance term: σ²_t = ω + αε²_{t-1} + βσ²_{t-1}. Stationarity of GARCH(1,1) requires α + β < 1. The model captures 'fat tails' and volatility clustering seen in financial data."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Volatility clustering in financial time series means:",
+      "answers": ["Periods of high volatility tend to be followed by high volatility", "Volatility is constant over time", "Returns are normally distributed", "Volatility only occurs at market open"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Volatility clustering: large price changes tend to cluster together. This violates i.i.d. assumptions and motivates GARCH-type models.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "In GARCH(1,1): σ²_t = ω + αε²_{t-1} + βσ²_{t-1}, the parameter β represents:",
+      "answers": ["Persistence of volatility from the previous period's variance", "The impact of yesterday's shock", "The unconditional variance", "The mean of returns"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "β is the 'volatility persistence' parameter — how much of yesterday's conditional variance carries forward. High β means slow volatility decay.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The unconditional variance of a stationary GARCH(1,1) is:",
+      "latex": "\\sigma^2 = \\frac{\\omega}{1 - \\alpha - \\beta}",
+      "steps": ["\\text{Stationarity: } \\alpha + \\beta < 1", "\\sigma^2 = \\omega / (1 - \\alpha - \\beta)"],
+      "answers": ["ω/(1 − α − β)", "ω + α + β", "ω/(1 − β)", "ω·α·β"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Taking unconditional expectation of GARCH(1,1): E[σ²_t] = ω + (α+β)E[σ²_t], solving: σ² = ω/(1−α−β).",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to fit a GARCH(1,1) model to financial returns:",
+      "items": ["Test for ARCH effects (Engle's LM test on squared residuals)", "Specify GARCH(1,1) conditional variance equation", "Estimate parameters via maximum likelihood", "Check standardized residuals for remaining patterns"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "Test for ARCH effects first (check if GARCH is needed), specify model, MLE estimation, then diagnostics.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "GARCH models are typically applied to:",
+      "answers": ["Returns (first differences of log prices), not price levels", "Raw price levels", "Trading volume", "Interest rates directly"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "GARCH models the conditional variance of returns r_t = log(P_t/P_{t-1}). Price levels are non-stationary; returns are approximately stationary.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Volatility Demon",
+    "taunt": "Calm periods breed complacency. I strike when least expected, then cluster.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Engle's ARCH-LM test regresses squared residuals ε²_t on:",
+        "answers": ["Their own lagged values ε²_{t-1}, ..., ε²_{t-q}", "The original returns", "The conditional variance", "A constant only"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "ARCH-LM test: regress ε²_t on ε²_{t-1},...,ε²_{t-q}. Under H₀ (no ARCH), R² ≈ 0. nR² ~ χ²(q) under H₀."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Integrated GARCH (IGARCH) occurs when α + β = 1, implying:",
+        "answers": ["Volatility shocks are permanent (infinite persistence)", "Unconditional variance is zero", "The process is stationary with unit variance", "No ARCH effects"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "IGARCH (α+β=1) means unconditional variance is infinite and shocks never die out. Often seen in high-frequency financial data."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "EGARCH (Exponential GARCH) extends GARCH to allow for the 'leverage effect', which means:",
+        "answers": ["Negative returns increase volatility more than positive returns of the same size", "Volatility is always symmetric", "GARCH(1,1) with exponential noise", "Variance is always positive by construction"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "The leverage effect: stock price drops → higher leverage → increased volatility. Symmetric GARCH misses this. EGARCH models log σ²_t allowing asymmetry."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

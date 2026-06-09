@@ -1,0 +1,97 @@
+{
+  "id": "linalg-12",
+  "title": "Linear Transformations",
+  "kingdom": "linear-algebra",
+  "dungeonNumber": 12,
+  "lesson": {
+    "title": "Linear Transformations",
+    "body": "A function T: Rⁿ → Rᵐ is a linear transformation if T(u+v) = T(u) + T(v) and T(cu) = cT(u) for all vectors and scalars. Every linear transformation is represented by a matrix: T(x) = Ax. The kernel (null space) of T is {x : T(x) = 0}, and the image (range) is {T(x) : x ∈ Rⁿ}. T is injective iff ker(T) = {0} and surjective iff image(T) = Rᵐ."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Which condition must a function T satisfy to be a linear transformation?",
+      "latex": "T(\\mathbf{u} + \\mathbf{v}) = T(\\mathbf{u}) + T(\\mathbf{v}) \\text{ and } T(c\\mathbf{u}) = cT(\\mathbf{u})",
+      "answers": ["Additivity and homogeneity", "Continuity and differentiability", "Injectivity and surjectivity", "T(0) = 0 only"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Linear transformations must preserve vector addition and scalar multiplication. A consequence is T(0) = 0.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The standard matrix of a rotation by 90° counterclockwise in R² is:",
+      "latex": "\\begin{pmatrix}0 & -1 \\\\ 1 & 0\\end{pmatrix}",
+      "answers": ["[[0, -1], [1, 0]]", "[[0, 1], [-1, 0]]", "[[1, 0], [0, -1]]", "[[-1, 0], [0, 1]]"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Rotation by θ has matrix [[cos θ, -sin θ], [sin θ, cos θ]]. At θ = 90°: cos90°=0, sin90°=1, giving [[0,-1],[1,0]].",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The kernel of a linear transformation T: Rⁿ → Rᵐ is:",
+      "answers": ["{x ∈ Rⁿ : T(x) = 0}", "{y ∈ Rᵐ : y = T(x) for some x}", "The set of all outputs", "The set of all eigenvectors"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "ker(T) = null space = all input vectors that map to the zero vector. Its dimension is the nullity.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Match these properties to their definitions (order from most to least restrictive for T: Rⁿ → Rᵐ):",
+      "items": ["Isomorphism: bijective linear map (injective + surjective)", "Surjection: image = Rᵐ (n ≥ m required)", "Injection: ker(T) = {0} (n ≤ m required)", "Linear map: preserves + and scalar mult"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "Isomorphism is the most restrictive (bijective). Surjection and injection are one-sided. Linear map is the base requirement.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For T: Rⁿ → Rᵐ with standard matrix A, T is injective iff:",
+      "answers": ["rank(A) = n (columns are linearly independent)", "rank(A) = m", "A is square", "det(A) ≠ 0"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "T is injective iff ker(T) = {0} iff null space is trivial iff columns of A are linearly independent iff rank(A) = n.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Transformation Tyrant",
+    "taunt": "In my domain, every input has one output. But not every output has an input.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "For T: R³ → R² with rank(T) = 2, what is nullity(T)?",
+        "answers": ["1", "0", "2", "3"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Rank-Nullity Theorem: rank + nullity = n = 3. So nullity = 3 − 2 = 1."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "T: Rⁿ → Rⁿ is an isomorphism if and only if:",
+        "answers": ["Its standard matrix A is invertible", "n = 1", "A is diagonal", "T maps 0 to 0"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "For T: Rⁿ → Rⁿ, isomorphism ⟺ bijective ⟺ invertible standard matrix. T⁻¹(x) = A⁻¹x."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "If T and S are linear transformations with standard matrices A and B respectively, the standard matrix of T∘S is:",
+        "answers": ["AB", "BA", "A + B", "A⊗B"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "(T∘S)(x) = T(S(x)) = T(Bx) = A(Bx) = (AB)x. Composition corresponds to matrix multiplication in the same order."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

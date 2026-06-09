@@ -1,0 +1,102 @@
+{
+  "id": "prob-10",
+  "title": "Point Estimation",
+  "kingdom": "probability",
+  "dungeonNumber": 10,
+  "lesson": {
+    "title": "Point Estimation",
+    "body": "A point estimator is a statistic θ̂ used to estimate an unknown population parameter θ. Maximum Likelihood Estimation (MLE) finds the parameter value that maximizes the likelihood L(θ|x) = ∏f(xᵢ; θ). An estimator is unbiased if E[θ̂] = θ. The Mean Squared Error MSE = Bias² + Variance quantifies total estimation error."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "An estimator θ̂ is unbiased if:",
+      "latex": "E[\\hat{\\theta}] = \\theta",
+      "answers": ["E[θ̂] = θ for all θ", "θ̂ = θ always", "Var(θ̂) = 0", "MSE(θ̂) = 0"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Unbiasedness means the expected value of the estimator equals the true parameter, regardless of the sample.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For an i.i.d. sample X₁,...,Xₙ from N(μ, σ²), the MLE of μ is:",
+      "latex": "\\hat{\\mu}_{MLE} = \\bar{X} = \\frac{1}{n}\\sum_{i=1}^n X_i",
+      "steps": ["\\text{Maximize } \\ell(\\mu) = -\\frac{n}{2}\\log(2\\pi\\sigma^2) - \\frac{1}{2\\sigma^2}\\sum(X_i - \\mu)^2", "\\frac{d\\ell}{d\\mu} = \\frac{1}{\\sigma^2}\\sum(X_i - \\mu) = 0 \\implies \\hat{\\mu} = \\bar{X}"],
+      "answers": ["X̄ (sample mean)", "X₁ (first observation)", "Median of sample", "X̄ + σ"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Differentiating the log-likelihood and setting to zero gives the sample mean as the MLE for μ.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The sample variance S² = Σ(Xᵢ − X̄)²/(n−1) is used instead of dividing by n because:",
+      "answers": ["Dividing by n−1 makes S² an unbiased estimator of σ²", "n−1 is computationally easier", "Dividing by n overestimates σ²", "Both A and C are correct"],
+      "correct": 3,
+      "difficulty": 2,
+      "explanation": "Both are correct: dividing by n gives a biased estimator E[S²_biased] = (n-1)σ²/n < σ², while dividing by n−1 corrects for this bias.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps of maximum likelihood estimation:",
+      "items": ["Write the likelihood L(θ) = ∏f(xᵢ; θ)", "Take log: ℓ(θ) = Σlog f(xᵢ; θ)", "Differentiate ℓ(θ) with respect to θ", "Solve dℓ/dθ = 0 for θ̂"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Standard MLE procedure: write likelihood, log-transform, differentiate log-likelihood, solve for the MLE.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "MSE of an estimator decomposes as:",
+      "latex": "MSE(\\hat{\\theta}) = \\text{Bias}^2(\\hat{\\theta}) + \\text{Var}(\\hat{\\theta})",
+      "answers": ["Bias² + Variance", "Bias + Variance", "Bias² × Variance", "|Bias| + √Variance"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "MSE = E[(θ̂ − θ)²] = Bias² + Variance. This bias-variance tradeoff is fundamental in statistics and machine learning.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Biased Judge",
+    "taunt": "Your estimate is systematically wrong. Consistency is not accuracy.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "The MLE of p for X ~ Binomial(n, p) based on a single observation x is:",
+        "latex": "\\hat{p}_{MLE} = x/n",
+        "answers": ["x/n", "(x+1)/(n+2)", "1/2", "x/(x+1)"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "L(p) = p^x(1-p)^(n-x). Setting d/dp[log L] = x/p − (n-x)/(1-p) = 0 gives p̂ = x/n."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "An estimator is consistent if:",
+        "latex": "\\hat{\\theta}_n \\xrightarrow{p} \\theta \\text{ as } n \\to \\infty",
+        "answers": ["It converges in probability to θ as n → ∞", "It is unbiased for all n", "Its variance equals zero", "Its MSE is minimized"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Consistency means the estimator converges in probability to the true parameter as sample size grows — a weaker but often easier property to establish than unbiasedness."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The Cramér-Rao lower bound states that for any unbiased estimator θ̂:",
+        "latex": "\\text{Var}(\\hat{\\theta}) \\geq \\frac{1}{I(\\theta)}",
+        "answers": ["Var(θ̂) ≥ 1/I(θ) where I(θ) is the Fisher information", "Var(θ̂) ≥ Bias²", "Var(θ̂) ≤ 1/I(θ)", "MSE ≥ Variance"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "The CRLB gives a lower bound on variance of unbiased estimators. An estimator achieving this bound is called UMVUE (uniformly minimum variance unbiased estimator)."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

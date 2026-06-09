@@ -1,0 +1,98 @@
+{
+  "id": "py-02",
+  "title": "Control Flow & Functions",
+  "kingdom": "python",
+  "dungeonNumber": 2,
+  "lesson": {
+    "title": "Control Flow & Functions",
+    "body": "Python controls execution with if/elif/else branches, for loops over iterables, and while loops for condition-based repetition. List comprehensions offer a compact syntax for building lists from loops. Functions defined with def encapsulate reusable logic; *args captures extra positional arguments and **kwargs captures keyword arguments. Lambda creates anonymous single-expression functions, useful for short callbacks."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "What does this code print?\n\nresult = [x**2 for x in range(5) if x % 2 == 0]\nprint(result)",
+      "answers": ["[0, 4, 16]", "[0, 1, 4, 9, 16]", "[4, 16]", "[0, 4]"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "range(5) gives 0-4. Filtering by x % 2 == 0 keeps 0, 2, 4. Squaring gives [0, 4, 16].",
+      "xp": 10
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the function to accept any number of positional arguments and return their sum:",
+      "code": "def total(___args):\n    return sum(args)",
+      "answers": ["*", "**", "&", "@"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "*args packs all extra positional arguments into a tuple named args, which can then be passed to sum().",
+      "xp": 10
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the lambda that doubles a number:",
+      "code": "double = ___ x: x * 2\nprint(double(5))",
+      "answers": ["lambda", "def", "func", "map"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "lambda creates an anonymous function. lambda x: x * 2 defines a function that takes x and returns x * 2.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does this code print?\n\ndef greet(name, greeting='Hello'):\n    return f'{greeting}, {name}!'\n\nprint(greet('Alice', greeting='Hi'))",
+      "answers": ["Hello, Alice!", "Hi, Alice!", "Hi, greeting!", "TypeError"],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "greeting has a default value of 'Hello', but it is overridden here by the keyword argument greeting='Hi'. The result is 'Hi, Alice!'.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these steps to write a function that processes a list with error handling:",
+      "items": ["Define the function with def", "Add a docstring", "Validate input with if/raise", "Process data in a for loop", "Return the result"],
+      "correctOrder": [0, 1, 2, 3, 4],
+      "difficulty": 3,
+      "explanation": "Best practice: define the function, document it, validate inputs early (fail fast), process, then return. This order ensures inputs are checked before expensive computation begins.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Infinite Loop",
+    "taunt": "Your while condition is always True… you will iterate here forever!",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "What does this code print?\n\ndef f(*args, **kwargs):\n    return len(args) + len(kwargs)\n\nprint(f(1, 2, a=3, b=4))",
+        "answers": ["2", "4", "3", "TypeError"],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "args captures (1, 2) — length 2. kwargs captures {'a': 3, 'b': 4} — length 2. Total is 4."
+      },
+      {
+        "type": "fill-blank",
+        "question": "Complete the list comprehension to flatten a 2D list:",
+        "code": "matrix = [[1,2],[3,4],[5,6]]\nflat = [x for ___ in matrix for x in ___]\nprint(flat)",
+        "answers": ["row, row", "col, col", "x, x", "i, i"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "The outer loop iterates over each row, the inner loop iterates over each element x in that row. Both blanks must use the same variable name 'row'."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What is the output?\n\nresult = list(map(lambda x: x * 3, filter(lambda x: x > 2, [1, 2, 3, 4])))\nprint(result)",
+        "answers": ["[9, 12]", "[3, 6, 9, 12]", "[3, 4]", "[6, 9]"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "filter keeps elements > 2: [3, 4]. map multiplies each by 3: [9, 12]."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

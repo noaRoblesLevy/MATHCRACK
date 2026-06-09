@@ -1,0 +1,100 @@
+{
+  "id": "py-09",
+  "title": "GroupBy & Merge",
+  "kingdom": "python",
+  "dungeonNumber": 9,
+  "lesson": {
+    "title": "GroupBy & Merge",
+    "body": "GroupBy applies the split-apply-combine paradigm: split the DataFrame into groups, apply a function, combine results. df.groupby('col').agg({'val': 'mean'}) is the most common pattern. pd.merge() joins DataFrames like SQL: inner (only matching rows), left (all left rows), right, or outer (all rows). pd.concat() stacks DataFrames vertically (axis=0) or horizontally (axis=1)."
+  },
+  "rooms": [
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to compute the mean salary by department:",
+      "code": "import pandas as pd\ndf = pd.DataFrame({'dept':['A','B','A','B'],'salary':[50,60,55,65]})\nresult = df.___(  'dept')['salary'].mean()",
+      "answers": ["groupby(", "pivot_table(", "sort_values(", "query("],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "df.groupby('dept')['salary'].mean() — groupBy creates groups by department, then computes mean salary within each group.",
+      "xp": 10
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to merge two DataFrames on 'id':",
+      "code": "import pandas as pd\ndf1 = pd.DataFrame({'id':[1,2,3],'name':['A','B','C']})\ndf2 = pd.DataFrame({'id':[2,3,4],'score':[90,85,88]})\nresult = pd.___(df1, df2, on='id', how='inner')",
+      "answers": ["merge", "concat", "join", "combine"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "pd.merge(left, right, on='key', how='type') performs SQL-style joins. 'inner' keeps only rows where 'id' appears in both DataFrames.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A left join (how='left') in pd.merge() keeps:",
+      "answers": ["All rows from the left DataFrame, NaN for non-matching right rows", "Only matching rows from both", "All rows from both DataFrames", "All rows from the right DataFrame"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Left join: all left rows are preserved. Where there's no match in the right DataFrame, NaN values fill the right columns.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the GroupBy aggregation steps (split-apply-combine):",
+      "items": ["Split: df.groupby('col') creates GroupBy object", "Apply: .agg({'col': 'sum'}) or .mean() etc.", "Combine: results are assembled into a new DataFrame", "Optional: .reset_index() if you want flat column index"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Split → Apply → Combine is the Pandas groupby paradigm. reset_index() is often needed when the group-by keys become the index.",
+      "xp": 20
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to stack two DataFrames vertically:",
+      "code": "import pandas as pd\ndf1 = pd.DataFrame({'a':[1,2],'b':[3,4]})\ndf2 = pd.DataFrame({'a':[5,6],'b':[7,8]})\nresult = pd.___(  [df1, df2], ignore_index=True)",
+      "answers": ["concat(", "merge(", "append(", "stack("],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "pd.concat([df1, df2]) stacks DataFrames vertically (default axis=0). ignore_index=True resets the index to 0,1,2,... in the result.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Merge Conflict",
+    "taunt": "Your keys don't match. Your NaNs are everywhere. Welcome to real data.",
+    "questions": [
+      {
+        "type": "fill-blank",
+        "question": "Complete the code to apply multiple aggregations at once:",
+        "code": "import pandas as pd\ndf = pd.DataFrame({'dept':['A','B','A'],'score':[80,90,70]})\nresult = df.groupby('dept')['score'].___({'score_mean': 'mean', 'score_max': 'max'})",
+        "answers": ["agg", "apply", "transform", "aggregate"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "groupby().agg(dict) computes multiple aggregations in one pass. Result columns are named by the dictionary keys."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What is the difference between pd.merge() and pd.concat()?",
+        "answers": ["merge() aligns on key columns (join); concat() stacks DataFrames by axis", "They are identical", "concat() is faster than merge()", "merge() only works for inner joins"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "merge() = SQL join (align on key column values). concat() = stack (bind rows or columns). They serve different purposes."
+      },
+      {
+        "type": "fill-blank",
+        "question": "Complete to get the size of each group:",
+        "code": "import pandas as pd\ndf = pd.DataFrame({'team':['A','B','A','A','B'],'val':[1,2,3,4,5]})\nsizes = df.groupby('team').___() ",
+        "answers": ["size", "count", "len", "shape"],
+        "correct": 0,
+        "difficulty": 1,
+        "explanation": "groupby().size() returns the number of rows per group. .count() is similar but excludes NaN values per column."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

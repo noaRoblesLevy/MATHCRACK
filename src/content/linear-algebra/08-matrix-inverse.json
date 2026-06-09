@@ -1,0 +1,101 @@
+{
+  "id": "linalg-08",
+  "title": "Matrix Inverse",
+  "kingdom": "linear-algebra",
+  "dungeonNumber": 8,
+  "lesson": {
+    "title": "Matrix Inverse",
+    "body": "The inverse of a square matrix A is the unique matrix A⁻¹ such that AA⁻¹ = A⁻¹A = I. An inverse exists if and only if det(A) ≠ 0. For 2×2 matrices: A⁻¹ = (1/det(A))·[[d, -b], [-c, a]]. For larger matrices, the Gauss-Jordan method augments [A|I] and row-reduces to [I|A⁻¹]. Key property: (AB)⁻¹ = B⁻¹A⁻¹."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "The inverse of A = [[2, 1], [5, 3]] is:",
+      "latex": "A^{-1} = \\frac{1}{\\det(A)} \\begin{pmatrix} 3 & -1 \\\\ -5 & 2 \\end{pmatrix}",
+      "steps": ["\\det(A) = 6 - 5 = 1", "A^{-1} = \\begin{pmatrix} 3 & -1 \\\\ -5 & 2 \\end{pmatrix}"],
+      "answers": ["[[3, -1], [-5, 2]]", "[[3, 1], [5, 2]]", "[[2, -1], [-5, 3]]", "[[1/2, -1/5], [0, 1/3]]"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "det(A) = 2·3 − 1·5 = 1, so A⁻¹ = [[3, -1], [-5, 2]].",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which property is true for invertible matrices A and B?",
+      "latex": "(AB)^{-1} = B^{-1}A^{-1}",
+      "answers": ["(AB)⁻¹ = B⁻¹A⁻¹", "(AB)⁻¹ = A⁻¹B⁻¹", "(AB)⁻¹ = A⁻¹ + B⁻¹", "(A+B)⁻¹ = A⁻¹ + B⁻¹"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "(AB)⁻¹ = B⁻¹A⁻¹ — note the order reversal. This is called the 'socks and shoes' property.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "To solve Ax = b using the inverse, we write:",
+      "latex": "x = A^{-1}b",
+      "answers": ["x = A⁻¹b", "x = b·A⁻¹", "x = A·b⁻¹", "x = det(A)·b"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "If A is invertible, multiply both sides of Ax=b on the left by A⁻¹ to get x = A⁻¹b.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the Gauss-Jordan steps to find A⁻¹:",
+      "items": ["Form the augmented matrix [A | I]", "Apply row operations to reduce A to I", "Verify the left block is I", "The right block is now A⁻¹"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Gauss-Jordan: augment with identity, row-reduce until identity is on the left, and the right side becomes the inverse.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "If A is an n×n matrix with det(A) = 0, then:",
+      "answers": ["A has no inverse", "A⁻¹ = 0", "A⁻¹ = A", "A⁻¹ = I/n"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "A singular matrix (det = 0) is not invertible. The system Ax = b either has no solution or infinitely many.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Non-Invertible",
+    "taunt": "I am singular. Your operations end here.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "If A² = A (A is idempotent) and A is invertible, then:",
+        "answers": ["A = I", "A = 0", "A² = I", "det(A) = 0"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "If A² = A, multiply both sides by A⁻¹: A = I. The only invertible idempotent matrix is the identity."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "(Aᵀ)⁻¹ equals:",
+        "latex": "(A^T)^{-1} = ?",
+        "answers": ["(A⁻¹)ᵀ", "A⁻¹", "Aᵀ", "(A⁻¹)⁻¹"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "(Aᵀ)⁻¹ = (A⁻¹)ᵀ. Transpose and inverse commute in this sense."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The adjugate (classical adjoint) formula gives A⁻¹ = (1/det(A))·adj(A). For a 2×2 matrix [[a,b],[c,d]], adj(A) is:",
+        "latex": "\\text{adj}(A) = \\begin{pmatrix} d & -b \\\\ -c & a \\end{pmatrix}",
+        "answers": ["[[d, -b], [-c, a]]", "[[a, b], [c, d]]", "[[d, b], [c, a]]", "[[-a, b], [c, -d]]"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "The adjugate swaps the diagonal and negates the off-diagonal entries of a 2×2 matrix."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

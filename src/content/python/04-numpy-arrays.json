@@ -1,0 +1,99 @@
+{
+  "id": "py-04",
+  "title": "NumPy Arrays",
+  "kingdom": "python",
+  "dungeonNumber": 4,
+  "lesson": {
+    "title": "NumPy Arrays",
+    "body": "NumPy's ndarray is the foundation of scientific computing in Python — a fixed-type, multi-dimensional array far faster than Python lists for numerical work. Every array has a dtype (data type), shape (dimensions as a tuple), ndim (number of dimensions), and size (total elements). Creation functions like np.arange(), np.linspace(), np.zeros(), np.ones(), and np.random.rand() generate arrays without manual loops."
+  },
+  "rooms": [
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to create a 1D array of evenly spaced values from 0 to 1 (inclusive) with 5 points:",
+      "code": "import numpy as np\narr = np.___(0, 1, 5)\nprint(arr)",
+      "answers": ["linspace", "arange", "zeros", "ones"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "np.linspace(start, stop, num) returns num evenly spaced values from start to stop inclusive. np.arange uses a step size, not a count.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does this code print?\n\nimport numpy as np\narr = np.arange(12).reshape(3, 4)\nprint(arr.shape)",
+      "answers": ["(12,)", "(3, 4)", "(4, 3)", "(3,)"],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "np.arange(12) creates a 1D array of 12 elements. reshape(3, 4) rearranges it into 3 rows and 4 columns, giving shape (3, 4).",
+      "xp": 10
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to create a 3x3 array of zeros with float64 dtype:",
+      "code": "import numpy as np\narr = np.___(( 3, 3), dtype=np.float64)\nprint(arr)",
+      "answers": ["zeros", "ones", "empty", "full"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "np.zeros(shape, dtype) creates an array of the given shape filled with 0.0. np.ones fills with 1.0 instead.",
+      "xp": 10
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to get the number of dimensions of a NumPy array:",
+      "code": "import numpy as np\narr = np.array([[1,2],[3,4],[5,6]])\nprint(arr.___)",
+      "answers": ["ndim", "shape", "size", "dtype"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "arr.ndim returns the number of dimensions (axes). For a 2D array it returns 2. arr.shape returns the full tuple (3, 2); arr.size returns 6.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these NumPy array attributes from smallest to largest information scope:",
+      "items": ["dtype (element type)", "ndim (number of axes)", "shape (size per axis)", "size (total elements)"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "dtype tells you about individual elements. ndim tells you how many dimensions exist. shape gives the size along each dimension. size is the product of all shape values — the total element count.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Shape Mismatch",
+    "taunt": "Cannot broadcast shape (3,) with shape (4,). Your arrays are incompatible!",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "What is the shape of np.zeros((2, 3, 4))?",
+        "answers": ["(24,)", "(2, 3, 4)", "(4, 3, 2)", "(6, 4)"],
+        "correct": 1,
+        "difficulty": 1,
+        "explanation": "np.zeros() takes the shape directly as its first argument. The resulting array has exactly the shape you pass in: (2, 3, 4)."
+      },
+      {
+        "type": "fill-blank",
+        "question": "Complete the code to create an array of 10 random floats uniformly distributed in [0, 1):",
+        "code": "import numpy as np\narr = np.random.___(10)\nprint(arr)",
+        "answers": ["rand", "randn", "randint", "random"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "np.random.rand(d0, d1, ...) creates an array of the given shape with samples from a uniform distribution over [0, 1). np.random.randn gives the standard normal distribution."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What does arr.size return for arr = np.ones((4, 5))?",
+        "answers": ["4", "5", "20", "9"],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "arr.size returns the total number of elements: 4 * 5 = 20."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

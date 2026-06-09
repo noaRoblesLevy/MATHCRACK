@@ -1,0 +1,155 @@
+{
+  "id": "prob-05",
+  "title": "Continuous Random Variables",
+  "kingdom": "probability",
+  "dungeonNumber": 5,
+  "lesson": {
+    "title": "Continuous Random Variables",
+    "body": "A continuous random variable X is described by a probability density function (PDF) f(x) ≥ 0 with ∫_{-∞}^{∞} f(x)dx = 1. Probabilities are areas: P(a ≤ X ≤ b) = ∫_a^b f(x)dx. The CDF is F(x) = P(X ≤ x) = ∫_{-∞}^x f(t)dt, and f(x) = F′(x). Expected value and variance generalize: E[X] = ∫ x f(x)dx and Var(X) = E[X²] − (E[X])²."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "A random variable X has PDF f(x) = 2x for 0 ≤ x ≤ 1. Verify this is a valid PDF.",
+      "latex": "\\int_0^1 2x\\,dx = ?",
+      "steps": [
+        "Integrate: \\int_0^1 2x\\,dx = [x^2]_0^1 = 1 - 0 = 1.",
+        "Also f(x)=2x \\geq 0 on [0,1]."
+      ],
+      "answers": [
+        "Yes — f(x) \\geq 0 and the integral equals 1.",
+        "No — the integral exceeds 1.",
+        "No — f(x) can be negative.",
+        "Yes — any quadratic function is a valid PDF."
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "∫₀¹ 2x dx = [x²]₀¹ = 1, and f(x) = 2x ≥ 0 on [0,1]. Both conditions for a valid PDF are satisfied.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For X with PDF f(x) = 2x on [0,1], find P(0.5 ≤ X ≤ 1).",
+      "latex": "P(0.5 \\leq X \\leq 1) = \\int_{0.5}^{1} 2x\\,dx",
+      "steps": [
+        "\\int_{0.5}^{1} 2x\\,dx = [x^2]_{0.5}^{1} = 1 - 0.25"
+      ],
+      "answers": [
+        "0.75",
+        "0.50",
+        "0.25",
+        "1.00"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "∫_{0.5}^{1} 2x dx = [x²]_{0.5}^{1} = 1 − 0.25 = 0.75.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For X with PDF f(x) = 2x on [0,1], what is E[X]?",
+      "latex": "E[X] = \\int_0^1 x \\cdot 2x\\,dx = \\int_0^1 2x^2\\,dx",
+      "steps": [
+        "\\int_0^1 2x^2\\,dx = 2 \\cdot \\frac{x^3}{3}\\Big|_0^1 = \\frac{2}{3}"
+      ],
+      "answers": [
+        "2/3",
+        "1/2",
+        "3/4",
+        "1/3"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "E[X] = ∫₀¹ x·2x dx = 2∫₀¹ x² dx = 2·[x³/3]₀¹ = 2/3.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For X with PDF f(x) = 2x on [0,1], what is the CDF F(x) for 0 ≤ x ≤ 1?",
+      "latex": "F(x) = \\int_0^x 2t\\,dt",
+      "steps": [
+        "F(x) = [t^2]_0^x = x^2"
+      ],
+      "answers": [
+        "x^2",
+        "2x",
+        "x^2/2",
+        "x"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "F(x) = ∫₀ˣ 2t dt = [t²]₀ˣ = x². Notice that F′(x) = 2x = f(x), confirming the fundamental relationship.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these steps to compute Var(X) for a continuous random variable with known PDF f(x):",
+      "items": [
+        "Compute E[X^2] = \\int x^2 f(x)\\,dx",
+        "Write down the PDF f(x)",
+        "Compute E[X] = \\int x\\,f(x)\\,dx",
+        "Var(X) = E[X^2] - (E[X])^2"
+      ],
+      "correctOrder": [1, 2, 0, 3],
+      "difficulty": 3,
+      "explanation": "Start with the PDF, then compute E[X] and E[X²] separately as integrals, and finally apply the computational formula for variance.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Continuous Specter",
+    "taunt": "You cannot pin me down. I exist at no single point — only as an integral of dread.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "X has PDF f(x) = c·e^{−x} for x ≥ 0. What value of c makes this a valid PDF?",
+        "latex": "\\int_0^\\infty c\\,e^{-x}\\,dx = 1",
+        "answers": [
+          "c = 1",
+          "c = e",
+          "c = 1/e",
+          "c = 2"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "∫₀^∞ c·e^{−x} dx = c·[−e^{−x}]₀^∞ = c·(0 − (−1)) = c = 1."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "X ~ Uniform(0, b). What value of b makes E[X] = 3?",
+        "latex": "E[X] = \\frac{b}{2} = 3",
+        "answers": [
+          "b = 6",
+          "b = 3",
+          "b = 1/3",
+          "b = 9"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "For X ~ Uniform(0,b), E[X] = b/2. Setting b/2 = 3 gives b = 6."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "X has PDF f(x) = 2x on [0,1]. Compute Var(X).",
+        "latex": "\\text{Var}(X) = E[X^2] - (E[X])^2",
+        "answers": [
+          "1/18",
+          "2/3",
+          "4/9",
+          "1/6"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "E[X²] = ∫₀¹ x²·2x dx = 2∫₀¹ x³ dx = 2·(1/4) = 1/2. E[X] = 2/3 (computed earlier). Var(X) = 1/2 − (2/3)² = 1/2 − 4/9 = 9/18 − 8/18 = 1/18."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

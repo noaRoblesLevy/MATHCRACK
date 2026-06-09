@@ -1,0 +1,102 @@
+{
+  "id": "linalg-07",
+  "title": "Determinants",
+  "kingdom": "linear-algebra",
+  "dungeonNumber": 7,
+  "lesson": {
+    "title": "Determinants",
+    "body": "The determinant is a scalar function of a square matrix that encodes geometric and algebraic properties. For a 2×2 matrix, det([[a,b],[c,d]]) = ad − bc. For larger matrices, cofactor expansion along any row or column works. Key properties: det(AB) = det(A)·det(B), det(Aᵀ) = det(A), and a matrix is invertible if and only if its determinant is nonzero."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "What is det([[3, 1], [2, 4]])?",
+      "latex": "\\det\\begin{pmatrix}3 & 1 \\\\ 2 & 4\\end{pmatrix} = 3 \\cdot 4 - 1 \\cdot 2",
+      "steps": ["\\det(A) = ad - bc = 3(4) - 1(2) = 12 - 2 = 10"],
+      "answers": ["10", "14", "−2", "8"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "det = 3·4 − 1·2 = 12 − 2 = 10.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "If det(A) = 5 and det(B) = 3, what is det(AB)?",
+      "latex": "\\det(AB) = \\det(A) \\cdot \\det(B)",
+      "answers": ["15", "8", "2", "Cannot be determined"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "det(AB) = det(A)·det(B) = 5·3 = 15. This multiplicative property is a key theorem.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What happens to det(A) when a row is multiplied by scalar c?",
+      "latex": "\\det(cA) = c^n \\det(A)",
+      "answers": ["det is multiplied by c", "det is unchanged", "det is multiplied by c²", "det is divided by c"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Scaling one row by c scales the determinant by c. Scaling all n rows (equivalently, multiplying the full matrix by c) scales det by cⁿ.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the cofactor expansion steps to compute det of a 3×3 matrix along row 1:",
+      "items": ["Identify the three entries a₁₁, a₁₂, a₁₃ in row 1", "Compute the 2×2 minors M₁₁, M₁₂, M₁₃", "Apply signs: (+, −, +)", "Sum: a₁₁M₁₁ − a₁₂M₁₂ + a₁₃M₁₃"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Cofactor expansion: select a row, compute the 2×2 minor for each entry, apply the checkerboard sign pattern, then sum.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A square matrix A is invertible (non-singular) if and only if:",
+      "answers": ["det(A) ≠ 0", "det(A) = 1", "det(A) > 0", "det(A) = n"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Invertibility is equivalent to det(A) ≠ 0. A singular matrix has det = 0 and no inverse.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Singular Matrix",
+    "taunt": "My determinant is zero. You cannot invert me. You cannot solve me.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "det(A⁻¹) = ?",
+        "latex": "\\det(A^{-1}) = ?",
+        "answers": ["1/det(A)", "−det(A)", "det(A)", "det(A)²"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Since AA⁻¹ = I and det(I)=1: det(A)·det(A⁻¹) = 1, so det(A⁻¹) = 1/det(A)."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "For what value of k does the matrix [[2, k], [1, 3]] become singular?",
+        "latex": "\\det\\begin{pmatrix}2 & k \\\\ 1 & 3\\end{pmatrix} = 6 - k = 0",
+        "answers": ["k = 6", "k = 3", "k = 0", "k = 2"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "det = 2·3 − k·1 = 6 − k. Set to zero: k = 6."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The determinant of an upper triangular matrix is:",
+        "latex": "\\det(U) = u_{11} \\cdot u_{22} \\cdots u_{nn}",
+        "answers": ["Product of diagonal entries", "Sum of diagonal entries", "Product of all entries", "Zero"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "For triangular matrices (upper or lower), the determinant equals the product of diagonal entries. This makes row reduction efficient for computing determinants."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

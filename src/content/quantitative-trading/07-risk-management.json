@@ -1,0 +1,98 @@
+{
+  "id": "qt-07",
+  "title": "Risk Management",
+  "kingdom": "quantitative-trading",
+  "dungeonNumber": 7,
+  "lesson": {
+    "title": "Risk Management",
+    "body": "The Sharpe ratio S = (E[R] − Rƒ)/σ measures risk-adjusted return. The Kelly criterion gives the optimal fraction of capital to bet: f* = edge/odds = (μ − Rƒ)/σ² for a normal distribution. Value at Risk (VaR) at confidence level α is the loss exceeded with probability 1−α. Maximum drawdown MDD = max over t of [peak − trough] / peak measures the worst loss from a peak."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "A strategy has annualized return 15% and std dev 20%. With Rƒ = 3%, the Sharpe ratio is:",
+      "latex": "S = \\frac{0.15 - 0.03}{0.20} = 0.6",
+      "answers": ["0.6", "0.75", "5", "0.12"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Sharpe = (15%−3%)/20% = 12%/20% = 0.6. A Sharpe of 0.6 is decent for a single strategy; 1.0+ is excellent.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The Kelly criterion says to bet fraction f* = μ/σ² of capital (simplified, Rƒ=0). If strategy has μ=12% and σ=20%, f* is:",
+      "latex": "f^* = \\mu/\\sigma^2 = 0.12/0.04 = 3",
+      "answers": ["300% (full Kelly, often use 25-50% of Kelly in practice)", "60% of capital", "12% of capital", "20% of capital"],
+      "correct": 0,
+      "difficulty": 3,
+      "explanation": "Full Kelly = 0.12/0.04 = 3 = 300% of capital (leveraged). Full Kelly maximizes long-run growth but has extreme drawdowns. In practice, use 25-50% of Kelly (fractional Kelly).",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The 95% VaR of a portfolio means:",
+      "answers": ["The portfolio will lose more than this amount only 5% of the time", "The expected loss in the worst 5% of cases", "The average daily loss", "The maximum possible loss"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "VaR_{95%} is the loss quantile at 5% probability: we expect to exceed this loss on 5% of days. It says nothing about the severity of losses beyond this threshold.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these risk metrics from most to least common in use:",
+      "items": ["Sharpe ratio (most widely reported)", "Maximum drawdown", "Calmar ratio (return/max drawdown)", "VaR and CVaR"],
+      "correctOrder": [0, 1, 3, 2],
+      "difficulty": 2,
+      "explanation": "Sharpe is universal. Max drawdown is widely watched by investors. VaR is required by regulators. Calmar is used by CTAs but less universal.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "CVaR (Conditional Value at Risk) improves on VaR by:",
+      "answers": ["Measuring the expected loss given that losses exceed VaR", "Being always larger than VaR", "Ignoring extreme tail events", "Using a higher confidence level"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "CVaR = Expected Shortfall = E[loss | loss > VaR]. It quantifies the average severity of tail losses, not just the threshold — capturing tail risk that VaR ignores.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Black Swan",
+    "taunt": "Your VaR model said I was impossible. I happened anyway.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "The Calmar ratio is defined as:",
+        "latex": "\\text{Calmar} = \\frac{\\text{Annual Return}}{|\\text{Max Drawdown}|}",
+        "answers": ["Annual return / |Maximum drawdown|", "Sharpe ratio × 2", "Return / Standard deviation", "Annual return / VaR"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Calmar ratio rewards strategies with good returns relative to their worst historical loss. A Calmar > 1 is considered good."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Using 'full Kelly' position sizing leads to:",
+        "answers": ["Maximum long-run geometric growth but extreme drawdowns (often 50%+)", "Minimum drawdown", "Bankrupt with certainty", "Slightly above market returns"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Full Kelly maximizes log-wealth growth but allows very large drawdowns. In practice, fractional Kelly (50% or 25% of Kelly) is preferred for drawdown control."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Normal VaR underestimates risk because financial returns have:",
+        "answers": ["Fat tails (more extreme events than normal distribution predicts)", "Thin tails (fewer extremes)", "No autocorrelation", "Exactly normal distribution"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Financial returns exhibit fat tails (excess kurtosis). 2008-style crashes are much more likely than Gaussian VaR predicts. Use t-distribution or historical simulation for better estimates."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

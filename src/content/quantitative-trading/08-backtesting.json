@@ -1,0 +1,95 @@
+{
+  "id": "qt-08",
+  "title": "Backtesting",
+  "kingdom": "quantitative-trading",
+  "dungeonNumber": 8,
+  "lesson": {
+    "title": "Backtesting",
+    "body": "Backtesting simulates a strategy on historical data to estimate performance. Pitfalls include: overfitting (too many parameters optimized in-sample), look-ahead bias (using data not available at decision time), survivorship bias (using only stocks that survived), and data snooping. Walk-forward validation splits data into rolling IS and OOS windows. A strategy that doesn't work OOS is likely overfit."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Look-ahead bias in backtesting means:",
+      "answers": ["Using information at time t that was only available after time t", "Looking too far back in history", "Using too many parameters", "Only testing on recent data"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Look-ahead bias = data snooping in time: e.g., using quarterly earnings announced on day T to make a decision on day T-1. This inflates backtest performance unrealistically.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Survivorship bias in stock backtesting occurs when you:",
+      "answers": ["Only test on stocks that currently exist, ignoring delisted/bankrupt firms", "Test on too few stocks", "Use only the best-performing historical period", "Include dividends but not buybacks"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Survivorship bias: historical universes include companies that went bankrupt or were delisted. Ignoring them inflates apparent strategy returns (you only see stocks that survived).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A strategy shows a Sharpe of 2.1 in-sample and 0.3 out-of-sample. This indicates:",
+      "answers": ["Severe overfitting — the strategy was fit to noise, not signal", "A good strategy with some OOS variation", "The OOS period is just unlucky", "The strategy needs more data"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "IS/OOS Sharpe collapse from 2.1 to 0.3 is a strong sign of overfitting. A legitimate strategy degrades moderately OOS, not catastrophically.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps of walk-forward validation:",
+      "items": ["Train on first N months (in-sample)", "Optimize parameters on training window", "Test on next M months (out-of-sample)", "Advance the window and repeat; aggregate OOS results"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Walk-forward: fix IS window, optimize, test OOS, slide the window forward. Repeat across multiple IS/OOS pairs for a realistic OOS track record.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The Deflated Sharpe Ratio (Bailey & Lopez de Prado) adjusts the Sharpe ratio for:",
+      "answers": ["Multiple testing and backtest length (more trials → lower significance)", "Transaction costs only", "Fat tails in returns", "The number of assets traded"],
+      "correct": 0,
+      "difficulty": 3,
+      "explanation": "If you test 100 strategies, some will look good by chance. The Deflated SR penalizes for the number of trials and non-normality, giving a probability that the SR is genuinely positive.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Overfit Model",
+    "taunt": "I have 50 parameters and 100 data points. I fit perfectly. I predict nothing.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "The minimum backtest length to achieve a given Sharpe ratio with statistical significance grows:",
+        "answers": ["Quadratically with the inverse Sharpe ratio (lower SR needs much longer backtest)", "Linearly with SR", "Does not depend on Sharpe ratio", "Inversely with SR"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Required observations n ≈ (Sharpe ratio / 0.5)⁻² · z². For SR=0.5, need ~4 years of monthly data; for SR=2.0, only ~1 year."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Transaction costs in backtesting should include:",
+        "answers": ["Commission, bid-ask spread, market impact, and short-selling costs", "Commission only", "Market impact only", "No costs — they are strategy-specific"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Full transaction cost model: commissions + half the bid-ask spread + market impact (especially for larger positions). Ignoring impact is the most common backtest error."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The primary defense against data snooping bias is:",
+        "answers": ["Holding out a genuine OOS period that is never touched during development", "Using cross-validation", "Testing on more assets", "Using a longer in-sample period"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "A 'pure' hold-out set, never seen during development, is the gold standard. Once you've looked at OOS results and adjusted, it's no longer truly OOS."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

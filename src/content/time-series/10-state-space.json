@@ -1,0 +1,98 @@
+{
+  "id": "ts-10",
+  "title": "State Space Models",
+  "kingdom": "time-series",
+  "dungeonNumber": 10,
+  "lesson": {
+    "title": "State Space Models",
+    "body": "A state space model has two equations: the state transition x_t = Φx_{t-1} + w_t (w_t ~ N(0, Q)) and the observation equation y_t = A_tx_t + v_t (v_t ~ N(0, R)). The Kalman filter recursively estimates the hidden state x_t given observations y_1:t, minimizing mean squared error. The filter alternates between prediction and update steps."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "In a state space model, the observation equation y_t = Ax_t + v_t represents:",
+      "answers": ["A noisy measurement of the hidden state", "The state dynamics over time", "The noise covariance", "The initial conditions"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "The observation equation relates observable y_t to unobservable state x_t with measurement noise v_t.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The Kalman filter prediction step gives:",
+      "latex": "x_{t|t-1} = \\Phi x_{t-1|t-1}, \\quad P_{t|t-1} = \\Phi P_{t-1|t-1} \\Phi^T + Q",
+      "answers": ["State estimate and covariance before seeing y_t", "The optimal smoother", "The likelihood function", "The final state estimate"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Prediction step: propagate the state mean and covariance forward in time before observing y_t.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The Kalman gain K_t determines:",
+      "latex": "K_t = P_{t|t-1} A^T (A P_{t|t-1} A^T + R)^{-1}",
+      "answers": ["How much to trust the new observation vs the prediction", "The noise variance Q", "The transition matrix Φ", "The observation matrix A"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "K_t balances prior prediction uncertainty P vs measurement noise R. Large K → trust observation; small K → trust prediction.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the Kalman filter recursion steps at each time t:",
+      "items": ["Predict: x_{t|t-1} = Φx_{t-1|t-1}", "Compute Kalman gain K_t", "Update state: x_{t|t} = x_{t|t-1} + K_t(y_t − Ax_{t|t-1})", "Update covariance: P_{t|t} = (I − K_tA)P_{t|t-1}"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "Kalman filter: predict → compute gain → update state → update covariance. Then move to t+1.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The Kalman smoother (RTS smoother) differs from the Kalman filter in that it:",
+      "answers": ["Uses all T observations to estimate each x_t (uses future data)", "Uses only past observations", "Only works for linear models", "Minimizes AIC"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "The filter gives x_{t|t} (using y_1,...,y_t). The smoother gives x_{t|T} (using all y_1,...,y_T), which is more accurate but only for offline processing.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Kalman Daemon",
+    "taunt": "Your true state is hidden. But I can infer it from your noisy signals.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "The local level model (random walk + noise) as a state space model is:",
+        "latex": "x_t = x_{t-1} + w_t, \\quad y_t = x_t + v_t",
+        "answers": ["x_t = x_{t-1} + w_t; y_t = x_t + v_t", "x_t = φx_{t-1}; y_t = x_t", "y_t = μ + v_t; x_t = μ", "x_t = 0; y_t = Ax_t"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "The local level model: the 'true level' x_t follows a random walk, and we observe it with noise v_t. Kalman filter estimates x_t = exponential smoothing."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "If the measurement noise variance R is very large relative to Q, the Kalman gain K_t approaches:",
+        "answers": ["0 (trust the prediction more)", "1 (trust the observation more)", "Φ", "Q/R"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Large R means measurements are noisy → K_t → 0 → heavily discount observations. The filter sticks with its predictions."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "ARIMA models can be written in state space form. This is useful because:",
+        "answers": ["It allows handling missing data and time-varying parameters via the Kalman filter", "It makes ARIMA non-stationary", "It reduces the number of parameters", "It converts ARIMA to a neural network"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "State space representation of ARIMA enables: Kalman filter for missing values, online estimation, and a unified framework for all linear Gaussian models."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

@@ -1,0 +1,97 @@
+{
+  "id": "ts-12",
+  "title": "Cointegration & VECM",
+  "kingdom": "time-series",
+  "dungeonNumber": 12,
+  "lesson": {
+    "title": "Cointegration & VECM",
+    "body": "Two I(1) series are cointegrated if a linear combination β₀ + β₁x_t + β₂y_t is I(0) (stationary). Cointegration implies a long-run equilibrium relationship. Spurious regression occurs when two independent I(1) series appear related (high R², low DW). The Vector Error Correction Model (VECM) models short-run dynamics while enforcing long-run cointegrating relationships."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Two I(1) series x_t and y_t are cointegrated if:",
+      "answers": ["There exists β such that y_t − βx_t is I(0)", "Both series have the same trend", "Their difference x_t − y_t is I(1)", "Both have unit roots"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Cointegration: the linear combination (spread) y_t − βx_t is stationary (I(0)), despite each series individually being non-stationary I(1).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Spurious regression occurs when two unrelated I(1) series are regressed. The symptom is:",
+      "answers": ["High R² and t-statistics but residuals are non-stationary", "Low R² despite strong theory", "Stationary residuals from OLS", "Perfect fit with R² = 1"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Spurious regression: two independent random walks regressed on each other yield high R² and significant t-stats, but this is a statistical artifact.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The Engle-Granger two-step test for cointegration involves:",
+      "latex": "\\text{Step 1: OLS of } y_t = \\alpha + \\beta x_t + u_t \\text{. Step 2: ADF on } \\hat{u}_t",
+      "steps": ["\\text{Step 1: Estimate OLS residuals } \\hat{u}_t", "\\text{Step 2: ADF test on } \\hat{u}_t \\text{ — reject unit root → cointegrated}"],
+      "answers": ["OLS regression, then ADF test on residuals", "ADF test on both series simultaneously", "Johansen trace test only", "Granger causality test"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Engle-Granger: regress y on x, save residuals û_t. If û_t is stationary (ADF rejects unit root), the series are cointegrated.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps in building a VECM from cointegrated series:",
+      "items": ["Test each series for unit root (ADF)", "Test for cointegration (Engle-Granger or Johansen)", "Estimate cointegrating vector β (OLS in step 1)", "Specify VECM with error correction term: Δy_t = α(y_{t-1} − βx_{t-1}) + ..."],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "Unit root tests first, cointegration tests, estimate long-run relationship, then build VECM incorporating the error correction mechanism.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "In the VECM error correction term α(y_{t-1} − βx_{t-1}), the parameter α represents:",
+      "answers": ["Speed of adjustment back to long-run equilibrium", "The long-run slope", "Short-run AR coefficient", "The cointegrating rank"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "α < 0 means the series corrects when above equilibrium. |α| is the speed: large |α| → fast mean reversion; small |α| → slow adjustment.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Spurious Oracle",
+    "taunt": "Your regressions are significant. But are they real? I deceive with R-squared.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "The Johansen test, unlike Engle-Granger, can test for:",
+        "answers": ["Multiple cointegrating vectors in a multivariate system", "Cointegration of exactly two series only", "Stationarity of individual series", "Seasonal cointegration"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Johansen allows testing cointegrating rank r (number of cointegrating vectors) in a system of n I(1) variables. Engle-Granger is limited to one cointegrating vector."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "If two I(1) series are cointegrated, what is the correct modeling approach?",
+        "answers": ["VECM (Vector Error Correction Model)", "VAR on levels", "VAR on first differences", "ARIMA separately on each series"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Cointegrated series should be modeled with VECM, which respects both short-run dynamics and the long-run cointegrating relationship. VAR in differences loses the long-run information."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "In pairs trading, cointegration is preferred over correlation because:",
+        "answers": ["Cointegration implies the spread is stationary (mean-reverting), enabling reliable entry/exit", "Correlation is harder to compute", "Cointegration implies higher returns", "Correlated pairs always diverge"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "High correlation can be spurious or temporary. Cointegration guarantees a stationary spread in the long run — a stable relationship to trade around."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

@@ -1,0 +1,141 @@
+{
+  "id": "ts-03",
+  "title": "ACF, PACF & Model Identification",
+  "kingdom": "time-series",
+  "dungeonNumber": 3,
+  "lesson": {
+    "title": "ACF, PACF & Model Identification",
+    "body": "The sample ACF estimates ρ(h) from data and is the primary tool for detecting serial correlation. The partial autocorrelation function (PACF) measures the correlation between x_t and x_{t-h} after removing the linear influence of all intermediate lags — it isolates the direct effect. The Ljung-Box test statistic Q = n(n+2) Σ_{k=1}^{m} ρ̂(k)²/(n-k) tests the null hypothesis that the first m autocorrelations are jointly zero; a significant Q indicates remaining structure. For model identification: a pure AR(p) has a PACF that cuts off after lag p and an ACF that tails off; a pure MA(q) has an ACF that cuts off after lag q and a PACF that tails off."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "The PACF at lag h measures:",
+      "steps": ["Think: partial means we remove the effect of lags 1 through h-1."],
+      "answers": [
+        "The correlation between x_t and x_{t-h} after controlling for x_{t-1}, ..., x_{t-h+1}",
+        "The total correlation between x_t and x_{t-h}",
+        "The correlation between consecutive first differences",
+        "The spectral density at frequency h"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "The PACF isolates the direct linear relationship between x_t and x_{t-h} by removing the indirect effects of all intermediate lags. This is what makes it useful for identifying the order p of AR models — the PACF cuts off sharply at lag p.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For an MA(2) process, what pattern do the ACF and PACF exhibit?",
+      "steps": ["MA(q): ACF cuts off at lag q, PACF tails off."],
+      "answers": [
+        "ACF cuts off after lag 2; PACF tails off (decays gradually)",
+        "ACF tails off; PACF cuts off after lag 2",
+        "Both ACF and PACF cut off after lag 2",
+        "Both ACF and PACF tail off indefinitely"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "MA(q) processes have ACF that is exactly zero beyond lag q (cuts off) and a PACF that decays to zero (tails off). This is the signature used to identify MA order. The opposite pattern — PACF cuts off, ACF tails off — identifies AR order.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The Ljung-Box test with m = 10 lags gives Q = 18.3 (χ²₁₀ critical value at 5% is 18.31). What do you conclude?",
+      "latex": "Q = n(n+2) \\sum_{k=1}^{m} \\frac{\\hat{\\rho}(k)^2}{n-k}",
+      "steps": ["Compare Q to the critical value. H₀: all ρ(1),...,ρ(m) = 0."],
+      "answers": [
+        "Marginally fail to reject H₀; no strong evidence of autocorrelation at 5% significance",
+        "Strongly reject H₀; the residuals are definitely autocorrelated",
+        "Accept H₀; the series is white noise",
+        "The test is invalid without knowing the sample size"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Q = 18.3 is just below the 5% critical value of 18.31, so we marginally fail to reject H₀ at 5%. We cannot 'accept' H₀ in the statistical sense — we only fail to reject it. The result is borderline and warrants further inspection.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "For identifying ARMA model order using ACF/PACF, match each pattern to its model. Order from AR-only to MA-only:",
+      "items": [
+        "MA(q): ACF cuts off at lag q, PACF tails off",
+        "AR(p): PACF cuts off at lag p, ACF tails off",
+        "ARMA(p,q): both ACF and PACF tail off",
+        "White noise: both ACF and PACF are zero for all h > 0"
+      ],
+      "correctOrder": [1, 2, 0, 3],
+      "difficulty": 3,
+      "explanation": "White noise has no structure. AR(p) shows a PACF that cuts off and ACF that tails off. ARMA(p,q) shows both ACF and PACF tailing off — neither cuts off cleanly. MA(q) shows ACF cutting off and PACF tailing off. This ordering goes from pure AR to pure MA with mixed ARMA in between.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "You fit an ARMA model and plot the residual ACF. What is the ideal outcome that confirms adequate fit?",
+      "steps": ["A good model should leave no exploitable structure in the residuals."],
+      "answers": [
+        "Residual ACF is within ±1.96/√n bands for all lags — consistent with white noise",
+        "Residual ACF decays slowly to zero",
+        "Residual ACF is positive for all lags",
+        "Residual PACF cuts off at the AR order"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "If the model is adequate, residuals should resemble white noise. The 95% confidence band for a white noise ACF is approximately ±1.96/√n. If all sample autocorrelations fall within these bands, there is no evidence of remaining structure.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Autocorrelation Oracle",
+    "taunt": "Every lag reveals a secret about the past. Can you read the correlogram, or will the pattern consume you?",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "An AR(3) process has which theoretical PACF pattern?",
+        "answers": [
+          "PACF is non-zero at lags 1, 2, 3 and exactly zero for all lags h > 3",
+          "PACF decays exponentially to zero for all lags",
+          "PACF is zero at all lags",
+          "PACF cuts off after lag 1 regardless of the order"
+        ],
+        "correct": 0,
+        "difficulty": 1,
+        "explanation": "For AR(p), the PACF cuts off sharply after lag p. An AR(3) has non-zero PACF at lags 1, 2, 3 and zero PACF beyond that. The ACF of an AR(p) tails off gradually, showing the distinction between the two functions."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The sample ACF at lag 1 is ρ̂(1) = 0.72 with n = 100. Approximate 95% confidence band is ±1.96/√100 = ±0.196. What can you say?",
+        "latex": "\\hat{\\rho}(1) = 0.72, \\quad \\pm \\frac{1.96}{\\sqrt{100}} = \\pm 0.196",
+        "answers": [
+          "ρ̂(1) is significantly different from zero; there is strong evidence of lag-1 autocorrelation",
+          "ρ̂(1) is inside the confidence band so we cannot reject zero autocorrelation",
+          "The test requires at least 1000 observations to be valid",
+          "ρ̂(1) = 0.72 means the series is definitely AR(1)"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "0.72 >> 0.196, so ρ̂(1) is far outside the 95% band. We strongly reject H₀: ρ(1) = 0. Significant autocorrelation at lag 1 does not uniquely identify the model as AR(1) — it could be AR(p), MA(q), or ARMA(p,q)."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "You observe that the sample ACF has significant spikes at lags 1 and 2, and the sample PACF decays slowly with spikes at many lags. Which model class is most consistent with this pattern?",
+        "answers": [
+          "MA(2): ACF cuts off after lag 2, PACF tails off",
+          "AR(2): PACF cuts off after lag 2, ACF tails off",
+          "White noise: no significant lags in either",
+          "I(1) random walk: ACF decays very slowly"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "ACF cutting off after lag 2 with a slowly decaying PACF is the signature of MA(2). AR(2) would show the opposite: PACF cutting off at lag 2 and ACF decaying slowly. ARMA processes show both tailing off rather than either cutting off."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

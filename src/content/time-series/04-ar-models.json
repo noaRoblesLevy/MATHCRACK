@@ -1,0 +1,101 @@
+{
+  "id": "ts-04",
+  "title": "AR Models",
+  "kingdom": "time-series",
+  "dungeonNumber": 4,
+  "lesson": {
+    "title": "AR Models",
+    "body": "An autoregressive model AR(p) expresses x_t as a linear combination of its own past values: x_t = φ₁x_{t-1} + ... + φₚx_{t-p} + ε_t where ε_t is white noise. An AR(p) is stationary if the roots of the characteristic polynomial 1 − φ₁z − ... − φₚzᵖ = 0 all lie outside the unit circle. The Yule-Walker equations relate autocovariances to AR parameters."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "An AR(1) process is x_t = φx_{t-1} + ε_t. It is stationary when:",
+      "latex": "|\\phi| < 1",
+      "answers": ["|φ| < 1", "|φ| > 1", "φ = 0", "φ = 1"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "AR(1) is stationary iff |φ| < 1. If |φ| = 1, it is a random walk (unit root); if |φ| > 1, it is explosive.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For a stationary AR(1) with parameter φ, the variance is:",
+      "latex": "\\text{Var}(x_t) = \\frac{\\sigma_\\varepsilon^2}{1 - \\phi^2}",
+      "steps": ["\\text{Var}(x_t) = \\phi^2 \\text{Var}(x_t) + \\sigma_\\varepsilon^2 \\implies \\text{Var}(x_t) = \\frac{\\sigma_\\varepsilon^2}{1-\\phi^2}"],
+      "answers": ["σ²_ε/(1 − φ²)", "σ²_ε/(1 − φ)", "σ²_ε·(1 − φ²)", "σ²_ε"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "From Var(x_t) = φ²Var(x_t) + σ²_ε (since ε_t independent of x_{t-1}), solve: Var = σ²_ε/(1−φ²).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The ACF of a stationary AR(1) process decays as:",
+      "latex": "\\rho(h) = \\phi^h",
+      "answers": ["φʰ (geometric decay)", "Cuts off at lag 1", "Sinusoidal oscillation", "Constant for all h"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "AR(1) ACF: ρ(h) = φʰ — geometric decay. For positive φ all lags positive; negative φ alternates sign.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the Yule-Walker estimation steps for AR(1):",
+      "items": ["Compute sample ACF at lags 1 and 0: ρ̂(0)=1, ρ̂(1)", "Apply Yule-Walker: φ̂ = ρ̂(1)", "Estimate noise variance: σ̂²_ε = γ̂(0)(1 − φ̂²)", "Verify stationarity: |φ̂| < 1"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "Yule-Walker: compute sample autocorrelations, estimate φ from ρ(1), then estimate noise variance, then check stationarity.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The PACF of an AR(p) process cuts off after lag:",
+      "answers": ["p", "∞ (tails off)", "1", "q"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "The partial ACF (PACF) of an AR(p) is exactly zero for lags > p. This is the key diagnostic: PACF cutoff → AR order.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Autoregressive Specter",
+    "taunt": "Your future is determined by your past. Every step depends on the one before.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "An AR(2): x_t = 0.5x_{t-1} + 0.3x_{t-2} + ε_t. The mean of this stationary process (given E[ε_t]=0) is:",
+        "answers": ["0", "0.8", "1/(1−0.5−0.3)", "Undefined"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Taking expectations: E[x_t] = 0.5E[x_{t-1}] + 0.3E[x_{t-2}] + 0. In stationarity E[x_t] = μ for all t, so μ = 0.8μ → μ = 0."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A random walk x_t = x_{t-1} + ε_t has variance:",
+        "latex": "\\text{Var}(x_t) = t \\sigma_\\varepsilon^2",
+        "answers": ["tσ²_ε (grows without bound)", "σ²_ε/(1−1²) = ∞", "σ²_ε", "0"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "x_t = Σε_i, so Var(x_t) = tσ²_ε. The variance grows linearly with time — this is why a random walk is non-stationary."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The one-step-ahead forecast for AR(1) given x_t is:",
+        "latex": "\\hat{x}_{t+1|t} = \\phi x_t",
+        "answers": ["φx_t", "φx_t + σ²_ε", "x_t", "φ/(1−φ)"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "E[x_{t+1}|x_t] = φE[x_t|x_t] + E[ε_{t+1}|x_t] = φx_t + 0 = φx_t, since ε_{t+1} is independent of the past."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

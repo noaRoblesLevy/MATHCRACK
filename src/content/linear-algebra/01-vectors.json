@@ -1,0 +1,111 @@
+{
+  "id": "linalg-01",
+  "title": "Vectors in Rⁿ",
+  "kingdom": "linear-algebra",
+  "dungeonNumber": 1,
+  "lesson": {
+    "title": "Vectors in Rⁿ",
+    "body": "A vector in Rⁿ is an ordered n-tuple of real numbers representing a point or direction in n-dimensional space. Vectors support two core operations: addition (component-wise) and scalar multiplication. The dot product u·v = Σuᵢvᵢ gives a scalar measuring projection and is related to the angle between vectors by u·v = |u||v|cosθ."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Which of the following correctly defines the sum of vectors u = (1, 3, -2) and v = (4, -1, 5)?",
+      "latex": "\\mathbf{u} + \\mathbf{v} = (1,3,-2) + (4,-1,5)",
+      "steps": ["Add components pairwise: (1+4,\\; 3+(-1),\\; -2+5)"],
+      "answers": ["(5, 2, 3)", "(3, 4, 7)", "(5, -3, 3)", "(4, 3, 10)"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Vector addition is performed component-wise: (1+4, 3-1, -2+5) = (5, 2, 3).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "If v = (2, -4, 6) and c = -3, what is the scalar multiple cv?",
+      "latex": "c\\mathbf{v} = -3(2, -4, 6)",
+      "steps": ["Multiply each component by -3: (-3\\cdot2,\\; -3\\cdot(-4),\\; -3\\cdot6)"],
+      "answers": ["(-6, 12, -18)", "(6, -12, 18)", "(-6, -12, -18)", "(6, 12, -18)"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Scalar multiplication distributes over each component: -3·(2,-4,6) = (-6, 12, -18).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Compute the dot product of u = (3, -1, 2) and v = (1, 4, -2).",
+      "latex": "\\mathbf{u} \\cdot \\mathbf{v} = (3)(1) + (-1)(4) + (2)(-2)",
+      "steps": ["\\mathbf{u}\\cdot\\mathbf{v} = 3(1) + (-1)(4) + 2(-2) = 3 - 4 - 4"],
+      "answers": ["-5", "5", "3", "-3"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "u·v = 3(1) + (-1)(4) + 2(-2) = 3 - 4 - 4 = -5.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Two vectors u and v satisfy u·v = 0. What is the geometric interpretation?",
+      "latex": "\\mathbf{u} \\cdot \\mathbf{v} = |\\mathbf{u}||\\mathbf{v}|\\cos\\theta = 0",
+      "steps": ["\\cos\\theta = 0 \\implies \\theta = 90^\\circ"],
+      "answers": ["u and v are perpendicular (orthogonal)", "u and v are parallel", "u and v have the same magnitude", "u and v are equal"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Since u·v = |u||v|cosθ = 0, we have cosθ = 0, so θ = 90°. The vectors are orthogonal.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to find the angle θ between u = (1, 0) and v = (1, 1):",
+      "items": [
+        "Compute |u| = 1 and |v| = \\sqrt{2}",
+        "Use the formula \\theta = \\arccos\\left(\\frac{\\mathbf{u}\\cdot\\mathbf{v}}{|\\mathbf{u}||\\mathbf{v}|}\\right)",
+        "Compute the dot product u\\cdot v = 1",
+        "Conclude \\theta = 45^\\circ"
+      ],
+      "correctOrder": [2, 0, 1, 3],
+      "difficulty": 3,
+      "explanation": "First compute the dot product (=1), then both magnitudes, then apply the arccosine formula to get 45°.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Null Vector",
+    "taunt": "I am the void between all directions. Your vectors point nowhere against me!",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Find the magnitude of the vector w = (2, -3, 6).",
+        "latex": "|\\mathbf{w}| = \\sqrt{2^2 + (-3)^2 + 6^2}",
+        "answers": ["7", "11", "\\sqrt{13}", "49"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "|w| = √(4+9+36) = √49 = 7."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which expression gives the unit vector in the direction of v = (3, 4)?",
+        "latex": "\\hat{\\mathbf{v}} = \\frac{\\mathbf{v}}{|\\mathbf{v}|}",
+        "answers": ["\\left(\\frac{3}{5}, \\frac{4}{5}\\right)", "\\left(\\frac{3}{7}, \\frac{4}{7}\\right)", "(3, 4)", "\\left(\\frac{4}{5}, \\frac{3}{5}\\right)"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "|v| = √(9+16) = 5, so the unit vector is (3/5, 4/5)."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "For which value of k are u = (2, k) and v = (3, -6) orthogonal?",
+        "latex": "\\mathbf{u} \\cdot \\mathbf{v} = 2(3) + k(-6) = 0",
+        "answers": ["k = 1", "k = -1", "k = 3", "k = -3"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "u·v = 6 - 6k = 0, so k = 1."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

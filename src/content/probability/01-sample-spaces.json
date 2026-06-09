@@ -1,0 +1,158 @@
+{
+  "id": "prob-01",
+  "title": "Sample Spaces & Events",
+  "kingdom": "probability",
+  "dungeonNumber": 1,
+  "lesson": {
+    "title": "Sample Spaces & Events",
+    "body": "The sample space Ω is the set of all possible outcomes of a random experiment. An event is any subset A ⊆ Ω; it occurs when the observed outcome belongs to A. Set operations — complement Aᶜ, union A∪B, and intersection A∩B — let us build complex events from simpler ones. Two events A and B are mutually exclusive (disjoint) when A∩B = ∅, meaning they cannot both occur."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "A fair six-sided die is rolled once. Which of the following correctly describes the sample space Ω?",
+      "latex": "\\Omega = ?",
+      "steps": [
+        "List every possible outcome of one die roll.",
+        "Each face value 1 through 6 is a distinct outcome."
+      ],
+      "answers": [
+        "\\{1, 2, 3, 4, 5, 6\\}",
+        "\\{1, 2, 3, 4, 5, 6, 7\\}",
+        "\\{0, 1, 2, 3, 4, 5, 6\\}",
+        "\\{2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12\\}"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Rolling one die yields exactly six outcomes: the integers 1 through 6. There is no face labeled 0 or 7, so the sample space is {1, 2, 3, 4, 5, 6}.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Let Ω = {1, 2, 3, 4, 5, 6} and A = {2, 4, 6}. What is the complement Aᶜ?",
+      "latex": "A^c = \\Omega \\setminus A",
+      "steps": [
+        "The complement contains all outcomes in Ω that are NOT in A.",
+        "Remove \\{2,4,6\\} from \\{1,2,3,4,5,6\\}."
+      ],
+      "answers": [
+        "\\{1, 3, 5\\}",
+        "\\{2, 4, 6\\}",
+        "\\{1, 2, 3\\}",
+        "\\emptyset"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Aᶜ = Ω \\ A = {1,2,3,4,5,6} \\ {2,4,6} = {1,3,5}. The complement keeps every element of Ω that does not appear in A.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Let A = {1, 2, 3} and B = {3, 4, 5} be events in Ω = {1,2,3,4,5,6}. Find A ∪ B and A ∩ B.",
+      "latex": "A \\cup B = ?,\\quad A \\cap B = ?",
+      "steps": [
+        "Union: include every element appearing in A or B (or both).",
+        "Intersection: include only elements appearing in both A and B."
+      ],
+      "answers": [
+        "A \\cup B = \\{1,2,3,4,5\\},\\; A \\cap B = \\{3\\}",
+        "A \\cup B = \\{1,2,4,5\\},\\; A \\cap B = \\{3\\}",
+        "A \\cup B = \\{1,2,3,4,5\\},\\; A \\cap B = \\emptyset",
+        "A \\cup B = \\{3\\},\\; A \\cap B = \\{1,2,3,4,5\\}"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "A ∪ B collects {1,2,3} and {3,4,5} into {1,2,3,4,5}. A ∩ B is the overlap, which is just {3}.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these set-theoretic relationships from most restrictive (fewest elements guaranteed) to least restrictive (most elements guaranteed), for non-empty events A ⊆ Ω:",
+      "items": [
+        "A \\cap B = \\emptyset  (disjoint)",
+        "A \\cap B",
+        "A",
+        "A \\cup B"
+      ],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "Disjoint events have no overlap (empty intersection). The intersection A∩B is a subset of A, so it has at most as many elements as A. A itself sits between its intersection and union with B. The union A∪B is always at least as large as either A or B alone.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Two events A and B satisfy A ∩ B = ∅. What does this imply?",
+      "latex": "A \\cap B = \\emptyset",
+      "steps": [
+        "Recall the definition of mutually exclusive events.",
+        "If no outcome belongs to both A and B, they cannot co-occur."
+      ],
+      "answers": [
+        "A and B are mutually exclusive; they cannot both occur.",
+        "A and B are independent events.",
+        "A = Bᶜ necessarily.",
+        "P(A) + P(B) = 1."
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "A ∩ B = ∅ means A and B share no outcomes, so they are mutually exclusive. Independence is a separate concept involving probabilities, not mere set overlap. Aᶜ = B would require A ∪ B = Ω as well, which isn't guaranteed here.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Null Set",
+    "taunt": "Your events collapse into ∅ — nothing you build will ever occur!",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Let A and B be events such that A ⊆ B. Which of the following must be true?",
+        "latex": "A \\subseteq B",
+        "answers": [
+          "A \\cap B = A",
+          "A \\cup B = A",
+          "A \\cap B = \\emptyset",
+          "B \\subseteq A"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "When A ⊆ B, every element of A is also in B, so the intersection of A and B is exactly A. The union would be B, not A."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Using De Morgan's law, which expression equals (A ∪ B)ᶜ?",
+        "latex": "(A \\cup B)^c = ?",
+        "answers": [
+          "A^c \\cap B^c",
+          "A^c \\cup B^c",
+          "A \\cap B",
+          "A \\cup B^c"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "De Morgan's first law states (A ∪ B)ᶜ = Aᶜ ∩ Bᶜ. An outcome is outside the union precisely when it is outside both A and outside B."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A coin is flipped twice. Let A = {HH, HT} (first flip is H) and B = {HT, TT} (second flip is T). What is A ∩ Bᶜ?",
+        "latex": "\\Omega = \\{HH, HT, TH, TT\\},\\quad A \\cap B^c = ?",
+        "answers": [
+          "\\{HH\\}",
+          "\\{HT\\}",
+          "\\{HH, HT\\}",
+          "\\{TH\\}"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Bᶜ = {HH, TH} (outcomes where the second flip is H). A ∩ Bᶜ = {HH, HT} ∩ {HH, TH} = {HH}."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

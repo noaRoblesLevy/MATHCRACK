@@ -1,0 +1,97 @@
+{
+  "id": "ts-07",
+  "title": "Exponential Smoothing",
+  "kingdom": "time-series",
+  "dungeonNumber": 7,
+  "lesson": {
+    "title": "Exponential Smoothing",
+    "body": "Exponential smoothing forecasts by weighting recent observations more heavily. Simple exponential smoothing: ŝ_t = αx_t + (1−α)ŝ_{t-1} where 0 < α < 1. Holt's two-parameter method adds a trend component. Holt-Winters (triple exponential smoothing) adds seasonality. The smoothing parameter α controls how quickly old data is forgotten."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "In simple exponential smoothing ŝ_t = αx_t + (1−α)ŝ_{t-1}, larger α means:",
+      "answers": ["More weight on recent observations, faster adaptation", "More weight on older observations, slower adaptation", "Uniform weighting", "Seasonal adjustment"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "α close to 1 weights the current observation heavily (fast adaptation). α close to 0 averages over many past values (slow adaptation).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Simple exponential smoothing is appropriate for series with:",
+      "answers": ["No trend and no seasonality", "Linear trend only", "Seasonal pattern only", "Both trend and seasonality"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Simple (single) ES handles level but not trend or seasonality. Holt's method handles trend; Holt-Winters handles both.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Holt's method has two smoothing parameters α and β. β controls:",
+      "latex": "T_t = \\beta(L_t - L_{t-1}) + (1-\\beta)T_{t-1}",
+      "answers": ["Smoothing of the trend estimate", "Smoothing of the level", "Seasonal adjustment", "Noise variance"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Holt's method: L_t = level, T_t = trend. α smooths the level, β smooths the trend. The h-step forecast is L_t + h·T_t.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the components of the Holt-Winters additive model:",
+      "items": ["Level: L_t = α(x_t − S_{t−s}) + (1−α)(L_{t-1} + T_{t-1})", "Trend: T_t = β(L_t − L_{t-1}) + (1−β)T_{t-1}", "Seasonal: S_t = γ(x_t − L_t) + (1−γ)S_{t-s}", "Forecast: x̂_{T+h} = L_T + hT_T + S_{T+h-s}"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "Holt-Winters: update level, update trend, update seasonal factor, combine for forecast.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The k-step-ahead forecast from simple exponential smoothing is:",
+      "answers": ["ŝ_T for all h (the last smoothed value)", "α^h · x_T", "x_T + h·α", "0"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Simple ES h-step forecast is just the last smoothed value ŝ_T for all horizons h ≥ 1 — a flat forecast (appropriate when no trend).",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Forecast Wraith",
+    "taunt": "The future is an echo of the present. How heavily do you weight the past?",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "The optimal α for exponential smoothing is found by:",
+        "answers": ["Minimizing SSE on the training data", "Setting α = 1/n", "Using α = 0.5 always", "Cross-validation only"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "α is typically estimated by minimizing the sum of squared one-step-ahead forecast errors on the training data."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Exponential smoothing is equivalent to ARIMA(0,1,1) with:",
+        "latex": "\\theta = 1 - \\alpha",
+        "answers": ["θ = 1 − α", "θ = α", "θ = α/(1−α)", "θ = 0"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "SES is exactly ARIMA(0,1,1) with MA parameter θ = 1−α. This equivalence allows using ARIMA theory for ES."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "For a monthly series with strong yearly seasonality and upward trend, which model is most appropriate?",
+        "answers": ["Holt-Winters with seasonal period s=12", "Simple exponential smoothing", "Holt's two-parameter method", "AR(1)"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Holt-Winters (triple ES) handles both trend and seasonality. With monthly data and annual cycles, s=12."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

@@ -1,0 +1,98 @@
+{
+  "id": "linalg-09",
+  "title": "Cramer's Rule & LU Decomposition",
+  "kingdom": "linear-algebra",
+  "dungeonNumber": 9,
+  "lesson": {
+    "title": "Cramer's Rule & LU Decomposition",
+    "body": "Cramer's rule solves Ax = b by xᵢ = det(Aᵢ)/det(A), where Aᵢ is A with the i-th column replaced by b. LU decomposition factors A = LU where L is lower triangular and U is upper triangular. Once computed, it solves Ax = b via forward substitution Ly = b then back substitution Ux = y, which is efficient for multiple right-hand sides."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Cramer's rule gives x₁ = det(A₁)/det(A). What is A₁?",
+      "answers": ["A with its first column replaced by b", "A with its first row replaced by b", "A with its first column deleted", "The first column of A"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Aᵢ is formed by replacing the i-th column of A with the right-hand side vector b.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "In LU decomposition A = LU, which of these is true?",
+      "latex": "A = LU",
+      "answers": ["L is lower triangular with 1s on diagonal, U is upper triangular", "L is upper triangular, U is lower triangular", "Both L and U are diagonal", "L has zeros on the diagonal"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "L (Lower) has 1s on the diagonal and zeros above; U (Upper) is the result of Gaussian elimination.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "To solve Ax = b using LU decomposition, what two systems must be solved?",
+      "latex": "Ly = b, \\quad Ux = y",
+      "steps": ["\\text{Forward substitution: } Ly = b", "\\text{Back substitution: } Ux = y"],
+      "answers": ["Ly = b then Ux = y", "Ux = b then Ly = x", "LUx = b directly", "Ux = b then Ly = b"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Split A = LU, substitute: LUx = b becomes Ly = b (forward sub for y), then Ux = y (back sub for x).",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to solve a 2×2 system using Cramer's rule:",
+      "items": ["Compute det(A)", "Form A₁, A₂ by replacing columns with b", "Compute det(A₁), det(A₂)", "Compute x₁ = det(A₁)/det(A), x₂ = det(A₂)/det(A)"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Cramer's rule: compute det(A) first (check invertibility), form the modified matrices, compute their determinants, then divide.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the main advantage of LU decomposition over directly solving Ax = b by row reduction?",
+      "answers": ["Efficient for multiple right-hand sides: factor once, solve many times", "It always finds the unique solution", "It works for singular matrices", "It is more numerically accurate for 2×2 systems"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "LU decomposition factors A once. Each new right-hand side b only requires O(n²) forward and back substitution, not a full O(n³) elimination.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Decomposer",
+    "taunt": "Every matrix can be torn apart. Let me show you what lies inside.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "LU decomposition requires pivoting when:",
+        "answers": ["A zero appears on the diagonal during elimination", "det(A) = 1", "A is symmetric", "All eigenvalues are positive"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "When a pivot (diagonal element) is zero, rows must be swapped (partial pivoting). This leads to PLU decomposition: PA = LU."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Using Cramer's rule on a 3×3 system requires computing how many determinants?",
+        "answers": ["4", "3", "6", "9"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "You need det(A) once, plus det(A₁), det(A₂), det(A₃) for the three unknowns — a total of 4 determinants."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "For an n×n system, Cramer's rule requires O(?) operations while Gaussian elimination requires O(?)",
+        "answers": ["O(n!) vs O(n³)", "O(n³) vs O(n²)", "O(n²) vs O(n)", "O(n) vs O(n³)"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Computing n+1 determinants naively is O(n·n!) — exponential. Gaussian elimination is O(n³). Cramer's rule is only practical for very small n."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

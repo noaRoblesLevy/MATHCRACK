@@ -1,0 +1,99 @@
+{
+  "id": "py-08",
+  "title": "Indexing & Selection",
+  "kingdom": "python",
+  "dungeonNumber": 8,
+  "lesson": {
+    "title": "Indexing & Selection",
+    "body": "Pandas has two primary indexers: .loc[] uses label-based indexing (row/column names), while .iloc[] uses integer position-based indexing (0-based). Boolean selection filters rows where a condition is True: df[df['col'] > 5]. The .query() method offers SQL-like syntax. Use .at[] and .iat[] for scalar access. Chained indexing (df['a']['b']) can cause SettingWithCopyWarning — use .loc[] instead."
+  },
+  "rooms": [
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to select rows 0-2 and columns 0-1 by position:",
+      "code": "import pandas as pd\ndf = pd.DataFrame({'a':[1,2,3],'b':[4,5,6],'c':[7,8,9]})\nresult = df.___[0:3, 0:2]",
+      "answers": ["iloc", "loc", "at", "ix"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "df.iloc[row_positions, col_positions] — integer-based. df.iloc[0:3, 0:2] selects rows 0,1,2 and columns 0,1 (first two).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does df.loc[2:5, 'name'] select?",
+      "answers": ["Rows with index labels 2 through 5 (inclusive), column 'name'", "Rows at integer positions 2 to 4, column 'name'", "Rows 2 to 5 exclusive, column 'name'", "Error — mixed indexing not allowed"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": ".loc is label-based and INCLUSIVE of the stop label (unlike Python slicing). .iloc is position-based and exclusive of the stop.",
+      "xp": 10
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the boolean selection to filter rows where score > 80:",
+      "code": "import pandas as pd\ndf = pd.DataFrame({'name':['A','B','C'],'score':[75,85,90]})\nhigh = df[df['score'] ___ 80]",
+      "answers": ["> ", "== ", "!= ", "< "],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Boolean indexing: df[df['score'] > 80] creates a boolean mask and filters rows where it's True.",
+      "xp": 10
+    },
+    {
+      "type": "fill-blank",
+      "question": "Complete the code to use .query() for the same filter:",
+      "code": "import pandas as pd\ndf = pd.DataFrame({'name':['A','B','C'],'score':[75,85,90]})\nhigh = df.___('score > 80')",
+      "answers": ["query", "filter", "select", "where"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "df.query('condition') provides a clean SQL-like syntax. It's readable and efficient for complex conditions. Use @ for Python variables: df.query('score > @threshold').",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these selection methods from label-based to position-based to scalar:",
+      "items": ["df.loc['row_label', 'col_label'] — label-based", "df.iloc[0, 1] — position-based", "df.at['label', 'col'] — scalar by label", "df.iat[0, 1] — scalar by position"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "loc and at are label-based; iloc and iat are position-based. at/iat are scalar-optimized (much faster than loc/iloc for single values).",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Index Phantom",
+    "taunt": "You tried to modify a copy, not the original. SettingWithCopyWarning awaits you.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Why does df[df['a'] > 0]['b'] = 1 cause a SettingWithCopyWarning?",
+        "answers": ["The boolean selection may return a copy, so assignment may not modify the original df", "You cannot assign to column 'b'", "Boolean indexing doesn't work with assignment", "df['a'] is read-only"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Chained indexing may create a copy. Use df.loc[df['a'] > 0, 'b'] = 1 to guarantee in-place modification of the original DataFrame."
+      },
+      {
+        "type": "fill-blank",
+        "question": "Complete the correct way to set values with a condition:",
+        "code": "import pandas as pd\ndf = pd.DataFrame({'a':[1,-2,3],'b':[0,0,0]})\ndf.___[df['a'] > 0, 'b'] = 1",
+        "answers": ["loc", "iloc", "at", "query"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "df.loc[boolean_mask, column] = value is the correct pattern for conditional assignment. It directly modifies the original DataFrame in-place."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "df.iloc[-1] returns:",
+        "answers": ["The last row of the DataFrame", "The last column", "An error", "The second-to-last row"],
+        "correct": 0,
+        "difficulty": 1,
+        "explanation": "Negative indexing works in .iloc just like Python lists: -1 is the last element, -2 is second-to-last, etc."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

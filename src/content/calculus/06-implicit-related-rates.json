@@ -1,0 +1,106 @@
+{
+  "id": "calc-06",
+  "title": "Implicit Differentiation",
+  "kingdom": "calculus",
+  "dungeonNumber": 6,
+  "lesson": {
+    "title": "Implicit Differentiation",
+    "body": "When y is defined implicitly by an equation like x² + y² = r², we differentiate both sides with respect to x, treating y as a function of x and applying the chain rule wherever y appears. Related rates problems use the chain rule over time: if two quantities are related by an equation, we differentiate both sides with respect to t to find how their rates change."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Find dy/dx for x² + y² = 25 using implicit differentiation.",
+      "latex": "2x + 2y\\frac{dy}{dx} = 0",
+      "steps": ["\\frac{d}{dx}(x^2 + y^2) = \\frac{d}{dx}(25)", "2x + 2y \\frac{dy}{dx} = 0 \\implies \\frac{dy}{dx} = -\\frac{x}{y}"],
+      "answers": ["−x/y", "x/y", "−y/x", "y/x"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Differentiate both sides: 2x + 2y(dy/dx) = 0, so dy/dx = −x/y.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Differentiate xy = 5 implicitly with respect to x.",
+      "latex": "x\\frac{dy}{dx} + y = 0",
+      "steps": ["\\text{Product rule: } y + x\\frac{dy}{dx} = 0", "\\frac{dy}{dx} = -\\frac{y}{x}"],
+      "answers": ["dy/dx = −y/x", "dy/dx = y/x", "dy/dx = 1/x", "dy/dx = −1/x"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Product rule: d/dx[xy] = y + x(dy/dx) = 0, so dy/dx = −y/x.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A ladder 10 m long leans against a wall. The bottom slides out at 1 m/s. How fast is the top sliding down when the bottom is 6 m from the wall?",
+      "latex": "x^2 + y^2 = 100 \\implies 2x\\frac{dx}{dt} + 2y\\frac{dy}{dt} = 0",
+      "steps": ["\\text{When } x=6: y = \\sqrt{100-36} = 8", "2(6)(1) + 2(8)\\frac{dy}{dt} = 0 \\implies \\frac{dy}{dt} = -\\frac{3}{4}"],
+      "answers": ["−3/4 m/s", "3/4 m/s", "−4/3 m/s", "−6/8 m/s"],
+      "correct": 0,
+      "difficulty": 3,
+      "explanation": "At x=6, y=8. Differentiating x²+y²=100: 2x(dx/dt)+2y(dy/dt)=0. Plugging in: 12 + 16(dy/dt)=0, dy/dt = −3/4 m/s.",
+      "xp": 20
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps for solving a related rates problem:",
+      "items": ["Draw a diagram and identify all variables", "Write an equation relating the variables", "Differentiate both sides with respect to t", "Substitute known values and solve for the unknown rate"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Related rates: draw and label, relate variables with an equation, differentiate in t, then plug in known values.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For the equation x³ + y³ = 6xy, what is dy/dx?",
+      "latex": "3x^2 + 3y^2\\frac{dy}{dx} = 6y + 6x\\frac{dy}{dx}",
+      "steps": ["3x^2 - 6y = (6x - 3y^2)\\frac{dy}{dx}", "\\frac{dy}{dx} = \\frac{3x^2 - 6y}{6x - 3y^2} = \\frac{x^2 - 2y}{2x - y^2}"],
+      "answers": ["(x² − 2y)/(2x − y²)", "(2y − x²)/(y² − 2x)", "3x²/3y²", "y/x"],
+      "correct": 0,
+      "difficulty": 3,
+      "explanation": "Differentiate both sides, collect dy/dx terms on one side: dy/dx = (3x² − 6y)/(6x − 3y²) = (x² − 2y)/(2x − y²).",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Implicit Serpent",
+    "taunt": "I am never explicit. You must infer my rate from what is related.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A spherical balloon is inflated at 100 cm³/s. How fast is the radius growing when r = 5 cm?",
+        "latex": "V = \\frac{4}{3}\\pi r^3 \\implies \\frac{dV}{dt} = 4\\pi r^2 \\frac{dr}{dt}",
+        "answers": ["1/π cm/s", "1/(4π) cm/s", "4π cm/s", "100/(4π·25) = 1/π cm/s"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "dV/dt = 4πr²(dr/dt). At r=5: 100 = 4π(25)(dr/dt), so dr/dt = 100/(100π) = 1/π ≈ 0.318 cm/s."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Find the slope of the tangent to x² + xy + y² = 7 at the point (1, 2).",
+        "latex": "2x + y + x\\frac{dy}{dx} + 2y\\frac{dy}{dx} = 0",
+        "answers": ["−4/5", "4/5", "−2", "0"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Differentiate: 2x + y + (x + 2y)dy/dx = 0. At (1,2): 2+2+(1+4)dy/dx = 0, so dy/dx = −4/5."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "If y = f(x) satisfies e^y = x + y, find dy/dx.",
+        "latex": "e^y \\frac{dy}{dx} = 1 + \\frac{dy}{dx}",
+        "answers": ["1/(eʸ − 1)", "1/(1 − eʸ)", "eʸ/(eʸ − 1)", "eʸ"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Differentiate: eʸ(dy/dx) = 1 + dy/dx. Factor: (eʸ − 1)(dy/dx) = 1, so dy/dx = 1/(eʸ − 1)."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

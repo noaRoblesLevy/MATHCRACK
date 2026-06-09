@@ -1,0 +1,133 @@
+{
+  "id": "calc-01",
+  "title": "Limits",
+  "kingdom": "calculus",
+  "dungeonNumber": 1,
+  "lesson": {
+    "title": "Limits",
+    "body": "The limit of f(x) as x approaches a is L — written lim_{x→a} f(x) = L — if f(x) can be made arbitrarily close to L by taking x sufficiently close to a (but not equal to a). One-sided limits refine this: the left-hand limit lim_{x→a⁻} and right-hand limit lim_{x→a⁺} must both equal L for the two-sided limit to exist. The limit laws let you break complex limits into simpler pieces via sums, products, and quotients. The Squeeze Theorem guarantees lim f(x) = L if g(x) ≤ f(x) ≤ h(x) and both g and h approach L."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "What does lim_{x→3} f(x) = 7 mean?",
+      "latex": "\\lim_{x \\to 3} f(x) = 7",
+      "steps": [
+        "A limit describes the value f(x) approaches, not necessarily f(3).",
+        "x approaches 3 but never equals 3."
+      ],
+      "answers": [
+        "f(3) = 7",
+        "f(x) gets arbitrarily close to 7 as x gets close to 3",
+        "f(x) = 7 for all x near 3",
+        "The graph passes through (3, 7) with no gap"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "A limit describes the behavior of f(x) as x approaches 3, regardless of f(3)'s value. f(3) may be undefined or different from 7.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For the limit lim_{x→a} f(x) to exist, which condition must hold?",
+      "latex": "\\lim_{x \\to a} f(x) \\text{ exists}",
+      "steps": [
+        "Recall the relationship between one-sided and two-sided limits.",
+        "The left-hand limit is lim_{x→a⁻} f(x) and the right-hand limit is lim_{x→a⁺} f(x)."
+      ],
+      "answers": [
+        "f(a) must be defined",
+        "The left-hand and right-hand limits must both equal the same value",
+        "f(x) must be continuous on [a-1, a+1]",
+        "f'(a) must exist"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "A two-sided limit exists if and only if both one-sided limits exist and are equal. The value of f(a) is irrelevant to whether the limit exists.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Given lim_{x→2} f(x) = 5 and lim_{x→2} g(x) = 3, what is lim_{x→2} [f(x) · g(x)]?",
+      "latex": "\\lim_{x \\to 2} [f(x) \\cdot g(x)]",
+      "steps": [
+        "Apply the product limit law: lim[f·g] = lim(f) · lim(g).",
+        "Substitute the given values: 5 · 3."
+      ],
+      "answers": ["2", "8", "15", "Cannot be determined"],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "By the product limit law, lim[f(x)·g(x)] = lim f(x) · lim g(x) = 5 · 3 = 15.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Use the Squeeze Theorem: if -x² ≤ f(x) ≤ x² for all x, what is lim_{x→0} f(x)?",
+      "latex": "-x^2 \\leq f(x) \\leq x^2 \\implies \\lim_{x \\to 0} f(x) = ?",
+      "steps": [
+        "Find lim_{x→0} (-x²) and lim_{x→0} (x²).",
+        "Both equal 0, so by the Squeeze Theorem, lim f(x) = 0."
+      ],
+      "answers": ["Undefined", "-1", "0", "1"],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Since lim_{x→0}(-x²) = 0 and lim_{x→0}(x²) = 0, the Squeeze Theorem forces lim_{x→0} f(x) = 0.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to evaluate lim_{x→0} [x·sin(1/x)] using the Squeeze Theorem:",
+      "items": [
+        "Conclude lim_{x→0} x·sin(1/x) = 0 by the Squeeze Theorem",
+        "Note that -1 ≤ sin(1/x) ≤ 1 for all x ≠ 0",
+        "Multiply through by |x| to get -|x| ≤ x·sin(1/x) ≤ |x|",
+        "Observe lim_{x→0} (-|x|) = 0 and lim_{x→0} |x| = 0"
+      ],
+      "correctOrder": [1, 2, 3, 0],
+      "difficulty": 3,
+      "explanation": "First bound sin(1/x), then multiply by |x|, note both outer limits are 0, then squeeze to conclude the limit is 0.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Undefined Form",
+    "taunt": "You dare approach me? I am 0/0, ∞/∞ — I take no value, yet I haunt every limit you will ever compute!",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Evaluate: lim_{x→4} (x² - 16) / (x - 4)",
+        "latex": "\\lim_{x \\to 4} \\frac{x^2 - 16}{x - 4}",
+        "answers": ["0", "4", "8", "Undefined"],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "Factor: (x²-16)/(x-4) = (x+4)(x-4)/(x-4) = x+4 for x≠4. So the limit = 4+4 = 8."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "If lim_{x→2⁻} f(x) = 5 and lim_{x→2⁺} f(x) = 7, what is lim_{x→2} f(x)?",
+        "latex": "\\lim_{x \\to 2^-} f(x) = 5, \\quad \\lim_{x \\to 2^+} f(x) = 7",
+        "answers": ["5", "6", "7", "Does not exist"],
+        "correct": 3,
+        "difficulty": 1,
+        "explanation": "The two-sided limit exists only if the left-hand and right-hand limits are equal. Since 5 ≠ 7, the limit does not exist."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Given lim_{x→0} f(x) = 4 and lim_{x→0} g(x) = 0, what is lim_{x→0} [f(x)/g(x)]?",
+        "latex": "\\lim_{x \\to 0} \\frac{f(x)}{g(x)}, \\quad \\lim_{x\\to0}f = 4, \\quad \\lim_{x\\to0}g = 0",
+        "answers": ["4", "0", "∞", "Does not exist (or diverges)"],
+        "correct": 3,
+        "difficulty": 2,
+        "explanation": "When the numerator limit is nonzero and the denominator limit is 0, the quotient limit law does not apply — the limit either diverges to ±∞ or does not exist."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

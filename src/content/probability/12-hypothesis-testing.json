@@ -1,0 +1,98 @@
+{
+  "id": "prob-12",
+  "title": "Hypothesis Testing",
+  "kingdom": "probability",
+  "dungeonNumber": 12,
+  "lesson": {
+    "title": "Hypothesis Testing",
+    "body": "Hypothesis testing is a formal procedure for deciding between a null hypothesis H₀ and an alternative H₁ based on data. We compute a test statistic and reject H₀ if it falls in the rejection region. A Type I error (false positive) occurs with probability α. A Type II error (false negative) occurs with probability β. The p-value is the probability of observing results as extreme as the data, assuming H₀ is true."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "A Type I error is:",
+      "answers": ["Rejecting H₀ when H₀ is true", "Failing to reject H₀ when H₁ is true", "Accepting H₁ with probability 1", "The power of the test"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Type I error = false positive = rejecting a true null hypothesis. Its probability is controlled by the significance level α.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For a two-sided z-test at α = 0.05, we reject H₀: μ = μ₀ if:",
+      "latex": "|Z| = \\left|\\frac{\\bar{X} - \\mu_0}{\\sigma/\\sqrt{n}}\\right| > 1.96",
+      "answers": ["|Z| > 1.96", "|Z| > 1.645", "Z > 1.96", "p-value > 0.05"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Two-sided test at α=0.05 rejects when |Z| > z_{0.025} = 1.96.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does a p-value of 0.03 mean?",
+      "answers": ["Under H₀, there is a 3% probability of observing results as extreme as those obtained", "H₀ is false with probability 0.97", "There is a 3% chance of a Type I error in this specific test", "The effect size is 0.03"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "The p-value is a conditional probability: P(data as extreme | H₀ true). A common misconception is that it is P(H₀ is true | data).",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps in a hypothesis test:",
+      "items": ["State H₀ and H₁, choose α", "Compute the test statistic from data", "Find the p-value or critical region", "Reject or fail to reject H₀"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Proper order: define hypotheses and significance level first, then compute, then decide.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Power of a test = 1 − β is defined as:",
+      "answers": ["P(reject H₀ | H₁ is true)", "P(reject H₀ | H₀ is true)", "1 − α", "P(H₁ is true)"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Power = P(correctly rejecting H₀ when H₁ is true) = 1 − β (Type II error rate). Higher power is better.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Null Hypothesis",
+    "taunt": "You cannot prove I am wrong. You can only find weak evidence against me.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "When we 'fail to reject H₀', this means:",
+        "answers": ["The data do not provide sufficient evidence against H₀", "H₀ is true", "The test is inconclusive and we accept H₁", "Our sample size was too large"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Failing to reject ≠ accepting. We never 'accept' H₀ in classical testing — we simply lack enough evidence to reject it."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The t-statistic for testing H₀: μ = μ₀ with unknown σ is:",
+        "latex": "T = \\frac{\\bar{X} - \\mu_0}{S/\\sqrt{n}}",
+        "answers": ["T = (X̄ − μ₀)/(S/√n) ~ t_{n-1}", "T = (X̄ − μ₀)/(σ/√n) ~ N(0,1)", "T = X̄ − μ₀ ~ N(0, σ²)", "T = nX̄/S ~ F_{1,n-1}"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "With unknown σ, replace it by the sample S and use the t-distribution with n−1 degrees of freedom."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The Neyman-Pearson lemma states that the most powerful test at level α for a simple H₀ vs simple H₁ is based on:",
+        "latex": "\\Lambda(x) = \\frac{L(\\theta_1 | x)}{L(\\theta_0 | x)}",
+        "answers": ["The likelihood ratio Λ(x) = L(θ₁|x)/L(θ₀|x)", "The sample mean X̄", "The largest order statistic", "The posterior probability P(H₁|x)"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "The Neyman-Pearson lemma guarantees that the likelihood ratio test is the most powerful for simple hypotheses, providing the theoretical foundation for many common tests."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

@@ -1,0 +1,102 @@
+{
+  "id": "prob-09",
+  "title": "Normal Distribution",
+  "kingdom": "probability",
+  "dungeonNumber": 9,
+  "lesson": {
+    "title": "Normal Distribution",
+    "body": "The Normal (Gaussian) distribution N(μ, σ²) has the bell-shaped PDF f(x) = (1/√(2πσ²))·exp(-(x-μ)²/(2σ²)). It is fully characterized by its mean μ and variance σ². The standardization Z = (X-μ)/σ gives the standard normal N(0,1). The 68-95-99.7 rule states that roughly 68%, 95%, and 99.7% of values fall within 1, 2, and 3 standard deviations of the mean."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "What percentage of observations fall within μ ± 2σ for a normal distribution?",
+      "answers": ["Approximately 95%", "Approximately 68%", "Approximately 99.7%", "Exactly 90%"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "The 68-95-99.7 rule: ~68% within 1σ, ~95% within 2σ, ~99.7% within 3σ of the mean.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "If X ~ N(50, 100), what is P(X ≤ 60)?",
+      "latex": "Z = \\frac{X - \\mu}{\\sigma} = \\frac{60 - 50}{10} = 1",
+      "steps": ["\\sigma = \\sqrt{100} = 10", "P(X \\leq 60) = P\\left(Z \\leq \\frac{60-50}{10}\\right) = P(Z \\leq 1) \\approx 0.841"],
+      "answers": ["≈ 0.841", "≈ 0.159", "≈ 0.977", "≈ 0.500"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Standardize: Z = (60−50)/10 = 1. P(Z ≤ 1) ≈ 0.8413 from standard normal tables.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the PDF of the standard normal N(0,1)?",
+      "latex": "\\phi(z) = \\frac{1}{\\sqrt{2\\pi}} e^{-z^2/2}",
+      "answers": ["φ(z) = (1/√(2π))·e^{-z²/2}", "φ(z) = e^{-z²}", "φ(z) = (1/2π)·e^{-z²/2}", "φ(z) = (1/√π)·e^{-z²}"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "The standard normal PDF is φ(z) = (1/√(2π))·e^{-z²/2}. The factor 1/√(2π) ensures it integrates to 1.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to find P(a < X < b) for X ~ N(μ, σ²):",
+      "items": ["Standardize: Z₁ = (a−μ)/σ, Z₂ = (b−μ)/σ", "Look up Φ(Z₂) and Φ(Z₁) in z-table", "Compute Φ(Z₂) − Φ(Z₁)", "State the answer as the probability"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Standardize both endpoints, look up their CDF values in the standard normal table, then subtract.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "If X ~ N(μ, σ²) and Y = aX + b, what is the distribution of Y?",
+      "latex": "Y = aX + b",
+      "steps": ["E[Y] = aE[X] + b = a\\mu + b", "\\text{Var}(Y) = a^2 \\text{Var}(X) = a^2 \\sigma^2"],
+      "answers": ["N(aμ + b, a²σ²)", "N(aμ, aσ²)", "N(aμ + b, aσ²)", "N(μ + b, σ²)"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Linear transformations of normal RVs remain normal. The mean transforms as aμ+b and variance scales by a².",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Gaussian Ghost",
+    "taunt": "Everything converges to me. You cannot escape the bell curve.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "The Central Limit Theorem states that the sample mean X̄ of n i.i.d. RVs with mean μ and variance σ² has approximately which distribution for large n?",
+        "latex": "\\bar{X} \\approx N\\left(\\mu, \\frac{\\sigma^2}{n}\\right)",
+        "answers": ["N(μ, σ²/n)", "N(μ, σ²)", "N(0, 1)", "N(nμ, nσ²)"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "CLT: X̄ ~ N(μ, σ²/n) approximately. The standard error is σ/√n."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "For X ~ N(0,1), what is P(|X| > 1.96)?",
+        "answers": ["≈ 0.05", "≈ 0.025", "≈ 0.95", "≈ 0.975"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "P(Z > 1.96) ≈ 0.025, and by symmetry P(|Z| > 1.96) = 2·0.025 = 0.05. This is the basis for 95% confidence intervals."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The moment generating function of X ~ N(μ, σ²) is:",
+        "latex": "M_X(t) = e^{\\mu t + \\sigma^2 t^2/2}",
+        "answers": ["e^{μt + σ²t²/2}", "e^{μt}", "e^{σ²t²/2}", "e^{μt − σ²t²/2}"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "The MGF of N(μ, σ²) is M(t) = exp(μt + σ²t²/2). This uniquely characterizes the normal distribution and is useful for proving CLT."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

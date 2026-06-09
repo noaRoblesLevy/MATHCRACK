@@ -1,0 +1,103 @@
+{
+  "id": "calc-12",
+  "title": "Integration Techniques",
+  "kingdom": "calculus",
+  "dungeonNumber": 12,
+  "lesson": {
+    "title": "Integration Techniques",
+    "body": "Beyond basic antiderivatives, two key techniques extend our reach. U-substitution reverses the chain rule: substitute u = g(x), du = g'(x)dx to simplify ∫f(g(x))g'(x)dx = ∫f(u)du. Integration by parts reverses the product rule: ∫u dv = uv − ∫v du, where you choose u to differentiate and dv to integrate."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "To evaluate ∫(2x)(x²+1)⁵ dx by substitution, set u = ?",
+      "latex": "u = x^2 + 1 \\implies du = 2x\\, dx",
+      "answers": ["u = x² + 1", "u = x²", "u = 2x", "u = (x²+1)⁵"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Set u = x²+1 so du = 2x dx. The integral becomes ∫u⁵ du = u⁶/6 + C = (x²+1)⁶/6 + C.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Evaluate ∫x·eˣ dx using integration by parts with u = x, dv = eˣdx.",
+      "latex": "\\int x e^x\\, dx = xe^x - \\int e^x\\, dx = xe^x - e^x + C",
+      "steps": ["u = x, \\, dv = e^x dx", "du = dx, \\, v = e^x", "\\int u\\, dv = uv - \\int v\\, du = xe^x - e^x + C"],
+      "answers": ["xeˣ − eˣ + C", "xeˣ + C", "x²eˣ/2 + C", "eˣ(x−1) + C"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "IBP: ∫x eˣdx = xeˣ − ∫eˣdx = xeˣ − eˣ + C = eˣ(x−1) + C. Both A and D are equivalent.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Evaluate ∫₀¹ 2x·e^{x²} dx.",
+      "latex": "\\int_0^1 2x e^{x^2}\\, dx",
+      "steps": ["u = x^2, \\, du = 2x\\, dx", "\\int_0^1 e^u\\, du = [e^u]_0^1 = e - 1"],
+      "answers": ["e − 1", "e + 1", "2e − 1", "e"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "u-sub: u=x², du=2xdx. Limits: u(0)=0, u(1)=1. ∫₀¹ eᵘdu = [eᵘ]₀¹ = e − 1.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the u-substitution steps for ∫f(g(x))g'(x) dx:",
+      "items": ["Set u = g(x), compute du = g'(x) dx", "Substitute to get ∫f(u) du", "Integrate with respect to u: F(u) + C", "Back-substitute: F(g(x)) + C"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "U-substitution: choose substitution, replace, integrate in u, then convert back to x.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The LIATE rule suggests choosing u as the first type in the list. What does LIATE stand for?",
+      "answers": ["Logarithm, Inverse trig, Algebraic, Trigonometric, Exponential", "Linear, Inverse, Algebraic, Trig, Exponential", "Logarithm, Integral, Algebraic, Trig, Euler", "Limits, Integration, Antiderivative, Trig, Exponent"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "LIATE: Logarithm > Inverse trig > Algebraic (polynomial) > Trigonometric > Exponential. Choose u from earlier in the list.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Integration Lich",
+    "taunt": "Every integral falls to technique. But first you must recognize the pattern.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Evaluate ∫ln(x) dx using integration by parts.",
+        "latex": "\\int \\ln x\\, dx = x\\ln x - x + C",
+        "answers": ["x ln(x) − x + C", "ln(x)/x + C", "x²ln(x)/2 + C", "1/x + C"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "IBP with u = ln x, dv = dx: v = x, du = (1/x)dx. ∫ln x dx = x·ln x − ∫x·(1/x)dx = x ln x − x + C."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "∫sin²(x) dx using the identity sin²x = (1 − cos(2x))/2 equals:",
+        "latex": "\\int \\sin^2 x\\, dx = \\frac{x}{2} - \\frac{\\sin(2x)}{4} + C",
+        "answers": ["x/2 − sin(2x)/4 + C", "−cos(x)sin(x) + C", "x/2 + sin(2x)/4 + C", "−sin(2x)/2 + C"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "∫(1−cos2x)/2 dx = x/2 − sin(2x)/4 + C. This is the standard half-angle reduction technique."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "∫xe^{-x} dx equals:",
+        "latex": "\\int x e^{-x}\\, dx = -xe^{-x} - e^{-x} + C",
+        "answers": ["−xe^{-x} − e^{-x} + C", "−xe^{-x} + e^{-x} + C", "e^{-x}(x+1) + C", "−e^{-x}/x + C"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "IBP: u=x, dv=e^{-x}dx, v=−e^{-x}. ∫xe^{-x}dx = x(−e^{-x}) − ∫(−e^{-x})dx = −xe^{-x} − e^{-x} + C = −e^{-x}(x+1) + C."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

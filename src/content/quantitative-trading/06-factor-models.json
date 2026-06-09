@@ -1,0 +1,96 @@
+{
+  "id": "qt-06",
+  "title": "Factor Models",
+  "kingdom": "quantitative-trading",
+  "dungeonNumber": 6,
+  "lesson": {
+    "title": "Factor Models",
+    "body": "The CAPM states E[Rᵢ] = Rƒ + βᵢ(E[Rₘ]−Rƒ), where βᵢ = Cov(Rᵢ,Rₘ)/Var(Rₘ). Alpha α is excess return above what CAPM predicts. The Fama-French 3-factor model adds size (SMB: small minus big) and value (HML: high minus low book-to-market) factors. A strategy with positive, statistically significant alpha after factor adjustment provides genuine skill."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "In CAPM, a stock with β = 1.5 is expected to:",
+      "latex": "E[R_i] = R_f + 1.5(E[R_m] - R_f)",
+      "answers": ["Return 1.5× the market excess return", "Have 1.5× market volatility", "Outperform the market", "Have negative alpha"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "β = 1.5 means the stock is expected to move 1.5% for every 1% market move. Higher β = more systematic risk.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Alpha (α) in the single-factor regression Rᵢ − Rƒ = α + β(Rₘ − Rƒ) + ε measures:",
+      "answers": ["Risk-adjusted excess return not explained by market exposure", "Total return of the stock", "The volatility of the strategy", "Beta of the portfolio"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Alpha is the return after stripping out market exposure. Positive alpha means the strategy earns more than CAPM predicts — potential evidence of skill.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The Fama-French SMB (Small Minus Big) factor captures:",
+      "answers": ["The tendency for small-cap stocks to outperform large-cap stocks", "Short minus buy transaction costs", "Short-term momentum", "The bond-equity return spread"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "SMB = returns of a portfolio of small stocks minus large stocks. Historically, small caps have earned a premium — the 'size premium'.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to evaluate a strategy using factor models:",
+      "items": ["Collect strategy returns and factor returns (MKT-RF, SMB, HML)", "Regress strategy excess returns on factors", "Test α for statistical significance (t-stat > 2)", "Interpret: large α means genuine value beyond known factors"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Factor attribution: collect data, regress, test alpha significance, interpret. An insignificant alpha means the strategy's returns are fully explained by factor exposures.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A strategy with high returns but β = 1.5 in a bull market likely has:",
+      "answers": ["Low alpha (returns explained by market exposure)", "High alpha", "Negative beta", "No market exposure"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "High β means the strategy benefits from market moves. In a bull market, β = 1.5 explains high returns without any skill (α ≈ 0).",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Beta Trap",
+    "taunt": "You call it alpha. I call it leveraged beta. Adjust for risk, then tell me about your skill.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "The Fama-French 5-factor model adds which two factors to the 3-factor model?",
+        "answers": ["Profitability (RMW) and Investment (CMA)", "Momentum (WML) and Liquidity", "Quality and Low Volatility", "Carry and Trend"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "FF5 adds: RMW (Robust Minus Weak profitability) and CMA (Conservative Minus Aggressive investment). These capture additional cross-sectional return variation."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Factor crowding occurs when:",
+        "answers": ["Too many investors load on the same factor, reducing future returns and increasing crash risk", "A factor has too few stocks in its long/short portfolio", "A factor's beta is too high", "Transaction costs exceed factor returns"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "When a factor becomes crowded (many quant funds with similar exposures), any simultaneous de-risking leads to factor crashes — massive correlated drawdowns."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Information ratio (IR) = α/σ_α is preferred over raw Sharpe ratio for strategy evaluation because:",
+        "answers": ["IR measures alpha per unit of residual risk, removing benchmark and factor exposures", "IR is always higher than Sharpe", "IR does not require risk-free rate", "IR measures total return"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "IR captures manager skill (alpha) relative to tracking error (residual risk). Sharpe includes beta return. IR = 0.5 is considered good for an active manager."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

@@ -1,0 +1,96 @@
+{
+  "id": "qt-05",
+  "title": "Trend Following",
+  "kingdom": "quantitative-trading",
+  "dungeonNumber": 5,
+  "lesson": {
+    "title": "Trend Following",
+    "body": "Trend following (CTA-style) takes long positions when an asset is trending up and short when trending down. Classic systems: moving average crossovers (fast MA crosses above slow MA = buy signal), Donchian channel breakouts (buy when price breaks above N-day high). Trend following has positive skew and performs well during market crises — the opposite of carry/value strategies."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "A moving average crossover signal goes long when:",
+      "answers": ["The fast MA crosses above the slow MA", "The fast MA is below the slow MA", "Price is below both MAs", "The slow MA crosses above the fast MA"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Golden cross: fast MA (e.g., 50-day) crosses above slow MA (e.g., 200-day) → bullish signal. Death cross is the reverse.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A Donchian channel breakout system buys when:",
+      "answers": ["Price exceeds the N-day high", "Price falls below the N-day low", "The middle channel is trending", "Volume exceeds average"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Donchian system: buy breakout above N-day high (e.g., 20-day high), sell breakout below N-day low. Made famous by the Turtle Traders.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Trend following strategies typically have which payoff profile?",
+      "answers": ["Many small losses, occasional large gains (positive skew)", "Many small gains, occasional large losses (negative skew)", "Symmetric gains and losses", "Guaranteed positive returns"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Trend following cuts losses quickly (small, frequent) and lets winners run (rare but large). This positive skew makes it uncorrelated with or negatively correlated with equity crises.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the moving average crossover system implementation:",
+      "items": ["Compute fast MA (e.g., 50-day) and slow MA (200-day)", "Generate signal: +1 if fast > slow, −1 if fast < slow", "Scale position by target volatility (σ_target/σ_i)", "Trade at close; rebalance when signal changes"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Compute MAs, generate binary signal, volatility-scale for risk management, then trade.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The main cost of trend following is:",
+      "answers": ["Whipsaws: frequent false signals in range-bound markets lead to transaction costs", "High data requirements", "Negative expected return in trending markets", "Regulatory restrictions"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "In sideways markets, MAs cross back and forth (whipsaws), generating many trades at a loss. Trend following needs sustained trends to be profitable.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Range-Bound Market",
+    "taunt": "There is no trend here. Only noise. Your moving average crossovers are lies.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "An exponentially weighted moving average (EMA) with decay factor λ weights recent prices:",
+        "latex": "EMA_t = \\lambda \\cdot P_t + (1-\\lambda) \\cdot EMA_{t-1}",
+        "answers": ["More than older prices (exponentially decaying weights)", "Equally with older prices", "Less than older prices", "Only based on the last price"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "EMA = λP_t + (1−λ)EMA_{t-1}. Weights decay exponentially backward in time. EMA is more responsive to recent changes than SMA."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Trend following strategies are known for their positive performance during equity market drawdowns because:",
+        "answers": ["They are typically short equities during sustained downtrends", "They hold no equity exposure", "They use options for protection", "Fixed income exposure provides a hedge"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "CTAs go short when equity trends turn negative. During 2008, 2001-2002 crashes, trend-following funds posted positive returns by riding the downtrend."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The optimal lookback period for a trend-following MA crossover:",
+        "answers": ["Depends on the asset and varies over time — there is no universal optimum", "Is always 50/200 days", "Is shorter for equity than commodities", "Should be 10/50 days to maximize Sharpe ratio"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Different assets trend at different speeds. Optimizing lookbacks in-sample leads to overfitting. Robust trend systems use multiple lookbacks and average signals."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

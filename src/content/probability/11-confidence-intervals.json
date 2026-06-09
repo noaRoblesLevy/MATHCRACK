@@ -1,0 +1,99 @@
+{
+  "id": "prob-11",
+  "title": "Confidence Intervals",
+  "kingdom": "probability",
+  "dungeonNumber": 11,
+  "lesson": {
+    "title": "Confidence Intervals",
+    "body": "A 95% confidence interval is a random interval constructed from the data such that, in repeated sampling, 95% of such intervals contain the true parameter. For μ with known σ, the CI is X̄ ± z_{α/2}·σ/√n. With unknown σ, replace z with the t-distribution critical value. The width is controlled by the margin of error z·σ/√n."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "What is the correct interpretation of a 95% confidence interval?",
+      "answers": ["If we repeated sampling many times, 95% of such intervals would contain μ", "There is a 95% probability that μ lies in this specific interval", "95% of the data falls in this interval", "The true μ is within the interval with certainty"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "The confidence level is a frequentist property of the procedure, not a probability statement about the specific realized interval. μ is fixed; the interval is random.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For a 95% CI on μ with known σ, the critical value z_{0.025} is approximately:",
+      "latex": "\\bar{X} \\pm z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}}",
+      "answers": ["1.96", "1.645", "2.576", "2.326"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "For 95% CI, α = 0.05, α/2 = 0.025, and P(Z ≤ 1.96) ≈ 0.975 in standard normal tables.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "To halve the margin of error in a CI while keeping confidence level fixed, you must:",
+      "latex": "ME = z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}}",
+      "steps": ["ME \\propto 1/\\sqrt{n}", "\\text{To halve ME, need } \\sqrt{n} \\text{ to double, so } n \\text{ must quadruple}"],
+      "answers": ["Quadruple the sample size", "Double the sample size", "Halve the sample size", "Use a larger confidence level"],
+      "correct": 0,
+      "difficulty": 3,
+      "explanation": "Since ME ∝ 1/√n, halving ME requires multiplying n by 4. The margin of error decreases slowly with sample size.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "When σ is unknown, the 95% CI for μ uses the t-distribution with n−1 degrees of freedom. For large n, t_{n-1, 0.025} approaches:",
+      "answers": ["1.96", "0", "∞", "2.576"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "As degrees of freedom → ∞, the t-distribution converges to the standard normal, so t_{n-1,0.025} → z_{0.025} = 1.96.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to construct a t-confidence interval for μ:",
+      "items": ["Compute X̄ and S from the sample", "Determine degrees of freedom df = n − 1", "Find t* = t_{df, α/2} from t-table", "Report X̄ ± t*·S/√n"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Compute sample statistics, set degrees of freedom, find the critical value, then construct the interval.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Interval Inquisitor",
+    "taunt": "Tell me where the truth lies. You have only finite data and infinite uncertainty.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A 95% CI for μ is (12.3, 18.7). A 99% CI based on the same data will be:",
+        "answers": ["Wider than (12.3, 18.7)", "Narrower than (12.3, 18.7)", "The same width", "Shifted but same width"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Higher confidence → larger critical value z_{α/2} → wider interval. The 99% CI captures more uncertainty."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "For a one-sided 95% upper CI, the critical value from N(0,1) is:",
+        "answers": ["z_{0.05} ≈ 1.645", "z_{0.025} ≈ 1.96", "z_{0.10} ≈ 1.28", "z_{0.005} ≈ 2.576"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "One-sided 95% CI puts all α=0.05 in one tail: use z_{0.05} ≈ 1.645, not z_{0.025} ≈ 1.96 which is for two-sided."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The width of a CI for proportion p (using normal approximation) is maximized when:",
+        "latex": "\\text{Width} \\propto \\sqrt{p(1-p)}",
+        "answers": ["p = 0.5", "p = 0 or p = 1", "p = 0.25", "p = 0.75"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "p(1-p) is maximized at p=0.5, giving the widest CI. This is why conservative sample size calculations assume p=0.5."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

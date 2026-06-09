@@ -1,0 +1,158 @@
+{
+  "id": "prob-02",
+  "title": "Axioms of Probability",
+  "kingdom": "probability",
+  "dungeonNumber": 2,
+  "lesson": {
+    "title": "Axioms of Probability",
+    "body": "Kolmogorov's three axioms define a probability measure P on a sample space Ω: (1) P(A) ≥ 0 for every event A; (2) P(Ω) = 1; (3) for any countable collection of mutually exclusive events, P(A₁ ∪ A₂ ∪ …) = ΣP(Aᵢ). From these axioms follow key theorems: P(∅) = 0, P(Aᶜ) = 1 − P(A), and the inclusion-exclusion formula P(A ∪ B) = P(A) + P(B) − P(A ∩ B)."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Which of the following assignments is a valid probability measure on Ω = {a, b, c}?",
+      "latex": "P(\\{a\\})=?,\\;P(\\{b\\})=?,\\;P(\\{c\\})=?",
+      "steps": [
+        "All probabilities must be \\geq 0.",
+        "They must sum to P(\\Omega) = 1."
+      ],
+      "answers": [
+        "P(\\{a\\})=0.5,\\;P(\\{b\\})=0.3,\\;P(\\{c\\})=0.2",
+        "P(\\{a\\})=0.5,\\;P(\\{b\\})=0.6,\\;P(\\{c\\})=0.1",
+        "P(\\{a\\})=-0.1,\\;P(\\{b\\})=0.6,\\;P(\\{c\\})=0.5",
+        "P(\\{a\\})=0.4,\\;P(\\{b\\})=0.4,\\;P(\\{c\\})=0.4"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Option A has all values ≥ 0 and sums to exactly 1 (0.5 + 0.3 + 0.2 = 1.0). Option B sums to 1.2, option C has a negative value, and option D sums to 1.2.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Given P(A) = 0.3, what is P(Aᶜ)?",
+      "latex": "P(A^c) = 1 - P(A)",
+      "steps": [
+        "A and A^c are mutually exclusive and exhaustive: A \\cup A^c = \\Omega.",
+        "By axiom 2 and axiom 3: P(A) + P(A^c) = 1."
+      ],
+      "answers": [
+        "0.7",
+        "0.3",
+        "1.3",
+        "0"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "P(Aᶜ) = 1 − P(A) = 1 − 0.3 = 0.7. This follows directly from Axioms 2 and 3: A and Aᶜ partition Ω.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Events A and B satisfy P(A) = 0.4, P(B) = 0.5, and P(A ∩ B) = 0.2. Find P(A ∪ B).",
+      "latex": "P(A \\cup B) = P(A) + P(B) - P(A \\cap B)",
+      "steps": [
+        "Apply the inclusion-exclusion principle.",
+        "P(A \\cup B) = 0.4 + 0.5 - 0.2"
+      ],
+      "answers": [
+        "0.7",
+        "0.9",
+        "0.2",
+        "1.1"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "By inclusion-exclusion: P(A ∪ B) = P(A) + P(B) − P(A ∩ B) = 0.4 + 0.5 − 0.2 = 0.7. Subtracting P(A ∩ B) corrects for double-counting the overlap.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For mutually exclusive events A and B with P(A) = 0.25 and P(B) = 0.35, what is P(A ∪ B)?",
+      "latex": "A \\cap B = \\emptyset \\implies P(A \\cup B) = P(A) + P(B)",
+      "steps": [
+        "Mutual exclusivity means A \\cap B = \\emptyset, so P(A \\cap B) = 0.",
+        "Inclusion-exclusion reduces to simple addition."
+      ],
+      "answers": [
+        "0.60",
+        "0.10",
+        "0.35",
+        "0.875"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "For disjoint events, P(A ∪ B) = P(A) + P(B) = 0.25 + 0.35 = 0.60. No overlap correction is needed because A ∩ B = ∅.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these probability values from smallest to largest, given that A ⊆ B ⊆ Ω and P(A)=0.2, P(B)=0.5:",
+      "items": [
+        "P(\\emptyset) = 0",
+        "P(A) = 0.2",
+        "P(B) = 0.5",
+        "P(\\Omega) = 1"
+      ],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 3,
+      "explanation": "For any events with A ⊆ B ⊆ Ω, monotonicity of probability gives P(∅) ≤ P(A) ≤ P(B) ≤ P(Ω). Here: 0 < 0.2 < 0.5 < 1.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Kolmogorov Daemon",
+    "taunt": "Your axioms crumble. I am the void where probability collapses to zero!",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Which Kolmogorov axiom directly implies P(∅) = 0?",
+        "latex": "P(\\emptyset) = 0",
+        "answers": [
+          "Axiom 3 (countable additivity): \\Omega = \\Omega \\cup \\emptyset, so P(\\Omega) = P(\\Omega) + P(\\emptyset)",
+          "Axiom 1: all probabilities are non-negative",
+          "Axiom 2: P(\\Omega) = 1 directly",
+          "None of the axioms — it is an independent postulate"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Since Ω and ∅ are disjoint with Ω ∪ ∅ = Ω, Axiom 3 gives P(Ω) = P(Ω) + P(∅). Subtracting P(Ω) from both sides yields P(∅) = 0."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Given P(A) = 0.6, P(B) = 0.5, and P(A ∪ B) = 0.8, what is P(A ∩ B)?",
+        "latex": "P(A \\cap B) = P(A) + P(B) - P(A \\cup B)",
+        "answers": [
+          "0.3",
+          "0.1",
+          "0.7",
+          "0.4"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Rearranging inclusion-exclusion: P(A ∩ B) = P(A) + P(B) − P(A ∪ B) = 0.6 + 0.5 − 0.8 = 0.3."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Three mutually exclusive and exhaustive events A₁, A₂, A₃ satisfy P(A₁) = 2P(A₂) = 4P(A₃). Find P(A₁).",
+        "latex": "P(A_1)+P(A_2)+P(A_3)=1,\\quad P(A_1)=2P(A_2)=4P(A_3)",
+        "answers": [
+          "\\dfrac{4}{7}",
+          "\\dfrac{1}{2}",
+          "\\dfrac{2}{7}",
+          "\\dfrac{1}{7}"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Let P(A₃) = p. Then P(A₂) = 2p and P(A₁) = 4p. The three events partition Ω so 4p + 2p + p = 7p = 1, giving p = 1/7. Therefore P(A₁) = 4/7."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

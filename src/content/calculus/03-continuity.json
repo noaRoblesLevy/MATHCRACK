@@ -1,0 +1,133 @@
+{
+  "id": "calc-03",
+  "title": "Continuity & IVT",
+  "kingdom": "calculus",
+  "dungeonNumber": 3,
+  "lesson": {
+    "title": "Continuity & IVT",
+    "body": "A function f is continuous at a point a if three conditions hold: f(a) is defined, lim_{x→a} f(x) exists, and lim_{x→a} f(x) = f(a). Discontinuities come in three types: removable (a hole the limit exists), jump (one-sided limits are unequal), and infinite (a vertical asymptote). The Intermediate Value Theorem (IVT) states that if f is continuous on [a, b] and N is any value strictly between f(a) and f(b), then there exists at least one c in (a, b) with f(c) = N — guaranteeing roots can be located within intervals."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Which three conditions must hold for f to be continuous at x = a?",
+      "latex": "f \\text{ continuous at } a \\iff ?",
+      "steps": [
+        "Recall the definition of continuity.",
+        "All three conditions must hold simultaneously."
+      ],
+      "answers": [
+        "f'(a) exists, f(a) > 0, and the graph is smooth",
+        "f(a) is defined, lim_{x→a} f(x) exists, and lim_{x→a} f(x) = f(a)",
+        "f(a) is defined and f is differentiable at a",
+        "lim_{x→a} f(x) exists and equals zero"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Continuity at a requires: (1) f(a) defined, (2) the limit exists, and (3) the limit equals f(a). All three must hold.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "f(x) = (x²-9)/(x-3) has a __ discontinuity at x = 3.",
+      "latex": "f(x) = \\frac{x^2 - 9}{x - 3}",
+      "steps": [
+        "Factor: (x²-9)/(x-3) = x+3 for x≠3.",
+        "The limit as x→3 exists (equals 6), but f(3) is undefined."
+      ],
+      "answers": ["Jump", "Infinite", "Removable", "Essential"],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "The limit exists (= 6) but f(3) is undefined — a hole in the graph. This is a removable discontinuity, fixable by defining f(3) = 6.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "f(x) = ⌊x⌋ (floor function) has what type of discontinuity at every integer?",
+      "latex": "f(x) = \\lfloor x \\rfloor",
+      "steps": [
+        "Consider lim_{x→n⁻} ⌊x⌋ and lim_{x→n⁺} ⌊x⌋ for integer n.",
+        "The left-hand limit is n-1, the right-hand limit is n."
+      ],
+      "answers": ["Removable", "Jump", "Infinite", "None — it is continuous"],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "At each integer n, the left-hand limit is n-1 and the right-hand limit is n, so the two one-sided limits differ — a jump discontinuity.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "f is continuous on [1, 4], f(1) = -2, f(4) = 5. By the IVT, there exists c in (1, 4) with f(c) = ?",
+      "latex": "f \\text{ continuous on } [1,4], \\; f(1)=-2, \\; f(4)=5",
+      "steps": [
+        "The IVT guarantees f takes every value between f(1) = -2 and f(4) = 5.",
+        "Any value N with -2 < N < 5 is guaranteed."
+      ],
+      "answers": [
+        "Only f(c) = 0 is guaranteed",
+        "Any value N with -2 < N < 5",
+        "f(c) = 3/2, the midpoint",
+        "Nothing is guaranteed unless f is differentiable"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "The IVT guarantees every intermediate value between f(a) and f(b) is attained, i.e., every N in (-2, 5).",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to verify f is continuous at x = 2 for f(x) = x² - 1:",
+      "items": [
+        "Compute f(2) = 4 - 1 = 3",
+        "Check that lim_{x→2} f(x) = f(2), confirming continuity",
+        "Verify f(2) is defined",
+        "Evaluate lim_{x→2} (x²-1) = 4-1 = 3 by direct substitution"
+      ],
+      "correctOrder": [2, 0, 3, 1],
+      "difficulty": 3,
+      "explanation": "First confirm f(2) is defined, compute its value, compute the limit, then check they agree.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Discontinuity",
+    "taunt": "I am the hole, the jump, the pole — I shatter your function at every turn. Prove the limit exists if you can!",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Which value of k makes f(x) = { kx² for x < 2; 3x+2 for x ≥ 2 } continuous at x = 2?",
+        "latex": "f(x) = \\begin{cases} kx^2 & x < 2 \\\\ 3x+2 & x \\geq 2 \\end{cases}",
+        "answers": ["k = 1", "k = 2", "k = 3", "k = 4"],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "For continuity: lim_{x→2⁻} kx² = 4k and f(2) = 3(2)+2 = 8. Set 4k = 8 → k = 2."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "f(x) = 1/(x-5). At x = 5, this is a(n) __ discontinuity.",
+        "latex": "f(x) = \\frac{1}{x - 5}",
+        "answers": ["Removable", "Jump", "Infinite", "Oscillating"],
+        "correct": 2,
+        "difficulty": 1,
+        "explanation": "As x→5, |1/(x-5)| → ∞. The function has a vertical asymptote at x = 5 — an infinite discontinuity."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "g(x) = x³ - x - 1. The IVT guarantees a root on which interval?",
+        "latex": "g(x) = x^3 - x - 1",
+        "answers": ["[0, 1] since g(0)=-1 and g(1)=-1", "[1, 2] since g(1)=-1 and g(2)=5", "[-1, 0] since g(-1)=1 and g(0)=-1", "[2, 3]"],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "g(1) = 1-1-1 = -1 < 0 and g(2) = 8-2-1 = 5 > 0. Since g is continuous and changes sign on [1,2], IVT guarantees a root there."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

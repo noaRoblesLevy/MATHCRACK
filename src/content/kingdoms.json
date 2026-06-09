@@ -189,42 +189,324 @@
       "title": "Probability & Statistics",
       "icon": "📘",
       "color": "#60a5fa",
-      "subjects": []
+      "subjects": [
+        {
+          "id": "prob-fundamentals",
+          "title": "Probability Fundamentals",
+          "subtitle": "Unit 1 — Sample Spaces to Bayes",
+          "icon": "🎯",
+          "color": "#60a5fa",
+          "dungeons": [
+            { "id": "prob-01", "title": "Sample Spaces & Events", "file": "probability/01-sample-spaces.json" },
+            { "id": "prob-02", "title": "Axioms of Probability", "file": "probability/02-axioms-probability.json" },
+            { "id": "prob-03", "title": "Conditional Probability & Bayes", "file": "probability/03-conditional-bayes.json" }
+          ]
+        },
+        {
+          "id": "random-variables",
+          "title": "Random Variables & Distributions",
+          "subtitle": "Unit 2 — Discrete, Continuous & Joint",
+          "icon": "📊",
+          "color": "#818cf8",
+          "dungeons": [
+            { "id": "prob-04", "title": "Discrete Random Variables", "file": "probability/04-discrete-random-variables.json" },
+            { "id": "prob-05", "title": "Continuous Random Variables", "file": "probability/05-continuous-random-variables.json" },
+            { "id": "prob-06", "title": "Joint Distributions", "file": "probability/06-joint-distributions.json" }
+          ]
+        },
+        {
+          "id": "prob-models",
+          "title": "Common Probability Models",
+          "subtitle": "Unit 3 — Binomial, Poisson & Normal",
+          "icon": "🔔",
+          "color": "#a78bfa",
+          "dungeons": [
+            { "id": "prob-07", "title": "Binomial Distribution", "file": "probability/07-binomial-distribution.json" },
+            { "id": "prob-08", "title": "Poisson Distribution", "file": "probability/08-poisson-distribution.json" },
+            { "id": "prob-09", "title": "Normal Distribution", "file": "probability/09-normal-distribution.json" }
+          ]
+        },
+        {
+          "id": "statistical-inference",
+          "title": "Statistical Inference",
+          "subtitle": "Unit 4 — Estimation & Hypothesis Tests",
+          "icon": "🧪",
+          "color": "#c084fc",
+          "dungeons": [
+            { "id": "prob-10", "title": "Point Estimation", "file": "probability/10-estimation.json" },
+            { "id": "prob-11", "title": "Confidence Intervals", "file": "probability/11-confidence-intervals.json" },
+            { "id": "prob-12", "title": "Hypothesis Testing", "file": "probability/12-hypothesis-testing.json" }
+          ]
+        }
+      ]
     },
     {
       "id": "linear-algebra-course",
       "title": "Linear Algebra",
       "icon": "🔷",
       "color": "#a78bfa",
-      "subjects": []
+      "subjects": [
+        {
+          "id": "vectors-spaces",
+          "title": "Vectors & Vector Spaces",
+          "subtitle": "Unit 1 — Vectors to Basis",
+          "icon": "➡",
+          "color": "#a78bfa",
+          "dungeons": [
+            { "id": "linalg-01", "title": "Vectors in Rⁿ", "file": "linear-algebra/01-vectors.json" },
+            { "id": "linalg-02", "title": "Vector Spaces & Subspaces", "file": "linear-algebra/02-vector-spaces.json" },
+            { "id": "linalg-03", "title": "Basis & Dimension", "file": "linear-algebra/03-basis-dimension.json" }
+          ]
+        },
+        {
+          "id": "matrix-ops",
+          "title": "Matrix Operations",
+          "subtitle": "Unit 2 — Matrices & Row Reduction",
+          "icon": "📐",
+          "color": "#8b5cf6",
+          "dungeons": [
+            { "id": "linalg-04", "title": "Matrix Operations", "file": "linear-algebra/04-matrix-operations.json" },
+            { "id": "linalg-05", "title": "Row Reduction & RREF", "file": "linear-algebra/05-row-reduction.json" },
+            { "id": "linalg-06", "title": "Rank, Nullspace & Column Space", "file": "linear-algebra/06-matrix-rank.json" }
+          ]
+        },
+        {
+          "id": "determinants-inverse",
+          "title": "Determinants & Inverses",
+          "subtitle": "Unit 3 — Det, Inverse & LU",
+          "icon": "⚙",
+          "color": "#7c3aed",
+          "dungeons": [
+            { "id": "linalg-07", "title": "Determinants", "file": "linear-algebra/07-determinants.json" },
+            { "id": "linalg-08", "title": "Matrix Inverse", "file": "linear-algebra/08-matrix-inverse.json" },
+            { "id": "linalg-09", "title": "Cramer's Rule & LU Decomposition", "file": "linear-algebra/09-cramer-lu.json" }
+          ]
+        },
+        {
+          "id": "eigenvalues-transforms",
+          "title": "Eigenvalues & Linear Transformations",
+          "subtitle": "Unit 4 — Eigen & Diagonalization",
+          "icon": "🌀",
+          "color": "#6d28d9",
+          "dungeons": [
+            { "id": "linalg-10", "title": "Eigenvalues & Eigenvectors", "file": "linear-algebra/10-eigenvalues.json" },
+            { "id": "linalg-11", "title": "Diagonalization", "file": "linear-algebra/11-diagonalization.json" },
+            { "id": "linalg-12", "title": "Linear Transformations", "file": "linear-algebra/12-linear-transformations.json" }
+          ]
+        }
+      ]
     },
     {
       "id": "calculus-course",
       "title": "Calculus",
       "icon": "∫",
       "color": "#f97316",
-      "subjects": []
+      "subjects": [
+        {
+          "id": "limits-continuity",
+          "title": "Limits & Continuity",
+          "subtitle": "Unit 1 — Limits, L'Hôpital & IVT",
+          "icon": "→",
+          "color": "#f97316",
+          "dungeons": [
+            { "id": "calc-01", "title": "Limits", "file": "calculus/01-limits-intro.json" },
+            { "id": "calc-02", "title": "Computing Limits", "file": "calculus/02-computing-limits.json" },
+            { "id": "calc-03", "title": "Continuity & IVT", "file": "calculus/03-continuity.json" }
+          ]
+        },
+        {
+          "id": "derivatives",
+          "title": "Derivatives",
+          "subtitle": "Unit 2 — Differentiation Rules",
+          "icon": "d/dx",
+          "color": "#ea580c",
+          "dungeons": [
+            { "id": "calc-04", "title": "The Derivative", "file": "calculus/04-derivative-definition.json" },
+            { "id": "calc-05", "title": "Differentiation Rules", "file": "calculus/05-derivative-rules.json" },
+            { "id": "calc-06", "title": "Implicit Differentiation", "file": "calculus/06-implicit-related-rates.json" }
+          ]
+        },
+        {
+          "id": "applications-derivatives",
+          "title": "Applications of Derivatives",
+          "subtitle": "Unit 3 — Extrema, Optimization & MVT",
+          "icon": "📉",
+          "color": "#c2410c",
+          "dungeons": [
+            { "id": "calc-07", "title": "Extrema & Critical Points", "file": "calculus/07-extrema.json" },
+            { "id": "calc-08", "title": "Optimization", "file": "calculus/08-optimization.json" },
+            { "id": "calc-09", "title": "Mean Value Theorem", "file": "calculus/09-mean-value.json" }
+          ]
+        },
+        {
+          "id": "integration",
+          "title": "Integration",
+          "subtitle": "Unit 4 — Antiderivatives & FTC",
+          "icon": "∫",
+          "color": "#9a3412",
+          "dungeons": [
+            { "id": "calc-10", "title": "Antiderivatives & Indefinite Integrals", "file": "calculus/10-antiderivatives.json" },
+            { "id": "calc-11", "title": "The Definite Integral", "file": "calculus/11-definite-integral.json" },
+            { "id": "calc-12", "title": "Integration Techniques", "file": "calculus/12-integration-techniques.json" }
+          ]
+        }
+      ]
     },
     {
       "id": "time-series",
       "title": "Time Series Analysis",
       "icon": "📈",
       "color": "#22d3ee",
-      "subjects": []
+      "subjects": [
+        {
+          "id": "ts-fundamentals",
+          "title": "Time Series Fundamentals",
+          "subtitle": "Unit 1 — Stationarity & ACF/PACF",
+          "icon": "📅",
+          "color": "#22d3ee",
+          "dungeons": [
+            { "id": "ts-01", "title": "Time Series Basics", "file": "time-series/01-ts-basics.json" },
+            { "id": "ts-02", "title": "Stationarity", "file": "time-series/02-stationarity.json" },
+            { "id": "ts-03", "title": "ACF, PACF & Model Identification", "file": "time-series/03-acf-pacf.json" }
+          ]
+        },
+        {
+          "id": "arima-models",
+          "title": "ARIMA Models",
+          "subtitle": "Unit 2 — AR, MA & ARIMA",
+          "icon": "〰",
+          "color": "#06b6d4",
+          "dungeons": [
+            { "id": "ts-04", "title": "AR Models", "file": "time-series/04-ar-models.json" },
+            { "id": "ts-05", "title": "MA & ARMA Models", "file": "time-series/05-ma-arma.json" },
+            { "id": "ts-06", "title": "ARIMA & Differencing", "file": "time-series/06-arima.json" }
+          ]
+        },
+        {
+          "id": "forecasting",
+          "title": "Forecasting & Spectral Analysis",
+          "subtitle": "Unit 3 — Smoothing & Model Selection",
+          "icon": "🔮",
+          "color": "#0891b2",
+          "dungeons": [
+            { "id": "ts-07", "title": "Exponential Smoothing", "file": "time-series/07-exponential-smoothing.json" },
+            { "id": "ts-08", "title": "Spectral Analysis", "file": "time-series/08-spectral-analysis.json" },
+            { "id": "ts-09", "title": "Model Selection & Diagnostics", "file": "time-series/09-model-selection.json" }
+          ]
+        },
+        {
+          "id": "advanced-ts",
+          "title": "Advanced Models",
+          "subtitle": "Unit 4 — Kalman, GARCH & Cointegration",
+          "icon": "⚡",
+          "color": "#0e7490",
+          "dungeons": [
+            { "id": "ts-10", "title": "State Space Models", "file": "time-series/10-state-space.json" },
+            { "id": "ts-11", "title": "ARCH & GARCH Models", "file": "time-series/11-garch.json" },
+            { "id": "ts-12", "title": "Cointegration & VECM", "file": "time-series/12-cointegration.json" }
+          ]
+        }
+      ]
     },
     {
       "id": "quant-trading",
       "title": "Quantitative Trading",
       "icon": "💹",
       "color": "#10b981",
-      "subjects": []
+      "subjects": [
+        {
+          "id": "mean-reversion-trading",
+          "title": "Mean Reversion",
+          "subtitle": "Unit 1 — Pairs Trading & Kalman",
+          "icon": "↩",
+          "color": "#10b981",
+          "dungeons": [
+            { "id": "qt-01", "title": "Mean Reversion & Stationarity", "file": "quantitative-trading/01-mean-reversion.json" },
+            { "id": "qt-02", "title": "Cointegration & Pairs Trading", "file": "quantitative-trading/02-cointegration-pairs.json" },
+            { "id": "qt-03", "title": "Kalman Filter for Pairs", "file": "quantitative-trading/03-kalman-filter-trading.json" }
+          ]
+        },
+        {
+          "id": "momentum-trend",
+          "title": "Momentum & Trend",
+          "subtitle": "Unit 2 — Momentum, Trend & Factors",
+          "icon": "🚀",
+          "color": "#059669",
+          "dungeons": [
+            { "id": "qt-04", "title": "Momentum Strategies", "file": "quantitative-trading/04-momentum.json" },
+            { "id": "qt-05", "title": "Trend Following", "file": "quantitative-trading/05-trend-following.json" },
+            { "id": "qt-06", "title": "Factor Models", "file": "quantitative-trading/06-factor-models.json" }
+          ]
+        },
+        {
+          "id": "risk-execution",
+          "title": "Risk & Execution",
+          "subtitle": "Unit 3 — Risk, Backtesting & Execution",
+          "icon": "🛡",
+          "color": "#047857",
+          "dungeons": [
+            { "id": "qt-07", "title": "Risk Management", "file": "quantitative-trading/07-risk-management.json" },
+            { "id": "qt-08", "title": "Backtesting", "file": "quantitative-trading/08-backtesting.json" },
+            { "id": "qt-09", "title": "Market Microstructure & Execution", "file": "quantitative-trading/09-execution.json" }
+          ]
+        }
+      ]
     },
     {
       "id": "python-data",
       "title": "Python & Data Analysis",
       "icon": "🐍",
       "color": "#eab308",
-      "subjects": []
+      "subjects": [
+        {
+          "id": "python-basics",
+          "title": "Python for Data Science",
+          "subtitle": "Unit 1 — Python, Control Flow & OOP",
+          "icon": "🐍",
+          "color": "#eab308",
+          "dungeons": [
+            { "id": "py-01", "title": "Python Data Types", "file": "python/01-python-basics.json" },
+            { "id": "py-02", "title": "Control Flow & Functions", "file": "python/02-control-flow.json" },
+            { "id": "py-03", "title": "OOP & Modules", "file": "python/03-oop-modules.json" }
+          ]
+        },
+        {
+          "id": "numpy",
+          "title": "NumPy",
+          "subtitle": "Unit 2 — Arrays, Operations & Linalg",
+          "icon": "🔢",
+          "color": "#ca8a04",
+          "dungeons": [
+            { "id": "py-04", "title": "NumPy Arrays", "file": "python/04-numpy-arrays.json" },
+            { "id": "py-05", "title": "NumPy Operations", "file": "python/05-numpy-operations.json" },
+            { "id": "py-06", "title": "NumPy Linear Algebra", "file": "python/06-numpy-linalg.json" }
+          ]
+        },
+        {
+          "id": "pandas",
+          "title": "Pandas DataFrames",
+          "subtitle": "Unit 3 — DataFrames, Indexing & Merge",
+          "icon": "🐼",
+          "color": "#a16207",
+          "dungeons": [
+            { "id": "py-07", "title": "Pandas Basics", "file": "python/07-pandas-basics.json" },
+            { "id": "py-08", "title": "Indexing & Selection", "file": "python/08-pandas-indexing.json" },
+            { "id": "py-09", "title": "GroupBy & Merge", "file": "python/09-groupby-merge.json" }
+          ]
+        },
+        {
+          "id": "data-wrangling",
+          "title": "Data Wrangling & Visualization",
+          "subtitle": "Unit 4 — Cleaning, Reshaping & Plotting",
+          "icon": "🎨",
+          "color": "#78350f",
+          "dungeons": [
+            { "id": "py-10", "title": "Data Cleaning", "file": "python/10-data-cleaning.json" },
+            { "id": "py-11", "title": "Reshaping Data", "file": "python/11-reshaping.json" },
+            { "id": "py-12", "title": "Data Visualization", "file": "python/12-visualization.json" }
+          ]
+        }
+      ]
     }
   ]
 }

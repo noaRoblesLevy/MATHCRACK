@@ -1,0 +1,95 @@
+{
+  "id": "ts-09",
+  "title": "Model Selection & Diagnostics",
+  "kingdom": "time-series",
+  "dungeonNumber": 9,
+  "lesson": {
+    "title": "Model Selection & Diagnostics",
+    "body": "Information criteria balance model fit against complexity. AIC = −2logL + 2k, BIC = −2logL + k·ln(n). BIC penalizes complexity more, tends to select simpler models. Forecast accuracy metrics: MAE = mean|e_t|, RMSE = √(mean e²_t), MAPE = mean|e_t/x_t|·100%. Residual diagnostics check that residuals resemble white noise using the Ljung-Box test."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Between two models with the same log-likelihood, AIC selects:",
+      "answers": ["The one with fewer parameters (lower k)", "The one with more parameters", "The one with higher n", "Randomly"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "AIC = −2logL + 2k. Same log-likelihood means lower AIC for smaller k. AIC penalizes extra parameters.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "RMSE gives higher penalty to large errors than MAE because it:",
+      "answers": ["Squares the errors before averaging", "Uses absolute values", "Divides by the mean", "Sums without averaging"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "RMSE = √(Σe²/n). Squaring amplifies large errors, making RMSE sensitive to outliers compared to MAE.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The Ljung-Box test statistic Q = n(n+2)Σ[ρ̂(k)²/(n-k)] tests:",
+      "answers": ["Whether first m autocorrelations of residuals are jointly zero", "Whether the series is stationary", "Whether residuals are normally distributed", "Whether the model is overfit"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Ljung-Box tests H₀: ρ(1) = ... = ρ(m) = 0. Failure to reject suggests residuals are white noise — a sign of good model fit.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the residual diagnostic checks after fitting ARIMA:",
+      "items": ["Plot residuals over time (look for patterns/outliers)", "Plot ACF of residuals (should be near zero for all lags)", "Ljung-Box test on residuals", "Assess normality via QQ-plot or histogram"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Time plot reveals heteroscedasticity or outliers; ACF checks autocorrelation; Ljung-Box formalizes it; QQ-plot checks distributional assumptions.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "MAPE is inappropriate for forecasting when:",
+      "answers": ["The series contains zeros or values close to zero", "The series has a trend", "The series is seasonal", "n is large"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "MAPE = mean|e_t/x_t|·100% divides by actual values. If x_t = 0 or near zero, MAPE explodes or is undefined.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Information Criterion",
+    "taunt": "More parameters always improve fit. But I see through your overfitting.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Why does BIC tend to select simpler models than AIC?",
+        "answers": ["BIC's penalty k·ln(n) > 2k for n > e² ≈ 7.4", "BIC uses a different log-likelihood", "BIC ignores sample size", "AIC penalizes squared k, BIC penalizes k"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "BIC penalty = k·ln(n) vs AIC penalty = 2k. For n ≥ 8, ln(n) > 2, so BIC penalizes complexity more, favoring parsimony."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Walk-forward (rolling) validation in time series means:",
+        "answers": ["Training on past, testing on the next period, then extending the window", "Randomly splitting the series into train/test", "Using all data for training", "Bootstrapping the time series"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Walk-forward validation respects the temporal ordering — no future data leaks into training. It gives realistic out-of-sample forecasting accuracy."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Model A has AIC=250, BIC=270. Model B has AIC=255, BIC=260. Based on these:",
+        "answers": ["A is preferred by AIC; B is preferred by BIC — results conflict", "A is preferred by both", "B is preferred by both", "The models are equivalent"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Lower is better for both. A wins on AIC (250 < 255); B wins on BIC (260 < 270). This conflict suggests model A has more parameters that AIC tolerates but BIC does not."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

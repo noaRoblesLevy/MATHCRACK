@@ -1,0 +1,141 @@
+{
+  "id": "calc-04",
+  "title": "The Derivative",
+  "kingdom": "calculus",
+  "dungeonNumber": 4,
+  "lesson": {
+    "title": "The Derivative",
+    "body": "The derivative of f at x is defined as f'(x) = lim_{h→0} [f(x+h) - f(x)] / h, provided this limit exists. Geometrically, f'(a) is the slope of the tangent line to the curve y = f(x) at x = a. If f is differentiable at a, then f must also be continuous there — but the converse is false (e.g., f(x) = |x| at x = 0). The power rule provides the quickest path for polynomials: d/dx [xⁿ] = nxⁿ⁻¹."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Which expression is the definition of f'(x)?",
+      "latex": "f'(x) = ?",
+      "steps": [
+        "Recall the limit definition of the derivative.",
+        "It measures the rate of change of f at x."
+      ],
+      "answers": [
+        "\\lim_{h \\to 0} \\frac{f(x+h) + f(x)}{h}",
+        "\\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}",
+        "\\lim_{x \\to 0} \\frac{f(h)}{h}",
+        "\\frac{f(b) - f(a)}{b - a}"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "The derivative is defined as the limit of the difference quotient: f'(x) = lim_{h→0} [f(x+h) - f(x)] / h.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Using the limit definition, find f'(x) for f(x) = x².",
+      "latex": "f(x) = x^2, \\quad f'(x) = \\lim_{h \\to 0} \\frac{(x+h)^2 - x^2}{h}",
+      "steps": [
+        "Expand (x+h)²: x² + 2xh + h².",
+        "Subtract x²: 2xh + h².",
+        "Divide by h: 2x + h.",
+        "Take limit as h→0."
+      ],
+      "answers": ["x", "2x", "2x + 1", "x²"],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "[( x+h)² - x²]/h = (2xh + h²)/h = 2x + h → 2x as h→0.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the slope of the tangent line to f(x) = 3x² - 4 at x = 2?",
+      "latex": "f(x) = 3x^2 - 4, \\quad x = 2",
+      "steps": [
+        "Differentiate using the power rule: f'(x) = 6x.",
+        "Evaluate at x = 2."
+      ],
+      "answers": ["6", "8", "12", "24"],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "f'(x) = 6x by the power rule. At x = 2: f'(2) = 6·2 = 12.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "f(x) = |x| — is f differentiable at x = 0?",
+      "latex": "f(x) = |x|",
+      "steps": [
+        "Check the left-hand derivative: lim_{h→0⁻} (|0+h| - 0)/h = lim h<0: -h/h = -1.",
+        "Check the right-hand derivative: lim_{h→0⁺} h/h = 1.",
+        "The one-sided derivatives differ."
+      ],
+      "answers": [
+        "Yes, because f is continuous at 0",
+        "Yes, f'(0) = 0",
+        "No — the left and right derivatives are unequal",
+        "No — f is not continuous at 0"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Left derivative = -1, right derivative = 1. Since they differ, f'(0) does not exist — f is not differentiable at 0 despite being continuous there.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to find the equation of the tangent line to f(x) = x³ at x = 1:",
+      "items": [
+        "Evaluate f(1) = 1 to get the point (1, 1)",
+        "Write the tangent line: y - 1 = 3(x - 1)",
+        "Differentiate: f'(x) = 3x²",
+        "Evaluate the slope: f'(1) = 3"
+      ],
+      "correctOrder": [2, 3, 0, 1],
+      "difficulty": 3,
+      "explanation": "First differentiate to get f', then evaluate the slope at x=1, find the point, then apply point-slope form.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Difference Quotient",
+    "taunt": "I am the very foundation of calculus. Can you take my limit, or will you crumble in the face of h → 0?",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Use the limit definition to find f'(2) for f(x) = 5x - 3.",
+        "latex": "f(x) = 5x - 3, \\quad f'(2) = \\lim_{h \\to 0} \\frac{f(2+h) - f(2)}{h}",
+        "answers": ["3", "5", "7", "10"],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "[f(2+h)-f(2)]/h = [5(2+h)-3 - (10-3)]/h = 5h/h = 5. The limit is 5."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Apply the power rule: d/dx [x⁷]",
+        "latex": "\\frac{d}{dx}[x^7]",
+        "answers": ["x⁶", "7x⁶", "7x⁷", "6x⁶"],
+        "correct": 1,
+        "difficulty": 1,
+        "explanation": "Power rule: d/dx[xⁿ] = nxⁿ⁻¹. So d/dx[x⁷] = 7x⁶."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "If f is differentiable at a, which must be true?",
+        "latex": "f \\text{ differentiable at } a \\implies ?",
+        "answers": [
+          "f'(a) = 0",
+          "f is continuous at a",
+          "f has a local extremum at a",
+          "f(a) = 0"
+        ],
+        "correct": 1,
+        "difficulty": 1,
+        "explanation": "Differentiability implies continuity. The converse is false (e.g. |x| at 0 is continuous but not differentiable)."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

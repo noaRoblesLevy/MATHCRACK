@@ -1,0 +1,128 @@
+{
+  "id": "ts-01",
+  "title": "Time Series Basics",
+  "kingdom": "time-series",
+  "dungeonNumber": 1,
+  "lesson": {
+    "title": "Time Series Basics",
+    "body": "A time series {x_t} is a sequence of observations indexed by time t = 1, 2, ..., n. Every series can be decomposed into structural components: a long-run trend, repeating seasonal patterns, longer cyclic swings, and an irregular residual. The irregular component is modeled as white noise ε_t ~ WN(0, σ²), meaning each shock has mean zero, constant variance σ², and is uncorrelated across time. Understanding these components is the foundation for building any forecasting or inference model."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Which component of a time series describes a long-run increase or decrease in the level of the series?",
+      "steps": ["Think about which word describes a gradual, persistent direction."],
+      "answers": ["Trend", "Seasonality", "White noise", "Cycle"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "The trend component captures the long-run direction of a series. Seasonality is periodic within a fixed calendar period, cycles are longer irregular fluctuations, and white noise is pure random error.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A process ε_t is called white noise WN(0, σ²) if it satisfies which set of properties?",
+      "latex": "\\varepsilon_t \\sim WN(0, \\sigma^2)",
+      "steps": ["Write out E[ε_t], Var(ε_t), and Cov(ε_t, ε_s) for t ≠ s."],
+      "answers": [
+        "E[ε_t]=0, Var(ε_t)=σ², Cov(ε_t,ε_s)=0 for t≠s",
+        "E[ε_t]=0, Var(ε_t)=σ², ε_t is normally distributed",
+        "E[ε_t]=0, Var(ε_t)=σ_t² (time-varying), Cov=0",
+        "E[ε_t]=μ, Var(ε_t)=σ², Cov=0"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "White noise requires zero mean, constant variance σ², and zero autocovariance. It does NOT require normality — Gaussian white noise is a stricter special case.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Monthly retail sales consistently spike every December. Which component best explains this pattern?",
+      "steps": ["Is the pattern tied to a fixed calendar period?"],
+      "answers": ["Seasonality", "Trend", "Cycle", "Irregular"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Seasonality refers to patterns that repeat at a fixed, known frequency (e.g., monthly, quarterly, annually). A December spike in retail sales is a classic seasonal effect driven by holiday shopping.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these time series components from most predictable (most structured) to least predictable (most random):",
+      "items": ["White noise ε_t", "Seasonal component", "Cyclic component", "Trend component"],
+      "correctOrder": [3, 1, 2, 0],
+      "difficulty": 2,
+      "explanation": "Trend is the most predictable because it changes slowly and directionally. Seasonal patterns repeat at a fixed period and are very predictable. Cycles are longer and irregular, making them harder to forecast. White noise is by definition unpredictable — it carries no information about future values.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The additive decomposition model writes x_t = T_t + S_t + C_t + ε_t. When should you prefer a multiplicative decomposition instead?",
+      "latex": "x_t = T_t \\cdot S_t \\cdot C_t \\cdot \\varepsilon_t",
+      "steps": ["Think about whether seasonal swings grow proportionally as the level rises."],
+      "answers": [
+        "When the amplitude of seasonal fluctuations grows proportionally with the trend level",
+        "When the series contains a unit root",
+        "When the series has no seasonal component",
+        "When observations are negative"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Multiplicative decomposition is appropriate when seasonal swings scale with the level of the series (e.g., airline passenger data). If the seasonal amplitude is roughly constant regardless of the trend, the additive model is preferred. Negative values prevent multiplicative decomposition since log transformation would be undefined.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The White Noise",
+    "taunt": "Every pattern you see is an illusion. I am pure randomness — you cannot model me, predict me, or escape me.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Which statement is TRUE about a white noise process ε_t ~ WN(0, σ²)?",
+        "latex": "\\varepsilon_t \\sim WN(0, \\sigma^2)",
+        "answers": [
+          "All its autocorrelations ρ(h) equal zero for h ≠ 0",
+          "Its variance changes over time",
+          "Consecutive values are positively correlated",
+          "It must follow a normal distribution"
+        ],
+        "correct": 0,
+        "difficulty": 1,
+        "explanation": "By definition, white noise has zero autocorrelation at all non-zero lags. It does not require normality, and its variance is constant, not time-varying."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "If a series shows a strong upward movement over 30 years with overlaid annual peaks each summer, the decomposition has components:",
+        "answers": [
+          "Trend + Seasonality + Irregular",
+          "Seasonality + Cycle + Irregular",
+          "Trend + Cycle only",
+          "White noise only"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "A 30-year upward movement is trend; annual summer peaks are seasonality; the unexplained residual is irregular (white noise). Cycles would be present if there were additional medium-term swings beyond those components."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A time series analyst subtracts the estimated trend T_t and seasonal component S_t from x_t and obtains a residual. If that residual is white noise, what does this imply?",
+        "latex": "\\hat{\\varepsilon}_t = x_t - \\hat{T}_t - \\hat{S}_t",
+        "answers": [
+          "The model has captured all systematic structure in the data",
+          "The original series was already stationary",
+          "Forecasts will be perfect",
+          "The series has no trend"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "If the residual ε̂_t is indistinguishable from white noise (zero autocorrelation, constant variance), the model has extracted all exploitable structure. This does not mean forecasts are perfect — white noise is irreducible randomness — nor does it imply the original series was stationary."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

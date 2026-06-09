@@ -1,0 +1,111 @@
+{
+  "id": "linalg-05",
+  "title": "Row Reduction & RREF",
+  "kingdom": "linear-algebra",
+  "dungeonNumber": 5,
+  "lesson": {
+    "title": "Row Reduction & RREF",
+    "body": "Row reduction applies three elementary operations — swapping rows, scaling a row by a nonzero scalar, and adding a multiple of one row to another — without changing the solution set. Reduced Row Echelon Form (RREF) requires each pivot to be 1 with zeros above and below it. Pivot positions correspond to basic variables; columns without pivots yield free variables. The system Ax = b is consistent iff b is not a pivot column in the augmented matrix."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Which operation is NOT a valid elementary row operation?",
+      "latex": "\\text{Elementary row operations on a matrix}",
+      "steps": ["Valid operations: row swap, scale a row, add a multiple of one row to another."],
+      "answers": ["Multiply two rows together", "Swap two rows", "Multiply a row by a nonzero scalar", "Add a multiple of one row to another row"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Multiplying two rows together is not an elementary row operation. The three valid operations are: swap, scale (by nonzero), and row addition.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which matrix is in Reduced Row Echelon Form (RREF)?",
+      "latex": "\\text{Select the matrix in RREF}",
+      "steps": ["RREF: pivots are 1, each pivot is the only nonzero entry in its column, pivots move right and down."],
+      "answers": ["[[1,0,2],[0,1,-3],[0,0,0]]", "[[1,2,0],[0,0,1],[0,0,0]]", "[[2,0,1],[0,1,0],[0,0,0]]", "[[1,1,0],[0,1,0],[0,0,1]]"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "The first matrix has pivots 1 in columns 1 and 2, each pivot is the only nonzero in its column, and pivots step right-downward. The others violate RREF conditions.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The system Ax = b has infinitely many solutions when:",
+      "latex": "A\\mathbf{x} = \\mathbf{b}",
+      "steps": ["Count pivots vs variables. Free variables exist ⇒ infinitely many solutions (if consistent)."],
+      "answers": ["The system is consistent and has at least one free variable", "The system has more equations than unknowns", "Every column of A is a pivot column", "The system is inconsistent"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Infinitely many solutions occur when the system is consistent (solvable) AND has at least one free variable (a non-pivot column among the variable columns).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "In the augmented matrix [A | b], what condition signals that the system Ax = b is inconsistent?",
+      "latex": "[A \\mid \\mathbf{b}] \\text{ row reduces to reveal inconsistency when...}",
+      "steps": ["A row of the form [0\\; 0\\; \\cdots\\; 0 \\;|\\; c] with c \\neq 0 means 0 = c, a contradiction."],
+      "answers": ["A pivot appears in the last (augmented) column", "A row of all zeros appears", "There are more columns than rows", "Every row has a pivot"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "If a pivot appears in the augmented column (last column), the row reads 0 = c ≠ 0 — a contradiction — meaning no solution exists.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to solve the system x + 2y = 5, 2x + 3y = 8 by row reduction:",
+      "items": [
+        "Write augmented matrix [[1,2,5],[2,3,8]]",
+        "R2 ← R2 - 2R1 to get [[1,2,5],[0,-1,-2]]",
+        "Back-substitute: from row 2, y=2; substitute into row 1 to get x=1",
+        "Scale R2 by -1: [[1,2,5],[0,1,2]]"
+      ],
+      "correctOrder": [0, 1, 3, 2],
+      "difficulty": 3,
+      "explanation": "Form the augmented matrix, eliminate below the first pivot, then scale to get a pivot of 1, then back-substitute to find the solution.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Echelon Executioner",
+    "taunt": "No pivot shall stand in your path — because I will eliminate them all!",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A 3×5 matrix A (no augmented column) has 3 pivot positions. How many free variables does Ax = 0 have?",
+        "latex": "\\text{rank}(A) = 3,\\quad A \\text{ is } 3\\times 5",
+        "answers": ["2", "3", "5", "0"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "There are 5 variables total and 3 pivots, so the number of free variables = 5 - 3 = 2."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "After row reducing, you obtain a row [0, 0, 0 | 5] in the augmented matrix. What does this tell you?",
+        "latex": "\\begin{pmatrix}0 & 0 & 0 & \\big| & 5\\end{pmatrix}",
+        "answers": ["The system is inconsistent (no solution)", "x₃ = 5", "There is a free variable", "The system has infinitely many solutions"],
+        "correct": 0,
+        "difficulty": 1,
+        "explanation": "The row represents 0x₁ + 0x₂ + 0x₃ = 5, i.e. 0 = 5, which is false. The system is inconsistent."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Row operations transform a matrix to RREF. Which statement about the solution set is true?",
+        "latex": "A \\sim B \\text{ (row equivalent)}",
+        "answers": ["Row equivalent matrices have the same solution set for Ax=b", "Row operations change the solution set", "RREF always has a unique solution", "Only row swaps preserve the solution set"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "All three elementary row operations preserve the solution set of the system. Row equivalent matrices always have identical solution sets."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

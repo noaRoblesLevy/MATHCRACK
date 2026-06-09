@@ -1,0 +1,111 @@
+{
+  "id": "linalg-02",
+  "title": "Vector Spaces & Subspaces",
+  "kingdom": "linear-algebra",
+  "dungeonNumber": 2,
+  "lesson": {
+    "title": "Vector Spaces & Subspaces",
+    "body": "A vector space is a set V with addition and scalar multiplication satisfying 8 axioms including commutativity, associativity, existence of zero vector, and distributive laws. A subspace H ⊆ V must satisfy three criteria: contain the zero vector, be closed under addition, and be closed under scalar multiplication. The span of a set of vectors is the set of all linear combinations, and vectors are linearly independent if no vector can be written as a combination of the others."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Which of the following is NOT one of the 8 axioms of a vector space?",
+      "latex": "\\text{Vector space axioms for } V",
+      "steps": ["Recall: closure, commutativity, associativity, identity, inverse, scalar identity, distributive laws"],
+      "answers": ["All vectors have length 1", "There exists a zero vector 0 such that v + 0 = v", "u + v = v + u for all u, v in V", "c(u + v) = cu + cv for all scalars c"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Having unit length is not an axiom of a vector space. The real axioms include commutativity, zero vector existence, and the distributive laws.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which of the following subsets of R² is a subspace?",
+      "latex": "H \\subseteq \\mathbb{R}^2",
+      "steps": ["Check: does H contain \\mathbf{0}? Is H closed under addition and scalar mult?"],
+      "answers": ["The set of all (x, y) with y = 2x", "The set of all (x, y) with y = 2x + 1", "The set of all (x, y) with x ≥ 0", "The set of all (x, y) with x² + y² = 1"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "y = 2x passes through the origin and is closed under addition and scalar multiplication — it's a subspace (a line through the origin). The others fail at least one criterion.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Are the vectors v₁ = (1, 2, 3) and v₂ = (2, 4, 6) linearly independent?",
+      "latex": "\\mathbf{v}_2 = 2\\mathbf{v}_1",
+      "steps": ["Check: does c_1\\mathbf{v}_1 + c_2\\mathbf{v}_2 = \\mathbf{0} force c_1 = c_2 = 0?"],
+      "answers": ["No, v₂ = 2v₁ so they are linearly dependent", "Yes, they point in different directions", "Yes, both vectors are non-zero", "No, because they are in R³"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "v₂ = 2v₁, so 2v₁ - v₂ = 0, giving a nontrivial linear combination equal to zero. They are linearly dependent.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The span of a single nonzero vector v in R³ is geometrically:",
+      "latex": "\\text{span}\\{\\mathbf{v}\\} = \\{c\\mathbf{v} : c \\in \\mathbb{R}\\}",
+      "steps": ["All scalar multiples of v form a line through the origin."],
+      "answers": ["A line through the origin", "A plane through the origin", "All of R³", "The zero vector only"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "span{v} = {cv : c ∈ R} is the set of all scalar multiples of v, which forms a line through the origin in R³.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to verify that H = {(x, y, z) : x + y + z = 0} is a subspace of R³:",
+      "items": [
+        "Check closure under addition: if (a,b,c) and (d,e,f) are in H, then (a+d)+(b+e)+(c+f)=0 ✓",
+        "Verify (0,0,0) is in H since 0+0+0=0 ✓",
+        "Conclude H is a subspace",
+        "Check closure under scalar mult: k(a+b+c) = k·0 = 0 ✓"
+      ],
+      "correctOrder": [1, 0, 3, 2],
+      "difficulty": 3,
+      "explanation": "Subspace verification requires checking all three criteria in order: zero vector, closure under addition, closure under scalar multiplication.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Axiom Guardian",
+    "taunt": "Name all eight axioms or face infinite-dimensional oblivion!",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Which condition alone is sufficient to conclude that a subset H of a vector space V is a subspace?",
+        "latex": "H \\neq \\emptyset,\\quad \\forall\\, \\mathbf{u},\\mathbf{v}\\in H,\\, c\\in\\mathbb{R}: c\\mathbf{u}+\\mathbf{v}\\in H",
+        "answers": ["H is nonempty and closed under linear combinations", "H contains at least two distinct vectors", "H is a finite set", "H contains the zero vector only"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "If H is nonempty and closed under the operation cu + v for all scalars c, it is closed under both scalar multiplication and addition, making it a subspace."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Is the set W = {(x, y) : xy = 0} a subspace of R²?",
+        "latex": "W = \\{(x,y)\\in\\mathbb{R}^2 : xy = 0\\}",
+        "answers": ["No, it is not closed under addition", "Yes, it contains the zero vector", "Yes, it is closed under scalar multiplication", "No, it does not contain the zero vector"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "W consists of the x-axis and y-axis. Take (1,0) and (0,1): both are in W but their sum (1,1) satisfies 1·1 ≠ 0, so (1,1) ∉ W. Not closed under addition."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Three vectors in R³ are linearly dependent if and only if:",
+        "latex": "c_1\\mathbf{v}_1 + c_2\\mathbf{v}_2 + c_3\\mathbf{v}_3 = \\mathbf{0}",
+        "answers": ["There exist scalars c₁, c₂, c₃ (not all zero) making their linear combination equal to 0", "All three vectors are nonzero", "The vectors span R³", "No vector equals the zero vector"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Linear dependence means there exists a nontrivial (not all-zero) combination of the vectors that equals the zero vector."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

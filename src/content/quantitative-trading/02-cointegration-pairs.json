@@ -1,0 +1,97 @@
+{
+  "id": "qt-02",
+  "title": "Cointegration & Pairs Trading",
+  "kingdom": "quantitative-trading",
+  "dungeonNumber": 2,
+  "lesson": {
+    "title": "Cointegration & Pairs Trading",
+    "body": "Pairs trading identifies two cointegrated stocks where the spread y_t − β·x_t is stationary. The hedge ratio β is estimated by OLS regression. The spread is standardized into a z-score: z_t = (spread_t − mean)/std. Typical entry: |z| > 2; exit: |z| < 0.5. Long the cheaper stock, short the expensive one when the spread diverges."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "In pairs trading with stocks A and B, when the spread is 2 standard deviations above its mean, you should:",
+      "answers": ["Short A and long B (the spread should narrow)", "Long A and short B", "Long both A and B", "Short both A and B"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Spread = A − β·B. Spread too high means A is expensive relative to B → short A, long B. You profit when the spread narrows.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The hedge ratio β in pairs trading is estimated by:",
+      "latex": "y_t = \\alpha + \\beta x_t + u_t \\quad \\text{(OLS regression)}",
+      "answers": ["OLS regression of stock A on stock B", "Correlation coefficient", "Ratio of volatilities σ_A/σ_B", "Equal weight (β=1)"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "OLS regression gives β that minimizes variance of the spread. Note: in practice, many use total least squares (TLS) or Kalman filter for a dynamic β.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The z-score for entry in pairs trading is computed as:",
+      "latex": "z_t = \\frac{\\text{spread}_t - \\mu_{\\text{spread}}}{\\sigma_{\\text{spread}}}",
+      "answers": ["(spread_t − mean_spread) / std_spread", "spread_t / std_spread", "spread_t − mean_spread", "spread_t · β"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Z-score normalizes the spread by subtracting its mean and dividing by its standard deviation, making it dimensionless and comparable to historical norms.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the pairs trading strategy implementation steps:",
+      "items": ["Screen for cointegrated pairs (Engle-Granger test)", "Estimate hedge ratio β by OLS regression", "Compute spread and z-score rolling", "Enter when |z| > 2, exit when |z| < 0.5, stop-loss at |z| > 3"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Pairs trading pipeline: find cointegrated pairs → estimate β → build z-score signal → trade the signal with clear entry/exit rules.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Pairs trading is considered market-neutral because:",
+      "answers": ["Long and short positions offset broad market moves (beta exposure ≈ 0)", "Both stocks are in the same sector", "You hold equal dollar amounts in each stock", "The strategy uses only limit orders"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "With hedge ratio β, long one stock and short β units of the other approximately neutralizes market beta exposure — the strategy profits from relative moves, not direction.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Diverging Pair",
+    "taunt": "Your spread never closes. Your cointegration was just correlation in disguise.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A key risk in pairs trading is 'regime change'. This means:",
+        "answers": ["The cointegrating relationship breaks down, and the spread keeps diverging", "The hedge ratio becomes negative", "Transaction costs increase", "Both stocks become correlated with the market"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Cointegrating relationships can and do break down (mergers, sector rotations, fundamental changes). The trade must have a stop-loss for when the spread diverges beyond expectations."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Using a static (OLS-estimated) hedge ratio in pairs trading can fail because:",
+        "answers": ["The true hedge ratio changes over time (non-stationarity of β)", "OLS is not the correct regression technique", "The regression must be run on returns, not prices", "Pairs trading requires β = 1"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "A time-varying β (from Kalman filter or rolling OLS) better adapts to changing market conditions. Static β from a 1-year regression may be stale."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The Johansen test is preferred over Engle-Granger for pairs trading when:",
+        "answers": ["Testing multiple pairs simultaneously (more than 2 assets)", "The pair has high correlation", "The hedge ratio is known in advance", "The lookback period is short"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Johansen naturally extends to k>2 assets (portfolio/basket trading) and correctly identifies all cointegrating vectors, avoiding the single-equation bias in Engle-Granger."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}

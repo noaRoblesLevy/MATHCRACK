@@ -1,0 +1,96 @@
+{
+  "id": "qt-04",
+  "title": "Momentum Strategies",
+  "kingdom": "quantitative-trading",
+  "dungeonNumber": 4,
+  "lesson": {
+    "title": "Momentum Strategies",
+    "body": "Momentum (trend-following in the cross-section) exploits the tendency for recent winners to continue outperforming and recent losers to continue underperforming. The classic Jegadeesh-Titman factor uses 12-month return minus the most recent month (12-1 momentum). Time-series momentum bets that a single asset continues in its recent direction. Both violate the efficient market hypothesis."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "The 12-1 momentum factor for stock i at time t is:",
+      "latex": "\\text{Mom}_{12-1} = R_{t-1\\text{ month back}} - R_{t-12\\text{ months back}}",
+      "answers": ["12-month cumulative return, skipping the most recent month", "1-month return only", "12-month average return", "Return over the last 1 month"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "12-1 momentum: buy stocks with highest return over months t-12 to t-2; skip the last month to avoid short-term reversal.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Why is the most recent month excluded from the 12-1 momentum signal?",
+      "answers": ["Short-term reversal: last-month winners often reverse in the next month", "Data availability lag", "Transaction costs are highest for recent trades", "Recent returns have higher volatility"],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "The 1-month short-term reversal effect (bid-ask bounce, microstructure effects) counteracts momentum at very short horizons.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Cross-sectional momentum strategy is long-short. This means:",
+      "answers": ["Long the top decile of momentum stocks, short the bottom decile", "Long all positive momentum stocks", "Short all stocks uniformly", "Long momentum, short value stocks"],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Cross-sectional momentum: rank all stocks by past return, buy the top decile (winners), short the bottom decile (losers). The L/S structure is market-neutral.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the cross-sectional momentum strategy steps:",
+      "items": ["Compute 12-1 month return for each stock in the universe", "Rank stocks by momentum score", "Long top 10%, short bottom 10%", "Rebalance monthly and measure performance"],
+      "correctOrder": [0, 1, 2, 3],
+      "difficulty": 2,
+      "explanation": "Classic momentum: compute signal, rank, trade extremes, rebalance. Monthly rebalancing is typical for 12-1 momentum.",
+      "xp": 20
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Momentum strategies are known to 'crash' because:",
+      "answers": ["In sharp market reversals, winners become losers rapidly (crowded unwind)", "Markets always trend upward", "Momentum factors have negative expected return", "Short-selling is expensive in momentum crashes"],
+      "correct": 0,
+      "difficulty": 3,
+      "explanation": "Momentum crashes (e.g., 2009 rebound) occur when a sudden reversal causes the long (recent winners) to collapse and short (losers) to bounce. Crowded momentum trades amplify losses.",
+      "xp": 10
+    }
+  ],
+  "boss": {
+    "name": "The Contrarian",
+    "taunt": "Yesterday's winners are tomorrow's losers. You are trading stale information.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Time-series momentum (TSMOM) for asset i at time t is typically computed as:",
+        "answers": ["Sign of 12-month past return × volatility-scaled position", "12-month return divided by volatility", "Correlation with market over 12 months", "Average return over 3 months"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Moskowitz, Ooi, Pedersen (2012) TSMOM: sign(r_{12mo}) × (σ_target/σ_i). Go long if past 12-month return is positive, short if negative, scale by target volatility."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The autocorrelation of returns at 1-month horizon is typically:",
+        "answers": ["Slightly negative (short-term reversal)", "Strongly positive (strong momentum)", "Zero (efficient markets)", "Depends entirely on the asset class"],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "At 1-month: slight negative autocorrelation (reversal). At 6-12 months: positive (momentum). At 3-5 years: negative again (long-term reversal)."
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Volatility-scaling a momentum position means:",
+        "answers": ["Dividing target dollar exposure by recent volatility σ_i to equalize risk across assets", "Increasing position when volatility is high", "Using ATR as stop-loss", "Hedging with options"],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Without vol-scaling, high-volatility assets dominate risk. Dividing by σ_i makes each position contribute roughly equal risk, improving diversification and Sharpe ratio."
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {"type": "hint-scroll", "weight": 70},
+      {"type": "focus-crystal", "weight": 20},
+      {"type": "scholars-tome", "weight": 7},
+      {"type": "solution-orb", "weight": 3}
+    ]
+  },
+  "lootTable": []
+}
