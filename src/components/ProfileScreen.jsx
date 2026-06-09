@@ -65,8 +65,8 @@ export default function ProfileScreen({ isDark, onToggleTheme }) {
           <span style={{
             fontFamily: 'var(--font-mono)',
             color: 'var(--text-muted)',
-            fontSize: '0.58rem',
-            letterSpacing: '3px',
+            fontSize: '0.72rem',
+            letterSpacing: '2px',
           }}>PROFILE</span>
 
           {/* Theme toggle */}
@@ -121,10 +121,9 @@ export default function ProfileScreen({ isDark, onToggleTheme }) {
             <div style={{
               fontFamily: 'var(--font-mono)',
               color: 'var(--violet-light)',
-              fontSize: '0.65rem',
-              letterSpacing: '1.5px',
+              fontSize: '0.72rem',
+              letterSpacing: '1px',
               marginBottom: '0.2rem',
-              opacity: 0.85,
             }}>
               · {equippedFlair}
             </div>
@@ -136,25 +135,25 @@ export default function ProfileScreen({ isDark, onToggleTheme }) {
           <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginBottom: '1.25rem' }}>
             <div>
               <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--gold)', fontSize: '1.5rem', fontWeight: 'bold', lineHeight: 1 }}>{xp}</div>
-              <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.55rem', letterSpacing: '1.5px', marginTop: '0.25rem' }}>TOTAL XP</div>
+              <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.68rem', letterSpacing: '1px', marginTop: '0.25rem' }}>TOTAL XP</div>
             </div>
             <div>
               <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--blue)', fontSize: '1.5rem', fontWeight: 'bold', lineHeight: 1 }}>{streak}</div>
-              <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.55rem', letterSpacing: '1.5px', marginTop: '0.25rem' }}>DAY STREAK</div>
+              <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.68rem', letterSpacing: '1px', marginTop: '0.25rem' }}>DAY STREAK</div>
             </div>
             <div>
               <div style={{ fontFamily: 'var(--font-mono)', color: '#f59e0b', fontSize: '1.5rem', fontWeight: 'bold', lineHeight: 1 }}>🪙{coins}</div>
-              <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.55rem', letterSpacing: '1.5px', marginTop: '0.25rem' }}>COINS</div>
+              <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.68rem', letterSpacing: '1px', marginTop: '0.25rem' }}>COINS</div>
             </div>
           </div>
 
           {toNext > 0 ? (
             <>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.3rem' }}>
-                <span style={{ color: 'var(--text-muted)', fontSize: '0.65rem' }}>
+                <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>
                   → {TIERS[currentIdx + 1]?.title}
                 </span>
-                <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.62rem' }}>
+                <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.72rem' }}>
                   {toNext} XP to go
                 </span>
               </div>
@@ -171,8 +170,8 @@ export default function ProfileScreen({ isDark, onToggleTheme }) {
         <div style={{
           fontFamily: 'var(--font-mono)',
           color: 'var(--text-muted)',
-          fontSize: '0.56rem',
-          letterSpacing: '2.5px',
+          fontSize: '0.7rem',
+          letterSpacing: '2px',
           marginBottom: '0.75rem',
         }}>
           TITLE PROGRESSION
@@ -192,7 +191,7 @@ export default function ProfileScreen({ isDark, onToggleTheme }) {
                 borderLeft: `2px solid ${unlocked ? tier.color : 'var(--border)'}`,
                 borderRadius: 10,
                 padding: '0.8rem 0.875rem',
-                opacity: unlocked ? 1 : 0.35,
+                opacity: unlocked ? 1 : 0.5,
                 transition: 'opacity 0.2s',
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -213,7 +212,7 @@ export default function ProfileScreen({ isDark, onToggleTheme }) {
                           fontFamily: 'var(--font-mono)',
                           background: tier.color,
                           color: '#000',
-                          fontSize: '0.45rem',
+                          fontSize: '0.58rem',
                           padding: '2px 5px',
                           borderRadius: 3,
                           letterSpacing: '1px',
@@ -226,12 +225,12 @@ export default function ProfileScreen({ isDark, onToggleTheme }) {
                       <Bar pct={progress} color={tier.color} />
                     )}
                     {!unlocked && (
-                      <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.58rem', marginTop: '0.25rem' }}>
+                      <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.72rem', marginTop: '0.25rem' }}>
                         {tier.xp} XP · {tier.xp - xp} to go
                       </div>
                     )}
                     {unlocked && !isCurrent && (
-                      <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--correct)', fontSize: '0.56rem', marginTop: '0.2rem', letterSpacing: '1px' }}>
+                      <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--correct)', fontSize: '0.7rem', marginTop: '0.2rem', letterSpacing: '1px' }}>
                         ✓ Unlocked
                       </div>
                     )}
@@ -246,8 +245,8 @@ export default function ProfileScreen({ isDark, onToggleTheme }) {
         <div style={{
           fontFamily: 'var(--font-mono)',
           color: 'var(--text-muted)',
-          fontSize: '0.56rem',
-          letterSpacing: '2.5px',
+          fontSize: '0.7rem',
+          letterSpacing: '2px',
           marginBottom: '0.75rem',
           marginTop: '1.5rem',
         }}>
@@ -266,7 +265,7 @@ export default function ProfileScreen({ isDark, onToggleTheme }) {
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.25rem' }}>
                   <span style={{ fontSize: '0.75rem', color: 'var(--text)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{s.title}</span>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', color: s.completed === s.total && s.total > 0 ? 'var(--correct)' : 'var(--text-muted)', flexShrink: 0, marginLeft: '0.5rem' }}>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: s.completed === s.total && s.total > 0 ? 'var(--correct)' : 'var(--text-muted)', flexShrink: 0, marginLeft: '0.5rem' }}>
                     {s.completed === s.total && s.total > 0 ? '✓' : `${s.completed}/${s.total}`}
                   </span>
                 </div>
@@ -288,8 +287,8 @@ export default function ProfileScreen({ isDark, onToggleTheme }) {
         <div style={{
           fontFamily: 'var(--font-mono)',
           color: 'var(--text-muted)',
-          fontSize: '0.56rem',
-          letterSpacing: '2.5px',
+          fontSize: '0.7rem',
+          letterSpacing: '2px',
           marginBottom: '0.75rem',
           marginTop: '1.5rem',
         }}>
@@ -311,7 +310,7 @@ export default function ProfileScreen({ isDark, onToggleTheme }) {
                   : 'var(--bg-card)',
                 border: `1px solid ${earned ? s.color + '40' : 'var(--border)'}`,
                 borderRadius: 10,
-                opacity: earned ? 1 : 0.38,
+                opacity: earned ? 1 : 0.5,
                 transition: 'opacity 0.2s',
               }}>
                 <div style={{ fontSize: '1.5rem', marginBottom: '0.3rem', lineHeight: 1 }}>
@@ -319,7 +318,7 @@ export default function ProfileScreen({ isDark, onToggleTheme }) {
                 </div>
                 <div style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '0.62rem',
+                  fontSize: '0.72rem',
                   color: earned ? s.color : 'var(--text-muted)',
                   fontWeight: earned ? 700 : 400,
                   marginBottom: '0.15rem',
@@ -329,7 +328,7 @@ export default function ProfileScreen({ isDark, onToggleTheme }) {
                 }}>
                   {earned ? '✓ ' : ''}{s.title}
                 </div>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', color: 'var(--text-muted)', letterSpacing: '0.5px' }}>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--text-muted)' }}>
                   {earned ? 'CONQUERED' : `${s.completed}/${s.total} done`}
                 </div>
               </div>
@@ -345,7 +344,7 @@ export default function ProfileScreen({ isDark, onToggleTheme }) {
           borderRadius: 12,
           padding: '1rem',
         }}>
-          <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.56rem', letterSpacing: '2px', marginBottom: '0.75rem' }}>
+          <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.7rem', letterSpacing: '1.5px', marginBottom: '0.75rem' }}>
             ACCOUNT
           </div>
           {user ? (

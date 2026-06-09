@@ -86,10 +86,10 @@ export default function KingdomView({ kingdom, onSelectDungeon, onBack, onTrain 
         {availableCount > 0 && (
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
-              <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.56rem', letterSpacing: '1.5px' }}>
+              <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.7rem', letterSpacing: '1px' }}>
                 LESSONS
               </span>
-              <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.56rem' }}>
+              <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.7rem' }}>
                 {completedCount} / {availableCount}
               </span>
             </div>
@@ -165,7 +165,7 @@ export default function KingdomView({ kingdom, onSelectDungeon, onBack, onTrain 
                   {complete
                     ? <span style={{ color: 'var(--correct)' }}>✓</span>
                     : isStub
-                      ? <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '1px' }}>SOON</span>
+                      ? <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '1px' }}>SOON</span>
                       : '›'}
                 </span>
               </div>

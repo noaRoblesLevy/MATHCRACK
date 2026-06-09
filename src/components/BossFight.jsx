@@ -25,7 +25,7 @@ function ScorePips({ total, correct, needed }) {
       <span style={{
         fontFamily: 'var(--font-mono)',
         color: 'var(--text-muted)',
-        fontSize: '0.55rem',
+        fontSize: '0.7rem',
         letterSpacing: '1px',
         marginLeft: '0.25rem',
       }}>
@@ -69,10 +69,9 @@ function BossIntro({ boss, lessonTitle, onFight }) {
         style={{
           fontFamily: 'var(--font-mono)',
           color: 'var(--danger)',
-          fontSize: '0.62rem',
-          letterSpacing: '4px',
+          fontSize: '0.72rem',
+          letterSpacing: '3px',
           marginBottom: '1.5rem',
-          opacity: 0.8,
         }}
       >
         ⚔ BOSS ENCOUNTER
@@ -125,10 +124,10 @@ function BossIntro({ boss, lessonTitle, onFight }) {
         style={{
           fontFamily: 'var(--font-mono)',
           color: 'var(--text-muted)',
-          fontSize: '0.55rem',
-          letterSpacing: '2px',
+          fontSize: '0.7rem',
+          letterSpacing: '1.5px',
           marginBottom: '3rem',
-          opacity: 0.5,
+          opacity: 0.7,
         }}
       >
         {lessonTitle.toUpperCase()}
@@ -149,7 +148,7 @@ function BossIntro({ boss, lessonTitle, onFight }) {
           <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--gold)', fontSize: '1.2rem', fontWeight: 'bold', lineHeight: 1 }}>
             {boss.questions.length}
           </div>
-          <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.5rem', letterSpacing: '1.5px', marginTop: '0.3rem' }}>
+          <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.65rem', letterSpacing: '1px', marginTop: '0.3rem' }}>
             QUESTIONS
           </div>
         </div>
@@ -158,7 +157,7 @@ function BossIntro({ boss, lessonTitle, onFight }) {
           <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--correct)', fontSize: '1.2rem', fontWeight: 'bold', lineHeight: 1 }}>
             {boss.passMark}/{boss.questions.length}
           </div>
-          <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.5rem', letterSpacing: '1.5px', marginTop: '0.3rem' }}>
+          <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.65rem', letterSpacing: '1px', marginTop: '0.3rem' }}>
             TO PASS
           </div>
         </div>
@@ -167,7 +166,7 @@ function BossIntro({ boss, lessonTitle, onFight }) {
           <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--blue)', fontSize: '1.2rem', fontWeight: 'bold', lineHeight: 1 }}>
             {boss.questions.length * 25}
           </div>
-          <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.5rem', letterSpacing: '1.5px', marginTop: '0.3rem' }}>
+          <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.65rem', letterSpacing: '1px', marginTop: '0.3rem' }}>
             MAX XP
           </div>
         </div>
@@ -255,8 +254,8 @@ export default function BossFight({ boss, lessonTitle = '', onPass, onFail }) {
               <div style={{
                 fontFamily: 'var(--font-mono)',
                 color: 'var(--danger)',
-                fontSize: '0.58rem',
-                letterSpacing: '2px',
+                fontSize: '0.72rem',
+                letterSpacing: '1.5px',
                 marginBottom: '0.15rem',
               }}>
                 ⚔ BOSS
@@ -283,8 +282,8 @@ export default function BossFight({ boss, lessonTitle = '', onPass, onFail }) {
               <div style={{
                 fontFamily: 'var(--font-mono)',
                 color: 'var(--text-muted)',
-                fontSize: '0.52rem',
-                letterSpacing: '1px',
+                fontSize: '0.68rem',
+                letterSpacing: '0.5px',
               }}>
                 Q {questionIdx + 1} / {boss.questions.length}
               </div>

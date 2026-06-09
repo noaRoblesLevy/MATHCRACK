@@ -31,15 +31,15 @@ function StatCard({ label, value, sub, color, delay }) {
       </div>
       <div style={{
         fontFamily: 'var(--font-mono)',
-        fontSize: '0.48rem',
-        letterSpacing: '1.5px',
+        fontSize: '0.65rem',
+        letterSpacing: '1px',
         color: 'var(--text-muted)',
         marginBottom: sub ? '0.15rem' : 0,
       }}>
         {label}
       </div>
       {sub && (
-        <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', opacity: 0.7 }}>
+        <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
           {sub}
         </div>
       )}

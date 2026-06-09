@@ -85,8 +85,8 @@ export default function OverworldMap({ courses = [], kingdoms = [], onSelectKing
           <p style={{
             fontFamily: 'var(--font-mono)',
             color: 'var(--text-muted)',
-            fontSize: '0.58rem',
-            letterSpacing: '3px',
+            fontSize: '0.72rem',
+            letterSpacing: '2px',
           }}>
             PRE-ALGEBRA &amp; ALGEBRA 1
           </p>
@@ -104,7 +104,7 @@ export default function OverworldMap({ courses = [], kingdoms = [], onSelectKing
               <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--gold)', fontSize: '0.78rem', fontWeight: 'bold' }}>
                 {streak}
               </span>
-              <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.55rem', letterSpacing: '1px' }}>
+              <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.7rem', letterSpacing: '0.5px' }}>
                 DAY
               </span>
             </div>
@@ -113,7 +113,7 @@ export default function OverworldMap({ courses = [], kingdoms = [], onSelectKing
               <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--blue)', fontSize: '0.78rem', fontWeight: 'bold' }}>
                 {xp}
               </span>
-              <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.55rem', letterSpacing: '1px' }}>
+              <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.7rem', letterSpacing: '0.5px' }}>
                 XP
               </span>
             </div>
@@ -122,7 +122,7 @@ export default function OverworldMap({ courses = [], kingdoms = [], onSelectKing
               <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--correct)', fontSize: '0.78rem', fontWeight: 'bold' }}>
                 {completedSubjects}/{kingdoms.length}
               </span>
-              <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.55rem', letterSpacing: '1px' }}>
+              <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.7rem', letterSpacing: '0.5px' }}>
                 DONE
               </span>
             </div>
@@ -189,8 +189,8 @@ export default function OverworldMap({ courses = [], kingdoms = [], onSelectKing
               display: 'inline-block',
               fontFamily: 'var(--font-mono)',
               color: 'var(--text-muted)',
-              fontSize: '0.5rem',
-              letterSpacing: '2px',
+              fontSize: '0.65rem',
+              letterSpacing: '1.5px',
               border: '1px solid rgba(239,68,68,0.2)',
               borderRadius: 4,
               padding: '3px 8px',
@@ -260,8 +260,8 @@ export default function OverworldMap({ courses = [], kingdoms = [], onSelectKing
                   <span style={{
                     fontFamily: 'var(--font-mono)',
                     color: course.color,
-                    fontSize: '0.6rem',
-                    letterSpacing: '2px',
+                    fontSize: '0.75rem',
+                    letterSpacing: '1.5px',
                     fontWeight: 'bold',
                     textTransform: 'uppercase',
                   }}>
@@ -293,8 +293,8 @@ export default function OverworldMap({ courses = [], kingdoms = [], onSelectKing
                             <span style={{
                               fontFamily: 'var(--font-mono)',
                               color: 'var(--blue)',
-                              fontSize: '0.5rem',
-                              letterSpacing: '1px',
+                              fontSize: '0.65rem',
+                              letterSpacing: '0.5px',
                               whiteSpace: 'nowrap',
                             }}>START HERE</span>
                             <div style={{
@@ -361,7 +361,7 @@ export default function OverworldMap({ courses = [], kingdoms = [], onSelectKing
                             </div>
                             <div style={{
                               color: 'var(--text-muted)',
-                              fontSize: '0.63rem',
+                              fontSize: '0.75rem',
                               whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
                               marginBottom: available > 0 && completed > 0 ? '0.35rem' : 0,
                             }}>
@@ -387,8 +387,8 @@ export default function OverworldMap({ courses = [], kingdoms = [], onSelectKing
                               <span style={{
                                 fontFamily: 'var(--font-mono)',
                                 color: 'var(--correct)',
-                                fontSize: '0.48rem',
-                                letterSpacing: '1.5px',
+                                fontSize: '0.65rem',
+                                letterSpacing: '1px',
                               }}>DONE</span>
                             ) : available === 0 ? (
                               <span style={{
@@ -397,8 +397,8 @@ export default function OverworldMap({ courses = [], kingdoms = [], onSelectKing
                                 border: '1px solid var(--border)',
                                 borderRadius: 4,
                                 padding: '1px 5px',
-                                fontSize: '0.48rem',
-                                letterSpacing: '1px',
+                                fontSize: '0.65rem',
+                                letterSpacing: '0.5px',
                               }}>soon</span>
                             ) : (
                               <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>›</span>
@@ -417,11 +417,11 @@ export default function OverworldMap({ courses = [], kingdoms = [], onSelectKing
         <p style={{
           fontFamily: 'var(--font-mono)',
           color: 'var(--text-muted)',
-          fontSize: '0.52rem',
-          letterSpacing: '2px',
+          fontSize: '0.7rem',
+          letterSpacing: '1.5px',
           marginTop: '1.5rem',
           textAlign: 'center',
-          opacity: 0.4,
+          opacity: 0.7,
         }}>
           {totalLessons} LESSONS AVAILABLE
         </p>

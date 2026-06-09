@@ -60,7 +60,7 @@ export default function BottomNav({ activeView, onSubjects, onLibrary, onShop, o
               {tab.icon}
             </span>
             <span style={{
-              fontSize: '0.5rem', letterSpacing: '1.5px',
+              fontSize: '0.65rem', letterSpacing: '1px',
               fontFamily: 'var(--font-mono)',
               fontWeight: isActive ? 'bold' : 'normal',
             }}>

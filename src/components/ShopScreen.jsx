@@ -40,8 +40,8 @@ function SectionLabel({ children }) {
     <div style={{
       fontFamily: 'var(--font-mono)',
       color: 'var(--text-muted)',
-      fontSize: '0.56rem',
-      letterSpacing: '2.5px',
+      fontSize: '0.7rem',
+      letterSpacing: '2px',
       marginBottom: '0.75rem',
       marginTop: '1.5rem',
     }}>
@@ -145,7 +145,7 @@ export default function ShopScreen() {
 
         {/* Header */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
-          <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.58rem', letterSpacing: '3px' }}>SHOP</span>
+          <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.72rem', letterSpacing: '2px' }}>SHOP</span>
           <div style={{
             display: 'flex', alignItems: 'center', gap: '0.4rem',
             background: 'var(--bg-elevated)', border: '1px solid var(--border)',
@@ -153,7 +153,7 @@ export default function ShopScreen() {
           }}>
             <span style={{ fontSize: '0.9rem' }}>🪙</span>
             <span style={{ fontFamily: 'var(--font-mono)', color: '#f59e0b', fontWeight: 'bold', fontSize: '1rem' }}>{coins}</span>
-            <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.55rem', letterSpacing: '1px' }}>COINS</span>
+            <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.7rem', letterSpacing: '0.5px' }}>COINS</span>
           </div>
         </div>
 
@@ -182,7 +182,7 @@ export default function ShopScreen() {
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <span style={{ fontSize: '0.82rem', color: 'var(--text)', fontWeight: 500 }}>{item.label}</span>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.52rem', color: 'var(--text-muted)', background: 'var(--bg-elevated)', padding: '1px 5px', borderRadius: 3 }}>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--text-muted)', background: 'var(--bg-elevated)', padding: '1px 5px', borderRadius: 3 }}>
                     ×{invCounts[item.type]}
                   </span>
                 </div>
@@ -299,7 +299,7 @@ export default function ShopScreen() {
                 borderRadius: 9,
               }}>
                 <div style={{ width: 28, height: 28, borderRadius: '50%', background: c.id, boxShadow: `0 0 8px ${c.id}80` }} />
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.52rem', color: 'var(--text-muted)' }}>{c.label}</span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--text-muted)' }}>{c.label}</span>
                 {owned ? (
                   <button
                     onClick={() => active ? equipAccentColor(null) : equipAccentColor(c.id)}
@@ -335,7 +335,7 @@ export default function ShopScreen() {
             <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>Completed subjects glow with enhanced borders and shimmer effects on the map.</div>
           </div>
           {premiumCardsUnlocked ? (
-            <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--correct)', fontSize: '0.62rem', letterSpacing: '1px', flexShrink: 0 }}>✓ OWNED</span>
+            <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--correct)', fontSize: '0.72rem', letterSpacing: '0.5px', flexShrink: 0 }}>✓ OWNED</span>
           ) : (
             <button onClick={buyPremiumCards} disabled={coins < 120} style={btnStyle('var(--gold)', false, coins < 120)}>🪙120</button>
           )}

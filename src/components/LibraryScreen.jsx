@@ -42,18 +42,18 @@ function ChapterRow({ chapterId, color, onOpen }) {
         border: `1px solid ${read ? color + '50' : color + '35'}`,
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         fontFamily: 'var(--font-mono)',
-        fontSize: '0.58rem', color,
+        fontSize: '0.72rem', color,
       }}>
         {read ? '✓' : chapter.chapterNumber}
       </div>
       <span style={{ fontSize: '0.84rem', color: read ? 'var(--text-muted)' : 'var(--text)', flex: 1 }}>
         {chapter.title}
       </span>
-      <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.6rem', flexShrink: 0 }}>
+      <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.72rem', flexShrink: 0 }}>
         p.{chapter.pages}
       </span>
       {read
-        ? <span style={{ color, fontSize: '0.6rem', fontFamily: 'var(--font-mono)', flexShrink: 0 }}>✓</span>
+        ? <span style={{ color, fontSize: '0.72rem', fontFamily: 'var(--font-mono)', flexShrink: 0 }}>✓</span>
         : <span style={{ color: 'var(--text-muted)', fontSize: '0.8rem', flexShrink: 0 }}>›</span>
       }
     </button>
@@ -91,8 +91,8 @@ export default function LibraryScreen({ onOpenChapter }) {
         <div style={{
           fontFamily: 'var(--font-mono)',
           color: 'var(--text-muted)',
-          fontSize: '0.58rem',
-          letterSpacing: '3px',
+          fontSize: '0.72rem',
+          letterSpacing: '2px',
           marginBottom: '1.25rem',
         }}>
           LIBRARY
@@ -225,8 +225,8 @@ export default function LibraryScreen({ onOpenChapter }) {
                     <div key={unit.number}>
                       <div style={{
                         fontFamily: 'var(--font-mono)',
-                        fontSize: '0.52rem',
-                        letterSpacing: '2px',
+                        fontSize: '0.68rem',
+                        letterSpacing: '1.5px',
                         color: book.color,
                         marginBottom: '0.35rem',
                       }}>
