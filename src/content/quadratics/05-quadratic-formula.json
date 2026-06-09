@@ -1,0 +1,176 @@
+{
+  "id": "quad-05",
+  "title": "The Formula Forge",
+  "kingdom": "quadratics",
+  "dungeonNumber": 5,
+  "lesson": {
+    "title": "The Quadratic Formula",
+    "body": "The **quadratic formula** solves ANY quadratic equation ax²+bx+c=0: x = (−b ± √(b²−4ac)) / (2a). It is derived by completing the square on the general form. Use it when factoring is hard or impossible. Steps: (1) Write in standard form. (2) Identify a, b, c. (3) Substitute and simplify. (4) Compute both ± cases. Always compute the discriminant b²−4ac first to check if real solutions exist."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Using the quadratic formula on x² + 5x + 6 = 0, what is b² − 4ac?",
+      "latex": "b^2 - 4ac \\quad (a=1, b=5, c=6)",
+      "steps": [
+        "b^2 - 4ac = 25 - 24 = 1"
+      ],
+      "answers": [
+        "1",
+        "−1",
+        "25",
+        "49"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "a=1, b=5, c=6. Discriminant: 5²−4(1)(6)=25−24=1. Since 1>0, there are two distinct real roots. x=(−5±√1)/2=(−5±1)/2. x=−2 or x=−3.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Apply the quadratic formula to 2x² − 3x − 2 = 0. What are the solutions?",
+      "latex": "x = \\frac{3 \\pm \\sqrt{9 + 16}}{4}",
+      "steps": [
+        "x = \\frac{3 \\pm \\sqrt{25}}{4} = \\frac{3 \\pm 5}{4}",
+        "x = 2 \\text{ or } x = -\\tfrac{1}{2}"
+      ],
+      "answers": [
+        "x = 2 or x = −1/2",
+        "x = 3 or x = −2",
+        "x = 1 or x = −2",
+        "x = 2 or x = 1/2"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "a=2, b=−3, c=−2. x=(3±√(9+16))/4=(3±5)/4. Case 1: (3+5)/4=8/4=2. Case 2: (3−5)/4=−2/4=−1/2. Solutions: x=2 or x=−1/2.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Solve: x² + 2x − 4 = 0 (give exact form)",
+      "latex": "x = \\frac{-2 \\pm \\sqrt{4 + 16}}{2}",
+      "steps": [
+        "x = \\frac{-2 \\pm \\sqrt{20}}{2} = \\frac{-2 \\pm 2\\sqrt{5}}{2} = -1 \\pm \\sqrt{5}"
+      ],
+      "answers": [
+        "x = −1 ± √5",
+        "x = −1 ± √20",
+        "x = 1 ± √5",
+        "x = −2 ± √5"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "a=1, b=2, c=−4. x=(−2±√20)/2. Simplify: √20=2√5. x=(−2±2√5)/2=−1±√5. Always simplify the radical and divide every term by the denominator.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Solve: x² − 6x + 10 = 0",
+      "latex": "x^2 - 6x + 10 = 0",
+      "steps": [
+        "\\Delta = 36 - 40 = -4 < 0",
+        "\\text{No real solutions}"
+      ],
+      "answers": [
+        "x = 3 ± 1",
+        "x = 3 ± i",
+        "No real solutions",
+        "x = 6 ± 2"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Discriminant: 36−4(10)=−4<0. Negative discriminant → no real solutions. The square root of a negative number is imaginary (√(−4)=2i), so complex solutions x=3±i exist but not real ones.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to apply the quadratic formula to 3x² − x − 2 = 0:",
+      "items": [
+        "Identify a=3, b=−1, c=−2",
+        "Compute discriminant: (−1)²−4(3)(−2) = 1+24 = 25",
+        "Apply formula: x = (1 ± √25)/6 = (1 ± 5)/6",
+        "Evaluate: x = 1 or x = −2/3"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "Identify coefficients → compute discriminant → plug into formula → simplify both ± cases. Check: 3(1)²−1−2=0 ✓ and 3(4/9)+(2/3)−2=4/3+2/3−2=2−2=0 ✓.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Quadratic Lich",
+    "taunt": "b² − 4ac. Discriminating who lives.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A projectile's height is h = −5t² + 20t + 0. When does it return to the ground?",
+        "latex": "-5t^2 + 20t = 0",
+        "answers": [
+          "t = 0 only",
+          "t = 4 s",
+          "t = 0 or t = 4 s",
+          "t = 2 s"
+        ],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "−5t²+20t=0 → factor: −5t(t−4)=0 → t=0 or t=4. t=0 is launch; t=4 s is landing. The quadratic formula also gives: t=(−20±√(400−0))/(−10)=(−20±20)/(−10) → t=0 or t=4. Both methods confirm t=4 s for landing.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Solve: 3x² + 2x − 1 = 0 using the quadratic formula.",
+        "latex": "x = \\frac{-2 \\pm \\sqrt{4 + 12}}{6}",
+        "answers": [
+          "x = 1/3 or x = −1",
+          "x = −1/3 or x = 1",
+          "x = 1 or x = 1/3",
+          "x = 1/3 or x = 1"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "a=3,b=2,c=−1. x=(−2±√(4+12))/6=(−2±4)/6. Case 1: 2/6=1/3. Case 2: −6/6=−1. Solutions: x=1/3 or x=−1. This also factors: (3x−1)(x+1)=0 → same roots.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Solve: x² − 4x + 1 = 0 (exact form)",
+        "latex": "x^2 - 4x + 1 = 0",
+        "answers": [
+          "x = 4 ± √15",
+          "x = 2 ± √3",
+          "x = −2 ± √3",
+          "x = 2 ± 2√3"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "a=1,b=−4,c=1. x=(4±√(16−4))/2=(4±√12)/2. Simplify: √12=2√3. x=(4±2√3)/2=2±√3. Solutions: x=2+√3≈3.73 and x=2−√3≈0.27.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

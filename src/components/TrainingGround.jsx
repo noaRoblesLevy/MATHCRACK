@@ -26,7 +26,8 @@ export default function TrainingGround() {
     const flat = dungeons.flatMap((d) =>
       d.rooms.map((r) => ({ ...r, lesson: d.lesson ?? null }))
     )
-    return shuffle(flat)
+    // Order by difficulty 1→3, randomise within each tier
+    return [1, 2, 3].flatMap(d => shuffle(flat.filter(r => (r.difficulty ?? 2) === d)))
   }, [trainingKingdom])
 
   const [pool, setPool] = useState(initialPool)
@@ -79,7 +80,7 @@ export default function TrainingGround() {
         display: 'flex', justifyContent: 'space-between', alignItems: 'center',
       }}>
         <button onClick={stopTraining} style={backStyle}>← Kingdom</button>
-        <span style={{ color: 'var(--gold)', fontWeight: 'bold' }}>Training Ground</span>
+        <span style={{ color: 'var(--gold)', fontWeight: 'bold', fontFamily: 'var(--font-mono)', fontSize: '0.8rem', letterSpacing: '1px' }}>PRACTICE</span>
         <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
           ✓ {correct} correct &nbsp;|&nbsp; {total} done
         </span>
@@ -88,9 +89,9 @@ export default function TrainingGround() {
       {hasLesson && (
         <div style={{
           margin: '1rem 1.5rem 0',
-          background: '#1a1040',
-          border: '1px solid #7c3aed',
-          borderRadius: 6,
+          background: 'var(--bg-card)',
+          border: '1px solid var(--purple)',
+          borderRadius: 8,
           overflow: 'hidden',
         }}>
           <button
@@ -99,14 +100,14 @@ export default function TrainingGround() {
               width: '100%', display: 'flex', justifyContent: 'space-between',
               alignItems: 'center', padding: '0.6rem 0.9rem',
               background: 'none', border: 'none', cursor: 'pointer',
-              color: '#c4b5fd', fontSize: '0.9rem', fontWeight: 'bold',
+              color: 'var(--purple-light, var(--purple))', fontSize: '0.9rem', fontWeight: 'bold',
             }}
           >
             <span>📖 {current.lesson.title}</span>
-            <span>{theoryOpen ? '▲' : '▼'}</span>
+            <span style={{ color: 'var(--text-muted)' }}>{theoryOpen ? '▲' : '▼'}</span>
           </button>
           {theoryOpen && (
-            <div style={{ padding: '0 0.9rem 0.75rem', color: '#e2e8f0', fontSize: '0.85rem', lineHeight: 1.6 }}>
+            <div style={{ padding: '0 0.9rem 0.75rem', color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: 1.6, borderTop: '1px solid var(--border)' }}>
               {current.lesson.body}
             </div>
           )}

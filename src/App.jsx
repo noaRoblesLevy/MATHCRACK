@@ -20,25 +20,32 @@ import TrainingGround from './components/TrainingGround'
 import ProfileScreen from './components/ProfileScreen'
 import LibraryScreen from './components/LibraryScreen'
 import ReaderScreen from './components/ReaderScreen'
+import ShopScreen from './components/ShopScreen'
 import BottomNav from './components/BottomNav'
 import LoginScreen from './components/LoginScreen'
 
 const FOCUSED_VIEWS = new Set(['lesson', 'boss'])
+const NAV_VIEWS = new Set(['overworld', 'profile', 'library', 'shop'])
 
 export default function App() {
   const {
     activeView, activeKingdom, activeDungeon, activeDungeonData,
     currentRoom, lastXPGain, bossResult,
-    addXP, setActiveKingdom, startStudy, startLesson, setActiveDungeon,
+    addXP, addCoins, setActiveKingdom, startStudy, startLesson, setActiveDungeon,
     advanceRoom, startBoss, setBossResult, goToResult, goToKingdom,
-    goToOverworld, updateStreak, startTraining, goToProfile, goToLibrary,
+    goToOverworld, updateStreak, startTraining, goToProfile, goToLibrary, goToShop,
+    resumeLesson, equippedAccentColor, premiumCardsUnlocked,
   } = useGameStore()
 
   const { inventory, focusMode, scholarActive, addItem, useItem, toggleFocus, toggleScholar } = useInventory()
-  useTheme()
+  const { isDark, toggle: toggleTheme } = useTheme()
   const { user, loading: authLoading, isGuest } = useAuth()
   const [guestMode, setGuestMode] = useState(false)
   const [lootDrop, setLootDrop] = useState(null)
+  const [sessionXP, setSessionXP] = useState(0)
+  const [roomsCorrect, setRoomsCorrect] = useState(0)
+  const [bossScore, setBossScore] = useState({ correct: 0, total: 3 })
+  const [wrongBossQuestions, setWrongBossQuestions] = useState([])
   const [openChapter, setOpenChapter] = useState(null)
 
   useEffect(() => { updateStreak() }, [])
@@ -53,10 +60,23 @@ export default function App() {
       if (data.xp > store.xp) {
         useGameStore.setState({ xp: data.xp, streak: data.streak, lastVisit: data.last_visit })
       }
+      // Merge dungeon completion — union of cloud and local (a dungeon stays complete)
+      if (data.progress && typeof data.progress === 'object') {
+        const local = JSON.parse(localStorage.getItem('mathcrack_progress') || '{}')
+        const merged = { ...data.progress }
+        for (const [id, val] of Object.entries(local)) {
+          if (!merged[id]) { merged[id] = val; continue }
+          merged[id] = {
+            rooms: [...new Set([...(merged[id].rooms ?? []), ...(val.rooms ?? [])])],
+            bossComplete: merged[id].bossComplete || val.bossComplete,
+          }
+        }
+        localStorage.setItem('mathcrack_progress', JSON.stringify(merged))
+      }
     })
   }, [user?.id])
 
-  // Save to cloud after XP changes
+  // Save to cloud after XP or dungeon progress changes
   const xp = useGameStore(s => s.xp)
   const streak = useGameStore(s => s.streak)
   const lastVisit = useGameStore(s => s.lastVisit)
@@ -69,6 +89,14 @@ export default function App() {
   const solutionOrbs = inventory.find(i => i.type === 'solution-orb')?.count ?? 0
   const activeKingdomData = kingdoms.find(k => k.id === activeKingdom)
   const showNav = !FOCUSED_VIEWS.has(activeView)
+
+  // Next lesson in the same subject (null if this is the last one)
+  const nextDungeon = (() => {
+    if (!activeKingdomData || !activeDungeon) return null
+    const available = activeKingdomData.dungeons.filter(d => !d.stub)
+    const idx = available.findIndex(d => d.id === activeDungeon)
+    return idx >= 0 && idx < available.length - 1 ? available[idx + 1] : null
+  })()
 
   // Show login screen until authenticated or guest mode chosen
   if (!isGuest && authLoading) return (
@@ -84,29 +112,52 @@ export default function App() {
     const data = loadDungeon(dungeonMeta.file)
     if (!data) return
     startStudy(dungeonMeta.id, data)
+    setSessionXP(0)
+    setRoomsCorrect(0)
+  }
+
+  function handleResume(fromRoom) {
+    if (fromRoom === 'boss') {
+      startBoss()
+    } else {
+      resumeLesson(fromRoom)
+      setRoomsCorrect(fromRoom) // credit already-completed rooms
+    }
   }
 
   function handleRoomComplete(xpEarned, correct) {
     if (correct) {
       addXP(xpEarned)
+      addCoins(2)
       markRoomComplete(activeDungeon, currentRoom)
+      setSessionXP(prev => prev + xpEarned)
+      setRoomsCorrect(prev => prev + 1)
     }
     const totalRooms = activeDungeonData?.rooms?.length ?? 5
     if (currentRoom + 1 >= totalRooms) startBoss()
     else advanceRoom()
   }
 
-  function handleBossPass() {
-    addXP(75)
+  function handleBossPass(correctCount) {
+    const bossTotal = activeDungeonData?.boss?.questions?.length ?? 3
+    const bossXP = correctCount * 25
+    addXP(bossXP)
+    addCoins(20)
     markBossComplete(activeDungeon)
     setBossResult(true)
+    setSessionXP(prev => prev + bossXP)
+    setBossScore({ correct: correctCount, total: bossTotal })
+    setWrongBossQuestions([])
     const drop = rollLoot(activeDungeonData?.lootTable ?? [])
     setLootDrop(drop)
     goToResult()
   }
 
-  function handleBossFail() {
+  function handleBossFail(correctCount, wrongQuestions) {
+    const bossTotal = activeDungeonData?.boss?.questions?.length ?? 3
     setBossResult(false)
+    setBossScore({ correct: correctCount, total: bossTotal })
+    setWrongBossQuestions(wrongQuestions ?? [])
     setLootDrop(null)
     goToResult()
   }
@@ -114,7 +165,20 @@ export default function App() {
   function handleContinue() {
     if (lootDrop) addItem(lootDrop)
     setLootDrop(null)
+    setSessionXP(0)
+    setRoomsCorrect(0)
     goToKingdom()
+  }
+
+  function handleNextLesson() {
+    if (!nextDungeon) return
+    if (lootDrop) addItem(lootDrop)
+    setLootDrop(null)
+    const data = loadDungeon(nextDungeon.file)
+    if (!data) { goToKingdom(); return }
+    setSessionXP(0)
+    setRoomsCorrect(0)
+    startStudy(nextDungeon.id, data)
   }
 
   function handleOpenChapter(chapter) {
@@ -137,10 +201,11 @@ export default function App() {
           style={{ minHeight: '100vh' }}
         >
           {activeView === 'overworld' && (
-            <OverworldMap kingdoms={kingdoms} onSelectKingdom={id => setActiveKingdom(id)} />
+            <OverworldMap kingdoms={kingdoms} onSelectKingdom={id => setActiveKingdom(id)} premiumCardsUnlocked={premiumCardsUnlocked} />
           )}
 
-          {activeView === 'profile' && <ProfileScreen />}
+          {activeView === 'profile' && <ProfileScreen isDark={isDark} onToggleTheme={toggleTheme} />}
+          {activeView === 'shop' && <ShopScreen />}
 
           {activeView === 'library' && !openChapter && (
             <LibraryScreen onOpenChapter={handleOpenChapter} />
@@ -165,10 +230,17 @@ export default function App() {
           {activeView === 'study' && activeDungeonData && (
             <StudyScreen
               dungeon={activeDungeonData}
+              dungeonId={activeDungeon}
               subjectTitle={activeKingdomData?.title ?? ''}
               subjectColor={activeKingdomData?.color ?? 'var(--blue)'}
               onStart={startLesson}
+              onResume={handleResume}
               onBack={goToKingdom}
+              inventory={inventory}
+              focusMode={focusMode}
+              scholarActive={scholarActive}
+              onToggleFocus={toggleFocus}
+              onToggleScholar={toggleScholar}
             />
           )}
 
@@ -183,6 +255,7 @@ export default function App() {
                 currentRoom={currentRoom}
                 totalRooms={activeDungeonData.rooms.length}
                 onBack={goToKingdom}
+                accentColor={equippedAccentColor}
               />
               <LessonRoom
                 key={currentRoom}
@@ -201,6 +274,7 @@ export default function App() {
           {activeView === 'boss' && activeDungeonData?.boss && (
             <BossFight
               boss={activeDungeonData.boss}
+              lessonTitle={activeDungeonData.title ?? ''}
               onPass={handleBossPass}
               onFail={handleBossFail}
             />
@@ -209,10 +283,16 @@ export default function App() {
           {activeView === 'result' && (
             <ResultScreen
               passed={bossResult === true}
-              xpGained={lastXPGain}
-              dungeonTitle={activeDungeonData?.title ?? ''}
+              xpGained={sessionXP}
+              lessonTitle={activeDungeonData?.title ?? ''}
+              totalRooms={activeDungeonData?.rooms?.length ?? 5}
+              roomsCorrect={roomsCorrect}
+              bossScore={bossScore}
               lootDrop={lootDrop}
+              wrongBossQuestions={wrongBossQuestions}
+              nextLessonTitle={nextDungeon?.title ?? null}
               onContinue={handleContinue}
+              onNextLesson={nextDungeon ? handleNextLesson : null}
               onRetry={() => setActiveDungeon(activeDungeon, activeDungeonData)}
             />
           )}
@@ -237,6 +317,7 @@ export default function App() {
           activeView={activeView}
           onSubjects={goToOverworld}
           onLibrary={() => { setOpenChapter(null); goToLibrary() }}
+          onShop={goToShop}
           onProfile={goToProfile}
         />
       )}

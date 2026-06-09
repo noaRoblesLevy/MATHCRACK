@@ -1,0 +1,179 @@
+{
+  "id": "fact-02",
+  "title": "The Grouping Grounds",
+  "kingdom": "factoring",
+  "dungeonNumber": 2,
+  "lesson": {
+    "title": "Factoring by Grouping",
+    "body": "**Factoring by grouping** works on 4-term polynomials. Steps: (1) Group the first two and last two terms. (2) Factor the GCF out of each group. (3) If both groups share a common binomial factor, factor it out. Example: x³ + 2x² + 3x + 6 = x²(x + 2) + 3(x + 2) = (x² + 3)(x + 2). The key signal: after factoring each pair, you should see the same binomial in parentheses."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Factor by grouping: x³ + 3x² + 2x + 6",
+      "latex": "x^3 + 3x^2 + 2x + 6",
+      "steps": [
+        "x^2(x + 3) + 2(x + 3)",
+        "= (x^2 + 2)(x + 3)"
+      ],
+      "answers": [
+        "(x² + 3)(x + 2)",
+        "(x² + 2)(x + 3)",
+        "(x + 3)(x + 2)",
+        "(x³ + 2)(x + 3)"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Group: (x³+3x²)+(2x+6) = x²(x+3)+2(x+3). Factor out (x+3): (x²+2)(x+3). Check by expanding: x³+3x²+2x+6 ✓.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Factor: 2x³ − x² + 6x − 3",
+      "latex": "2x^3 - x^2 + 6x - 3",
+      "steps": [
+        "x^2(2x - 1) + 3(2x - 1)",
+        "= (x^2 + 3)(2x - 1)"
+      ],
+      "answers": [
+        "(2x − 1)(x² + 3)",
+        "(2x + 1)(x² + 3)",
+        "(x − 1)(2x² + 3)",
+        "(x² − 3)(2x + 1)"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Group: (2x³−x²)+(6x−3) = x²(2x−1)+3(2x−1). Factor out (2x−1): (x²+3)(2x−1). Both groups must reveal the same binomial — that's the signal grouping worked.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Factor: 3a² − 12a + ab − 4b",
+      "latex": "3a^2 - 12a + ab - 4b",
+      "steps": [
+        "3a(a - 4) + b(a - 4)",
+        "= (3a + b)(a - 4)"
+      ],
+      "answers": [
+        "(3a − b)(a + 4)",
+        "(3a + b)(a − 4)",
+        "(a + b)(3a − 4)",
+        "(3a + b)(a + 4)"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Group: (3a²−12a)+(ab−4b) = 3a(a−4)+b(a−4). Factor out (a−4): (3a+b)(a−4). Check: 3a²−12a+ab−4b ✓.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Factor: x³ − 2x² − 9x + 18",
+      "latex": "x^3 - 2x^2 - 9x + 18",
+      "steps": [
+        "x^2(x - 2) - 9(x - 2)",
+        "= (x^2 - 9)(x - 2)",
+        "= (x-3)(x+3)(x-2)"
+      ],
+      "answers": [
+        "(x² − 9)(x − 2)",
+        "(x − 3)(x + 3)(x − 2)",
+        "(x − 2)(x − 3)²",
+        "(x + 3)(x − 2)²"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Group: x²(x−2)−9(x−2) = (x²−9)(x−2). Then factor x²−9 as a difference of squares: (x−3)(x+3). Final: (x−3)(x+3)(x−2). Always factor completely — (x²−9) can be factored further.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the grouping steps to factor: 5x³ + 10x² − 3x − 6",
+      "items": [
+        "Group: (5x³ + 10x²) + (−3x − 6)",
+        "Factor each group: 5x²(x + 2) − 3(x + 2)",
+        "Factor out common binomial: (5x² − 3)(x + 2)",
+        "Check: 5x³+10x²−3x−6 ✓"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "Group → factor GCF from each group → identify common binomial → factor it out → verify. Note: −3(x+2) means −3·x=−3x and −3·2=−6, preserving the negative signs from the original.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Grouping Wraith",
+    "taunt": "Two by two into the abyss.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Factor: 4xy − 8x + 3y − 6",
+        "latex": "4xy - 8x + 3y - 6",
+        "answers": [
+          "(4x + 3)(y + 2)",
+          "(4x + 3)(y − 2)",
+          "(4x − 3)(y + 2)",
+          "(4x − 3)(y − 2)"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "Group: (4xy−8x)+(3y−6) = 4x(y−2)+3(y−2). Factor out (y−2): (4x+3)(y−2). Check: 4xy−8x+3y−6 ✓.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "When trying to factor 2x³ + 3x² + 4x + 6, which grouping produces a common binomial?",
+        "latex": "2x^3 + 3x^2 + 4x + 6",
+        "answers": [
+          "(2x³+4x) + (3x²+6)",
+          "(2x³+3x²) + (4x+6)",
+          "Both groupings work",
+          "Neither grouping works"
+        ],
+        "correct": 2,
+        "difficulty": 3,
+        "explanation": "Grouping 1: (2x³+4x)+(3x²+6) = 2x(x²+2)+3(x²+2) = (2x+3)(x²+2) ✓. Grouping 2: (2x³+3x²)+(4x+6) = x²(2x+3)+2(2x+3) = (x²+2)(2x+3) ✓. Both give the same result — the order inside doesn't change the product.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Factor completely: 6x³ − 9x² + 4x − 6",
+        "latex": "6x^3 - 9x^2 + 4x - 6",
+        "answers": [
+          "(6x² + 4)(x − 1)",
+          "(2x − 3)(3x² + 2)",
+          "(3x² + 2)(2x − 3)",
+          "(3x − 2)(2x² + 3)"
+        ],
+        "correct": 2,
+        "difficulty": 3,
+        "explanation": "Group: (6x³−9x²)+(4x−6) = 3x²(2x−3)+2(2x−3) = (3x²+2)(2x−3). Note: options B and C are the same expression — (2x−3)(3x²+2) = (3x²+2)(2x−3). Both B and C are correct; the expected canonical form is C.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

@@ -1,0 +1,177 @@
+{
+  "id": "graph-01",
+  "title": "The Coordinate Cavern",
+  "kingdom": "graphing",
+  "dungeonNumber": 1,
+  "lesson": {
+    "title": "Points & Lines",
+    "body": "The **coordinate plane** has two perpendicular axes: the horizontal x-axis and vertical y-axis. Every point is described by an ordered pair (x, y) where x is the horizontal position and y is the vertical. The four **quadrants** are numbered I (top-right, +,+), II (top-left, −,+), III (bottom-left, −,−), and IV (bottom-right, +,−). A **line** is a set of infinitely many collinear points. Two points determine exactly one line."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "In which quadrant is the point (−3, 5)?",
+      "latex": "(-3, 5)",
+      "steps": [
+        "x = -3 \\text{ (negative)}, \\quad y = 5 \\text{ (positive)}",
+        "\\text{Negative x, positive y} \\Rightarrow \\text{Quadrant II}"
+      ],
+      "answers": [
+        "Quadrant I",
+        "Quadrant II",
+        "Quadrant III",
+        "Quadrant IV"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "x is negative and y is positive → Quadrant II (top-left region). Remember: Q I (+,+), Q II (−,+), Q III (−,−), Q IV (+,−). The y-axis separates negative x from positive x; the x-axis separates negative y from positive y.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which point lies on the x-axis?",
+      "latex": "\\text{Which point has } y = 0?",
+      "steps": [
+        "\\text{Points on the x-axis have y-coordinate = 0}"
+      ],
+      "answers": [
+        "(0, 4)",
+        "(4, 0)",
+        "(4, 4)",
+        "(0, 0) only"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Points on the x-axis have y = 0. So (4, 0) lies on the x-axis. (0, 4) is on the y-axis. (4, 4) is in Quadrant I. (0, 0) is also on both axes, but (4, 0) is the clearest answer here.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the distance between the points (1, 3) and (4, 3)?",
+      "latex": "\\text{Distance between } (1, 3) \\text{ and } (4, 3)",
+      "steps": [
+        "\\text{Same y-coordinate → horizontal distance}",
+        "|4 - 1| = 3"
+      ],
+      "answers": [
+        "1",
+        "3",
+        "5",
+        "7"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "When two points share the same y-coordinate, the distance is simply |x₂ − x₁| = |4 − 1| = 3. The points are 3 units apart horizontally. The Pythagorean theorem isn't needed here because the movement is purely horizontal.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The midpoint of a segment from (2, 4) to (8, 10) is:",
+      "latex": "M = \\left(\\frac{2+8}{2},\\, \\frac{4+10}{2}\\right)",
+      "steps": [
+        "M_x = (2 + 8)/2 = 5",
+        "M_y = (4 + 10)/2 = 7"
+      ],
+      "answers": [
+        "(5, 7)",
+        "(3, 5)",
+        "(6, 7)",
+        "(10, 14)"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "The midpoint formula averages the x-coordinates and averages the y-coordinates: M = ((2+8)/2, (4+10)/2) = (5, 7). The (10, 14) error sums without dividing. The (3, 5) error uses subtraction instead of addition.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these points from left to right (increasing x-coordinate):",
+      "items": [
+        "(−4, 2)",
+        "(−1, 5)",
+        "(0, −3)",
+        "(3, 1)"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "Left to right means increasing x: −4 < −1 < 0 < 3. The y-coordinate is irrelevant when ordering by x position. Plotting these points would place them in a horizontal sequence from far left to right.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Cartesian Wraith",
+    "taunt": "X marks your grave. Y is obvious.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Point A is at (−2, 5) and point B is at (4, −3). What are the coordinates of the midpoint of AB?",
+        "latex": "M = \\left(\\frac{-2+4}{2},\\, \\frac{5+(-3)}{2}\\right)",
+        "answers": [
+          "(1, 1)",
+          "(2, 2)",
+          "(1, −4)",
+          "(3, 2)"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "M = ((−2+4)/2, (5+(−3))/2) = (2/2, 2/2) = (1, 1). Check that M is between A and B on both axes: x goes from −2 to 4, midpoint 1 ✓; y goes from 5 to −3, midpoint 1 ✓.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A line passes through (0, 3) and (4, 3). Which statement is true?",
+        "latex": "\\text{Line through } (0, 3) \\text{ and } (4, 3)",
+        "answers": [
+          "The line is vertical (x = 3)",
+          "The line is horizontal (y = 3)",
+          "The line has slope 4",
+          "The line passes through the origin"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "Both points have y = 3, so every point on the line has y = 3 — that's the equation of a horizontal line. A vertical line would require both x-coordinates to be equal. The slope of a horizontal line is 0, not 4.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Three points are A(1, 2), B(3, 6), C(5, 10). Without graphing, determine if they are collinear.",
+        "latex": "A(1,2),\\; B(3,6),\\; C(5,10)",
+        "answers": [
+          "Yes — equal slopes between consecutive points",
+          "No — the distances aren't equal",
+          "Yes — they all have even coordinates",
+          "No — three points can never be collinear"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Check slope A→B: (6−2)/(3−1) = 4/2 = 2. Slope B→C: (10−6)/(5−3) = 4/2 = 2. Equal slopes mean the same direction → all three are collinear. In fact, they all satisfy y = 2x: 2(1)=2 ✓, 2(3)=6 ✓, 2(5)=10 ✓.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

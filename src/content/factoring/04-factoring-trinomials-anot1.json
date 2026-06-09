@@ -1,0 +1,180 @@
+{
+  "id": "fact-04",
+  "title": "The Advanced Alcazar",
+  "kingdom": "factoring",
+  "dungeonNumber": 4,
+  "lesson": {
+    "title": "Factoring Trinomials (a ≠ 1)",
+    "body": "For ax² + bx + c where a ≠ 1, use the **AC method**: (1) Find ac. (2) Find two numbers that multiply to ac and add to b. (3) Rewrite the middle term as two terms using those numbers. (4) Factor by grouping. Example: 2x² + 7x + 3. ac = 6. Pairs: {6,1} → sum 7 ✓. Rewrite: 2x² + 6x + x + 3 = 2x(x+3) + 1(x+3) = (2x+1)(x+3)."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "For 3x² + 10x + 8, what is ac, and which pair of numbers multiplies to ac and sums to b = 10?",
+      "latex": "3x^2 + 10x + 8 \\quad ac = ?",
+      "steps": [
+        "ac = 3 \\times 8 = 24",
+        "\\text{Find: product 24, sum 10 → } \\{4, 6\\}"
+      ],
+      "answers": [
+        "ac = 24; pair {4, 6}",
+        "ac = 24; pair {3, 8}",
+        "ac = 30; pair {5, 6}",
+        "ac = 24; pair {2, 12}"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "ac = 3×8 = 24. Find two numbers: product 24, sum 10. Test: 4×6=24 and 4+6=10 ✓. The pair {3,8} has sum 11, and {2,12} has sum 14.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Factor: 2x² + 7x + 6",
+      "latex": "2x^2 + 7x + 6",
+      "steps": [
+        "ac = 12; \\text{ pairs: } \\{3, 4\\} \\text{ (sum 7)}",
+        "2x^2 + 3x + 4x + 6 = x(2x+3) + 2(2x+3)",
+        "= (x + 2)(2x + 3)"
+      ],
+      "answers": [
+        "(2x + 1)(x + 6)",
+        "(x + 2)(2x + 3)",
+        "(2x + 6)(x + 1)",
+        "(x + 3)(2x + 2)"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "AC method: ac=12, sum=7: {3,4}. Rewrite: 2x²+3x+4x+6. Group: x(2x+3)+2(2x+3) = (x+2)(2x+3). Check: (x+2)(2x+3) = 2x²+3x+4x+6 = 2x²+7x+6 ✓.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Factor: 6x² − 7x − 3",
+      "latex": "6x^2 - 7x - 3",
+      "steps": [
+        "ac = -18; \\text{ pairs: } \\{2, -9\\} \\text{ (sum −7)}",
+        "6x^2 + 2x - 9x - 3 = 2x(3x+1) - 3(3x+1)",
+        "= (2x - 3)(3x + 1)"
+      ],
+      "answers": [
+        "(3x + 1)(2x − 3)",
+        "(3x − 1)(2x + 3)",
+        "(6x + 1)(x − 3)",
+        "(2x + 1)(3x − 3)"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "ac=6×(−3)=−18. Sum=−7: {+2,−9}: 2+(−9)=−7 ✓. Rewrite: 6x²+2x−9x−3 = 2x(3x+1)−3(3x+1) = (2x−3)(3x+1). Check: (2x−3)(3x+1) = 6x²+2x−9x−3 = 6x²−7x−3 ✓.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Factor: 4x² − 12x + 9",
+      "latex": "4x^2 - 12x + 9",
+      "steps": [
+        "ac = 36; \\text{ sum = −12: } \\{-6, -6\\}",
+        "\\text{This is a perfect square: } (2x - 3)^2"
+      ],
+      "answers": [
+        "(2x − 3)²",
+        "(4x − 3)(x − 3)",
+        "(2x − 9)(2x − 1)",
+        "(4x − 9)(x − 1)"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "ac = 36, sum = −12: {−6,−6}. Both numbers are equal → perfect square trinomial: (2x−3)² = 4x²−12x+9. Check: (2x)²=4x², 2(2x)(−3)=−12x, (−3)²=9 ✓. Recognizing perfect squares saves time.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the AC method steps to factor: 5x² + 13x + 6",
+      "items": [
+        "Compute ac = 5 × 6 = 30",
+        "Find pair with product 30 and sum 13: {3, 10}",
+        "Rewrite: 5x² + 3x + 10x + 6",
+        "Group and factor: x(5x+3) + 2(5x+3) = (x+2)(5x+3)"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "AC method: compute ac → find the splitting pair → rewrite middle term → group and factor. Check: (x+2)(5x+3) = 5x²+3x+10x+6 = 5x²+13x+6 ✓.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Leading Coefficient Daemon",
+    "taunt": "When a ≠ 1, neither do your chances.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Factor completely: 12x² + 22x − 20",
+        "latex": "12x^2 + 22x - 20",
+        "answers": [
+          "2(6x² + 11x − 10)",
+          "2(3x − 2)(2x + 5)",
+          "(4x − 2)(3x + 10)",
+          "2(6x − 5)(x + 2)"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "GCF = 2: 2(6x²+11x−10). Now factor 6x²+11x−10: ac=−60, sum=11: {15,−4}. Rewrite: 6x²+15x−4x−10 = 3x(2x+5)−2(2x+5) = (3x−2)(2x+5). Final: 2(3x−2)(2x+5). Always check for a GCF first before applying the AC method.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Factor: 3x² − 11x + 6",
+        "latex": "3x^2 - 11x + 6",
+        "answers": [
+          "(3x − 2)(x − 3)",
+          "(3x + 2)(x − 3)",
+          "(3x − 6)(x − 1)",
+          "(x − 2)(3x − 3)"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "ac=18, sum=−11: {−9,−2}: (−9)+(−2)=−11 ✓. Rewrite: 3x²−9x−2x+6 = 3x(x−3)−2(x−3) = (3x−2)(x−3). Check: (3x−2)(x−3)=3x²−9x−2x+6=3x²−11x+6 ✓. The (3x+2)(x−3) error uses +2 instead of −2, giving 3x²−7x−6.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Solve: 6x² + x − 2 = 0",
+        "latex": "6x^2 + x - 2 = 0",
+        "answers": [
+          "x = 1/2 or x = −2/3",
+          "x = −1/2 or x = 2/3",
+          "x = 1/3 or x = −1/2",
+          "x = 2/3 or x = 1/2"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "Factor: ac=−12, sum=1: {4,−3}. Rewrite: 6x²+4x−3x−2 = 2x(3x+2)−1(3x+2) = (2x−1)(3x+2). Set each factor to 0: 2x−1=0 → x=1/2; 3x+2=0 → x=−2/3. Solutions: x=1/2 or x=−2/3. Check: 6(1/4)+(1/2)−2=1.5+0.5−2=0 ✓.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

@@ -1,0 +1,175 @@
+{
+  "id": "graph-02",
+  "title": "The Slope Summit",
+  "kingdom": "graphing",
+  "dungeonNumber": 2,
+  "lesson": {
+    "title": "Slope of a Line",
+    "body": "**Slope** measures steepness: m = rise/run = (y₂ − y₁)/(x₂ − x₁). A **positive slope** goes up left-to-right. A **negative slope** goes down left-to-right. A **zero slope** is a horizontal line. An **undefined slope** is a vertical line (division by zero). Parallel lines have equal slopes. Perpendicular lines have slopes that are negative reciprocals: m₁ × m₂ = −1."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Find the slope of the line through (1, 2) and (5, 10).",
+      "latex": "m = \\frac{10 - 2}{5 - 1}",
+      "steps": [
+        "m = \\frac{10-2}{5-1} = \\frac{8}{4} = 2"
+      ],
+      "answers": [
+        "1/2",
+        "2",
+        "4",
+        "8"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Slope = (y₂−y₁)/(x₂−x₁) = (10−2)/(5−1) = 8/4 = 2. The line rises 8 units for every 4 units of horizontal movement, simplified to 2 units of rise per 1 unit of run. The ½ answer flips rise and run.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the slope of a vertical line through x = 7?",
+      "latex": "x = 7",
+      "steps": [
+        "\\text{Two points: } (7, 0) \\text{ and } (7, 5)",
+        "m = \\frac{5 - 0}{7 - 7} = \\frac{5}{0} \\text{ — undefined}"
+      ],
+      "answers": [
+        "0",
+        "7",
+        "Undefined",
+        "1"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "A vertical line has the form x = k. Taking any two points on x = 7, the run (change in x) is always 0. Dividing by zero gives an undefined slope. A horizontal line (y = k) has slope 0 — don't confuse the two.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A line has slope −3/4 and passes through two points. If the x-coordinate increases by 8, what happens to the y-coordinate?",
+      "latex": "m = -\\frac{3}{4}, \\quad \\Delta x = 8",
+      "steps": [
+        "\\Delta y = m \\cdot \\Delta x = -\\frac{3}{4} \\cdot 8 = -6"
+      ],
+      "answers": [
+        "Increases by 6",
+        "Decreases by 6",
+        "Increases by 8",
+        "Decreases by 2"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Δy = m × Δx = (−3/4) × 8 = −6. A negative slope means y decreases when x increases. For every 4 units right, y drops 3 units — so for 8 units right, y drops 6.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which pair of slopes belongs to perpendicular lines?",
+      "latex": "m_1 \\times m_2 = -1",
+      "steps": [
+        "\\text{Test each: multiply slopes and check if product = −1}"
+      ],
+      "answers": [
+        "3 and 1/3",
+        "2 and −2",
+        "3/4 and −4/3",
+        "5 and −5"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Perpendicular slopes multiply to −1. Test 3/4 × (−4/3) = −12/12 = −1 ✓. The others: 3 × 1/3 = 1 (parallel if equal, but these aren't equal — just reciprocals, not negative reciprocals). 2 × −2 = −4 ≠ −1.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these slopes from steepest downward to steepest upward:",
+      "items": [
+        "m = −3 (steep descent)",
+        "m = −1/2 (gentle descent)",
+        "m = 0 (flat)",
+        "m = 2 (steep ascent)"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "On a number line: −3 < −½ < 0 < 2. Negative slopes descend left-to-right; the more negative, the steeper the descent. Positive slopes ascend; larger positive means steeper. Zero is horizontal.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Slope Specter",
+    "taunt": "Rise over run — then fall.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Find the slope of the line through (−4, 7) and (2, −5).",
+        "latex": "m = \\frac{-5 - 7}{2 - (-4)}",
+        "answers": [
+          "2",
+          "−2",
+          "1/2",
+          "−1/2"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "m = (−5 − 7)/(2 − (−4)) = (−12)/(6) = −2. The line falls 12 units over a horizontal run of 6. The −1/2 error flips rise and run. Always subtract y₁ from y₂ and x₁ from x₂ in the same order.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A road rises 30 meters over a horizontal distance of 500 meters. What is the slope (grade) as a percent?",
+        "latex": "m = \\frac{30}{500} = ?\\%",
+        "answers": [
+          "3%",
+          "6%",
+          "15%",
+          "30%"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "Slope = 30/500 = 0.06 = 6%. Road grades are expressed as percents — a 6% grade means 6 meters of rise per 100 meters of run. The 3% error halves the result, and 30% comes from misreading 30 as the percent directly.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Line A passes through (0, 3) and (4, 5). Line B has slope −2. Are lines A and B perpendicular?",
+        "latex": "m_A \\cdot m_B = ?",
+        "answers": [
+          "Yes — their slopes multiply to −1",
+          "No — their slopes multiply to −1 but they share a point",
+          "No — their slopes multiply to something other than −1",
+          "Yes — they have the same slope"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Slope of A: (5−3)/(4−0) = 2/4 = 1/2. Product: (1/2)(−2) = −1. Since m_A × m_B = −1, the lines are perpendicular. Two lines are perpendicular if and only if their slopes are negative reciprocals, regardless of whether they share a point.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

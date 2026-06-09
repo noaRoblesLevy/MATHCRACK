@@ -1,0 +1,177 @@
+{
+  "id": "graph-03",
+  "title": "The Intercept Isle",
+  "kingdom": "graphing",
+  "dungeonNumber": 3,
+  "lesson": {
+    "title": "Slope-Intercept Form",
+    "body": "The **slope-intercept form** of a line is y = mx + b, where m is the slope and b is the y-intercept (the y-value where the line crosses the y-axis). To graph: start at (0, b), then use the slope (rise/run) to find a second point. To **find the equation** from a graph: read the y-intercept directly, then calculate the slope between two clear lattice points. Example: a line crossing (0, −2) with slope 3 has equation y = 3x − 2."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Identify the slope and y-intercept of: y = −2x + 5",
+      "latex": "y = -2x + 5",
+      "steps": [
+        "m = -2, \\quad b = 5"
+      ],
+      "answers": [
+        "m = 2, b = 5",
+        "m = −2, b = 5",
+        "m = 5, b = −2",
+        "m = −2, b = −5"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "In y = mx + b form, the coefficient of x is the slope (m) and the constant is the y-intercept (b). Here m = −2 and b = 5. The line crosses the y-axis at (0, 5) and decreases 2 units for every 1 unit right.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A line has slope 3 and y-intercept −4. What is its equation?",
+      "latex": "m = 3, \\; b = -4",
+      "steps": [
+        "y = mx + b = 3x + (-4) = 3x - 4"
+      ],
+      "answers": [
+        "y = 3x + 4",
+        "y = −3x − 4",
+        "y = 3x − 4",
+        "y = 4x − 3"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "Substitute m = 3 and b = −4 into y = mx + b: y = 3x − 4. The y = 3x + 4 error uses +4 instead of −4. Check a point: at x = 0, y = −4; at x = 1, y = −1. The line rises 3 units per unit of x.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Write the equation of the line through (0, 2) and (3, 8).",
+      "latex": "\\text{Through } (0, 2) \\text{ and } (3, 8)",
+      "steps": [
+        "b = 2 \\text{ (y-intercept is the y-value at } x=0)",
+        "m = \\frac{8-2}{3-0} = 2",
+        "y = 2x + 2"
+      ],
+      "answers": [
+        "y = 2x + 3",
+        "y = 3x + 2",
+        "y = 2x + 2",
+        "y = 6x + 2"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Since one point is (0, 2), the y-intercept is b = 2. Slope m = (8−2)/(3−0) = 6/3 = 2. Equation: y = 2x + 2. Check (3, 8): 2(3)+2 = 8 ✓.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Rewrite 3x − y = 6 in slope-intercept form.",
+      "latex": "3x - y = 6",
+      "steps": [
+        "-y = -3x + 6",
+        "y = 3x - 6"
+      ],
+      "answers": [
+        "y = −3x + 6",
+        "y = 3x + 6",
+        "y = 3x − 6",
+        "y = −3x − 6"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Subtract 3x: −y = −3x + 6. Multiply by −1: y = 3x − 6. Both slope and constant flip signs. The y = −3x + 6 error forgets to multiply by −1 (leaves y on the left side as negative, then reads off wrong signs).",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these lines from most negative slope to most positive slope:",
+      "items": [
+        "y = −3x + 1",
+        "y = −x + 4",
+        "y = 2x − 3",
+        "y = ½x + 2"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "difficulty": 3,
+      "explanation": "Slopes: −3, −1, 2, ½. Order: −3 < −1 < ½ < 2. So y=−3x+1, then y=−x+4, then y=½x+2, then y=2x−3. The y-intercepts (b values) are irrelevant to ordering by slope.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Intercept Lich",
+    "taunt": "y = mx + b. b is for burial.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A line passes through (2, 1) and (6, 9). Write its equation in slope-intercept form.",
+        "latex": "\\text{Through } (2, 1) \\text{ and } (6, 9)",
+        "answers": [
+          "y = 2x − 3",
+          "y = 2x + 3",
+          "y = 3x − 2",
+          "y = 2x − 1"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Slope m = (9−1)/(6−2) = 8/4 = 2. Use point-slope with (2,1): y − 1 = 2(x − 2) → y = 2x − 4 + 1 = 2x − 3. Check (6, 9): 2(6)−3 = 9 ✓.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Two lines: y = 3x − 1 and y = 3x + 5. How many times do they intersect?",
+        "latex": "y = 3x - 1 \\quad y = 3x + 5",
+        "answers": [
+          "Exactly once",
+          "Exactly twice",
+          "Never — they are parallel",
+          "Infinitely many times"
+        ],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "Both lines have slope m = 3 but different y-intercepts (−1 and 5). Parallel lines never intersect. Setting equal: 3x−1 = 3x+5 → −1 = 5, which is false. No solution means no intersection point.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A line with slope −1/2 passes through (4, 3). What is its y-intercept?",
+        "latex": "y - 3 = -\\tfrac{1}{2}(x - 4)",
+        "answers": [
+          "b = 1",
+          "b = 5",
+          "b = 3",
+          "b = −1"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "y − 3 = −½(x − 4) → y = −½x + 2 + 3 = −½x + 5. The y-intercept is b = 5. Check: at x = 0, y = 5 ✓. At x = 4, y = −2 + 5 = 3 ✓.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

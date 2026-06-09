@@ -1,0 +1,176 @@
+{
+  "id": "rad-03",
+  "title": "The Radical Realm",
+  "kingdom": "radicals",
+  "dungeonNumber": 3,
+  "lesson": {
+    "title": "Radical Operations",
+    "body": "**Adding/subtracting radicals**: Only **like radicals** (same radicand and index) can be combined. Treat √5 like a variable: 3√5 + 2√5 = 5√5. First simplify each radical, then combine. Example: √12 + √27 = 2√3 + 3√3 = 5√3. **Multiplying**: Use the product rule — (a√b)(c√d) = ac√(bd). Simplify the result. **Conjugates**: (√a + √b)(√a − √b) = a − b. Used to rationalize binomial denominators: multiply top and bottom by the conjugate."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Add: 5√3 + 2√3",
+      "latex": "5\\sqrt{3} + 2\\sqrt{3}",
+      "steps": [
+        "(5 + 2)\\sqrt{3} = 7\\sqrt{3}"
+      ],
+      "answers": [
+        "7√6",
+        "7√3",
+        "10√3",
+        "7√9"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "5√3 + 2√3 = (5+2)√3 = 7√3. Like radicals add like like terms. Unlike radicals (e.g., √3 + √5) cannot be combined further — just as x + y cannot be simplified.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Simplify: √12 + √27",
+      "latex": "\\sqrt{12} + \\sqrt{27}",
+      "steps": [
+        "\\sqrt{12} = 2\\sqrt{3}, \\quad \\sqrt{27} = 3\\sqrt{3}",
+        "2\\sqrt{3} + 3\\sqrt{3} = 5\\sqrt{3}"
+      ],
+      "answers": [
+        "√39",
+        "3√13",
+        "5√3",
+        "6√3"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "√12 = √(4·3) = 2√3; √27 = √(9·3) = 3√3. Now they are like radicals: 2√3 + 3√3 = 5√3. The √39 error tries to add radicands directly — you cannot do that.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Multiply: (3√2)(4√8)",
+      "latex": "(3\\sqrt{2})(4\\sqrt{8})",
+      "steps": [
+        "3 \\times 4 = 12, \\quad \\sqrt{2} \\times \\sqrt{8} = \\sqrt{16} = 4",
+        "12 \\times 4 = 48"
+      ],
+      "answers": [
+        "12√16",
+        "24√2",
+        "48",
+        "12√10"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Multiply coefficients: 3×4=12. Multiply radicands: √2·√8=√16=4. Total: 12×4=48. The result is a whole number because √16 simplifies completely. Always check if the product simplifies to an integer.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Expand and simplify: (√5 + √3)(√5 − √3)",
+      "latex": "(\\sqrt{5} + \\sqrt{3})(\\sqrt{5} - \\sqrt{3})",
+      "steps": [
+        "(\\sqrt{5})^2 - (\\sqrt{3})^2 = 5 - 3 = 2"
+      ],
+      "answers": [
+        "√2",
+        "2",
+        "√15",
+        "8"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "This is a difference of squares: (a+b)(a−b) = a²−b². With a=√5 and b=√3: (√5)²−(√3)² = 5−3 = 2. Conjugate pairs always produce rational results — this is exactly why we use conjugates to rationalize denominators.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to rationalize: 4/(3 + √2)",
+      "items": [
+        "Multiply by the conjugate: × (3 − √2)/(3 − √2)",
+        "Expand denominator: (3)² − (√2)² = 9 − 2 = 7",
+        "Expand numerator: 4(3 − √2) = 12 − 4√2",
+        "Write result: (12 − 4√2)/7"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "When the denominator is a binomial with a radical, multiply by its conjugate to apply the difference of squares pattern. This eliminates the radical from the denominator. The conjugate of (3+√2) is (3−√2).",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Radical Lich",
+    "taunt": "Add. Multiply. Rationalize your fear.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Simplify: √18 − √50 + √8",
+        "latex": "\\sqrt{18} - \\sqrt{50} + \\sqrt{8}",
+        "answers": [
+          "−2√2",
+          "0",
+          "√(−24)",
+          "4√2"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "√18=3√2; √50=5√2; √8=2√2. Combine: 3√2 − 5√2 + 2√2 = (3−5+2)√2 = 0·√2 = 0. The three terms cancel completely. Always simplify each radical before combining.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Expand: (2 + √3)²",
+        "latex": "(2 + \\sqrt{3})^2",
+        "answers": [
+          "4 + 3",
+          "4 + √6 + 3",
+          "7 + 4√3",
+          "4 + 4√3 + 3"
+        ],
+        "correct": 2,
+        "difficulty": 3,
+        "explanation": "(2+√3)² = 4 + 2·2·√3 + (√3)² = 4 + 4√3 + 3 = 7 + 4√3. The common error is (2+√3)²=4+3=7, forgetting the cross term 2·2·√3=4√3. Always apply (a+b)²=a²+2ab+b².",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Rationalize: 5/(√7 − √2)",
+        "latex": "\\frac{5}{\\sqrt{7} - \\sqrt{2}}",
+        "answers": [
+          "5(√7 + √2)/5",
+          "√7 + √2",
+          "5(√7 − √2)/5",
+          "5/(√7 − √2)"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "Multiply by conjugate (√7+√2)/(√7+√2): numerator=5(√7+√2); denominator=(√7)²−(√2)²=7−2=5. Result: 5(√7+√2)/5 = √7+√2. The denominator simplifying to exactly 5 made this clean. Always check if the rationalized form reduces.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 25
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 35
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 28
+      },
+      {
+        "type": "solution-orb",
+        "weight": 12
+      }
+    ]
+  },
+  "lootTable": []
+}

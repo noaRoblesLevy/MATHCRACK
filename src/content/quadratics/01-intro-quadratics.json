@@ -1,0 +1,175 @@
+{
+  "id": "quad-01",
+  "title": "The Quadratic Quarry",
+  "kingdom": "quadratics",
+  "dungeonNumber": 1,
+  "lesson": {
+    "title": "Introduction to Quadratics",
+    "body": "A **quadratic equation** has the form ax² + bx + c = 0, where a ≠ 0. The highest power is 2. The graph of y = ax² + bx + c is a **parabola**. When a > 0, it opens upward (U-shape); when a < 0, it opens downward. The **roots** (or solutions) are the x-values where y = 0 — where the parabola crosses the x-axis. A quadratic can have 0, 1, or 2 real roots. The number of roots depends on the **discriminant** b² − 4ac."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Which equation is quadratic?",
+      "latex": "3x + 5 = 0, \\quad 2x^2 - 4 = 0, \\quad x^3 + 1 = 0, \\quad 5 = 7",
+      "steps": [
+        "\\text{Quadratic: highest degree is 2, leading coefficient} \\neq 0"
+      ],
+      "answers": [
+        "3x + 5 = 0",
+        "2x² − 4 = 0",
+        "x³ + 1 = 0",
+        "5 = 7"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "2x²−4=0 is quadratic (highest degree = 2, a=2≠0). 3x+5=0 is linear (degree 1). x³+1=0 is cubic (degree 3). 5=7 is a false statement with no variable.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "In the quadratic 3x² − 5x + 2 = 0, what are a, b, and c?",
+      "latex": "3x^2 - 5x + 2 = 0",
+      "steps": [
+        "a = 3, \\quad b = -5, \\quad c = 2"
+      ],
+      "answers": [
+        "a=3, b=5, c=2",
+        "a=3, b=−5, c=2",
+        "a=−5, b=3, c=2",
+        "a=3, b=−5, c=−2"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Standard form ax²+bx+c=0: a is the coefficient of x², b is the coefficient of x (with its sign), and c is the constant. Here a=3, b=−5 (the negative sign belongs to b), c=2.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which parabola opens downward?",
+      "latex": "y = 2x^2 + 1, \\quad y = -x^2, \\quad y = x^2 - 3, \\quad y = 0.5x^2",
+      "steps": [
+        "\\text{Opens down when } a < 0"
+      ],
+      "answers": [
+        "y = 2x² + 1",
+        "y = −x²",
+        "y = x² − 3",
+        "y = 0.5x²"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "y = −x² has a = −1 < 0, so its parabola opens downward. All others have positive leading coefficients and open upward. A downward parabola has a maximum point; an upward one has a minimum.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "If a parabola crosses the x-axis at x = −1 and x = 4, what are the roots?",
+      "latex": "y = (x+1)(x-4)",
+      "steps": [
+        "x + 1 = 0 \\Rightarrow x = -1",
+        "x - 4 = 0 \\Rightarrow x = 4"
+      ],
+      "answers": [
+        "x = 1 and x = −4",
+        "x = −1 and x = 4",
+        "x = 0 and x = 3",
+        "x = −1 only"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "The parabola crosses the x-axis where y=0. If the x-intercepts are at x=−1 and x=4, those are the two roots. The factored form is y=(x+1)(x−4), with zeros at x=−1 and x=4.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Match each parabola feature to its description — order from vertex to axis to intercept to direction:",
+      "items": [
+        "Vertex — the highest or lowest point of the parabola",
+        "Axis of symmetry — the vertical line through the vertex",
+        "X-intercepts — where the parabola crosses the x-axis (roots)",
+        "Direction — determined by the sign of the leading coefficient"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 2,
+      "explanation": "Key parabola vocabulary: vertex (turning point), axis of symmetry x = −b/(2a), x-intercepts (roots/zeros), direction (opens up if a>0, down if a<0). Understanding these features helps sketch and interpret any quadratic function.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Parabola Specter",
+    "taunt": "Every parabola opens toward doom.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Rewrite in standard form: 5x − x² = 6",
+        "latex": "5x - x^2 = 6",
+        "answers": [
+          "x² − 5x + 6 = 0",
+          "−x² + 5x − 6 = 0",
+          "5x − x² − 6 = 0",
+          "x² + 5x − 6 = 0"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Move all terms to one side with a > 0: subtract 5x and add x² to both sides: 0 = x²−5x+6, which is x²−5x+6=0. Standard form has a>0 and everything on the left. Both options A and B are equivalent — standard convention is a positive leading coefficient, so A is preferred.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A quadratic has roots x = 2 and x = −3. Which factored form matches?",
+        "latex": "\\text{roots: } x=2 \\text{ and } x=-3",
+        "answers": [
+          "(x + 2)(x − 3)",
+          "(x − 2)(x + 3)",
+          "(x − 2)(x − 3)",
+          "(x + 2)(x + 3)"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "For root x=2: the factor is (x−2). For root x=−3: the factor is (x+3). Factored form: (x−2)(x+3). Check: roots at (x−2)=0 → x=2 ✓; (x+3)=0 → x=−3 ✓. The sign rule: root r gives factor (x−r).",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "How many real roots does y = x² + 4 have?",
+        "latex": "y = x^2 + 4",
+        "answers": [
+          "0 real roots",
+          "1 real root",
+          "2 real roots",
+          "4 real roots"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Set y=0: x²+4=0 → x²=−4. A square can never be negative, so there are no real solutions. The discriminant: b²−4ac = 0−4(1)(4) = −16 < 0 → no real roots. Graphically: y=x²+4 starts at (0,4) and never touches the x-axis.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

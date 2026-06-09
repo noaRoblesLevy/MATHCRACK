@@ -1,0 +1,177 @@
+{
+  "id": "func-03",
+  "title": "The Application Arena",
+  "kingdom": "functions",
+  "dungeonNumber": 3,
+  "lesson": {
+    "title": "Applications of Functions",
+    "body": "Functions model real-world situations. The **domain** is the set of valid input values (x); the **range** is the corresponding outputs (y). In context, the domain is often restricted: a function modeling height over time can't have negative time. A **linear function** has constant rate of change (slope). A **quadratic function** has a variable rate of change. To interpret a function in context: identify what x and f(x) represent, read key values (intercepts, max/min), and describe what they mean."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "A phone plan charges $30/month plus $0.10 per text. Which function models the monthly cost C for t texts?",
+      "latex": "C(t) = ?",
+      "steps": [
+        "\\text{Fixed fee: 30; Per-text: 0.10t}",
+        "C(t) = 0.10t + 30"
+      ],
+      "answers": [
+        "C(t) = 30t + 0.10",
+        "C(t) = 0.10t",
+        "C(t) = 0.10t + 30",
+        "C(t) = 30 + 30t"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "The fixed fee is $30 (the y-intercept) and $0.10 per text is the variable rate (slope). C(t) = 0.10t + 30. The 30t+0.10 error swaps the coefficient and the constant.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For C(t) = 0.10t + 30, what does C(0) represent?",
+      "latex": "C(0) = 0.10(0) + 30 = 30",
+      "steps": [
+        "C(0) = 30"
+      ],
+      "answers": [
+        "The cost per text message",
+        "The monthly fee if you send 0 texts",
+        "The number of texts at $30",
+        "The maximum cost"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "C(0) = $30 is the cost when t = 0 texts — the base monthly fee. In linear functions, f(0) is the y-intercept and represents the starting value or fixed cost. It doesn't represent the rate of change ($0.10/text is the slope).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A ball is thrown up. Its height in meters after t seconds is h(t) = −5t² + 20t. What is the maximum height?",
+      "latex": "h(t) = -5t^2 + 20t",
+      "steps": [
+        "\\text{Vertex at } t = -\\frac{b}{2a} = -\\frac{20}{2(-5)} = 2",
+        "h(2) = -5(4) + 20(2) = -20 + 40 = 20"
+      ],
+      "answers": [
+        "10 m",
+        "15 m",
+        "20 m",
+        "40 m"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "The vertex gives the maximum. t = −b/(2a) = −20/(2×−5) = 2 seconds. h(2) = −5(4) + 40 = 20 meters. The 40 error ignores the −5t² term and just computes 20t at t=2.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The function d(t) = 60t models distance (km) over time (hours). What is the practical domain?",
+      "latex": "d(t) = 60t, \\quad t \\geq 0",
+      "steps": [
+        "\\text{Time cannot be negative in this context}",
+        "\\text{Domain: } t \\geq 0"
+      ],
+      "answers": [
+        "All real numbers",
+        "t > 0 only",
+        "t ≥ 0",
+        "0 ≤ t ≤ 60"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Mathematically d(t) = 60t works for all real t, but in context time can't be negative — so the practical domain is t ≥ 0. The 't > 0 only' answer excludes t = 0 (the starting position), which is a valid input (distance = 0 at time 0).",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Match each function description to its type (order: linear, quadratic, neither — then sort linear first):",
+      "items": [
+        "f(x) = 4x − 1 → linear (constant rate of change)",
+        "g(x) = x² + 3x → quadratic (parabola)",
+        "h(x) = 2x + x² → quadratic (rearranges to x² + 2x)",
+        "k(x) = 5 → linear (horizontal line, slope = 0)"
+      ],
+      "correctOrder": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "difficulty": 3,
+      "explanation": "Linear functions have the form mx + b with no higher powers. f(x) = 4x−1 and k(x) = 5 are both linear (k has m=0). g and h are quadratic because they contain x². h = x² + 2x — the leading term is x², making it quadratic.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Function Lich",
+    "taunt": "Model this: your complete destruction.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A car rental costs $25/day plus $0.15/mile. You have a budget of $70. What is the maximum number of miles you can drive in one day?",
+        "latex": "0.15m + 25 \\leq 70",
+        "answers": [
+          "250 miles",
+          "300 miles",
+          "350 miles",
+          "466 miles"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "0.15m + 25 ≤ 70 → 0.15m ≤ 45 → m ≤ 300 miles. The 466 error divides 70 by 0.15 without subtracting the base fee. The 250 error subtracts $25 from $70 but then divides by 0.18 instead of 0.15.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A population grows according to P(t) = 500 × 2^t where t is years. When does the population first EXCEED (strictly greater than) 4,000?",
+        "latex": "500 \\cdot 2^t > 4000",
+        "answers": [
+          "t = 2",
+          "t = 3",
+          "t = 4",
+          "t = 8"
+        ],
+        "correct": 2,
+        "difficulty": 3,
+        "explanation": "Solve: 2^t > 8 → t > 3. At t = 3: P(3) = 500 × 8 = 4,000 (equal — does not exceed). At t = 4: P(4) = 500 × 16 = 8,000 > 4,000 ✓. The first integer year where the population strictly exceeds 4,000 is t = 4.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A function f has f(2) = 10 and f(5) = 25. If f is linear, what is the rate of change?",
+        "latex": "\\text{slope} = \\frac{25 - 10}{5 - 2}",
+        "answers": [
+          "3",
+          "5",
+          "7.5",
+          "15"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "Rate of change = slope = (25−10)/(5−2) = 15/3 = 5. This means for every 1-unit increase in x, f(x) increases by 5. The 3 error uses the denominator only. The 15 error uses the numerator only.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 25
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 35
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 28
+      },
+      {
+        "type": "solution-orb",
+        "weight": 12
+      }
+    ]
+  },
+  "lootTable": []
+}

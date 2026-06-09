@@ -1,0 +1,178 @@
+{
+  "id": "qfunc-02",
+  "title": "The Vertex Vault",
+  "kingdom": "quadratic-functions",
+  "dungeonNumber": 2,
+  "lesson": {
+    "title": "Vertex & Axis of Symmetry",
+    "body": "**Vertex form**: y = a(x − h)² + k. The vertex is at (h, k), the axis of symmetry is x = h, and a controls width and direction. To convert standard form to vertex form, complete the square or use h = −b/(2a). **Maximum vs minimum**: if a > 0, the vertex is a minimum; if a < 0, it is a maximum. The vertex value k is the min/max value of the function. **Width**: |a| > 1 makes the parabola narrower; 0 < |a| < 1 makes it wider than y = x²."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "What is the vertex of y = (x − 3)² + 5?",
+      "latex": "y = (x - 3)^2 + 5",
+      "steps": [
+        "h = 3, \\quad k = 5",
+        "\\text{Vertex: } (3, 5)"
+      ],
+      "answers": [
+        "(−3, 5)",
+        "(3, −5)",
+        "(3, 5)",
+        "(5, 3)"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "In vertex form y=a(x−h)²+k, the vertex is (h,k). Here h=3, k=5. Vertex: (3,5). Common error: using (−3,5) because of the minus sign in (x−3) — the formula says x−h, so h=3 (positive).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the vertex of y = −2(x + 1)² − 4?",
+      "latex": "y = -2(x + 1)^2 - 4",
+      "steps": [
+        "\\text{Rewrite: } y = -2(x - (-1))^2 + (-4)",
+        "h = -1, \\quad k = -4"
+      ],
+      "answers": [
+        "(1, 4)",
+        "(−1, −4)",
+        "(1, −4)",
+        "(−1, 4)"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "y = −2(x+1)²−4 = −2(x−(−1))²+(−4). So h=−1, k=−4. Vertex: (−1,−4). Since a=−2<0, this is a maximum at y=−4.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Convert y = x² + 6x + 5 to vertex form.",
+      "latex": "y = x^2 + 6x + 5",
+      "steps": [
+        "y = (x^2 + 6x + 9) - 9 + 5",
+        "= (x + 3)^2 - 4"
+      ],
+      "answers": [
+        "y = (x + 3)² + 5",
+        "y = (x − 3)² − 4",
+        "y = (x + 3)² − 4",
+        "y = (x + 6)² − 4"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Complete the square: (b/2)²=9. Add and subtract 9: y=(x²+6x+9)−9+5=(x+3)²−4. Vertex: (−3,−4). The −9+5=−4 balances the equation — we add and subtract the same value, not changing it.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A ball is thrown upward: h(t) = −5t² + 20t + 1. What is the maximum height?",
+      "latex": "h(t) = -5t^2 + 20t + 1",
+      "steps": [
+        "t_{vertex} = -\\frac{20}{2(-5)} = 2",
+        "h(2) = -20 + 40 + 1 = 21"
+      ],
+      "answers": [
+        "h = 1 m",
+        "h = 20 m",
+        "h = 21 m",
+        "h = 25 m"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Vertex x-coord: t=−20/(2·(−5))=−20/(−10)=2 s. Max height: h(2)=−5(4)+20(2)+1=−20+40+1=21 m. Since a=−5<0, the vertex is a maximum.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to convert y = 2x² − 8x + 11 to vertex form:",
+      "items": [
+        "Factor out leading coefficient from x² and x terms: y = 2(x² − 4x) + 11",
+        "Complete the square inside: y = 2(x² − 4x + 4) + 11 − 8",
+        "Factor the trinomial: y = 2(x − 2)² + 3",
+        "Read off vertex: (2, 3), minimum since a = 2 > 0"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "When a≠1, factor it out first. Completing the square inside adds 4 inside the parentheses, but that's really 2×4=8 added to the right side, so subtract 8 outside: 11−8=3. Vertex: (2,3).",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Axis Specter",
+    "taunt": "Symmetric only in suffering.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A parabola has vertex (2, −3) and passes through (4, 5). Find a in y = a(x−2)² − 3.",
+        "latex": "5 = a(4-2)^2 - 3",
+        "answers": [
+          "a = 1",
+          "a = 2",
+          "a = −2",
+          "a = 4"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "Substitute (4,5): 5=a(2)²−3=4a−3. Solve: 4a=8 → a=2. Equation: y=2(x−2)²−3. Opens upward, vertex at minimum (2,−3).",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which function has its maximum value at y = 7?",
+        "latex": "y = -(x-3)^2 + 7",
+        "answers": [
+          "y = (x − 3)² + 7",
+          "y = −(x − 3)² + 7",
+          "y = −(x + 7)² − 3",
+          "y = (x + 3)² − 7"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "y=−(x−3)²+7 has a=−1<0 (opens down), so vertex is a maximum at y=7. y=(x−3)²+7 has a minimum at y=7. y=−(x+7)²−3 has maximum at y=−3. y=(x+3)²−7 has minimum at y=−7.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "For y = x² − 4x + c, the minimum value is −5. Find c.",
+        "latex": "y_{min} = c - \\left(\\frac{b}{2a}\\right)^2 = -5",
+        "answers": [
+          "c = −1",
+          "c = 9",
+          "c = 1",
+          "c = −9"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Vertex form: y=(x−2)²+(c−4). Minimum value = c−4 = −5 → c=−1. Verify: y=x²−4x−1. Vertex at (2,−5): y(2)=4−8−1=−5 ✓.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

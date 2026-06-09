@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import MathDisplay from './MathDisplay'
+import { getProgress, isDungeonComplete } from '../hooks/useProgress'
 
 function renderBody(text) {
   const parts = text.split(/(\*\*[^*]+\*\*)/g)
@@ -10,10 +11,46 @@ function renderBody(text) {
   )
 }
 
-export default function StudyScreen({ dungeon, subjectTitle, subjectColor = 'var(--blue)', onStart, onBack }) {
+const ITEM_META = {
+  'hint-scroll':   { emoji: '📜', label: 'Hint' },
+  'focus-crystal': { emoji: '🔷', label: 'Focus' },
+  'scholars-tome': { emoji: '📖', label: 'Scholar' },
+  'solution-orb':  { emoji: '🔮', label: 'Orb' },
+}
+
+export default function StudyScreen({ dungeon, dungeonId, subjectTitle, subjectColor = 'var(--blue)', onStart, onResume, onBack, inventory = [], focusMode = false, scholarActive = false, onToggleFocus, onToggleScholar }) {
   const [showNotes, setShowNotes] = useState(false)
   const lesson = dungeon?.lesson
   const rooms = dungeon?.rooms ?? []
+  const totalRooms = rooms.length
+
+  // Snapshot progress at mount — no need to re-read while the screen is open
+  const [progress] = useState(() => getProgress()[dungeonId] ?? { rooms: [], bossComplete: false })
+  const completedRooms = progress.rooms.length
+  const bossComplete = progress.bossComplete
+  const allRoomsDone = completedRooms >= totalRooms
+  const isComplete = bossComplete
+  const isInProgress = completedRooms > 0 && !isComplete
+
+  // Decide button configuration
+  let primaryLabel, primaryAction, secondaryLabel, secondaryAction
+  if (isComplete) {
+    primaryLabel = 'Replay →'
+    primaryAction = onStart
+  } else if (allRoomsDone) {
+    primaryLabel = 'Fight Boss →'
+    primaryAction = () => onResume('boss')
+    secondaryLabel = 'Start Over'
+    secondaryAction = onStart
+  } else if (isInProgress) {
+    primaryLabel = `Continue (${completedRooms}/${totalRooms}) →`
+    primaryAction = () => onResume(completedRooms)
+    secondaryLabel = 'Start Over'
+    secondaryAction = onStart
+  } else {
+    primaryLabel = 'Start Quiz →'
+    primaryAction = onStart
+  }
 
   return (
     <div className="page-with-nav" style={{
@@ -55,12 +92,45 @@ export default function StudyScreen({ dungeon, subjectTitle, subjectColor = 'var
             letterSpacing: '2px',
             marginBottom: '0.4rem',
           }}>
-            LESSON · {rooms.length} QUESTIONS
+            LESSON · {totalRooms} QUESTIONS
           </div>
           <h2 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text)', marginBottom: '0.1rem' }}>
             {lesson?.title ?? dungeon?.title}
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.7rem' }}>{dungeon?.title}</p>
+
+          {/* Progress indicator */}
+          {isComplete ? (
+            <div style={{
+              marginTop: '0.75rem',
+              display: 'flex', alignItems: 'center', gap: '0.4rem',
+            }}>
+              <span style={{ color: 'var(--correct)', fontSize: '0.8rem' }}>✓</span>
+              <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--correct)', fontSize: '0.58rem', letterSpacing: '1px' }}>
+                COMPLETE
+              </span>
+            </div>
+          ) : isInProgress || allRoomsDone ? (
+            <div style={{ marginTop: '0.75rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.3rem' }}>
+                <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.55rem', letterSpacing: '1px' }}>
+                  {allRoomsDone ? 'QUESTIONS DONE — BOSS AWAITS' : 'IN PROGRESS'}
+                </span>
+                <span style={{ fontFamily: 'var(--font-mono)', color: subjectColor, fontSize: '0.55rem' }}>
+                  {completedRooms}/{totalRooms}
+                </span>
+              </div>
+              <div style={{ background: 'var(--border)', borderRadius: 2, height: 3 }}>
+                <div style={{
+                  background: allRoomsDone ? 'var(--danger)' : subjectColor,
+                  borderRadius: 2, height: 3,
+                  width: `${(completedRooms / totalRooms) * 100}%`,
+                  boxShadow: `0 0 6px ${allRoomsDone ? 'var(--danger)' : subjectColor}`,
+                  transition: 'width 0.4s ease',
+                }} />
+              </div>
+            </div>
+          ) : null}
         </div>
 
         {/* Study notes panel */}
@@ -109,55 +179,92 @@ export default function StudyScreen({ dungeon, subjectTitle, subjectColor = 'var
           </>
         )}
 
-        {/* Action buttons */}
-        <div style={{ display: 'flex', gap: '0.6rem', marginTop: '0.75rem' }}>
-          {lesson?.body && (
-            <button
-              onClick={() => setShowNotes(n => !n)}
-              style={{
-                flex: 1,
-                padding: '0.95rem',
-                minHeight: 52,
-                background: 'var(--bg-card)',
-                border: `1px solid ${subjectColor}30`,
-                borderRadius: 12,
-                color: subjectColor,
-                fontSize: '0.85rem',
-                fontFamily: 'var(--font-mono)',
-                cursor: 'pointer',
-                letterSpacing: '0.5px',
-                transition: 'background 0.15s',
-              }}
-              onMouseEnter={e => e.currentTarget.style.background = `${subjectColor}0c`}
-              onMouseLeave={e => e.currentTarget.style.background = 'var(--bg-card)'}
-            >
-              {showNotes ? 'Hide Notes' : '📖 Notes'}
-            </button>
-          )}
+        {/* Inventory tray */}
+        {inventory.length > 0 && (
+          <div style={{
+            display: 'flex', gap: '0.5rem', flexWrap: 'wrap',
+            padding: '0.75rem 1rem',
+            background: 'var(--bg-card)',
+            border: '1px solid var(--border)',
+            borderRadius: 10,
+            marginBottom: '0.75rem',
+          }}>
+            {inventory.map(item => {
+              const meta = ITEM_META[item.type]
+              if (!meta) return null
+              const isToggle = item.type === 'focus-crystal' || item.type === 'scholars-tome'
+              const isActive = item.type === 'focus-crystal' ? focusMode : scholarActive
+              return (
+                <div key={item.type} style={{
+                  display: 'flex', alignItems: 'center', gap: '0.35rem',
+                  padding: '0.3rem 0.6rem',
+                  background: isActive ? `${subjectColor}18` : 'var(--bg-elevated)',
+                  border: `1px solid ${isActive ? subjectColor + '60' : item.count > 0 ? 'var(--border-strong)' : 'var(--border)'}`,
+                  borderRadius: 6,
+                  opacity: item.count === 0 && !isActive ? 0.4 : 1,
+                  cursor: isToggle && (item.count > 0 || isActive) ? 'pointer' : 'default',
+                }}
+                  onClick={() => {
+                    if (!isToggle) return
+                    if (item.type === 'focus-crystal') onToggleFocus?.()
+                    else onToggleScholar?.()
+                  }}
+                >
+                  <span style={{ fontSize: '0.85rem' }}>{meta.emoji}</span>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', color: isActive ? subjectColor : 'var(--text-muted)' }}>
+                    {isActive ? 'ON' : item.count}
+                  </span>
+                </div>
+              )
+            })}
+          </div>
+        )}
 
+        {/* Action buttons */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.75rem' }}>
           <button
-            onClick={onStart}
+            onClick={primaryAction}
             style={{
-              flex: lesson?.body ? 2 : 1,
+              width: '100%',
               padding: '0.95rem',
               minHeight: 52,
-              background: subjectColor,
-              border: 'none',
+              background: isComplete ? 'var(--bg-elevated)' : subjectColor,
+              border: isComplete ? `1px solid ${subjectColor}40` : 'none',
               borderRadius: 12,
-              color: '#fff',
+              color: isComplete ? subjectColor : '#fff',
               fontSize: '0.95rem',
               fontFamily: 'var(--font-mono)',
               cursor: 'pointer',
               letterSpacing: '1px',
               fontWeight: 'bold',
-              boxShadow: `0 0 24px ${subjectColor}40`,
+              boxShadow: isComplete ? 'none' : `0 0 24px ${subjectColor}40`,
               transition: 'opacity 0.15s',
             }}
             onMouseEnter={e => e.currentTarget.style.opacity = '0.9'}
             onMouseLeave={e => e.currentTarget.style.opacity = '1'}
           >
-            Start Quiz →
+            {primaryLabel}
           </button>
+
+          {secondaryLabel && (
+            <button
+              onClick={secondaryAction}
+              style={{
+                width: '100%',
+                padding: '0.65rem',
+                minHeight: 40,
+                background: 'none',
+                border: 'none',
+                color: 'var(--text-muted)',
+                fontSize: '0.78rem',
+                fontFamily: 'var(--font-mono)',
+                cursor: 'pointer',
+                letterSpacing: '0.5px',
+              }}
+            >
+              {secondaryLabel}
+            </button>
+          )}
         </div>
       </div>
     </div>

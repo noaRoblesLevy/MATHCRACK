@@ -1,0 +1,178 @@
+{
+  "id": "poly-03",
+  "title": "The FOIL Foundry",
+  "kingdom": "polynomials",
+  "dungeonNumber": 3,
+  "lesson": {
+    "title": "Multiplying Polynomials (FOIL)",
+    "body": "To multiply two binomials, use **FOIL**: **F**irst, **O**uter, **I**nner, **L**ast. Example: (x + 3)(x − 5) = x² − 5x + 3x − 15 = x² − 2x − 15. For larger polynomials, distribute each term of the first polynomial across every term of the second. Special patterns: **(a + b)² = a² + 2ab + b²** (perfect square), **(a − b)² = a² − 2ab + b²**, **(a + b)(a − b) = a² − b²** (difference of squares)."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Expand: (x + 4)(x + 3)",
+      "latex": "(x + 4)(x + 3)",
+      "steps": [
+        "x^2 + 3x + 4x + 12",
+        "= x^2 + 7x + 12"
+      ],
+      "answers": [
+        "x² + 7x + 12",
+        "x² + 12x + 7",
+        "x² + 7x + 7",
+        "x² + 12"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "FOIL: First: x·x=x². Outer: x·3=3x. Inner: 4·x=4x. Last: 4·3=12. Combine: x²+(3x+4x)+12 = x²+7x+12. The x²+12x+7 error adds 3+4=7 for the constant and multiplies 3×4=12 for the x term — swapping the middle and last steps.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Expand: (2x − 3)(x + 5)",
+      "latex": "(2x - 3)(x + 5)",
+      "steps": [
+        "2x^2 + 10x - 3x - 15",
+        "= 2x^2 + 7x - 15"
+      ],
+      "answers": [
+        "2x² + 7x − 15",
+        "2x² − 7x − 15",
+        "2x² + 7x + 15",
+        "2x² − 13x − 15"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "FOIL: 2x·x=2x²; 2x·5=10x; −3·x=−3x; −3·5=−15. Combine: 2x²+(10x−3x)−15 = 2x²+7x−15. The 2x²−7x−15 error reverses the x signs, computing 10x−3x as −7x.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Expand: (x + 5)²",
+      "latex": "(x + 5)^2",
+      "steps": [
+        "(a+b)^2 = a^2 + 2ab + b^2",
+        "x^2 + 2(x)(5) + 25 = x^2 + 10x + 25"
+      ],
+      "answers": [
+        "x² + 25",
+        "x² + 5x + 25",
+        "x² + 10x + 25",
+        "x² + 10x + 10"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "(x+5)² = x² + 2(x)(5) + 5² = x² + 10x + 25. The x²+25 error is the most common mistake — squaring only the first and last terms, forgetting the middle term 2ab.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Expand: (3x − 2)(3x + 2)",
+      "latex": "(3x - 2)(3x + 2)",
+      "steps": [
+        "(a-b)(a+b) = a^2 - b^2",
+        "(3x)^2 - 2^2 = 9x^2 - 4"
+      ],
+      "answers": [
+        "9x² + 4",
+        "9x² − 4",
+        "9x² − 12x − 4",
+        "9x² − 12x + 4"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Difference of squares: (a−b)(a+b) = a²−b². Here a=3x, b=2. Result: 9x²−4. No middle term! The outer and inner terms cancel: +6x−6x=0. The 9x²−12x−4 error uses FOIL without recognizing the pattern.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Put the FOIL steps in order for: (2x + 1)(x − 4)",
+      "items": [
+        "First: 2x · x = 2x²",
+        "Outer: 2x · (−4) = −8x",
+        "Inner: 1 · x = x",
+        "Last: 1 · (−4) = −4; combine: 2x² − 7x − 4"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "FOIL in order: First (x·x terms), Outer (first × last), Inner (last × first), Last (last×last). Then combine like terms: −8x+x = −7x. Final: 2x²−7x−4.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The FOIL Specter",
+    "taunt": "First. Outer. Inner. Last. Then darkness.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Expand: (x + 2)(x² − 3x + 4)",
+        "latex": "(x + 2)(x^2 - 3x + 4)",
+        "answers": [
+          "x³ + 10x² − 2x + 8",
+          "x³ − x² − 2x + 8",
+          "x³ + x² − 10x + 8",
+          "x³ − 3x² + 4x + 8"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "Distribute x: x(x²−3x+4) = x³−3x²+4x. Distribute 2: 2(x²−3x+4) = 2x²−6x+8. Sum: x³+(−3+2)x²+(4−6)x+8 = x³−x²−2x+8. The last option error only distributes x, forgetting to distribute 2.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What is (x − 3)²?",
+        "latex": "(x - 3)^2",
+        "answers": [
+          "x² − 9",
+          "x² − 3x + 9",
+          "x² − 6x + 9",
+          "x² + 6x − 9"
+        ],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "(a−b)² = a²−2ab+b². Here a=x, b=3: x²−2(x)(3)+9 = x²−6x+9. The x²−9 error only squares each term. The x²−3x+9 error uses 1×coefficient instead of 2×coefficient for the middle term.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Expand and simplify: (x + 2)² − (x − 2)²",
+        "latex": "(x+2)^2 - (x-2)^2",
+        "answers": [
+          "4",
+          "8x",
+          "4x²",
+          "0"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "(x+2)² = x²+4x+4. (x−2)² = x²−4x+4. Subtract: (x²+4x+4)−(x²−4x+4) = 8x. The x² and constant terms cancel. This is a difference of squares pattern: (x+2)²−(x−2)² = [(x+2)+(x−2)][(x+2)−(x−2)] = (2x)(4) = 8x.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 25
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 35
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 28
+      },
+      {
+        "type": "solution-orb",
+        "weight": 12
+      }
+    ]
+  },
+  "lootTable": []
+}

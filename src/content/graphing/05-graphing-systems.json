@@ -1,0 +1,177 @@
+{
+  "id": "graph-05",
+  "title": "The System Crossroads",
+  "kingdom": "graphing",
+  "dungeonNumber": 5,
+  "lesson": {
+    "title": "Graphing Systems",
+    "body": "To solve a system of linear equations **graphically**, graph each line on the same axes. The solution is the **intersection point**. Three cases: one intersection point = **one solution** (consistent/independent); lines are parallel (same slope, different intercepts) = **no solution** (inconsistent); lines are identical = **infinitely many solutions** (consistent/dependent). Always convert to slope-intercept form first to graph easily."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Two lines: y = x + 1 and y = −x + 5. Where do they intersect?",
+      "latex": "y = x + 1 \\quad y = -x + 5",
+      "steps": [
+        "x + 1 = -x + 5",
+        "2x = 4 \\Rightarrow x = 2",
+        "y = 3"
+      ],
+      "answers": [
+        "(1, 2)",
+        "(2, 3)",
+        "(3, 4)",
+        "(5, 6)"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Set equal: x+1 = −x+5 → 2x = 4 → x = 2. Then y = 2+1 = 3. Intersection: (2, 3). Check in second line: −2+5 = 3 ✓.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which system has no solution?",
+      "latex": "\\text{No solution} \\Leftrightarrow \\text{parallel lines}",
+      "steps": [
+        "\\text{Parallel lines: same slope, different y-intercepts}"
+      ],
+      "answers": [
+        "y = 2x + 1 and y = −2x + 1",
+        "y = 3x + 1 and y = 3x + 5",
+        "y = x + 2 and 2y = 2x + 4",
+        "y = x + 1 and y = −x + 1"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "y = 3x + 1 and y = 3x + 5 both have slope 3 but different intercepts — they are parallel and never intersect. Option C (y = x+2 and 2y = 2x+4 → y = x+2) is actually the same line (infinite solutions). Options A and D have different slopes and do intersect.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "How many solutions does the system y = 4x − 3 and 8x − 2y = 6 have?",
+      "latex": "y = 4x - 3 \\quad 8x - 2y = 6",
+      "steps": [
+        "\\text{Rewrite second: } y = 4x - 3",
+        "\\text{Both equations are identical!}"
+      ],
+      "answers": [
+        "No solution",
+        "Exactly one",
+        "Exactly two",
+        "Infinitely many"
+      ],
+      "correct": 3,
+      "difficulty": 2,
+      "explanation": "Rewrite 8x − 2y = 6: −2y = −8x + 6 → y = 4x − 3. This is identical to the first equation. Every point on y = 4x − 3 is a solution, so there are infinitely many solutions. The system is dependent.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Estimate the intersection of y = (2/3)x − 1 and y = −x + 4.",
+      "latex": "y = \\tfrac{2}{3}x - 1 \\quad y = -x + 4",
+      "steps": [
+        "\\frac{2}{3}x - 1 = -x + 4",
+        "\\frac{5}{3}x = 5 \\Rightarrow x = 3",
+        "y = -3 + 4 = 1"
+      ],
+      "answers": [
+        "(2, 1/3)",
+        "(3, 1)",
+        "(4, 0)",
+        "(0, −1)"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Set equal: (2/3)x − 1 = −x + 4. Add x to both sides: (5/3)x = 5 → x = 3. Then y = −3+4 = 1. Intersection: (3, 1). Check: (2/3)(3)−1 = 2−1 = 1 ✓.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Match each system to its number of solutions (order: no solution, one solution, infinite solutions):",
+      "items": [
+        "y = 2x + 1 and y = 2x − 3 → no solution (parallel)",
+        "y = x + 2 and y = −x + 4 → one solution (intersect at (1,3))",
+        "2y = 4x + 6 and y = 2x + 3 → infinite solutions (same line)"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2
+      ],
+      "difficulty": 3,
+      "explanation": "Parallel lines (same slope, different intercepts) → no solution. Distinct intersecting lines → one solution. The same line written differently → infinite solutions. Simplify 2y=4x+6: y=2x+3, identical to the second equation.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Intersection Daemon",
+    "taunt": "Your lines will never meet mine.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Solve graphically: y = 2x − 4 and y = −x + 2. Where is the intersection?",
+        "latex": "y = 2x - 4 \\quad y = -x + 2",
+        "answers": [
+          "(1, −2)",
+          "(2, 0)",
+          "(3, 2)",
+          "(4, 4)"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "Set equal: 2x−4 = −x+2 → 3x = 6 → x = 2. Then y = 2(2)−4 = 0. Intersection: (2, 0). Check: −2+2 = 0 ✓. This point lies on both lines.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A system of two linear equations in two variables can have at most how many solutions?",
+        "latex": "\\text{Possible solution counts: } 0, 1, \\infty",
+        "answers": [
+          "Exactly 1 solution always",
+          "At most 2 solutions",
+          "Infinitely many, exactly 1, or none",
+          "Always at least 1 solution"
+        ],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "Two lines in a plane either: don't intersect (parallel — no solution), intersect at one point (one solution), or are the same line (infinitely many solutions). There is no case with exactly 2 solutions — two distinct lines can only cross at one point.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Convert to slope-intercept and determine: does 3x + 2y = 8 and 6x + 4y = 20 have a solution?",
+        "latex": "3x + 2y = 8 \\quad 6x + 4y = 20",
+        "answers": [
+          "Yes — they intersect at (2, 1)",
+          "No — they are parallel (same slope, different intercepts)",
+          "Infinitely many — they are the same line",
+          "Yes — at (4, −2)"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "Line 1: y = −(3/2)x + 4. Line 2: y = −(3/2)x + 5. Same slope (−3/2), different intercepts (4 vs 5). They are parallel — no solution. If line 2 had been 6x+4y=16 (i.e., 2× equation 1), they would be the same line.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

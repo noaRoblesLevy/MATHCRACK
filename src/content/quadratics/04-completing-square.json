@@ -1,0 +1,182 @@
+{
+  "id": "quad-04",
+  "title": "The Completion Chamber",
+  "kingdom": "quadratics",
+  "dungeonNumber": 4,
+  "lesson": {
+    "title": "Completing the Square",
+    "body": "**Completing the square** converts ax²+bx+c into (x+h)²=k form. Steps for x²+bx+c=0: (1) Move c to the right: x²+bx=−c. (2) Add (b/2)² to both sides. (3) Factor the left as (x+b/2)². (4) Solve with ±√. Example: x²+6x+5=0 → x²+6x=−5 → x²+6x+9=−5+9 → (x+3)²=4 → x+3=±2 → x=−1 or x=−5. If a≠1, divide through by a first."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "What value completes the square for x² + 8x?",
+      "latex": "x^2 + 8x + \\; ?",
+      "steps": [
+        "(b/2)^2 = (8/2)^2 = 16",
+        "x^2 + 8x + 16 = (x + 4)^2"
+      ],
+      "answers": [
+        "4",
+        "8",
+        "16",
+        "64"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "The completing-the-square value is always (b/2)². Here b=8, so (8/2)²=4²=16. Adding 16 gives x²+8x+16=(x+4)². This is the core mechanical step in the method.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Complete the square: x² − 10x + ? = (x − ?)²",
+      "latex": "x^2 - 10x + \\;? = (x - ?)^2",
+      "steps": [
+        "(b/2)^2 = (-10/2)^2 = 25",
+        "(x - 5)^2"
+      ],
+      "answers": [
+        "x² − 10x + 25 = (x − 5)²",
+        "x² − 10x + 100 = (x − 10)²",
+        "x² − 10x + 5 = (x − 5)²",
+        "x² − 10x + 25 = (x + 5)²"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "b=−10: (−10/2)²=25. Add 25: x²−10x+25=(x−5)². Verify: (x−5)²=x²−10x+25 ✓. The sign inside matches half of b: b/2 = −5, so the factor is (x−5).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Solve by completing the square: x² + 4x − 5 = 0",
+      "latex": "x^2 + 4x - 5 = 0",
+      "steps": [
+        "x^2 + 4x = 5",
+        "x^2 + 4x + 4 = 9",
+        "(x + 2)^2 = 9",
+        "x = 1 \\text{ or } x = -5"
+      ],
+      "answers": [
+        "x = 1 or x = −5",
+        "x = 5 or x = −1",
+        "x = 1 or x = 5",
+        "x = −2 ± 3"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Move 5: x²+4x=5. Add (4/2)²=4: x²+4x+4=9 → (x+2)²=9. Take ±√: x+2=±3. x=1 or x=−5. Option D '−2±3' is mathematically correct but not simplified to the two values 1 and −5.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Solve: x² − 6x + 1 = 0 (leave in radical form)",
+      "latex": "x^2 - 6x + 1 = 0",
+      "steps": [
+        "x^2 - 6x = -1",
+        "x^2 - 6x + 9 = 8",
+        "(x - 3)^2 = 8",
+        "x = 3 \\pm 2\\sqrt{2}"
+      ],
+      "answers": [
+        "x = 3 ± √8",
+        "x = 3 ± 2√2",
+        "x = −3 ± 2√2",
+        "x = 6 ± √8"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Add 9: (x−3)²=8. x=3±√8. Simplify √8=2√2: x=3±2√2. Options A and B are equivalent (√8=2√2), but B is the simplified form. Always simplify radicals in the final answer.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to solve: 2x² + 8x − 10 = 0 by completing the square",
+      "items": [
+        "Divide through by 2: x² + 4x − 5 = 0",
+        "Move constant: x² + 4x = 5",
+        "Add (4/2)² = 4 to both sides: (x+2)² = 9",
+        "Solve: x + 2 = ±3, so x = 1 or x = −5"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "When a≠1, divide first. Then the standard completing-the-square procedure applies. Note: this equation factors easily too — it's the same as (x−1)(x+5)=0. Completing the square is more general and works even when factoring is not obvious.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Completion Shade",
+    "taunt": "Complete the square. Complete your defeat.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Solve: x² + 6x + 13 = 0",
+        "latex": "x^2 + 6x + 13 = 0",
+        "answers": [
+          "x = −3 ± 2i",
+          "x = −3 ± √(−4)",
+          "No real solutions",
+          "x = 3 ± 2i"
+        ],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "Complete the square: (x+3)²=9−13=−4. Since (x+3)²=−4 has no real solution (squares can't be negative), there are no real solutions. Complex solutions would be x=−3±2i, but that's beyond this course.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Solve by completing the square: x² − 8x + 7 = 0",
+        "latex": "x^2 - 8x + 7 = 0",
+        "answers": [
+          "x = 7 or x = 1",
+          "x = 4 ± 3",
+          "x = −7 or x = −1",
+          "x = 8 ± √57"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "(x−4)²=16−7=9. x−4=±3. x=7 or x=1. Option B '4±3' also equals 7 and 1 — same answer, different notation. This trinomial also factors as (x−7)(x−1), confirming the roots.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Rewrite y = x² − 4x + 7 in vertex form.",
+        "latex": "y = x^2 - 4x + 7",
+        "answers": [
+          "y = (x − 2)² + 3",
+          "y = (x − 4)² + 7",
+          "y = (x − 2)² − 3",
+          "y = (x + 2)² + 3"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Complete the square: y=x²−4x+7 = (x²−4x+4)+3 = (x−2)²+3. Add and subtract 4 inside: (b/2)²=(−4/2)²=4. The vertex is at (2, 3), and the parabola opens upward with minimum at y=3.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

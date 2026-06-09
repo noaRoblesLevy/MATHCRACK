@@ -1,10 +1,30 @@
-import { isDungeonComplete, isDungeonUnlocked } from '../hooks/useProgress'
+import { isDungeonComplete, isDungeonUnlocked, getProgress } from '../hooks/useProgress'
+
+const TOTAL_ROOMS = 5
+
+function RoomPips({ completed, color }) {
+  return (
+    <div style={{ display: 'flex', gap: 3, marginTop: '0.3rem' }}>
+      {Array.from({ length: TOTAL_ROOMS }).map((_, i) => (
+        <div key={i} style={{
+          width: i < completed ? 10 : 6,
+          height: 4,
+          borderRadius: 2,
+          background: i < completed ? color : 'var(--border-strong)',
+          boxShadow: i < completed ? `0 0 4px ${color}` : 'none',
+          transition: 'width 0.2s, background 0.2s',
+        }} />
+      ))}
+    </div>
+  )
+}
 
 export default function KingdomView({ kingdom, onSelectDungeon, onBack, onTrain }) {
   const { title, subtitle, icon, color = 'var(--blue)', dungeons } = kingdom
   const ids = dungeons.map(d => d.id)
   const completedCount = dungeons.filter(d => isDungeonComplete(d.id)).length
   const availableCount = dungeons.filter(d => !d.stub).length
+  const allProgress = getProgress()
 
   return (
     <div className="page-with-nav" style={{
@@ -91,6 +111,8 @@ export default function KingdomView({ kingdom, onSelectDungeon, onBack, onTrain 
             const complete = isDungeonComplete(d.id)
             const isStub = !!d.stub
             const clickable = !isStub
+            const roomsDone = allProgress[d.id]?.rooms?.length ?? 0
+            const inProgress = !complete && roomsDone > 0
 
             return (
               <div
@@ -102,37 +124,42 @@ export default function KingdomView({ kingdom, onSelectDungeon, onBack, onTrain 
                   minHeight: 56,
                   background: complete
                     ? `linear-gradient(135deg, ${color}08, var(--bg-card))`
-                    : 'var(--bg-card)',
-                  border: `1px solid ${complete ? color + '30' : 'var(--border)'}`,
+                    : inProgress
+                      ? `linear-gradient(135deg, ${color}05, var(--bg-card))`
+                      : 'var(--bg-card)',
+                  border: `1px solid ${complete ? color + '30' : inProgress ? color + '20' : 'var(--border)'}`,
                   borderRadius: 9,
                   cursor: clickable ? 'pointer' : 'default',
                   transition: 'background 0.12s',
                 }}
                 onMouseEnter={e => { if (clickable) e.currentTarget.style.background = `linear-gradient(135deg, ${color}10, var(--bg-elevated))` }}
-                onMouseLeave={e => { e.currentTarget.style.background = complete ? `linear-gradient(135deg, ${color}08, var(--bg-card))` : 'var(--bg-card)' }}
+                onMouseLeave={e => { e.currentTarget.style.background = complete ? `linear-gradient(135deg, ${color}08, var(--bg-card))` : inProgress ? `linear-gradient(135deg, ${color}05, var(--bg-card))` : 'var(--bg-card)' }}
               >
                 {/* Step bubble */}
                 <div style={{
                   width: 28, height: 28, borderRadius: '50%', flexShrink: 0,
-                  background: complete ? `${color}18` : 'transparent',
-                  border: `1px solid ${complete ? color + '60' : 'var(--border)'}`,
+                  background: complete ? `${color}18` : inProgress ? `${color}10` : 'transparent',
+                  border: `1px solid ${complete ? color + '60' : inProgress ? color + '40' : 'var(--border)'}`,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontFamily: 'var(--font-mono)',
                   fontSize: '0.62rem', fontWeight: 'bold',
-                  color: complete ? color : 'var(--text-muted)',
+                  color: complete ? color : inProgress ? color : 'var(--text-muted)',
                 }}>
                   {complete ? '✓' : i + 1}
                 </div>
 
-                <span style={{
-                  flex: 1,
-                  fontSize: '0.875rem',
-                  fontWeight: 500,
-                  color: complete ? 'var(--correct)' : 'var(--text)',
-                  minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-                }}>
-                  {d.title}
-                </span>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <span style={{
+                    display: 'block',
+                    fontSize: '0.875rem',
+                    fontWeight: 500,
+                    color: complete ? 'var(--correct)' : 'var(--text)',
+                    overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                  }}>
+                    {d.title}
+                  </span>
+                  {inProgress && <RoomPips completed={roomsDone} color={color} />}
+                </div>
 
                 <span style={{ flexShrink: 0, fontSize: '0.75rem', color: 'var(--text-muted)' }}>
                   {complete

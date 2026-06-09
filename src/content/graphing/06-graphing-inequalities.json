@@ -1,0 +1,177 @@
+{
+  "id": "graph-06",
+  "title": "The Shaded Fortress",
+  "kingdom": "graphing",
+  "dungeonNumber": 6,
+  "lesson": {
+    "title": "Graphing Inequalities",
+    "body": "To graph a linear inequality: (1) Graph the boundary line (use y = mx + b form). Dashed line for strict inequality (< or >); solid line for ≤ or ≥. (2) Pick a **test point** not on the line (usually (0, 0) if not on the line). (3) If the test point satisfies the inequality, shade that side; if not, shade the other side. The shaded region represents all solutions."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "When graphing y > 2x − 1, should the boundary line be dashed or solid?",
+      "latex": "y > 2x - 1",
+      "steps": [
+        "\\text{Strict inequality (>) → dashed line (boundary not included)}"
+      ],
+      "answers": [
+        "Dashed",
+        "Solid",
+        "Dotted and thick",
+        "No line needed"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "The > symbol means points on the line itself are NOT solutions — so draw a dashed boundary. If the inequality were y ≥ 2x − 1, the line would be solid (points on the line are included). Dashed = strict, Solid = non-strict.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For the inequality y < x + 3, which side of the boundary line is shaded?",
+      "latex": "y < x + 3",
+      "steps": [
+        "\\text{Test (0, 0): } 0 < 0 + 3 = 3 \\checkmark",
+        "\\text{(0,0) satisfies it → shade the side containing (0,0)}"
+      ],
+      "answers": [
+        "Above the line",
+        "Below the line",
+        "Both sides",
+        "On the line only"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Test (0, 0): 0 < 3 ✓. The origin satisfies the inequality, so shade the side containing (0, 0) — which is below the line y = x + 3. For y < (line), you're looking for points below; for y > (line), above.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Does the point (2, 4) satisfy y ≥ 3x − 2?",
+      "latex": "y \\geq 3x - 2 \\text{ at } (2, 4)",
+      "steps": [
+        "\\text{Substitute: } 4 \\geq 3(2) - 2 = 4",
+        "4 \\geq 4 \\checkmark \\text{ (equality holds)}"
+      ],
+      "answers": [
+        "Yes — (2, 4) is in the shaded region",
+        "No — the boundary is dashed",
+        "Yes — but only because equality holds, not strict",
+        "No — 4 is not greater than 4"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "4 ≥ 4 is true (equality satisfies ≥). Since ≥ includes the boundary, (2, 4) is on the solid boundary line and counts as a solution. If the inequality were y > 3x − 2 (strict), (2, 4) would not qualify.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which inequality is satisfied by all points above the line y = −x + 2?",
+      "latex": "\\text{Points above } y = -x + 2",
+      "steps": [
+        "\\text{'Above' means y is greater than the line's y-value at each x}",
+        "y > -x + 2"
+      ],
+      "answers": [
+        "y < −x + 2",
+        "y > −x + 2",
+        "y ≤ −x + 2",
+        "x > −y + 2"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Points above the line have y-values greater than what the line gives at the same x. So the inequality is y > −x + 2. Points below would satisfy y < −x + 2. Test with (0, 3) above the line: 3 > 0+2 = 2 ✓.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to graph the inequality: 2x − y ≤ 4",
+      "items": [
+        "Rewrite in slope-intercept form: y ≥ 2x − 4",
+        "Draw a SOLID line through (0, −4) with slope 2",
+        "Test (0, 0): 0 ≥ −4 ✓ — shade above (the side with the origin)",
+        "Note: inequality flipped when multiplying by −1"
+      ],
+      "correctOrder": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "difficulty": 3,
+      "explanation": "Rearranging: −y ≤ −2x + 4 → multiply by −1 and flip: y ≥ 2x − 4. The sign flips! Draw a solid line (≥), then shade above. Steps: rewrite → note sign flip → draw boundary → shade.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Shade Warden",
+    "taunt": "Shade the wrong region. Perish.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Which point is NOT a solution to y < 2x + 1?",
+        "latex": "y < 2x + 1",
+        "answers": [
+          "(0, −1)",
+          "(1, 2)",
+          "(3, 7)",
+          "(2, 4)"
+        ],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "Test each by substituting into y < 2x+1: (0,−1): −1 < 1 ✓. (1,2): 2 < 3 ✓. (3,7): 7 < 7 → false (7 is not strictly less than 7). (2,4): 4 < 5 ✓. So (3,7) lies exactly on the boundary line and is excluded by the strict inequality.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The inequality y ≤ −(1/2)x + 3 is graphed. Which region description is correct?",
+        "latex": "y \\leq -\\tfrac{1}{2}x + 3",
+        "answers": [
+          "Dashed line, shaded above",
+          "Solid line, shaded above",
+          "Dashed line, shaded below",
+          "Solid line, shaded below"
+        ],
+        "correct": 3,
+        "difficulty": 2,
+        "explanation": "≤ means solid line (boundary included). y ≤ (line) means points on or below the line are shaded. Test (0, 0): 0 ≤ 3 ✓ — origin is below and in the shaded region.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A point (3, k) lies in the solution region of y > x − 2. Which values of k work?",
+        "latex": "k > 3 - 2 = 1",
+        "answers": [
+          "k = 1",
+          "k < 1",
+          "k > 1",
+          "k = 0"
+        ],
+        "correct": 2,
+        "difficulty": 3,
+        "explanation": "Substitute x = 3: y > 3 − 2 = 1. So k > 1. The point (3, k) is a solution for any k > 1. k = 1 would satisfy y ≥ x−2 but not y > x−2 (strict). k = 0 or any k ≤ 1 fails.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 25
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 35
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 28
+      },
+      {
+        "type": "solution-orb",
+        "weight": 12
+      }
+    ]
+  },
+  "lootTable": []
+}

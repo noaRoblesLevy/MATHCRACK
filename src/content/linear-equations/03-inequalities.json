@@ -1,0 +1,178 @@
+{
+  "id": "lin-03",
+  "title": "The Inequality Dungeon",
+  "kingdom": "linear-equations",
+  "dungeonNumber": 3,
+  "lesson": {
+    "title": "Inequalities",
+    "body": "An **inequality** uses <, >, ≤, or ≥ instead of =. Solve like an equation — but with one critical rule: **multiplying or dividing by a negative number reverses the inequality sign**. Example: −2x < 8 → divide both sides by −2, flip the sign → x > −4. Graph solutions on a number line: open circle for strict inequality (<, >), closed circle for ≤ or ≥, and shade in the direction of solutions."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Solve: x + 7 > 12",
+      "latex": "x + 7 > 12",
+      "steps": [
+        "x > 12 - 7",
+        "x > 5"
+      ],
+      "answers": [
+        "x > 5",
+        "x < 5",
+        "x ≥ 5",
+        "x > 19"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Subtract 7 from both sides: x > 5. The inequality sign stays the same because we didn't multiply or divide by a negative. On a number line: open circle at 5, arrow pointing right.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Solve: −3x ≥ 15",
+      "latex": "-3x \\geq 15",
+      "steps": [
+        "\\text{Divide by } -3 \\text{ — flip the sign!}",
+        "x \\leq -5"
+      ],
+      "answers": [
+        "x ≥ −5",
+        "x ≤ −5",
+        "x ≥ 5",
+        "x ≤ 5"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Divide both sides by −3 and flip the inequality: ≥ becomes ≤. So x ≤ −5. Check with a value: try x = −6: −3(−6) = 18 ≥ 15 ✓. Try x = 0: −3(0) = 0 ≥ 15 ✗ (correctly excluded).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Solve: 4x − 3 < 9",
+      "latex": "4x - 3 < 9",
+      "steps": [
+        "4x < 12",
+        "x < 3"
+      ],
+      "answers": [
+        "x < 1.5",
+        "x < 3",
+        "x > 3",
+        "x ≤ 3"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Add 3: 4x < 12. Divide by 4 (positive — sign stays): x < 3. Open circle at 3, shade left. The ≤ 3 answer would be correct if the original used ≤ instead of <.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Solve: 2 − 5x ≤ 17",
+      "latex": "2 - 5x \\leq 17",
+      "steps": [
+        "-5x \\leq 15",
+        "x \\geq -3 \\quad \\text{(flip sign when dividing by −5)}"
+      ],
+      "answers": [
+        "x ≤ 3",
+        "x ≥ −3",
+        "x ≤ −3",
+        "x ≥ 3"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Subtract 2: −5x ≤ 15. Divide by −5 (flip sign): x ≥ −3. Check: x = 0: 2−0 = 2 ≤ 17 ✓. x = −4: 2+20 = 22 ≤ 17 ✗ (correctly excluded since −4 < −3).",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these inequalities from the solution with the largest minimum value to smallest:",
+      "items": [
+        "x > 10 (minimum: just above 10)",
+        "x > −2 (minimum: just above −2)",
+        "x ≥ 5 (minimum: 5)",
+        "x ≥ 1 (minimum: 1)"
+      ],
+      "correctOrder": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "difficulty": 3,
+      "explanation": "Rank by minimum: x>10 (≈10) > x≥5 (5) > x≥1 (1) > x>−2 (≈−2). The inequality type (strict vs. inclusive) matters for whether the boundary is included, but for ordering purposes the boundary value itself determines rank.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Inequality Wraith",
+    "taunt": "Greater than. Less than. Equally dead.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Solve: 3(x − 2) > 2x + 1",
+        "latex": "3(x - 2) > 2x + 1",
+        "answers": [
+          "x > 5",
+          "x > 7",
+          "x < 5",
+          "x > −5"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "Distribute: 3x − 6 > 2x + 1. Subtract 2x: x − 6 > 1. Add 6: x > 7. Check: x = 8: 3(6)=18 > 2(8)+1=17 ✓. x = 6: 3(4)=12 > 13 ✗ (correctly excluded).",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The sum of a number and twice the number is at most 21. Which inequality represents this?",
+        "latex": "n + 2n \\leq 21",
+        "answers": [
+          "n + 2 ≤ 21",
+          "3n ≤ 21",
+          "3n < 21",
+          "n ≤ 21"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "'A number' = n. 'Twice the number' = 2n. 'Sum': n + 2n = 3n. 'At most 21' means ≤ 21. So 3n ≤ 21 → n ≤ 7. 'At most' always uses ≤, not <. 'Less than' would be strict (<).",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Solve: −2(x + 3) ≥ 4 − 3x",
+        "latex": "-2(x + 3) \\geq 4 - 3x",
+        "answers": [
+          "x ≥ 10",
+          "x ≤ 10",
+          "x ≥ −10",
+          "x ≤ −10"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Distribute: −2x − 6 ≥ 4 − 3x. Add 3x to both sides: x − 6 ≥ 4. Add 6: x ≥ 10. Note: adding 3x to both sides (positive) does not flip the sign. Only dividing/multiplying by a negative flips it.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

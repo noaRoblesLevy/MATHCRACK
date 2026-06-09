@@ -1,0 +1,178 @@
+{
+  "id": "ratio-01",
+  "title": "The Ratio Ruins",
+  "kingdom": "ratios-percent",
+  "dungeonNumber": 1,
+  "lesson": {
+    "title": "Ratios & Unit Rate",
+    "body": "A **ratio** compares two quantities: it can be written as a:b, a to b, or a/b. Always simplify by dividing both parts by their GCF. A **unit rate** is a ratio with a denominator of 1 — it tells you how much of one thing per single unit of another. For example, 150 miles in 3 hours → 150/3 = 50 miles per hour. Unit rates make comparing easy: $2.40 for 6 apples = $0.40/apple vs. $1.75 for 5 apples = $0.35/apple — the second is the better deal."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Simplify the ratio 18:24.",
+      "latex": "18 : 24 = ?",
+      "steps": [
+        "\\text{GCF of 18 and 24 is 6.}",
+        "18 \\div 6 = 3, \\quad 24 \\div 6 = 4"
+      ],
+      "answers": [
+        "6:8",
+        "3:4",
+        "9:12",
+        "2:3"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "The GCF of 18 and 24 is 6. Dividing both by 6 gives 3:4. 6:8 and 9:12 are equivalent ratios but not fully simplified. 2:3 is wrong — there is no whole-number divisor that gives that result from 18:24.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A car travels 240 miles in 4 hours. What is the unit rate?",
+      "latex": "\\frac{240 \\text{ miles}}{4 \\text{ hours}} = ? \\text{ mph}",
+      "steps": [
+        "\\text{Divide total by the number of units:}",
+        "240 \\div 4 = 60"
+      ],
+      "answers": [
+        "48 mph",
+        "60 mph",
+        "80 mph",
+        "96 mph"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Unit rate = 240 ÷ 4 = 60 miles per hour. Dividing total distance by total time gives the rate per single hour. 48 would be 192÷4, and 80 would be 320÷4.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Store A sells 5 notebooks for $6.25. Store B sells 3 notebooks for $4.20. Which store has the lower unit price?",
+      "latex": "\\text{A: } \\frac{\\$6.25}{5} \\quad \\text{vs} \\quad \\text{B: } \\frac{\\$4.20}{3}",
+      "steps": [
+        "\\text{Store A: } 6.25 \\div 5 = \\$1.25 \\text{ per notebook}",
+        "\\text{Store B: } 4.20 \\div 3 = \\$1.40 \\text{ per notebook}"
+      ],
+      "answers": [
+        "Store A ($1.25 each)",
+        "Store B ($1.40 each)",
+        "They are equal",
+        "Cannot be determined"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Store A: $6.25 ÷ 5 = $1.25/notebook. Store B: $4.20 ÷ 3 = $1.40/notebook. $1.25 < $1.40, so Store A is cheaper per unit. You can't compare by totals alone — you must reduce to the same denominator (1 unit) first.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A recipe uses 3 cups of flour for every 2 cups of sugar. If you use 9 cups of flour, how many cups of sugar are needed?",
+      "latex": "\\frac{3 \\text{ flour}}{2 \\text{ sugar}} = \\frac{9 \\text{ flour}}{?}",
+      "steps": [
+        "\\text{Scale factor: } 9 \\div 3 = 3",
+        "\\text{Sugar: } 2 \\times 3 = 6"
+      ],
+      "answers": [
+        "3 cups",
+        "4 cups",
+        "6 cups",
+        "8 cups"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Flour scaled from 3 to 9, a factor of ×3. The same factor applies to sugar: 2 × 3 = 6 cups. Maintaining equal ratios is what keeps the recipe proportional.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these unit rates from slowest to fastest:",
+      "items": [
+        "100 miles in 4 hours = 25 mph",
+        "300 miles in 6 hours = 50 mph",
+        "180 miles in 3 hours = 60 mph",
+        "350 miles in 5 hours = 70 mph"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "Compute each: 100/4=25, 300/6=50, 180/3=60, 350/5=70. Order from slowest to fastest: 25 < 50 < 60 < 70. Always find the unit rate before ordering.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Ratio Revenant",
+    "taunt": "Is your rate per hour... or per grave?",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A faucet drips at 15 liters per hour. How many liters drip in 2.5 hours?",
+        "latex": "15 \\text{ L/hr} \\times 2.5 \\text{ hr}",
+        "answers": [
+          "30 L",
+          "37.5 L",
+          "40 L",
+          "6 L"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "Unit rate × time = 15 × 2.5 = 37.5 liters. Once you have a unit rate, scaling is simply multiplication. 30 would be 15 × 2 (forgetting the 0.5 hour), and 6 comes from dividing instead of multiplying.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Printer A prints 45 pages in 3 minutes. Printer B prints 80 pages in 5 minutes. How many more pages per minute does the faster printer produce?",
+        "latex": "\\frac{45}{3} \\text{ vs } \\frac{80}{5}",
+        "answers": [
+          "1 page/min",
+          "2 pages/min",
+          "5 pages/min",
+          "16 pages/min"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Printer A: 45 ÷ 3 = 15 pages/min. Printer B: 80 ÷ 5 = 16 pages/min. Difference: 16 − 15 = 1 page/min. Always convert to unit rates before comparing — raw totals are misleading when the time intervals differ.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The ratio of boys to girls in a class is 3:5. There are 40 girls. How many total students are in the class?",
+        "latex": "\\frac{\\text{boys}}{\\text{girls}} = \\frac{3}{5}, \\quad \\text{girls} = 40",
+        "answers": [
+          "48",
+          "56",
+          "64",
+          "72"
+        ],
+        "correct": 2,
+        "difficulty": 3,
+        "explanation": "5 parts = 40 girls → 1 part = 8. Boys = 3 × 8 = 24. Total = 24 + 40 = 64 students. The ratio gives you the relative 'parts' — find the value of one part, then multiply for boys, then add both groups.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

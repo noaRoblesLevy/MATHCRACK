@@ -1,0 +1,178 @@
+{
+  "id": "exp-02",
+  "title": "The Notation Nebula",
+  "kingdom": "exponents-expressions",
+  "dungeonNumber": 2,
+  "lesson": {
+    "title": "Scientific Notation",
+    "body": "**Scientific notation** expresses very large or very small numbers as a × 10ⁿ, where 1 ≤ a < 10 and n is an integer. To convert a large number: move the decimal left until one non-zero digit is to the left — the number of moves is the positive exponent. Example: 93,000,000 = 9.3 × 10⁷. For small numbers, move the decimal right — the exponent is negative. Example: 0.000045 = 4.5 × 10⁻⁵. To multiply in scientific notation: multiply the coefficients and add the exponents."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Write 47,000 in scientific notation.",
+      "latex": "47{,}000 = ? \\times 10^?",
+      "steps": [
+        "\\text{Move decimal left 4 places: } 4.7",
+        "47{,}000 = 4.7 \\times 10^4"
+      ],
+      "answers": [
+        "4.7 × 10³",
+        "4.7 × 10⁴",
+        "47 × 10³",
+        "0.47 × 10⁵"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Move the decimal left until one digit is before it: 47000. → 4.7000, 4 moves = 10⁴. So 47,000 = 4.7 × 10⁴. Both 47 × 10³ and 0.47 × 10⁵ equal the right value but are not proper scientific notation (coefficient must satisfy 1 ≤ a < 10).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Convert 3.6 × 10⁻⁴ to standard notation.",
+      "latex": "3.6 \\times 10^{-4} = ?",
+      "steps": [
+        "\\text{Negative exponent → move decimal LEFT 4 places}",
+        "3.6 \\to 0.00036"
+      ],
+      "answers": [
+        "36,000",
+        "0.36",
+        "0.00036",
+        "0.000036"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "10⁻⁴ means move the decimal point 4 places to the left: 3.6 → 0.00036. A negative exponent signals a number between 0 and 1. Moving right instead (positive exponent direction) gives 36,000 — the opposite direction error.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Multiply: (2 × 10³) × (4 × 10⁵)",
+      "latex": "(2 \\times 10^3) \\times (4 \\times 10^5)",
+      "steps": [
+        "\\text{Multiply coefficients: } 2 \\times 4 = 8",
+        "\\text{Add exponents: } 3 + 5 = 8",
+        "8 \\times 10^8"
+      ],
+      "answers": [
+        "8 × 10⁸",
+        "6 × 10⁸",
+        "8 × 10¹⁵",
+        "8 × 10²"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Multiply coefficients: 2 × 4 = 8. Add exponents (product rule): 10³ × 10⁵ = 10⁸. Result: 8 × 10⁸. The 8 × 10¹⁵ error multiplies the exponents (3×5) instead of adding them.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which number is largest?",
+      "latex": "\\text{Compare these four values:}",
+      "steps": [
+        "\\text{Compare exponents first, then coefficients.}"
+      ],
+      "answers": [
+        "6.1 × 10⁴",
+        "9.9 × 10³",
+        "3.0 × 10⁵",
+        "7.5 × 10⁴"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "3.0 × 10⁵ = 300,000. The others: 6.1 × 10⁴ = 61,000; 9.9 × 10³ = 9,900; 7.5 × 10⁴ = 75,000. The highest exponent (10⁵) wins, regardless of how large the coefficient is for lower powers. 300,000 > 75,000 > 61,000 > 9,900.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these numbers from smallest to largest:",
+      "items": [
+        "5.0 × 10⁻³ = 0.005",
+        "2.5 × 10² = 250",
+        "8.1 × 10⁻¹ = 0.81",
+        "1.2 × 10¹ = 12"
+      ],
+      "correctOrder": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "difficulty": 3,
+      "explanation": "Expand each: 5×10⁻³=0.005, 2.5×10²=250, 8.1×10⁻¹=0.81, 1.2×10¹=12. Order: 0.005 < 0.81 < 12 < 250. Negative exponents produce small numbers; larger positive exponents produce larger numbers.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Notation Wraith",
+    "taunt": "Ten to the power of your failure.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "The Sun is about 1.5 × 10⁸ km from Earth. Light travels at 3 × 10⁵ km/s. How many seconds does it take light to reach Earth?",
+        "latex": "t = \\frac{1.5 \\times 10^8}{3 \\times 10^5}",
+        "answers": [
+          "5 × 10² seconds",
+          "5 × 10³ seconds",
+          "4.5 × 10¹³ seconds",
+          "0.5 × 10³ seconds"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Divide coefficients: 1.5 ÷ 3 = 0.5. Subtract exponents: 10⁸ ÷ 10⁵ = 10³. So t = 0.5 × 10³ = 5 × 10² = 500 seconds (about 8.3 minutes). Note that 0.5 × 10³ must be rewritten as 5 × 10² to be proper scientific notation.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Add: (3.2 × 10⁴) + (5.0 × 10³). Express in scientific notation.",
+        "latex": "3.2 \\times 10^4 + 5.0 \\times 10^3",
+        "answers": [
+          "8.2 × 10⁴",
+          "3.7 × 10⁴",
+          "8.2 × 10³",
+          "3.7 × 10⁷"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "Convert to same power: 5.0 × 10³ = 0.5 × 10⁴. Now add: (3.2 + 0.5) × 10⁴ = 3.7 × 10⁴. You cannot add 3.2 + 5.0 directly because the exponents differ. Always align exponents before adding or subtracting.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A bacterium is 2 × 10⁻⁶ meters wide. A human hair is 7 × 10⁻⁵ meters wide. How many times wider is the hair than the bacterium?",
+        "latex": "\\frac{7 \\times 10^{-5}}{2 \\times 10^{-6}}",
+        "answers": [
+          "3.5 times",
+          "35 times",
+          "350 times",
+          "0.35 times"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "Divide: (7÷2) × 10^(−5−(−6)) = 3.5 × 10¹ = 35 times wider. The exponent subtraction: −5 − (−6) = −5 + 6 = 1, giving 10¹ = 10. So 3.5 × 10 = 35.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

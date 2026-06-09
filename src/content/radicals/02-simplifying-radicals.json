@@ -1,0 +1,177 @@
+{
+  "id": "rad-02",
+  "title": "The Simplification Shrine",
+  "kingdom": "radicals",
+  "dungeonNumber": 2,
+  "lesson": {
+    "title": "Simplifying Radicals",
+    "body": "A radical is **simplified** when no perfect square factor remains under the radical sign. Use the **product rule**: √(ab) = √a · √b. Steps: (1) Factor out the largest perfect square from the radicand. (2) Take its square root outside. (3) Leave the rest inside. Example: √48 = √(16·3) = 4√3. Also: √(x⁴) = x² and √(x⁵) = x²√x. The **quotient rule**: √(a/b) = √a/√b. Always rationalize denominators: rewrite fractions so no radical is in the denominator."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Simplify: √72",
+      "latex": "\\sqrt{72}",
+      "steps": [
+        "72 = 36 \\times 2",
+        "\\sqrt{36 \\times 2} = \\sqrt{36} \\cdot \\sqrt{2} = 6\\sqrt{2}"
+      ],
+      "answers": [
+        "8√2",
+        "6√2",
+        "6√3",
+        "3√8"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Factor out the largest perfect square: 72 = 36 × 2. √72 = √36 · √2 = 6√2. Using 9×8 instead gives 3√8, which isn't fully simplified because √8 = 2√2. Always use the largest perfect square factor first.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Simplify: √(x⁶)",
+      "latex": "\\sqrt{x^6}",
+      "steps": [
+        "x^6 = (x^3)^2",
+        "\\sqrt{(x^3)^2} = x^3"
+      ],
+      "answers": [
+        "x²",
+        "x³",
+        "x⁴",
+        "x⁶"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "√(x⁶) = √((x³)²) = x³ (assuming x ≥ 0). General rule: √(xⁿ) = x^(n/2). For even exponents, divide by 2. For odd: √(x⁵) = x²√x (take out the largest even power).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Simplify: √(50x⁴y³)",
+      "latex": "\\sqrt{50x^4y^3}",
+      "steps": [
+        "50 = 25 \\times 2, \\; x^4 = (x^2)^2, \\; y^3 = y^2 \\cdot y",
+        "= 5x^2y\\sqrt{2y}"
+      ],
+      "answers": [
+        "5x²y√(2y)",
+        "5xy²√(2y)",
+        "5x²√(2y³)",
+        "10x²y√y"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Split: √50 = 5√2; √(x⁴) = x²; √(y³) = √(y²·y) = y√y. Combine: 5x²y√(2y). Check dimensions: 5²=25, x⁴, y²·(2y) = 2y³ → under radical: 25·x⁴·2y³ = 50x⁴y³ ✓.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Rationalize: 3/√5",
+      "latex": "\\frac{3}{\\sqrt{5}}",
+      "steps": [
+        "\\frac{3}{\\sqrt{5}} \\cdot \\frac{\\sqrt{5}}{\\sqrt{5}} = \\frac{3\\sqrt{5}}{5}"
+      ],
+      "answers": [
+        "3√5",
+        "3√5/5",
+        "√5/3",
+        "15/√5"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Multiply numerator and denominator by √5: (3/√5)(√5/√5) = 3√5/5. This removes the radical from the denominator. The denominator becomes √5·√5 = 5. Standard form requires no radicals in the denominator.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to simplify √(180):",
+      "items": [
+        "Find the largest perfect square factor: 36 × 5 = 180",
+        "Apply the product rule: √(36 × 5) = √36 · √5",
+        "Simplify √36 = 6",
+        "Write the result: 6√5"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "Factor → split → simplify the perfect square root → combine. Using 9×20 would give 3√20 = 3·2√5 = 6√5 — same answer, but takes an extra step. Choosing the largest perfect square factor first is always more efficient.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Radical Shade",
+    "taunt": "Simplify yourself out of my dungeon. You cannot.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Simplify: √(75a³b⁴)",
+        "latex": "\\sqrt{75a^3b^4}",
+        "answers": [
+          "5ab²√(3a)",
+          "5a²b²√3",
+          "15a√(ab⁴)",
+          "5ab√(3ab²)"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "75 = 25×3; √25=5. a³=a²·a; √(a²)=a. b⁴=(b²)²; √(b⁴)=b². Result: 5ab²√(3a). Check: 25·a²·b⁴·3a = 75a³b⁴ ✓.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Rationalize the denominator: 6/√8",
+        "latex": "\\frac{6}{\\sqrt{8}}",
+        "answers": [
+          "6√8/8",
+          "3√2/2",
+          "3√2",
+          "6/2√2"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "First simplify √8 = 2√2. So 6/√8 = 6/(2√2) = 3/√2. Rationalize: 3/√2 · √2/√2 = 3√2/2. Alternatively: 6/√8 · √8/√8 = 6√8/8 = 6·2√2/8 = 3√2/2. Same result.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which expression is NOT fully simplified?",
+        "latex": "5\\sqrt{3}, \\quad 2\\sqrt{12}, \\quad 3\\sqrt{7}, \\quad 4\\sqrt{5}",
+        "answers": [
+          "5√3",
+          "2√12",
+          "3√7",
+          "4√5"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "2√12 is not simplified: √12 = √(4·3) = 2√3, so 2√12 = 2·2√3 = 4√3. The others — 5√3, 3√7, 4√5 — all have prime radicands (no perfect square factors), so they are fully simplified.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

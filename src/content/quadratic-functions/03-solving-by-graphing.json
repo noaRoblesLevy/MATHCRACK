@@ -1,0 +1,175 @@
+{
+  "id": "qfunc-03",
+  "title": "The Graphing Gauntlet",
+  "kingdom": "quadratic-functions",
+  "dungeonNumber": 3,
+  "lesson": {
+    "title": "Solving Quadratics by Graphing",
+    "body": "The **solutions** of ax²+bx+c=0 are the **x-intercepts** of y=ax²+bx+c. To solve graphically: (1) Graph the parabola. (2) Find where it crosses the x-axis. The x-values at those points are the solutions. If the parabola touches but doesn't cross (tangent), there is exactly one solution (double root). If it doesn't reach the x-axis, there are no real solutions. Graphing gives approximate answers — use algebra for exact ones."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "The graph of y = x² − x − 6 crosses the x-axis at x = 3 and x = −2. What are the solutions to x² − x − 6 = 0?",
+      "latex": "x^2 - x - 6 = 0",
+      "steps": [
+        "\\text{x-intercepts of graph} = \\text{solutions of equation}"
+      ],
+      "answers": [
+        "x = 3 and x = 2",
+        "x = 3 and x = −2",
+        "x = −3 and x = 2",
+        "x = −6 only"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "The x-intercepts of y=x²−x−6 are the solutions to x²−x−6=0. Given intercepts at x=3 and x=−2, those are the solutions. Verify: 9−3−6=0 ✓ and 4+2−6=0 ✓.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A parabola is entirely above the x-axis (never touches it). How many real solutions does the corresponding equation have?",
+      "latex": "y = ax^2 + bx + c > 0 \\text{ for all } x",
+      "steps": [
+        "\\text{No x-intercepts} \\Rightarrow \\text{no real solutions}"
+      ],
+      "answers": [
+        "Two real solutions",
+        "One real solution",
+        "No real solutions",
+        "Infinitely many solutions"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "If the parabola is entirely above the x-axis, it never equals zero. Therefore ax²+bx+c=0 has no real solutions. This happens when Δ=b²−4ac<0. The graph and the discriminant tell the same story.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "From the graph of y = x² − 6x + 9, what is the solution count of x² − 6x + 9 = 0?",
+      "latex": "y = x^2 - 6x + 9 = (x-3)^2",
+      "steps": [
+        "(x-3)^2 \\geq 0, \\text{ touches x-axis at } x=3"
+      ],
+      "answers": [
+        "0 solutions",
+        "1 solution (double root)",
+        "2 solutions",
+        "3 solutions"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "y=(x−3)² touches the x-axis at exactly one point: (3,0). The graph is tangent to the x-axis, so there is one solution (x=3, a double root). Discriminant: 36−4(9)=0 ✓ confirming one root.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Estimate the solutions to x² + 2x − 2 = 0 from the graph where the parabola crosses near x ≈ 0.7 and x ≈ −2.7.",
+      "latex": "x^2 + 2x - 2 = 0",
+      "steps": [
+        "\\text{Exact: } x = \\frac{-2 \\pm \\sqrt{12}}{2} = -1 \\pm \\sqrt{3}",
+        "-1 + \\sqrt{3} \\approx 0.73, \\quad -1 - \\sqrt{3} \\approx -2.73"
+      ],
+      "answers": [
+        "x = 1 or x = −3 (exact)",
+        "x ≈ 0.73 or x ≈ −2.73 (estimated)",
+        "x = 0 or x = −2 (estimated)",
+        "x = 2 or x = −4 (estimated)"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "The graph gives approximate values. Exact values via formula: x=(−2±√12)/2=−1±√3 ≈ 0.73 and −2.73. Graphical solutions are useful for quick estimates but the algebraic method gives exact answers.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the steps to solve x² − 2x − 3 = 0 graphically:",
+      "items": [
+        "Find vertex: x=1, y=1−2−3=−4, vertex (1,−4)",
+        "Find y-intercept: (0, −3) and mirror point (2, −3)",
+        "Identify x-intercepts where y=0: x = −1 and x = 3",
+        "Write solutions: x = −1 or x = 3"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "Plot vertex (1,−4), y-intercept (0,−3), then sketch the parabola. Where it crosses the x-axis: (−1,0) and (3,0). Verify: 1+2−3=0 ✓ and 9−6−3=0 ✓.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Intersection Lich",
+    "taunt": "Where parabola meets x-axis — and ends you.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "The height of a ball is h = −t² + 4t. By graphing (or reasoning), at what time does it return to the ground?",
+        "latex": "-t^2 + 4t = 0",
+        "answers": [
+          "t = 2 s",
+          "t = 4 s",
+          "t = 0 and t = 4 s",
+          "t = 0 s only"
+        ],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "Set h=0: −t²+4t=0 → −t(t−4)=0 → t=0 or t=4. t=0 is launch; t=4 is landing. The graph of h=−t²+4t is a downward parabola crossing t-axis at 0 and 4, with maximum height h(2)=4 m at t=2 s.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What is true about y = x² + 2 in terms of x-intercepts?",
+        "latex": "y = x^2 + 2",
+        "answers": [
+          "It crosses the x-axis at x = ±√2",
+          "It has no real x-intercepts",
+          "It touches the x-axis once",
+          "It crosses at x = 0"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "The minimum of y=x²+2 is at y=2 (when x=0). Since the minimum value is 2>0, the parabola is always above the x-axis and never crosses it. Setting y=0: x²=−2, which has no real solution.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Two parabolas: y = x² − 5x + 4 and y = x² − 5x + 6.25. How many x-intercepts does each have?",
+        "latex": "\\Delta_1 = 25 - 16 = 9; \\quad \\Delta_2 = 25 - 25 = 0",
+        "answers": [
+          "Both have 2 x-intercepts",
+          "First has 2, second has 1",
+          "First has 2, second has 0",
+          "Both have 1 x-intercept"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "First: Δ=25−16=9>0 → two x-intercepts (at x=1 and x=4). Second: Δ=25−4(6.25)=25−25=0 → exactly one x-intercept (tangent to x-axis at x=2.5). Both open upward; the second has its vertex exactly on the x-axis.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 25
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 35
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 28
+      },
+      {
+        "type": "solution-orb",
+        "weight": 12
+      }
+    ]
+  },
+  "lootTable": []
+}

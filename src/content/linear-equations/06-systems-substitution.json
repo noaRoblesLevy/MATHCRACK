@@ -1,0 +1,181 @@
+{
+  "id": "lin-06",
+  "title": "The Substitution Shrine",
+  "kingdom": "linear-equations",
+  "dungeonNumber": 6,
+  "lesson": {
+    "title": "Systems by Substitution",
+    "body": "A **system of equations** is two or more equations with the same variables. The **substitution method** works when one equation is already solved (or easily solved) for a variable. Steps: (1) Solve one equation for one variable. (2) Substitute that expression into the other equation. (3) Solve the resulting single-variable equation. (4) Back-substitute to find the other variable. (5) Check in both original equations."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Which ordered pair (x, y) satisfies both equations: y = 2x − 1 and y = x + 3?",
+      "latex": "y = 2x - 1 \\quad y = x + 3",
+      "steps": [
+        "\\text{Set equal: } 2x - 1 = x + 3",
+        "x = 4, \\quad y = 7"
+      ],
+      "answers": [
+        "(2, 5)",
+        "(4, 7)",
+        "(3, 6)",
+        "(1, 4)"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Since both equal y, set equal: 2x−1 = x+3 → x = 4. Back-sub: y = 2(4)−1 = 7. Check in second: y = 4+3 = 7 ✓. The solution (4, 7) satisfies both equations simultaneously.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Solve the system: y = 3x + 2 and 2x + y = 12",
+      "latex": "y = 3x + 2 \\quad 2x + y = 12",
+      "steps": [
+        "\\text{Substitute: } 2x + (3x + 2) = 12",
+        "5x + 2 = 12 \\Rightarrow x = 2",
+        "y = 3(2) + 2 = 8"
+      ],
+      "answers": [
+        "(1, 5)",
+        "(2, 8)",
+        "(3, 6)",
+        "(4, 4)"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Substitute y = 3x + 2 into 2x + y = 12: 2x + 3x + 2 = 12 → 5x = 10 → x = 2. Then y = 3(2) + 2 = 8. Check: 2(2) + 8 = 12 ✓.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Solve: x + y = 10 and y = 2x − 2",
+      "latex": "x + y = 10 \\quad y = 2x - 2",
+      "steps": [
+        "x + (2x - 2) = 10",
+        "3x = 12 \\Rightarrow x = 4",
+        "y = 2(4) - 2 = 6"
+      ],
+      "answers": [
+        "(3, 7)",
+        "(4, 6)",
+        "(5, 5)",
+        "(6, 4)"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Substitute y = 2x−2 into x+y=10: x + 2x−2 = 10 → 3x = 12 → x = 4, y = 6. Check: 4+6=10 ✓ and 6=2(4)−2=6 ✓.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Solve: 2x + 3y = 7 and x = 4 − y",
+      "latex": "2x + 3y = 7 \\quad x = 4 - y",
+      "steps": [
+        "2(4 - y) + 3y = 7",
+        "8 - 2y + 3y = 7",
+        "y = -1, \\quad x = 5"
+      ],
+      "answers": [
+        "(5, −1)",
+        "(3, 1)",
+        "(2, 1)",
+        "(1, 5)"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Substitute x = 4−y: 2(4−y) + 3y = 7 → 8 − 2y + 3y = 7 → 8 + y = 7 → y = −1. Then x = 4 − (−1) = 5. Check: 2(5) + 3(−1) = 10 − 3 = 7 ✓.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the substitution steps to solve: 3x − y = 5 and y = x + 1",
+      "items": [
+        "Substitute: 3x − (x + 1) = 5",
+        "Simplify: 2x − 1 = 5 → 2x = 6 → x = 3",
+        "Back-substitute: y = 3 + 1 = 4",
+        "Check: 3(3) − 4 = 5 ✓ and 4 = 3 + 1 ✓"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "Always substitute the isolated variable first, then solve the one-variable equation, then find the other variable by back-substituting, then verify in both original equations. Skipping the check risks accepting an arithmetic error.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Substitution Shade",
+    "taunt": "Two equations. One survivor.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Two numbers sum to 30, and one is 6 more than twice the other. What is the larger number?",
+        "latex": "x + y = 30 \\quad x = 2y + 6",
+        "answers": [
+          "18",
+          "20",
+          "22",
+          "26"
+        ],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "x = 2y + 6. Substitute into x + y = 30: (2y+6) + y = 30 → 3y + 6 = 30 → 3y = 24 → y = 8. Then x = 2(8) + 6 = 22. The larger number is 22. Check: 22 + 8 = 30 ✓ and 22 = 2(8)+6 ✓.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Solve the system: x − y = 3 and 2x + y = 9",
+        "latex": "x - y = 3 \\quad 2x + y = 9",
+        "answers": [
+          "(2, −1)",
+          "(4, 1)",
+          "(3, 0)",
+          "(5, 2)"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "From equation 1: x = y + 3. Substitute into eq 2: 2(y+3) + y = 9 → 3y + 6 = 9 → y = 1. Then x = 1 + 3 = 4. Solution: (4, 1). Check: 4−1=3 ✓ and 2(4)+1=9 ✓.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Tickets cost $5 for adults and $3 for children. A group of 20 people paid $76 total. How many adults were in the group?",
+        "latex": "a + c = 20 \\quad 5a + 3c = 76",
+        "answers": [
+          "6",
+          "8",
+          "10",
+          "12"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "From equation 1: c = 20 − a. Substitute: 5a + 3(20−a) = 76 → 5a + 60 − 3a = 76 → 2a = 16 → a = 8. Children: 20 − 8 = 12. Check: 5(8) + 3(12) = 40 + 36 = 76 ✓.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

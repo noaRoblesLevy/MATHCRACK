@@ -1,0 +1,178 @@
+{
+  "id": "lin-04",
+  "title": "The Compound Catacombs",
+  "kingdom": "linear-equations",
+  "dungeonNumber": 4,
+  "lesson": {
+    "title": "Compound Inequalities",
+    "body": "A **compound inequality** combines two inequalities. An **AND** compound inequality (like −3 < x ≤ 5) requires both conditions to hold simultaneously — the solution is the overlap (intersection). An **OR** compound inequality (like x < 2 or x > 7) is satisfied when at least one condition holds — the solution is the union. To solve, treat each part separately, then combine. Example: 2 < 3x − 1 < 11 → add 1 everywhere: 3 < 3x < 12 → divide: 1 < x < 4."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Which value of x satisfies both x > −1 AND x < 4?",
+      "latex": "-1 < x < 4",
+      "steps": [
+        "\\text{x must be greater than −1 AND less than 4}",
+        "\\text{Test each answer}"
+      ],
+      "answers": [
+        "x = −1",
+        "x = 4",
+        "x = 0",
+        "x = 5"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "x = 0: −1 < 0 ✓ and 0 < 4 ✓. Both conditions satisfied. x = −1 fails the first (not strictly greater). x = 4 fails the second. x = 5 fails the second. For AND inequalities, both must hold.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Solve: 1 < 2x + 3 < 11",
+      "latex": "1 < 2x + 3 < 11",
+      "steps": [
+        "\\text{Subtract 3 from all parts: } -2 < 2x < 8",
+        "\\text{Divide all parts by 2: } -1 < x < 4"
+      ],
+      "answers": [
+        "−2 < x < 4",
+        "−1 < x < 4",
+        "1 < x < 4",
+        "−1 < x < 8"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Subtract 3 from all three parts: 1−3 < 2x < 11−3 → −2 < 2x < 8. Divide all by 2: −1 < x < 4. The −2 < x < 4 error skips the division step.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What values satisfy: x < −2 OR x ≥ 5?",
+      "latex": "x < -2 \\text{ OR } x \\geq 5",
+      "steps": [
+        "\\text{OR means: satisfy EITHER condition}",
+        "\\text{Solution: all x less than −2, or 5 and above}"
+      ],
+      "answers": [
+        "−2 ≤ x < 5",
+        "x < −2 only",
+        "x < −2 or x ≥ 5",
+        "no solution"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "OR unions the two solution sets. Any x < −2 (like −3, −10) works. Any x ≥ 5 (like 5, 100) works. Values between −2 and 5 satisfy neither condition. The −2 ≤ x < 5 answer describes the gap (the values NOT in the solution).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Solve: −4 ≤ 3x + 2 ≤ 14",
+      "latex": "-4 \\leq 3x + 2 \\leq 14",
+      "steps": [
+        "\\text{Subtract 2: } -6 \\leq 3x \\leq 12",
+        "\\text{Divide by 3: } -2 \\leq x \\leq 4"
+      ],
+      "answers": [
+        "−2 ≤ x ≤ 4",
+        "−6 ≤ x ≤ 12",
+        "−2 < x < 4",
+        "0 ≤ x ≤ 4"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Subtract 2 from all parts: −6 ≤ 3x ≤ 12. Divide by 3: −2 ≤ x ≤ 4. The ≤ signs are preserved (not flipped) because we divided by a positive number. The −6 ≤ x ≤ 12 error forgets to divide by 3.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Match each compound inequality to the correct description:",
+      "items": [
+        "−3 < x < 7 → AND: x between −3 and 7",
+        "x ≤ 1 or x > 9 → OR: x on two separate rays",
+        "x > 0 and x > 5 → AND: simplifies to x > 5",
+        "x < 4 or x < 10 → OR: simplifies to x < 10"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "For AND, the solution is the overlap — so x > 0 AND x > 5 means x must be both > 0 and > 5, which is just x > 5. For OR, the solution is the union — so x < 4 OR x < 10 is satisfied by anything less than 10 (the wider set).",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Compound Dread",
+    "taunt": "Two bounds. Nowhere to run.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Solve: −3 < −x + 1 ≤ 5",
+        "latex": "-3 < -x + 1 \\leq 5",
+        "answers": [
+          "−4 ≤ x < 4",
+          "−4 < x ≤ 4",
+          "4 > x ≥ −4",
+          "−4 ≤ x ≤ 4"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Subtract 1 from all parts: −4 < −x ≤ 4. Multiply all parts by −1 (flip both signs): 4 > x ≥ −4, which is the same as −4 ≤ x < 4. Both inequality signs flip because we multiplied by a negative. The strict < on the left becomes strict > on the right — rewritten as < for x: x < 4. The ≤ on the right becomes ≥ for x: x ≥ −4.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A thermometer reads between −5°C and 35°C inclusive. Which compound inequality describes valid readings t?",
+        "latex": "\\text{Between } -5^\\circ \\text{ and } 35^\\circ \\text{ inclusive}",
+        "answers": [
+          "t < −5 or t > 35",
+          "−5 ≤ t ≤ 35",
+          "−5 < t < 35",
+          "t ≤ −5 or t ≥ 35"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "'Between ... inclusive' means both endpoints are included, so ≤ on both sides: −5 ≤ t ≤ 35. The OR options describe values outside the range, not inside. 'Inclusive' means closed circles on both endpoints.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which x satisfies: 2x + 1 > 9 OR 3x − 2 < 1?",
+        "latex": "2x + 1 > 9 \\text{ OR } 3x - 2 < 1",
+        "answers": [
+          "x > 4 only",
+          "x < 1 only",
+          "x < 1 or x > 4",
+          "1 < x < 4"
+        ],
+        "correct": 2,
+        "difficulty": 3,
+        "explanation": "Solve each: 2x+1>9 → x>4. 3x−2<1 → 3x<3 → x<1. Union: x < 1 OR x > 4. The gap (1 ≤ x ≤ 4) satisfies neither. This is an OR inequality so we union, not intersect — the AND would give the impossible condition x < 1 and x > 4 simultaneously.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

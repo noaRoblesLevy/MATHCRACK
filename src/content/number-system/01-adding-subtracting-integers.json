@@ -17,7 +17,12 @@
         "|-8| + |-5| = 8 + 5 = 13",
         "\\text{Both negative, so answer is } -13"
       ],
-      "answers": ["-13", "13", "-3", "3"],
+      "answers": [
+        "-13",
+        "13",
+        "-3",
+        "3"
+      ],
       "correct": 0,
       "difficulty": 1,
       "explanation": "Both numbers are negative, so we add their absolute values: 8 + 5 = 13, and the result is negative: −13. Think of it as going 8 steps left on the number line, then 5 more steps left — you end up 13 steps left of zero.",
@@ -32,7 +37,12 @@
         "|9| - |-4| = 9 - 4 = 5",
         "\\text{9 has the larger absolute value and is positive, so the answer is } +5"
       ],
-      "answers": ["-13", "-5", "5", "13"],
+      "answers": [
+        "-13",
+        "-5",
+        "5",
+        "13"
+      ],
       "correct": 2,
       "difficulty": 1,
       "explanation": "The signs differ, so subtract the smaller absolute value from the larger: 9 − 4 = 5. Since 9 has the larger absolute value and is positive, the result is +5. On the number line: start at −4, move 9 steps right, land on +5.",
@@ -46,7 +56,12 @@
         "\\text{Subtracting a negative = adding a positive: } a - (-b) = a + b",
         "6 - (-10) = 6 + 10 = 16"
       ],
-      "answers": ["-16", "-4", "4", "16"],
+      "answers": [
+        "-16",
+        "-4",
+        "4",
+        "16"
+      ],
       "correct": 3,
       "difficulty": 1,
       "explanation": "Subtracting a negative number is the same as adding a positive: 6 − (−10) = 6 + 10 = 16. Two negatives make a positive. A common error is treating this as 6 − 10 = −4, forgetting to flip the sign of the second term.",
@@ -61,7 +76,12 @@
         "\\text{Different signs: } |-15| - |7| = 15 - 7 = 8",
         "\\text{Larger absolute value is negative, so answer is } -8"
       ],
-      "answers": ["-22", "22", "8", "-8"],
+      "answers": [
+        "-22",
+        "22",
+        "8",
+        "-8"
+      ],
       "correct": 3,
       "difficulty": 2,
       "explanation": "Change subtraction to adding the opposite: −15 − (−7) = −15 + 7. Now add integers with different signs: |−15| − |7| = 8, and since −15 has the larger absolute value, the answer is −8. Don't confuse this with −15 − 7 = −22.",
@@ -76,13 +96,20 @@
         "3 + (-9) = -6",
         "3 + 9 = 12"
       ],
-      "correctOrder": [0, 2, 1, 3],
+      "correctOrder": [
+        0,
+        2,
+        1,
+        3
+      ],
       "difficulty": 2,
       "explanation": "−12 < −6 < 6 < 12. Same signs → add magnitudes (with that sign). Different signs → subtract magnitudes (larger sign wins). Ordering these correctly shows how sign rules control whether the result is negative or positive.",
       "xp": 20
     }
   ],
   "boss": {
+    "name": "The Integer Specter",
+    "taunt": "Positive. Negative. Both will destroy you.",
     "questions": [
       {
         "type": "multiple-choice",
@@ -94,7 +121,12 @@
           "\\text{Add negatives: } -7 + (-2) = -9",
           "-9 + 8 = -1"
         ],
-        "answers": ["-1", "1", "-17", "13"],
+        "answers": [
+          "-1",
+          "1",
+          "-17",
+          "13"
+        ],
         "correct": 0,
         "difficulty": 2,
         "explanation": "Convert: −7 + 3 + 5 + (−2). Group positives (3+5=8) and negatives (−7+(−2)=−9), then combine: −9+8 = −1. Working left to right also works: −7+3=−4; −4+5=1; 1+(−2)=−1. Either method gives −1.",
@@ -108,7 +140,12 @@
           "-12 + 20 = 8",
           "8 - 8 = 0"
         ],
-        "answers": ["-1°F", "0°F", "40°F", "-20°F"],
+        "answers": [
+          "-1°F",
+          "0°F",
+          "40°F",
+          "-20°F"
+        ],
         "correct": 1,
         "difficulty": 2,
         "explanation": "Start at −12, add 20: −12 + 20 = 8. Then subtract 8: 8 − 8 = 0°F. This word problem applies integer addition and subtraction in a real context. It's important to track the sign of each change (rose = positive, dropped = negative).",
@@ -123,14 +160,37 @@
           "-3 - 7 = -10",
           "-10 + (-3) = -13"
         ],
-        "answers": ["1", "-13", "7", "-7"],
+        "answers": [
+          "1",
+          "-13",
+          "7",
+          "-7"
+        ],
         "correct": 1,
         "difficulty": 3,
         "explanation": "Substitute: −3 − 7 + (−3). Then compute left to right: −3 − 7 = −10 (same sign, add magnitudes), then −10 + (−3) = −13 (same sign again). Alternatively write as 2a − b = 2(−3) − 7 = −6 − 7 = −13.",
         "xp": 25
       }
     ],
-    "passMark": 2
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
   },
   "lootTable": []
 }

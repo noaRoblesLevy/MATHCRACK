@@ -1,0 +1,180 @@
+{
+  "id": "stat-02",
+  "title": "The Measures Mausoleum",
+  "kingdom": "stats-probability",
+  "dungeonNumber": 2,
+  "lesson": {
+    "title": "Mean, Median, Mode & Range",
+    "body": "**Mean**: sum of all values ÷ count. **Median**: the middle value when sorted (average of two middle values for even count). **Mode**: the value(s) that appear most often (can be multiple or none). **Range**: max − min. Each measure tells a different story: mean is sensitive to outliers; median is resistant; mode shows frequency. Example for {2, 4, 4, 6, 8}: mean=4.8, median=4, mode=4, range=6."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Find the mean of: 12, 8, 15, 7, 3",
+      "latex": "\\bar{x} = \\frac{12 + 8 + 15 + 7 + 3}{5}",
+      "steps": [
+        "\\text{Sum: } 12+8+15+7+3 = 45",
+        "45 \\div 5 = 9"
+      ],
+      "answers": [
+        "8",
+        "9",
+        "10",
+        "15"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Mean = 45 ÷ 5 = 9. The 8 error computes the median instead. The 15 error picks the maximum. Always sum all values first, then divide by the count of values.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Find the median of: 5, 1, 8, 3, 9, 2, 6",
+      "latex": "\\text{Sorted: } 1, 2, 3, 5, 6, 8, 9",
+      "steps": [
+        "\\text{Sort: } 1, 2, 3, 5, 6, 8, 9",
+        "\\text{Middle value (4th of 7): } 5"
+      ],
+      "answers": [
+        "3",
+        "5",
+        "6",
+        "4"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Sort first: 1, 2, 3, 5, 6, 8, 9. With 7 values, the middle is the 4th: 5. The 3 answer picks the 3rd value (forgetting to sort first or miscounting). The mean is (1+2+3+5+6+8+9)/7 = 34/7 ≈ 4.86 — different from the median.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A data set: 4, 7, 2, 7, 9, 3, 7, 1. What is the mode?",
+      "latex": "\\{4, 7, 2, 7, 9, 3, 7, 1\\}",
+      "steps": [
+        "\\text{Tally frequencies: 7 appears 3 times (most)}",
+        "\\text{Mode} = 7"
+      ],
+      "answers": [
+        "4",
+        "7",
+        "5.5",
+        "No mode"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "7 appears three times (more than any other value). Mode = 7. The 5.5 is the median of this sorted set: 1,2,3,4,7,7,7,9 → average of 4th and 5th values = (4+7)/2 = 5.5. A data set can have one mode, multiple modes, or no mode (if all values appear equally often).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A student scores 72, 85, 91, 68, 95. An outlier of 12 is added. How does this affect the mean vs median?",
+      "latex": "\\text{Add 12 to } \\{72, 85, 91, 68, 95\\}",
+      "steps": [
+        "\\text{Original mean: } (72+85+91+68+95)/5 = 411/5 = 82.2",
+        "\\text{New mean: } (411+12)/6 = 423/6 = 70.5",
+        "\\text{Original median (sorted): 72, 85, 91 → 85}",
+        "\\text{New median (sorted): 12,68,72,85,91,95 → (72+85)/2 = 78.5}"
+      ],
+      "answers": [
+        "Both decrease equally",
+        "Mean decreases significantly; median decreases slightly",
+        "Neither changes",
+        "Only the median decreases significantly"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Mean drops from 82.2 to 70.5 (large change — outlier pulls mean down). Median drops from 85 to 78.5 (smaller change). The mean is sensitive to outliers because it uses every value in the calculation; the median only uses the middle position.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these data sets by their range, smallest to largest:",
+      "items": [
+        "{3, 5, 5, 7} → range = 4",
+        "{1, 4, 6, 10} → range = 9",
+        "{8, 9, 9, 10} → range = 2",
+        "{2, 5, 8, 14} → range = 12"
+      ],
+      "correctOrder": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "Range = max − min: set 1: 10−3=7... wait, {3,5,5,7}: 7−3=4. Set 2: 10−1=9. Set 3: 10−8=2. Set 4: 14−2=12. Order: 2 < 4 < 9 < 12. A large range indicates more spread; a small range indicates values clustered together.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Median Lich",
+    "taunt": "Find the center — of your defeat.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "The mean of 5 numbers is 14. Four of the numbers are 10, 12, 18, 15. What is the fifth number?",
+        "latex": "\\frac{10 + 12 + 18 + 15 + x}{5} = 14",
+        "answers": [
+          "10",
+          "15",
+          "55",
+          "25"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "Sum needed: 5 × 14 = 70. Sum of four known: 10+12+18+15 = 55. Fifth: 70 − 55 = 15. The 55 distractor is the sum of the known values, not the missing one. The 10 distractor confuses 'missing value' with the smallest known value.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A dataset has mean 20 and median 15. What does this tell you about the data's shape?",
+        "latex": "\\bar{x} = 20, \\; \\text{median} = 15",
+        "answers": [
+          "The data is symmetric",
+          "The data is skewed right (tail on the right)",
+          "The data is skewed left (tail on the left)",
+          "The data has no outliers"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "When mean > median, the distribution is skewed right — there are high outliers pulling the mean up above the center (median). When mean < median, it's skewed left. When they're equal, the distribution is roughly symmetric.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Find the median of this even-count set: 3, 11, 7, 2, 9, 5",
+        "latex": "\\text{Sorted: } 2, 3, 5, 7, 9, 11",
+        "answers": [
+          "5",
+          "6",
+          "7",
+          "5.5"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "Sort: 2, 3, 5, 7, 9, 11. Six values → median is the average of the 3rd and 4th: (5+7)/2 = 6. The 5 or 7 error picks one of the middle values instead of averaging them.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

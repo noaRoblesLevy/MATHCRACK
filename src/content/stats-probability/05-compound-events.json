@@ -1,0 +1,179 @@
+{
+  "id": "stat-05",
+  "title": "The Compound Chamber",
+  "kingdom": "stats-probability",
+  "dungeonNumber": 5,
+  "lesson": {
+    "title": "Compound Events",
+    "body": "A **compound event** involves two or more events. **Independent events**: one doesn't affect the other (e.g., flipping a coin twice). P(A and B) = P(A) × P(B). **Dependent events**: the second depends on the first (e.g., drawing without replacement). P(A then B) = P(A) × P(B after A). The **Counting Principle**: if event A has m ways and event B has n ways, then A followed by B has m × n ways."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "A coin is flipped and a die is rolled. How many total outcomes are possible?",
+      "latex": "2 \\times 6 = ?",
+      "steps": [
+        "\\text{Coin: 2 outcomes; Die: 6 outcomes}",
+        "\\text{Total: } 2 \\times 6 = 12"
+      ],
+      "answers": [
+        "8",
+        "10",
+        "12",
+        "36"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "Counting Principle: 2 × 6 = 12 total outcomes (H1, H2, H3, H4, H5, H6, T1, T2, T3, T4, T5, T6). The 8 error adds instead of multiplies (2 + 6 = 8). Always multiply independent choices.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Two dice are rolled. What is the probability both show a 6?",
+      "latex": "P(6 \\text{ and } 6) = P(6) \\times P(6)",
+      "steps": [
+        "P(\\text{first}) = \\frac{1}{6}, \\quad P(\\text{second}) = \\frac{1}{6}",
+        "\\frac{1}{6} \\times \\frac{1}{6} = \\frac{1}{36}"
+      ],
+      "answers": [
+        "1/6",
+        "1/12",
+        "1/36",
+        "2/36"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "Dice rolls are independent: P(both 6) = (1/6)(1/6) = 1/36. The 1/12 error adds (1/6 + 1/6 = 2/6 = 1/3... that's wrong too — actually 1/6+1/6=2/6=1/3, not 1/12). The 2/36 error counts (6,6) as two outcomes.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A bag has 5 red and 3 blue chips. You draw one, keep it, then draw again. What is the probability of drawing red then blue?",
+      "latex": "P(R \\text{ then } B) = \\frac{5}{8} \\times \\frac{3}{7}",
+      "steps": [
+        "P(\\text{red first}) = \\frac{5}{8}",
+        "P(\\text{blue second} | \\text{red first}) = \\frac{3}{7}",
+        "\\frac{5}{8} \\times \\frac{3}{7} = \\frac{15}{56}"
+      ],
+      "answers": [
+        "15/64",
+        "15/56",
+        "8/56",
+        "3/7"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Without replacement, the second draw is dependent. After removing one red, 7 chips remain with 3 blue. P = (5/8)(3/7) = 15/56. The 15/64 error uses 8 instead of 7 for the second draw (treating it as independent).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "How many 3-digit codes can be made from digits 1–5 if repetition is allowed?",
+      "latex": "5 \\times 5 \\times 5 = ?",
+      "steps": [
+        "\\text{Each digit: 5 choices}",
+        "5^3 = 125"
+      ],
+      "answers": [
+        "15",
+        "60",
+        "125",
+        "150"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "With repetition allowed, each of the 3 positions has 5 independent choices: 5 × 5 × 5 = 125. The 60 answer would be for no repetition: 5 × 4 × 3 = 60.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these events from least likely to most likely:",
+      "items": [
+        "Rolling two dice and getting (1,1): P = 1/36",
+        "Flipping 3 heads in a row: P = 1/8",
+        "Drawing a heart from a 52-card deck: P = 13/52 = 1/4",
+        "Rolling at least one even on two dice: P = 3/4"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "Probabilities: 1/36 ≈ 0.028, 1/8 = 0.125, 1/4 = 0.25, 3/4 = 0.75. For the last: P(at least one even) = 1 − P(both odd) = 1 − (1/2)(1/2) = 3/4.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Compound Phantom",
+    "taunt": "And. Or. Neither will save you.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A password must be 2 letters followed by 2 digits (0–9). Letters can repeat; digits cannot. How many passwords are possible?",
+        "latex": "26 \\times 26 \\times 10 \\times 9",
+        "answers": [
+          "6,760",
+          "60,840",
+          "67,600",
+          "676,000"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "Letters (repeat allowed): 26 × 26 = 676. Digits (no repeat): 10 × 9 = 90. Total: 676 × 90 = 60,840. The 6,760 error uses only 10 for the digits. The 67,600 error swaps the digit rule (uses 10×10 instead of 10×9).",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A box has 4 red and 6 green balls. Two are drawn without replacement. What is the probability both are red?",
+        "latex": "P(R_1 \\cap R_2) = \\frac{4}{10} \\times \\frac{3}{9}",
+        "answers": [
+          "4/25",
+          "2/15",
+          "12/100",
+          "1/6"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "P(first red) = 4/10. P(second red | first red) = 3/9. P(both red) = (4/10)(3/9) = 12/90 = 2/15. The 4/25 error uses (4/10)(4/10) — treating the draws as independent. Without replacement, the second draw changes.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "You flip a coin 3 times. What is the probability of getting exactly 2 heads?",
+        "latex": "P(\\text{exactly 2 heads in 3 flips})",
+        "answers": [
+          "1/4",
+          "3/8",
+          "1/2",
+          "1/8"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "Outcomes with exactly 2 heads: HHT, HTH, THH = 3 outcomes. Total outcomes: 2³ = 8. P = 3/8. You can also use the formula C(3,2)(1/2)²(1/2)¹ = 3 × 1/4 × 1/2 = 3/8. The 1/4 error counts only 2 of the 3 favorable outcomes.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

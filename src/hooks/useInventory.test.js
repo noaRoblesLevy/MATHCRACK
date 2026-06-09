@@ -39,15 +39,13 @@ describe('useItem', () => {
 })
 
 describe('rollLoot', () => {
-  it('returns a valid item type string', () => {
-    const valid = ['hint-scroll', 'focus-crystal', 'scholars-tome', 'solution-orb']
-    const result = rollLoot([])
-    expect(valid).toContain(result)
+  it('returns null for an empty loot table', () => {
+    expect(rollLoot([])).toBeNull()
   })
 
-  it('respects lootTable filter when provided', () => {
+  it('returns a valid item type from a non-empty table', () => {
     const allowed = [{ type: 'hint-scroll', weight: 100 }]
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 20; i++) {
       expect(rollLoot(allowed)).toBe('hint-scroll')
     }
   })

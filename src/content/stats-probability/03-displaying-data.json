@@ -1,0 +1,176 @@
+{
+  "id": "stat-03",
+  "title": "The Display Dungeon",
+  "kingdom": "stats-probability",
+  "dungeonNumber": 3,
+  "lesson": {
+    "title": "Displaying Data",
+    "body": "Different data displays serve different purposes. A **dot plot** shows each value as a dot — good for small datasets. A **stem-and-leaf plot** splits each value into a stem (leading digit) and leaf (last digit) — preserves actual values. A **histogram** groups data into intervals (bars, no gaps) — good for large datasets and seeing distribution shape. A **box plot** shows median, quartiles, and range — best for comparing distributions. Choose the display that best fits the data and question."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "A stem-and-leaf plot shows: 3 | 2 5 8 and 4 | 1 7. What is the median of this data?",
+      "latex": "\\text{Data: } 32, 35, 38, 41, 47",
+      "steps": [
+        "\\text{Values: 32, 35, 38, 41, 47}",
+        "\\text{5 values → middle (3rd) = 38}"
+      ],
+      "answers": [
+        "35",
+        "37",
+        "38",
+        "40"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "The stem-and-leaf gives: 32, 35, 38, 41, 47. Five values; the middle (3rd) is 38. The 35 answer picks the 2nd value. The 37 is the mean ≈ (32+35+38+41+47)/5 = 193/5 = 38.6 ≈ 37... actually that's not right either — mean = 193/5 = 38.6. The median is 38.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A histogram has bars at: [0–10): height 3, [10–20): height 7, [20–30): height 5. How many data values are in the dataset?",
+      "latex": "3 + 7 + 5 = ?",
+      "steps": [
+        "\\text{Sum all bar heights (frequencies):}",
+        "3 + 7 + 5 = 15"
+      ],
+      "answers": [
+        "5",
+        "10",
+        "15",
+        "20"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "Each bar's height represents the count (frequency) of values in that interval. Total count = 3 + 7 + 5 = 15 data values. The 5 error counts bars instead of summing frequencies.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which display is best for comparing the spread of test scores between two different classes?",
+      "latex": "\\text{Compare two distributions}",
+      "steps": [
+        "\\text{Need to compare: medians, spread, outliers}"
+      ],
+      "answers": [
+        "Two dot plots",
+        "A stem-and-leaf plot",
+        "Side-by-side box plots",
+        "A single histogram"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Side-by-side box plots directly compare medians (the line inside the box), the interquartile range (box width), and overall range (whiskers) between two groups. Dot plots work but become cluttered. A stem-and-leaf can only show two groups with a back-to-back plot. A single histogram can't show two groups.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "In a box plot, the box spans from Q1 = 15 to Q3 = 35. What is the Interquartile Range (IQR)?",
+      "latex": "\\text{IQR} = Q3 - Q1 = 35 - 15",
+      "steps": [
+        "\\text{IQR} = 35 - 15 = 20"
+      ],
+      "answers": [
+        "15",
+        "20",
+        "25",
+        "50"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "IQR = Q3 − Q1 = 35 − 15 = 20. The IQR represents the middle 50% of the data. A small IQR means the middle half is tightly clustered; a large IQR means it's spread out. The range (50) uses minimum and maximum, not quartiles.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these data displays from most to least useful for showing the exact original data values:",
+      "items": [
+        "Stem-and-leaf plot (preserves all values)",
+        "Dot plot (one dot per value)",
+        "Box plot (shows 5-number summary only)",
+        "Histogram (groups into intervals)"
+      ],
+      "correctOrder": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "difficulty": 3,
+      "explanation": "Dot plot shows every individual value. Stem-and-leaf preserves every value in a compact form. Histogram groups values into bins (detail lost). Box plot only shows 5 numbers (most detail lost). The question is: which preserves the most individual values?",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Chart Specter",
+    "taunt": "I have charted every outcome. All end badly.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A box plot has: min=10, Q1=25, median=40, Q3=55, max=80. What percent of data lies between 25 and 55?",
+        "latex": "Q1 = 25, \\; Q3 = 55",
+        "answers": [
+          "25%",
+          "50%",
+          "75%",
+          "100%"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "By definition, Q1 to Q3 contains the middle 50% of the data. Q1 = 25th percentile and Q3 = 75th percentile — the box spans 50% of the data. The 25% answer gives only one quartile's worth.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A histogram shows most data clustered near 60–80, with a long tail toward lower values. This distribution is:",
+        "latex": "\\text{Tail toward low values}",
+        "answers": [
+          "Symmetric",
+          "Skewed right",
+          "Skewed left",
+          "Bimodal"
+        ],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "A long tail toward lower values = skewed left (negatively skewed). 'Skewed' is named after the direction of the tail, not the bulk of the data. Most values are high (60–80), but a few low outliers pull the tail left.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Test scores: 55, 60, 65, 70, 70, 75, 80, 90, 95, 100. The data is displayed in a histogram with interval width 10. How many bars have height > 1?",
+        "latex": "\\text{Intervals: } [50,60), [60,70), \\ldots",
+        "answers": [
+          "3 bars",
+          "4 bars",
+          "5 bars",
+          "6 bars"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "[50,60): {55} = 1. [60,70): {60,65} = 2. [70,80): {70,70,75} = 3. [80,90): {80} = 1. [90,100]: {90,95,100} = 3. Bars with height > 1: [60,70) with 2, [70,80) with 3, [90,100] with 3 → 3 bars. The [50,60) and [80,90) bars have height 1.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

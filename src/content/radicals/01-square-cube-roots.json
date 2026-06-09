@@ -1,0 +1,178 @@
+{
+  "id": "rad-01",
+  "title": "The Root Ruins",
+  "kingdom": "radicals",
+  "dungeonNumber": 1,
+  "lesson": {
+    "title": "Square Roots & Cube Roots",
+    "body": "The **square root** of n is the number r where r² = n. Written √n. Example: √25 = 5 because 5² = 25. Every positive number has two square roots: √25 = ±5, but by convention √ means the positive (principal) root. The **cube root** ∛n is the number r where r³ = n. Cube roots can be negative: ∛(−8) = −2 because (−2)³ = −8. Perfect squares: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100. Perfect cubes: 1, 8, 27, 64, 125."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "What is √144?",
+      "latex": "\\sqrt{144}",
+      "steps": [
+        "12^2 = 144",
+        "\\sqrt{144} = 12"
+      ],
+      "answers": [
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "√144 = 12 because 12² = 144. To verify: 12 × 12 = 144 ✓. Memorizing perfect squares up to 15² = 225 is very useful for speed.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which of the following is irrational?",
+      "latex": "\\sqrt{16}, \\; \\sqrt{25}, \\; \\sqrt{20}, \\; \\sqrt{49}",
+      "steps": [
+        "\\sqrt{16}=4, \\; \\sqrt{25}=5, \\; \\sqrt{49}=7",
+        "\\sqrt{20} \\text{ is not a perfect square}"
+      ],
+      "answers": [
+        "√16",
+        "√25",
+        "√20",
+        "√49"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "√16=4, √25=5, √49=7 are all integers (rational). √20 ≈ 4.472..., a non-repeating decimal — irrational. A square root is irrational whenever the radicand is not a perfect square.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is ∛27?",
+      "latex": "\\sqrt[3]{27}",
+      "steps": [
+        "3^3 = 27",
+        "\\sqrt[3]{27} = 3"
+      ],
+      "answers": [
+        "2",
+        "3",
+        "9",
+        "4"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "∛27 = 3 because 3³ = 27. Unlike square roots, cube roots of negatives are real: ∛(−27) = −3.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Between which two consecutive integers does √50 lie?",
+      "latex": "\\sqrt{50}",
+      "steps": [
+        "7^2 = 49, \\quad 8^2 = 64",
+        "49 < 50 < 64 \\Rightarrow 7 < \\sqrt{50} < 8"
+      ],
+      "answers": [
+        "5 and 6",
+        "6 and 7",
+        "7 and 8",
+        "8 and 9"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "7² = 49 and 8² = 64. Since 49 < 50 < 64, we have 7 < √50 < 8. √50 ≈ 7.07. This estimation technique works for any irrational square root.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Match each radical to its value — order from smallest to largest result:",
+      "items": [
+        "∛8 = 2",
+        "√9 = 3",
+        "∛64 = 4",
+        "√36 = 6"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 2,
+      "explanation": "∛8=2, √9=3, ∛64=4, √36=6. Note that ∛64=4 < √36=6, even though 64 > 36, because cube roots grow more slowly than square roots for the same radicand.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Root Wraith",
+    "taunt": "Rational or irrational — your fate is sealed.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Simplify: √(−9)",
+        "latex": "\\sqrt{-9}",
+        "answers": [
+          "−3",
+          "3i",
+          "Not a real number",
+          "−√9"
+        ],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "There is no real number r such that r² = −9 (any real number squared is non-negative). √(−9) is not a real number — it equals 3i in the complex number system, but at this level, the answer is 'not a real number'. This contrasts with ∛(−9) which IS real (≈ −2.08).",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A square room has an area of 75 m². What is the approximate side length to the nearest meter?",
+        "latex": "s = \\sqrt{75}",
+        "answers": [
+          "7 m",
+          "8 m",
+          "9 m",
+          "10 m"
+        ],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "Side = √75. Estimate: 8²=64, 9²=81. Since 64 < 75 < 81, we have 8 < √75 < 9. More precisely, √75 ≈ 8.66. To the nearest meter, 8.66 rounds to 9 m.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which equation has no real solution?",
+        "latex": "x^2 = 16, \\quad x^2 = -4, \\quad x^3 = -8, \\quad x^3 = 27",
+        "answers": [
+          "x² = 16",
+          "x² = −4",
+          "x³ = −8",
+          "x³ = 27"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "x²=16 → x=±4 (real solutions). x²=−4 → no real solution (squares can't be negative). x³=−8 → x=−2 (real, cube root of negative). x³=27 → x=3 (real). Key distinction: even powers reject negatives on the right; odd powers accept them.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

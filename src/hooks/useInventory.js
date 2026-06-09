@@ -51,14 +51,14 @@ export function getCount(type) {
 }
 
 export function rollLoot(lootTable) {
-  const pool = lootTable && lootTable.length > 0 ? lootTable : DEFAULT_LOOT
-  const total = pool.reduce((s, e) => s + e.weight, 0)
+  if (!lootTable || lootTable.length === 0) return null
+  const total = lootTable.reduce((s, e) => s + e.weight, 0)
   let roll = Math.random() * total
-  for (const entry of pool) {
+  for (const entry of lootTable) {
     roll -= entry.weight
     if (roll <= 0) return entry.type
   }
-  return pool[pool.length - 1].type
+  return lootTable[lootTable.length - 1].type
 }
 
 export function isFocusMode() {

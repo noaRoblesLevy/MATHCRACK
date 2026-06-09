@@ -32,11 +32,11 @@
     "icon": "📊",
     "color": "#84cc16",
     "dungeons": [
-      { "id": "ratio-01", "title": "Ratios & Unit Rate", "stub": true },
-      { "id": "ratio-02", "title": "Proportions", "stub": true },
-      { "id": "ratio-03", "title": "Percent", "stub": true },
-      { "id": "ratio-04", "title": "Percent Applications", "stub": true },
-      { "id": "ratio-05", "title": "Simple Interest & Percent Change", "stub": true }
+      { "id": "ratio-01", "title": "Ratios & Unit Rate", "file": "ratios-percent/01-ratios-unit-rate.json" },
+      { "id": "ratio-02", "title": "Proportions", "file": "ratios-percent/02-proportions.json" },
+      { "id": "ratio-03", "title": "Percent", "file": "ratios-percent/03-percent.json" },
+      { "id": "ratio-04", "title": "Percent Applications", "file": "ratios-percent/04-percent-applications.json" },
+      { "id": "ratio-05", "title": "Simple Interest & Percent Change", "file": "ratios-percent/05-simple-interest.json" }
     ]
   },
   {
@@ -46,10 +46,10 @@
     "icon": "⚡",
     "color": "#10b981",
     "dungeons": [
-      { "id": "exp-01", "title": "Exponents", "stub": true },
-      { "id": "exp-02", "title": "Scientific Notation", "stub": true },
-      { "id": "exp-03", "title": "Writing & Evaluating Expressions", "stub": true },
-      { "id": "exp-04", "title": "Combining Like Terms", "stub": true }
+      { "id": "exp-01", "title": "Exponents", "file": "exponents-expressions/01-exponents.json" },
+      { "id": "exp-02", "title": "Scientific Notation", "file": "exponents-expressions/02-scientific-notation.json" },
+      { "id": "exp-03", "title": "Writing & Evaluating Expressions", "file": "exponents-expressions/03-writing-evaluating-expressions.json" },
+      { "id": "exp-04", "title": "Combining Like Terms", "file": "exponents-expressions/04-combining-like-terms.json" }
     ]
   },
   {
@@ -60,12 +60,12 @@
     "color": "#06b6d4",
     "dungeons": [
       { "id": "lin-01", "title": "Introduction to Equations", "file": "linear-equations/01-intro-equations.json" },
-      { "id": "lin-02", "title": "Solving One-Variable Equations", "stub": true },
-      { "id": "lin-03", "title": "Inequalities", "stub": true },
-      { "id": "lin-04", "title": "Compound Inequalities", "stub": true },
-      { "id": "lin-05", "title": "Rewriting Formulas", "stub": true },
-      { "id": "lin-06", "title": "Systems by Substitution", "stub": true },
-      { "id": "lin-07", "title": "Systems by Elimination", "stub": true }
+      { "id": "lin-02", "title": "Solving One-Variable Equations", "file": "linear-equations/02-solving-one-variable.json" },
+      { "id": "lin-03", "title": "Inequalities", "file": "linear-equations/03-inequalities.json" },
+      { "id": "lin-04", "title": "Compound Inequalities", "file": "linear-equations/04-compound-inequalities.json" },
+      { "id": "lin-05", "title": "Rewriting Formulas", "file": "linear-equations/05-rewriting-formulas.json" },
+      { "id": "lin-06", "title": "Systems by Substitution", "file": "linear-equations/06-systems-substitution.json" },
+      { "id": "lin-07", "title": "Systems by Elimination", "file": "linear-equations/07-systems-elimination.json" }
     ]
   },
   {
@@ -75,12 +75,12 @@
     "icon": "📈",
     "color": "#3b82f6",
     "dungeons": [
-      { "id": "graph-01", "title": "Points & Lines", "stub": true },
-      { "id": "graph-02", "title": "Slope of a Line", "stub": true },
-      { "id": "graph-03", "title": "Slope-Intercept Form", "stub": true },
-      { "id": "graph-04", "title": "Point-Slope Form", "stub": true },
-      { "id": "graph-05", "title": "Graphing Systems", "stub": true },
-      { "id": "graph-06", "title": "Graphing Inequalities", "stub": true }
+      { "id": "graph-01", "title": "Points & Lines", "file": "graphing/01-points-lines.json" },
+      { "id": "graph-02", "title": "Slope of a Line", "file": "graphing/02-slope.json" },
+      { "id": "graph-03", "title": "Slope-Intercept Form", "file": "graphing/03-slope-intercept.json" },
+      { "id": "graph-04", "title": "Point-Slope Form", "file": "graphing/04-point-slope.json" },
+      { "id": "graph-05", "title": "Graphing Systems", "file": "graphing/05-graphing-systems.json" },
+      { "id": "graph-06", "title": "Graphing Inequalities", "file": "graphing/06-graphing-inequalities.json" }
     ]
   },
   {
@@ -91,11 +91,11 @@
     "color": "#8b5cf6",
     "dungeons": [
       { "id": "stat-01", "title": "Introduction to Statistics", "file": "stats-probability/01-intro-statistics.json" },
-      { "id": "stat-02", "title": "Mean, Median, Mode & Range", "stub": true },
-      { "id": "stat-03", "title": "Displaying Data", "stub": true },
-      { "id": "stat-04", "title": "Probability", "stub": true },
-      { "id": "stat-05", "title": "Compound Events", "stub": true },
-      { "id": "stat-06", "title": "Permutations & Combinations", "stub": true }
+      { "id": "stat-02", "title": "Mean, Median, Mode & Range", "file": "stats-probability/02-mean-median-mode.json" },
+      { "id": "stat-03", "title": "Displaying Data", "file": "stats-probability/03-displaying-data.json" },
+      { "id": "stat-04", "title": "Probability", "file": "stats-probability/04-probability.json" },
+      { "id": "stat-05", "title": "Compound Events", "file": "stats-probability/05-compound-events.json" },
+      { "id": "stat-06", "title": "Permutations & Combinations", "file": "stats-probability/06-permutations-combinations.json" }
     ]
   },
   {
@@ -106,8 +106,8 @@
     "color": "#a855f7",
     "dungeons": [
       { "id": "func-01", "title": "Relations & Functions", "file": "functions/01-relations-functions.json" },
-      { "id": "func-02", "title": "Function Notation", "stub": true },
-      { "id": "func-03", "title": "Applications of Functions", "stub": true }
+      { "id": "func-02", "title": "Function Notation", "file": "functions/02-function-notation.json" },
+      { "id": "func-03", "title": "Applications of Functions", "file": "functions/03-applications-functions.json" }
     ]
   },
   {
@@ -117,9 +117,9 @@
     "icon": "🧮",
     "color": "#ec4899",
     "dungeons": [
-      { "id": "poly-01", "title": "Adding & Subtracting Polynomials", "stub": true },
-      { "id": "poly-02", "title": "Multiplying & Dividing Exponents", "stub": true },
-      { "id": "poly-03", "title": "Multiplying Polynomials (FOIL)", "stub": true }
+      { "id": "poly-01", "title": "Adding & Subtracting Polynomials", "file": "polynomials/01-adding-subtracting-polynomials.json" },
+      { "id": "poly-02", "title": "Multiplying & Dividing Exponents", "file": "polynomials/02-multiplying-dividing-exponents.json" },
+      { "id": "poly-03", "title": "Multiplying Polynomials (FOIL)", "file": "polynomials/03-multiplying-polynomials.json" }
     ]
   },
   {
@@ -129,11 +129,11 @@
     "icon": "🔍",
     "color": "#f43f5e",
     "dungeons": [
-      { "id": "fact-01", "title": "Factoring Using GCF", "stub": true },
-      { "id": "fact-02", "title": "Factoring by Grouping", "stub": true },
-      { "id": "fact-03", "title": "Factoring Trinomials (a = 1)", "stub": true },
-      { "id": "fact-04", "title": "Factoring Trinomials (a ≠ 1)", "stub": true },
-      { "id": "fact-05", "title": "Special Factoring Formulas", "stub": true }
+      { "id": "fact-01", "title": "Factoring Using GCF", "file": "factoring/01-factoring-gcf.json" },
+      { "id": "fact-02", "title": "Factoring by Grouping", "file": "factoring/02-factoring-grouping.json" },
+      { "id": "fact-03", "title": "Factoring Trinomials (a = 1)", "file": "factoring/03-factoring-trinomials-a1.json" },
+      { "id": "fact-04", "title": "Factoring Trinomials (a ≠ 1)", "file": "factoring/04-factoring-trinomials-anot1.json" },
+      { "id": "fact-05", "title": "Special Factoring Formulas", "file": "factoring/05-special-factoring.json" }
     ]
   },
   {
@@ -143,9 +143,9 @@
     "icon": "√",
     "color": "#ef4444",
     "dungeons": [
-      { "id": "rad-01", "title": "Square Roots & Cube Roots", "stub": true },
-      { "id": "rad-02", "title": "Simplifying Radicals", "stub": true },
-      { "id": "rad-03", "title": "Radical Operations", "stub": true }
+      { "id": "rad-01", "title": "Square Roots & Cube Roots", "file": "radicals/01-square-cube-roots.json" },
+      { "id": "rad-02", "title": "Simplifying Radicals", "file": "radicals/02-simplifying-radicals.json" },
+      { "id": "rad-03", "title": "Radical Operations", "file": "radicals/03-radical-operations.json" }
     ]
   },
   {
@@ -155,12 +155,12 @@
     "icon": "🌊",
     "color": "#dc2626",
     "dungeons": [
-      { "id": "quad-01", "title": "Introduction to Quadratics", "stub": true },
-      { "id": "quad-02", "title": "Solving by Factoring", "stub": true },
-      { "id": "quad-03", "title": "Solving by Square Roots", "stub": true },
-      { "id": "quad-04", "title": "Completing the Square", "stub": true },
-      { "id": "quad-05", "title": "The Quadratic Formula", "stub": true },
-      { "id": "quad-06", "title": "The Discriminant", "stub": true }
+      { "id": "quad-01", "title": "Introduction to Quadratics", "file": "quadratics/01-intro-quadratics.json" },
+      { "id": "quad-02", "title": "Solving by Factoring", "file": "quadratics/02-solving-factoring.json" },
+      { "id": "quad-03", "title": "Solving by Square Roots", "file": "quadratics/03-solving-square-roots.json" },
+      { "id": "quad-04", "title": "Completing the Square", "file": "quadratics/04-completing-square.json" },
+      { "id": "quad-05", "title": "The Quadratic Formula", "file": "quadratics/05-quadratic-formula.json" },
+      { "id": "quad-06", "title": "The Discriminant", "file": "quadratics/06-discriminant.json" }
     ]
   },
   {
@@ -170,9 +170,9 @@
     "icon": "🔮",
     "color": "#991b1b",
     "dungeons": [
-      { "id": "qfunc-01", "title": "Graphing Parabolas", "stub": true },
-      { "id": "qfunc-02", "title": "Vertex & Axis of Symmetry", "stub": true },
-      { "id": "qfunc-03", "title": "Solving Quadratics by Graphing", "stub": true }
+      { "id": "qfunc-01", "title": "Graphing Parabolas", "file": "quadratic-functions/01-graphing-parabolas.json" },
+      { "id": "qfunc-02", "title": "Vertex & Axis of Symmetry", "file": "quadratic-functions/02-vertex-axis-symmetry.json" },
+      { "id": "qfunc-03", "title": "Solving Quadratics by Graphing", "file": "quadratic-functions/03-solving-by-graphing.json" }
     ]
   }
 ]

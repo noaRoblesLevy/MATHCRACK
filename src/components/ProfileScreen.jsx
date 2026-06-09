@@ -1,15 +1,16 @@
 import { useGameStore } from '../store/gameStore'
 import { getTitle, getXPToNextLevel, getTierProgress } from '../hooks/useXP'
-import { useTheme } from '../hooks/useTheme'
 import { useAuth, signOut } from '../hooks/useAuth'
+import { getProgress } from '../hooks/useProgress'
+import kingdoms from '../content/kingdoms.json'
 
 const TIERS = [
-  { title: 'Apprentice',  icon: '🎒', xp: 0,    next: 100,  color: '#60a5fa', desc: 'Just starting your journey' },
-  { title: 'Adept',       icon: '📖', xp: 100,  next: 300,  color: '#34d399', desc: 'The basics are within reach' },
-  { title: 'Scholar',     icon: '🎓', xp: 300,  next: 700,  color: '#a78bfa', desc: 'Serious student of mathematics' },
-  { title: 'Sage',        icon: '🌟', xp: 700,  next: 1500, color: '#fbbf24', desc: 'Deep knowledge, sharp instincts' },
-  { title: 'Archmage',    icon: '🔮', xp: 1500, next: 3000, color: '#f97316', desc: 'Commanding mastery of algebra' },
-  { title: 'Math Lich',   icon: '💀', xp: 3000, next: null, color: '#ef4444', desc: 'Immortal. Numbers bend to you.' },
+  { title: 'Apprentice',  icon: '🎒', xp: 0,     next: 500,   color: '#60a5fa', desc: 'Just starting your journey' },
+  { title: 'Adept',       icon: '📖', xp: 500,   next: 1500,  color: '#34d399', desc: 'The basics are within reach' },
+  { title: 'Scholar',     icon: '🎓', xp: 1500,  next: 3500,  color: '#a78bfa', desc: 'Serious student of mathematics' },
+  { title: 'Sage',        icon: '🌟', xp: 3500,  next: 6500,  color: '#fbbf24', desc: 'Deep knowledge, sharp instincts' },
+  { title: 'Archmage',    icon: '🔮', xp: 6500,  next: 10000, color: '#f97316', desc: 'Commanding mastery of algebra' },
+  { title: 'Math Lich',   icon: '💀', xp: 10000, next: null,  color: '#ef4444', desc: 'Immortal. Numbers bend to you.' },
 ]
 
 function Bar({ pct, color }) {
@@ -26,16 +27,24 @@ function Bar({ pct, color }) {
   )
 }
 
-export default function ProfileScreen() {
+export default function ProfileScreen({ isDark, onToggleTheme }) {
   const xp = useGameStore(s => s.xp)
+  const coins = useGameStore(s => s.coins)
   const streak = useGameStore(s => s.streak)
   const currentTitle = getTitle(xp)
   const toNext = getXPToNextLevel(xp)
-  const { isDark, toggle: toggleTheme } = useTheme()
   const { user, isGuest } = useAuth()
   const progress = getTierProgress(xp)
   const currentIdx = TIERS.findIndex(t => t.title === currentTitle)
   const current = TIERS[currentIdx]
+  const equippedFlair = useGameStore(s => s.equippedFlair)
+  const equippedIcon = useGameStore(s => s.equippedIcon)
+  const dungeonProgress = getProgress()
+  const subjectStats = kingdoms.map(k => {
+    const available = k.dungeons.filter(d => !d.stub)
+    const completed = available.filter(d => dungeonProgress[d.id]?.bossComplete).length
+    return { id: k.id, title: k.title, icon: k.icon, color: k.color, completed, total: available.length }
+  })
 
   return (
     <div className="page-with-nav" style={{
@@ -61,7 +70,7 @@ export default function ProfileScreen() {
 
           {/* Theme toggle */}
           <button
-            onClick={toggleTheme}
+            onClick={onToggleTheme}
             aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
             style={{
               width: 48, height: 26, borderRadius: 13,
@@ -96,22 +105,34 @@ export default function ProfileScreen() {
           textAlign: 'center',
         }}>
           <div style={{ fontSize: '3rem', marginBottom: '0.5rem', lineHeight: 1 }}>
-            {current?.icon ?? '🎒'}
+            {equippedIcon ?? current?.icon ?? '🎒'}
           </div>
           <h2 style={{
             fontFamily: 'var(--font-mono)',
             color: current?.color ?? 'var(--blue)',
             fontSize: '1.3rem',
             letterSpacing: '3px',
-            marginBottom: '0.2rem',
+            marginBottom: equippedFlair ? '0.1rem' : '0.2rem',
           }}>
             {currentTitle}
           </h2>
+          {equippedFlair && (
+            <div style={{
+              fontFamily: 'var(--font-mono)',
+              color: 'var(--violet-light)',
+              fontSize: '0.65rem',
+              letterSpacing: '1.5px',
+              marginBottom: '0.2rem',
+              opacity: 0.85,
+            }}>
+              · {equippedFlair}
+            </div>
+          )}
           <p style={{ color: 'var(--text-muted)', fontSize: '0.78rem', marginBottom: '1.25rem' }}>
             {current?.desc}
           </p>
 
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', marginBottom: '1.25rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginBottom: '1.25rem' }}>
             <div>
               <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--gold)', fontSize: '1.5rem', fontWeight: 'bold', lineHeight: 1 }}>{xp}</div>
               <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.55rem', letterSpacing: '1.5px', marginTop: '0.25rem' }}>TOTAL XP</div>
@@ -119,6 +140,10 @@ export default function ProfileScreen() {
             <div>
               <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--blue)', fontSize: '1.5rem', fontWeight: 'bold', lineHeight: 1 }}>{streak}</div>
               <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.55rem', letterSpacing: '1.5px', marginTop: '0.25rem' }}>DAY STREAK</div>
+            </div>
+            <div>
+              <div style={{ fontFamily: 'var(--font-mono)', color: '#f59e0b', fontSize: '1.5rem', fontWeight: 'bold', lineHeight: 1 }}>🪙{coins}</div>
+              <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', fontSize: '0.55rem', letterSpacing: '1.5px', marginTop: '0.25rem' }}>COINS</div>
             </div>
           </div>
 
@@ -216,9 +241,51 @@ export default function ProfileScreen() {
           })}
         </div>
 
+        {/* Subject progress */}
+        <div style={{
+          fontFamily: 'var(--font-mono)',
+          color: 'var(--text-muted)',
+          fontSize: '0.56rem',
+          letterSpacing: '2.5px',
+          marginBottom: '0.75rem',
+          marginTop: '1.5rem',
+        }}>
+          SUBJECT PROGRESS
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem', marginBottom: '1.5rem' }}>
+          {subjectStats.map(s => (
+            <div key={s.id} style={{
+              display: 'flex', alignItems: 'center', gap: '0.75rem',
+              padding: '0.6rem 0.875rem',
+              background: s.completed === s.total && s.total > 0 ? `linear-gradient(135deg, ${s.color}08, var(--bg-card))` : 'var(--bg-card)',
+              border: `1px solid ${s.completed === s.total && s.total > 0 ? s.color + '30' : 'var(--border)'}`,
+              borderRadius: 9,
+            }}>
+              <span style={{ fontSize: '1rem', flexShrink: 0 }}>{s.icon}</span>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.25rem' }}>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{s.title}</span>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', color: s.completed === s.total && s.total > 0 ? 'var(--correct)' : 'var(--text-muted)', flexShrink: 0, marginLeft: '0.5rem' }}>
+                    {s.completed === s.total && s.total > 0 ? '✓' : `${s.completed}/${s.total}`}
+                  </span>
+                </div>
+                <div style={{ background: 'var(--border)', borderRadius: 2, height: 3 }}>
+                  <div style={{
+                    background: s.color, borderRadius: 2, height: 3,
+                    width: s.total > 0 ? `${(s.completed / s.total) * 100}%` : '0%',
+                    boxShadow: s.completed > 0 ? `0 0 4px ${s.color}` : 'none',
+                    minWidth: s.completed > 0 ? 4 : 0,
+                    transition: 'width 0.4s ease',
+                  }} />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
         {/* Account section */}
         <div style={{
-          marginTop: '1.5rem',
+          marginTop: '0',
           background: 'var(--bg-card)',
           border: '1px solid var(--border)',
           borderRadius: 12,

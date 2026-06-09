@@ -1,0 +1,177 @@
+{
+  "id": "stat-06",
+  "title": "The Permutation Pyramid",
+  "kingdom": "stats-probability",
+  "dungeonNumber": 6,
+  "lesson": {
+    "title": "Permutations & Combinations",
+    "body": "**Permutations** count arrangements where order matters: P(n, r) = n! / (n−r)!. Example: how many ways to arrange 3 of 5 books = 5×4×3 = 60. **Combinations** count selections where order does NOT matter: C(n, r) = n! / (r!(n−r)!). Example: choosing 3 from 5 people for a committee = 10. Key question: does the order of selection matter? If yes → permutation; if no → combination."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "A race has 8 runners. How many ways can the top 3 finishes (gold, silver, bronze) be assigned?",
+      "latex": "P(8, 3) = 8 \\times 7 \\times 6",
+      "steps": [
+        "\\text{Order matters (gold ≠ silver ≠ bronze)}",
+        "8 \\times 7 \\times 6 = 336"
+      ],
+      "answers": [
+        "56",
+        "336",
+        "512",
+        "40,320"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Order matters (different medals = different outcomes). P(8,3) = 8×7×6 = 336. The 56 answer is C(8,3) = 56 (ignoring order). The 40,320 is 8! (all 8 in order, not just top 3).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A committee of 3 is chosen from 7 people. How many committees are possible?",
+      "latex": "C(7, 3) = \\frac{7!}{3! \\cdot 4!}",
+      "steps": [
+        "\\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1} = \\frac{210}{6} = 35"
+      ],
+      "answers": [
+        "21",
+        "35",
+        "210",
+        "840"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Order doesn't matter (a committee is a set, not a ranked list). C(7,3) = 7×6×5/(3×2×1) = 210/6 = 35. The 210 is the numerator only (forgetting to divide by 3!). The 840 is P(7,3) = 7×6×5×4 — wrong formula.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Should you use permutation or combination? 'How many ways can 4 students sit in 4 chairs in a row?'",
+      "latex": "4! = 24",
+      "steps": [
+        "\\text{Different seating arrangements = different outcomes}",
+        "\\text{Order matters → Permutation}"
+      ],
+      "answers": [
+        "Combination — the same people regardless of seat",
+        "Permutation — the seat positions are distinct",
+        "Either — the answer is the same",
+        "Neither — this uses the counting principle"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Sitting ABCD differs from BACD (Alice in seat 1 vs seat 2 is a different arrangement). Order matters → permutation. P(4,4) = 4! = 24. If you just asked 'how many groups of 4 can be formed from 4 people?' — that would be 1 (combination, C(4,4)=1).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A pizza shop has 10 toppings. How many ways can you choose exactly 3 toppings?",
+      "latex": "C(10, 3) = \\frac{10 \\times 9 \\times 8}{6}",
+      "steps": [
+        "\\text{Order doesn't matter (toppings are a set)}",
+        "C(10,3) = \\frac{720}{6} = 120"
+      ],
+      "answers": [
+        "30",
+        "120",
+        "720",
+        "1000"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "C(10,3) = (10×9×8)/(3×2×1) = 720/6 = 120. Toppings are a set — pepperoni+mushroom+onion is the same pizza regardless of which was chosen first. The 720 is the numerator only (= P(10,3)).",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Sort these into Permutation (order matters) vs Combination (order doesn't matter):",
+      "items": [
+        "Choosing 5 cards from a deck for a hand → Combination",
+        "First, second, third place in a contest → Permutation",
+        "Creating a 4-digit PIN → Permutation",
+        "Selecting 3 flavors for a sampler plate → Combination"
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "Permutations (order matters): contest rankings (1st ≠ 2nd) and PIN codes (1234 ≠ 4321). Combinations (order doesn't matter): card hand (same 5 cards regardless of dealing order) and flavor sampler (same 3 flavors regardless of pick order).",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Permutation Wraith",
+    "taunt": "n! ways to fail. You will find them all.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "How many 4-letter arrangements (no repeats) can be made from the letters A, B, C, D, E?",
+        "latex": "P(5, 4) = \\frac{5!}{(5-4)!}",
+        "answers": [
+          "24",
+          "60",
+          "120",
+          "5"
+        ],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "P(5,4) = 5×4×3×2 = 120. Order matters (ABCD ≠ DCBA). The 24 = 4! error only considers 4 letters (missing the 5th option for each slot). The 5 answer is C(5,1) — choosing only 1 at a time.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "From a group of 6 boys and 4 girls, a committee of 3 boys and 2 girls is chosen. How many committees are possible?",
+        "latex": "C(6,3) \\times C(4,2)",
+        "answers": [
+          "48",
+          "120",
+          "240",
+          "360"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "C(6,3) = 6!/(3!3!) = 20 ways to choose the boys. C(4,2) = 4!/(2!2!) = 6 ways to choose the girls. Total = 20 × 6 = 120. Multiply because the boy-choice and girl-choice are independent. The 48 error uses P(6,3)/P(4,2) incorrectly.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "How many different 5-card hands from a 52-card deck contain exactly 2 aces?",
+        "latex": "C(4,2) \\times C(48,3)",
+        "answers": [
+          "103,776",
+          "6,768",
+          "1,128",
+          "288"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Choose 2 aces from 4: C(4,2) = 6. Choose 3 non-aces from 48: C(48,3) = (48×47×46)/(3×2×1) = 103,776/6... C(48,3) = 48×47×46/6 = 17,296. Total = 6 × 17,296 = 103,776. Answer: 103,776.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 25
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 35
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 28
+      },
+      {
+        "type": "solution-orb",
+        "weight": 12
+      }
+    ]
+  },
+  "lootTable": []
+}

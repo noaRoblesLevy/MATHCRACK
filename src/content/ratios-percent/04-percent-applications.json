@@ -1,0 +1,177 @@
+{
+  "id": "ratio-04",
+  "title": "The Market of Markups",
+  "kingdom": "ratios-percent",
+  "dungeonNumber": 4,
+  "lesson": {
+    "title": "Percent Applications",
+    "body": "Percents appear constantly in real life. A **tip** is a percent of the bill added on top. A **tax** is a percent added to the price. A **discount** reduces the price by a percent. A **markup** increases a cost by a percent to set a retail price. Key formulas: Sale price = Original × (1 − discount rate). Price with tax = Original × (1 + tax rate). These can be chained: apply discount first, then add tax, or combine into one step."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "A meal costs $45. You leave a 20% tip. How much is the tip?",
+      "latex": "20\\% \\times \\$45",
+      "steps": [
+        "0.20 \\times 45 = 9"
+      ],
+      "answers": [
+        "$7.00",
+        "$8.00",
+        "$9.00",
+        "$9.45"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "Tip = 20% of $45 = 0.20 × 45 = $9.00. Quick check: 10% of $45 = $4.50, doubled = $9.00. The total bill with tip would be $45 + $9 = $54.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A shirt originally costs $50. It is marked down 30%. What is the sale price?",
+      "latex": "\\$50 \\times (1 - 0.30)",
+      "steps": [
+        "\\text{Discount amount: } 0.30 \\times 50 = \\$15",
+        "\\text{Sale price: } 50 - 15 = \\$35"
+      ],
+      "answers": [
+        "$15",
+        "$20",
+        "$30",
+        "$35"
+      ],
+      "correct": 3,
+      "difficulty": 1,
+      "explanation": "Sale price = $50 × 0.70 = $35. A 30% discount means you pay 70% of the original. The $15 answer is the discount amount, not the final price — a very common error.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A store buys a lamp for $40 and marks it up 65%. What is the retail price?",
+      "latex": "\\$40 \\times (1 + 0.65)",
+      "steps": [
+        "\\text{Markup amount: } 0.65 \\times 40 = \\$26",
+        "\\text{Retail price: } 40 + 26 = \\$66"
+      ],
+      "answers": [
+        "$26",
+        "$56",
+        "$66",
+        "$76"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Retail = $40 × 1.65 = $66. Or: markup = 65% × $40 = $26, so retail = $40 + $26 = $66. The $26 answer is just the markup amount, not the selling price.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A $120 jacket is 25% off, then 8% tax is applied to the sale price. What is the final cost?",
+      "latex": "\\$120 \\times 0.75 \\times 1.08",
+      "steps": [
+        "\\text{Sale price: } 120 \\times 0.75 = \\$90",
+        "\\text{With tax: } 90 \\times 1.08 = \\$97.20"
+      ],
+      "answers": [
+        "$84.00",
+        "$90.00",
+        "$97.20",
+        "$102.60"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Step 1: 25% off → $120 × 0.75 = $90. Step 2: 8% tax on the discounted price → $90 × 1.08 = $97.20. Tax applies to the sale price, not the original. Applying tax to $120 would overcharge.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these final prices from cheapest to most expensive:",
+      "items": [
+        "$80 with 10% off = $72",
+        "$100 with 25% off = $75",
+        "$60 with 5% tax = $63",
+        "$90 with 20% off = $72"
+      ],
+      "correctOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "difficulty": 3,
+      "explanation": "Compute: $80×0.90=$72, $100×0.75=$75, $60×1.05=$63, $90×0.80=$72. Order: $63 < $72 = $72 < $75. Two items tie at $72. Either ordering of those two is acceptable.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Interest Specter",
+    "taunt": "Tax, tip, discount — then death.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A restaurant bill is $80 before tax. Tax is 8% and you tip 15% on the pre-tax bill. What is the total you pay?",
+        "latex": "\\$80 + (\\$80 \\times 0.08) + (\\$80 \\times 0.15)",
+        "answers": [
+          "$91.20",
+          "$95.60",
+          "$98.40",
+          "$104.00"
+        ],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "Tax: $80 × 0.08 = $6.40. Tip (on pre-tax): $80 × 0.15 = $12.00. Total: $80 + $6.40 + $12.00 = $98.40. Note: tip is calculated on the pre-tax amount, not the after-tax total.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A phone is discounted 15%, then an additional 10% off the discounted price. Is this the same as a single 25% discount off $800?",
+        "latex": "\\$800 \\times 0.85 \\times 0.90 \\text{ vs } \\$800 \\times 0.75",
+        "answers": [
+          "Yes — both give $600",
+          "No — sequential gives $612, single 25% gives $600",
+          "No — sequential gives $600, single 25% gives $612",
+          "Yes — both give $612"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "Sequential: $800 × 0.85 = $680, then × 0.90 = $612. Single 25% off: $800 × 0.75 = $600. $612 ≠ $600. Chained discounts are always less generous than their sum — each percentage applies to a smaller base.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A store sells an item for $91 after a 30% markup on its wholesale cost. What was the wholesale cost?",
+        "latex": "w \\times 1.30 = \\$91",
+        "answers": [
+          "$61.30",
+          "$63.70",
+          "$70",
+          "$78"
+        ],
+        "correct": 2,
+        "difficulty": 3,
+        "explanation": "Retail = wholesale × 1.30, so wholesale = $91 ÷ 1.30 = $70. Check: $70 × 1.30 = $91 ✓. The trap answer ($63.70) comes from taking 30% of $91 and subtracting it — but the markup percentage is based on the wholesale price, not the retail price.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

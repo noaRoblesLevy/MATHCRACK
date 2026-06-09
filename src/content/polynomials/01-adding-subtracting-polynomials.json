@@ -1,0 +1,177 @@
+{
+  "id": "poly-01",
+  "title": "The Polynomial Plains",
+  "kingdom": "polynomials",
+  "dungeonNumber": 1,
+  "lesson": {
+    "title": "Adding & Subtracting Polynomials",
+    "body": "A **polynomial** is an expression with one or more terms, each being a number times a variable raised to a non-negative integer power. The **degree** is the highest exponent. To **add** polynomials: combine like terms (same variable, same exponent). To **subtract**: distribute the negative sign to every term of the polynomial being subtracted, then combine like terms. Example: (3x² + 2x − 1) − (x² − 4x + 5) = 2x² + 6x − 6."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "What is the degree of 4x³ − 7x + 2?",
+      "latex": "4x^3 - 7x + 2",
+      "steps": [
+        "\\text{Highest exponent is 3}"
+      ],
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "The degree of a polynomial is the highest power of the variable. In 4x³ − 7x + 2, the highest exponent is 3. The constant term 2 = 2x⁰ has degree 0.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Add: (3x² + 2x − 4) + (x² − 5x + 1)",
+      "latex": "(3x^2 + 2x - 4) + (x^2 - 5x + 1)",
+      "steps": [
+        "(3+1)x^2 + (2-5)x + (-4+1)",
+        "= 4x^2 - 3x - 3"
+      ],
+      "answers": [
+        "4x² − 3x − 3",
+        "4x² + 7x − 3",
+        "2x² − 3x − 3",
+        "4x² − 3x + 3"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Combine like terms: x²: 3+1=4; x: 2+(−5)=−3; constant: −4+1=−3. Result: 4x² − 3x − 3. The 4x²+7x−3 error adds 2+5=7 (ignoring the sign of −5x).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Subtract: (5x² − 3x + 2) − (2x² + x − 6)",
+      "latex": "(5x^2 - 3x + 2) - (2x^2 + x - 6)",
+      "steps": [
+        "\\text{Distribute negative: } 5x^2 - 3x + 2 - 2x^2 - x + 6",
+        "= 3x^2 - 4x + 8"
+      ],
+      "answers": [
+        "3x² − 4x + 8",
+        "3x² − 2x − 4",
+        "3x² − 4x − 4",
+        "7x² − 2x − 4"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Distribute the minus: −(2x²+x−6) = −2x²−x+6. Combine: 5x²−2x²=3x²; −3x−x=−4x; 2+6=8. Result: 3x²−4x+8. The −4 constant error forgets to flip the sign of −6 when subtracting.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is (2x³ + 0x² − x + 4) − (x³ − 3x + 1)?",
+      "latex": "(2x^3 - x + 4) - (x^3 - 3x + 1)",
+      "steps": [
+        "2x^3 - x + 4 - x^3 + 3x - 1",
+        "= x^3 + 2x + 3"
+      ],
+      "answers": [
+        "x³ + 2x + 3",
+        "x³ − 2x + 3",
+        "3x³ − 4x + 5",
+        "x³ + 2x + 5"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Distribute: 2x³−x+4−x³+3x−1. Combine: x³ terms: x³; x terms: −x+3x=2x; constants: 4−1=3. Result: x³+2x+3. The x³−2x+3 error keeps −3x negative instead of flipping to +3x.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these polynomials by degree from lowest to highest:",
+      "items": [
+        "7 (degree 0 — constant)",
+        "4x − 1 (degree 1 — linear)",
+        "x² + 3 (degree 2 — quadratic)",
+        "2x³ − x (degree 3 — cubic)"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "Degree = highest exponent: 7 has degree 0, 4x−1 has degree 1, x²+3 has degree 2, 2x³−x has degree 3. Polynomials are classified: degree 0=constant, 1=linear, 2=quadratic, 3=cubic, 4=quartic.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Polynomial Wraith",
+    "taunt": "Combine like terms — you have none.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Simplify: (4x² − 6x + 3) + (−2x² + 5x − 8) − (x² − x − 1)",
+        "latex": "(4x^2 - 6x + 3) + (-2x^2 + 5x - 8) - (x^2 - x - 1)",
+        "answers": [
+          "x² − 2",
+          "x² + 0x − 4",
+          "x² − 4",
+          "2x² − 4"
+        ],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "Distribute: 4x²−6x+3−2x²+5x−8−x²+x+1. x² terms: 4−2−1=1. x terms: −6+5+1=0. Constants: 3−8+1=−4. Result: x²−4. Note: 0x vanishes, so the polynomial has no x term.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The perimeter of a triangle has sides (x²+2), (3x−1), and (2x²−x+4). What is the perimeter?",
+        "latex": "(x^2+2) + (3x-1) + (2x^2-x+4)",
+        "answers": [
+          "3x² + 2x + 5",
+          "3x² + 2x + 7",
+          "x² + 2x + 5",
+          "3x² + 4x + 5"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Add all three: x²+2x²=3x²; 3x−x=2x; 2−1+4=5. Perimeter = 3x²+2x+5. Check: combine x²(1+2=3), x(3−1=2), constants(2−1+4=5).",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "If P(x) = 2x² + 3x − 1, find P(x + 1) − P(x).",
+        "latex": "P(x+1) - P(x)",
+        "answers": [
+          "4x + 4",
+          "4x + 5",
+          "2x + 4",
+          "4x + 2"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "P(x+1) = 2(x+1)² + 3(x+1) − 1 = 2(x²+2x+1) + 3x+3−1 = 2x²+4x+2+3x+2 = 2x²+7x+4. P(x+1)−P(x) = (2x²+7x+4) − (2x²+3x−1) = 4x+5. This result (4x+5) is the 'discrete derivative' of the quadratic.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

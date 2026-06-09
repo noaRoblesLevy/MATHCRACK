@@ -1,41 +1,14 @@
-function ThemeToggle({ isDark, onToggle }) {
-  return (
-    <button
-      onClick={onToggle}
-      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-      style={{
-        width: 44, height: 24, borderRadius: 12,
-        background: isDark ? '#0c1628' : '#dbeafe',
-        border: `1px solid ${isDark ? 'rgba(96,165,250,0.25)' : 'rgba(37,99,235,0.2)'}`,
-        position: 'relative', cursor: 'pointer', flexShrink: 0,
-        transition: 'background 0.3s, border-color 0.3s', padding: 0,
-      }}
-    >
-      <div style={{
-        position: 'absolute', top: 4,
-        left: isDark ? 4 : 20,
-        width: 14, height: 14, borderRadius: '50%',
-        background: isDark ? '#60a5fa' : '#fbbf24',
-        transition: 'left 0.28s cubic-bezier(0.34,1.56,0.64,1), background 0.3s',
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        fontSize: '0.55rem', lineHeight: 1,
-        boxShadow: isDark ? '0 0 8px rgba(96,165,250,0.6)' : '0 0 8px rgba(251,191,36,0.6)',
-      }}>
-        {isDark ? '🌙' : '☀️'}
-      </div>
-    </button>
-  )
-}
 
 const TABS = [
-  { id: 'subjects', label: 'Subjects', icon: '◈' },
-  { id: 'library',  label: 'Library',  icon: '◎' },
-  { id: 'profile',  label: 'Profile',  icon: '◉' },
+  { id: 'subjects', label: 'Subjects', icon: '🗺️' },
+  { id: 'library',  label: 'Library',  icon: '📚' },
+  { id: 'shop',     label: 'Shop',     icon: '🛒' },
+  { id: 'profile',  label: 'Profile',  icon: '👤' },
 ]
 
-export default function BottomNav({ activeView, onSubjects, onLibrary, onProfile, themeToggle, isDark }) {
-  const actions = { subjects: onSubjects, library: onLibrary, profile: onProfile }
-  const activeTab = ['profile', 'library'].includes(activeView) ? activeView : 'subjects'
+export default function BottomNav({ activeView, onSubjects, onLibrary, onShop, onProfile }) {
+  const actions = { subjects: onSubjects, library: onLibrary, shop: onShop, profile: onProfile }
+  const activeTab = ['profile', 'library', 'shop'].includes(activeView) ? activeView : 'subjects'
 
   return (
     <nav style={{

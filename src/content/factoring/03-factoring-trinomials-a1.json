@@ -1,0 +1,182 @@
+{
+  "id": "fact-03",
+  "title": "The Trinomial Temple",
+  "kingdom": "factoring",
+  "dungeonNumber": 3,
+  "lesson": {
+    "title": "Factoring Trinomials (a = 1)",
+    "body": "To factor x² + bx + c, find two numbers that **multiply to c** and **add to b**. Then write (x + p)(x + q) where p × q = c and p + q = b. Example: x² + 5x + 6 → find two numbers that multiply to 6 and add to 5: {2, 3} → (x + 2)(x + 3). For negative c, the signs must differ. For negative b but positive c, both numbers are negative."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Factor: x² + 7x + 12",
+      "latex": "x^2 + 7x + 12",
+      "steps": [
+        "\\text{Find two numbers: multiply to 12, add to 7}",
+        "3 \\times 4 = 12 \\text{ and } 3 + 4 = 7",
+        "(x + 3)(x + 4)"
+      ],
+      "answers": [
+        "(x + 2)(x + 6)",
+        "(x + 3)(x + 4)",
+        "(x + 1)(x + 12)",
+        "(x − 3)(x − 4)"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Need two numbers with product 12 and sum 7: the pair is {3, 4}. So the factorization is (x+3)(x+4). Check by expanding: x²+4x+3x+12 = x²+7x+12 ✓. (x+2)(x+6) gives sum 8, not 7.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Factor: x² − 5x + 6",
+      "latex": "x^2 - 5x + 6",
+      "steps": [
+        "\\text{Product = 6, sum = −5}",
+        "-2 \\times (-3) = 6 \\text{ and } -2 + (-3) = -5",
+        "(x - 2)(x - 3)"
+      ],
+      "answers": [
+        "(x + 2)(x + 3)",
+        "(x − 2)(x − 3)",
+        "(x − 1)(x − 6)",
+        "(x + 2)(x − 3)"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "c = +6 (positive) and b = −5 (negative) → both factors must be negative: (−2)(−3)=+6 and −2+(−3)=−5. Result: (x−2)(x−3). When c is positive and b is negative, both factors share the same negative sign.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Factor: x² + x − 12",
+      "latex": "x^2 + x - 12",
+      "steps": [
+        "\\text{Product = −12, sum = 1}",
+        "4 \\times (-3) = -12 \\text{ and } 4 + (-3) = 1",
+        "(x + 4)(x - 3)"
+      ],
+      "answers": [
+        "(x + 3)(x − 4)",
+        "(x − 3)(x + 4)",
+        "(x + 6)(x − 2)",
+        "(x − 6)(x + 2)"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "c = −12 (negative) → factors have opposite signs. Find pair: product −12, sum +1: {+4, −3}. Factorization: (x+4)(x−3). The (x+3)(x−4) answer has factors with product −12 but sum −1, not +1.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Factor: x² − 3x − 28",
+      "latex": "x^2 - 3x - 28",
+      "steps": [
+        "\\text{Product = −28, sum = −3}",
+        "4 \\times (-7) = -28 \\text{ and } 4 + (-7) = -3",
+        "(x + 4)(x - 7)"
+      ],
+      "answers": [
+        "(x + 7)(x − 4)",
+        "(x − 7)(x + 4)",
+        "(x + 7)(x + 4)",
+        "(x − 28)(x + 1)"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Product −28, sum −3: try pairs: (4,−7) gives sum −3 ✓. Result: (x+4)(x−7). Note: (x+7)(x−4) has product −28 but sum +3, not −3. The larger number takes the sign that matches the sum.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these factorizations from smallest constant (inside the factor) to largest:",
+      "items": [
+        "x² + 3x + 2 = (x+1)(x+2)",
+        "x² + 5x + 6 = (x+2)(x+3)",
+        "x² + 7x + 12 = (x+3)(x+4)",
+        "x² + 9x + 20 = (x+4)(x+5)"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "The consecutive integer pairs: (1,2), (2,3), (3,4), (4,5). As the factors increase, both b (sum) and c (product) increase. This pattern is useful for quickly factoring when the roots are consecutive integers.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Trinomial Lich",
+    "taunt": "Three terms. One undoing.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Factor: x² − 13x + 42",
+        "latex": "x^2 - 13x + 42",
+        "answers": [
+          "(x − 6)(x − 7)",
+          "(x + 6)(x + 7)",
+          "(x − 3)(x − 14)",
+          "(x − 2)(x − 21)"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Product = 42, sum = −13. Pairs of 42: (1,42), (2,21), (3,14), (6,7). With sum −13: −6+(−7)=−13 ✓. Answer: (x−6)(x−7). Check: (x−6)(x−7) = x²−13x+42 ✓.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Solve by factoring: x² + 2x − 15 = 0",
+        "latex": "x^2 + 2x - 15 = 0",
+        "answers": [
+          "x = 3 or x = −5",
+          "x = −3 or x = 5",
+          "x = 5 or x = −3",
+          "x = 3 or x = 5"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Factor: product −15, sum 2: {+5, −3} → (x+5)(x−3) = 0. Zero product property: x+5=0 → x=−5, or x−3=0 → x=3. Solutions: x=3 or x=−5. Note: (x+5)(x−3) means ONE factor is x+5 (root x=−5) and the other is x−3 (root x=3).",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The area of a rectangle is x² + 8x + 15. If the width is (x + 3), what is the length?",
+        "latex": "x^2 + 8x + 15 = (x+3)(\\;?\\;)",
+        "answers": [
+          "x + 5",
+          "x + 12",
+          "x + 3",
+          "x − 5"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Factor x²+8x+15: product 15, sum 8: {3,5} → (x+3)(x+5). Since width = (x+3), length = (x+5). Check: (x+3)(x+5) = x²+8x+15 ✓.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

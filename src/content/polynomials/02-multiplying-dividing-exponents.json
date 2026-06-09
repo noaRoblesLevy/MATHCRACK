@@ -1,0 +1,175 @@
+{
+  "id": "poly-02",
+  "title": "The Exponent Empire",
+  "kingdom": "polynomials",
+  "dungeonNumber": 2,
+  "lesson": {
+    "title": "Multiplying & Dividing Exponents",
+    "body": "When working with polynomial exponents: **Product rule**: xᵃ · xᵇ = xᵃ⁺ᵇ. **Power rule**: (xᵃ)ᵇ = xᵃᵇ. **Power of a product**: (xy)ᵃ = xᵃyᵃ. **Quotient rule**: xᵃ/xᵇ = xᵃ⁻ᵇ (for x ≠ 0). **Power of a quotient**: (x/y)ᵃ = xᵃ/yᵃ. **Zero exponent**: x⁰ = 1 (x ≠ 0). **Negative exponent**: x⁻ᵃ = 1/xᵃ. These rules combine when simplifying complex expressions."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Simplify: (3x²y)(4xy³)",
+      "latex": "(3x^2y)(4xy^3)",
+      "steps": [
+        "\\text{Coefficients: } 3 \\times 4 = 12",
+        "x^2 \\cdot x^1 = x^3, \\quad y^1 \\cdot y^3 = y^4"
+      ],
+      "answers": [
+        "7x³y⁴",
+        "12x²y³",
+        "12x³y⁴",
+        "12x³y³"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "Multiply coefficients: 12. Apply product rule to each variable: x²·x = x³; y·y³ = y⁴. Result: 12x³y⁴. The 7x³y⁴ error adds coefficients (3+4=7) instead of multiplying.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Simplify: (2a³b²)³",
+      "latex": "(2a^3b^2)^3",
+      "steps": [
+        "2^3 = 8, \\quad (a^3)^3 = a^9, \\quad (b^2)^3 = b^6"
+      ],
+      "answers": [
+        "6a⁹b⁶",
+        "8a⁶b⁵",
+        "8a⁹b⁶",
+        "2a⁹b⁶"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "Raise each factor to the power 3: 2³=8; (a³)³=a⁹; (b²)³=b⁶. Result: 8a⁹b⁶. The 2a⁹b⁶ error only raises variables to the power, forgetting the coefficient. The 6a⁹b⁶ error multiplies 2×3=6 instead of cubing (2³=8).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Simplify: 15x⁵y³ ÷ (3x²y)",
+      "latex": "\\frac{15x^5y^3}{3x^2y}",
+      "steps": [
+        "\\frac{15}{3} = 5, \\quad x^{5-2} = x^3, \\quad y^{3-1} = y^2"
+      ],
+      "answers": [
+        "5x³y²",
+        "12x³y²",
+        "5x⁷y⁴",
+        "5x³y³"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Divide coefficients: 15/3=5. Apply quotient rule: x⁵/x²=x³; y³/y=y². Result: 5x³y². The 5x⁷y⁴ error adds exponents instead of subtracting them (uses product rule when it should use quotient rule).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Simplify: (x³/y²)⁴",
+      "latex": "\\left(\\frac{x^3}{y^2}\\right)^4",
+      "steps": [
+        "(x^3)^4 = x^{12}, \\quad (y^2)^4 = y^8"
+      ],
+      "answers": [
+        "x⁷/y⁶",
+        "x¹²/y⁸",
+        "x¹²/y⁶",
+        "x⁷/y⁸"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Apply power rule to both numerator and denominator: (x³)⁴ = x¹² and (y²)⁴ = y⁸. Result: x¹²/y⁸. The x⁷/y⁶ error adds the outer exponent (3+4=7, 2+4=6) instead of multiplying.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these expressions from smallest to largest exponent on x (after simplifying):",
+      "items": [
+        "x² · x³ = x⁵",
+        "(x²)³ = x⁶",
+        "x⁸ / x² = x⁶",
+        "x⁴ / x = x³"
+      ],
+      "correctOrder": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "difficulty": 3,
+      "explanation": "Results: x⁴/x=x³, x²·x³=x⁵, (x²)³=x⁶, x⁸/x²=x⁶. Order by exponent: 3 < 5 < 6 = 6. Note two expressions both give x⁶ — either order is acceptable for those two.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Exponent Shade",
+    "taunt": "Add the powers. Multiply the pain.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Simplify: (4x²y³)² / (2xy²)",
+        "latex": "\\frac{(4x^2y^3)^2}{2xy^2}",
+        "answers": [
+          "8x³y⁴",
+          "8x²y³",
+          "4x³y⁴",
+          "16x³y⁴"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Numerator: (4x²y³)² = 16x⁴y⁶. Divide: 16/2=8; x⁴/x=x³; y⁶/y²=y⁴. Result: 8x³y⁴. The 16x³y⁴ error skips dividing the coefficient.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Simplify and write with positive exponents: x⁻³ · x⁵ / x²",
+        "latex": "\\frac{x^{-3} \\cdot x^5}{x^2}",
+        "answers": [
+          "x⁰ = 1",
+          "x⁻⁴",
+          "x⁴",
+          "x"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Combine exponents: x^(−3+5−2) = x^0 = 1. Any nonzero base raised to the 0 power equals 1. The x⁴ error adds the numerator exponents and ignores the denominator: −3+5=2, forgetting −2.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Simplify: (2x³)⁴ / (4x²)²",
+        "latex": "\\frac{(2x^3)^4}{(4x^2)^2}",
+        "answers": [
+          "x⁸",
+          "4x⁸",
+          "x⁴",
+          "4x⁴"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Numerator: (2x³)⁴ = 2⁴x¹² = 16x¹². Denominator: (4x²)² = 16x⁴. Divide: 16x¹²/16x⁴ = x⁸. The 4x⁸ error divides 16/16 as 4 instead of 1.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

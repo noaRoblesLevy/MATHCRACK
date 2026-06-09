@@ -1,0 +1,178 @@
+{
+  "id": "graph-04",
+  "title": "The Point-Slope Pass",
+  "kingdom": "graphing",
+  "dungeonNumber": 4,
+  "lesson": {
+    "title": "Point-Slope Form",
+    "body": "**Point-slope form** is y − y₁ = m(x − x₁), where (x₁, y₁) is a known point on the line and m is the slope. It's most useful when you know the slope and a point that is NOT the y-intercept. To convert to slope-intercept form, distribute and solve for y. Example: slope −2 through (3, 1) → y − 1 = −2(x − 3) → y = −2x + 7."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Write in point-slope form: slope 4, through (2, 5).",
+      "latex": "m = 4, \\; (x_1, y_1) = (2, 5)",
+      "steps": [
+        "y - y_1 = m(x - x_1)",
+        "y - 5 = 4(x - 2)"
+      ],
+      "answers": [
+        "y + 5 = 4(x − 2)",
+        "y − 5 = 4(x − 2)",
+        "y − 5 = 4(x + 2)",
+        "y − 2 = 4(x − 5)"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Point-slope form: y − y₁ = m(x − x₁). Plug in y₁ = 5, m = 4, x₁ = 2: y − 5 = 4(x − 2). The y + 5 error changes the sign of y₁. The y − 2 error swaps x₁ and y₁.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Convert y − 3 = 2(x + 1) to slope-intercept form.",
+      "latex": "y - 3 = 2(x + 1)",
+      "steps": [
+        "y - 3 = 2x + 2",
+        "y = 2x + 5"
+      ],
+      "answers": [
+        "y = 2x + 1",
+        "y = 2x + 2",
+        "y = 2x + 5",
+        "y = 2x − 1"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "Distribute: y − 3 = 2x + 2. Add 3: y = 2x + 5. The y = 2x + 2 error adds 3 to the left side (making it y = 0) instead of to the right. Always add 3 to both sides.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Write the equation of a line with slope −3 through (−1, 4) in slope-intercept form.",
+      "latex": "m = -3, \\; (-1, 4)",
+      "steps": [
+        "y - 4 = -3(x - (-1)) = -3(x + 1)",
+        "y = -3x - 3 + 4 = -3x + 1"
+      ],
+      "answers": [
+        "y = −3x − 7",
+        "y = −3x + 1",
+        "y = 3x + 7",
+        "y = −3x + 7"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "y − 4 = −3(x + 1) → y = −3x − 3 + 4 → y = −3x + 1. Watch the sign: x − (−1) = x + 1. The −3x + 7 error computes −3 × (−1) = +3, then adds 4 to get +7 (using −1 instead of +1).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Find the equation through (5, 2) and (3, 8) in slope-intercept form.",
+      "latex": "\\text{Through } (5, 2) \\text{ and } (3, 8)",
+      "steps": [
+        "m = \\frac{8-2}{3-5} = \\frac{6}{-2} = -3",
+        "y - 2 = -3(x - 5) \\Rightarrow y = -3x + 17"
+      ],
+      "answers": [
+        "y = −3x + 17",
+        "y = 3x − 13",
+        "y = −3x − 17",
+        "y = −3x + 7"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Slope = (8−2)/(3−5) = 6/(−2) = −3. Point-slope using (5,2): y−2 = −3(x−5) → y = −3x+15+2 = −3x+17. Check (3,8): −3(3)+17 = −9+17 = 8 ✓.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Put the steps in order to convert point-slope to standard form Ax + By = C for: slope 2/3 through (6, 1)",
+      "items": [
+        "Write point-slope: y − 1 = (2/3)(x − 6)",
+        "Multiply by 3: 3y − 3 = 2(x − 6)",
+        "Distribute and rearrange: 2x − 3y = 9",
+        "Expand: 3y − 3 = 2x − 12"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "difficulty": 3,
+      "explanation": "Write point-slope → multiply by 3 to clear the fraction → expand → rearrange to standard form. 3y−3 = 2x−12 → 2x−3y = −3+12 = 9. Standard form Ax+By=C has integer coefficients and C ≥ 0.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Point Phantom",
+    "taunt": "One point. One slope. One fate.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A line is perpendicular to y = (1/2)x + 3 and passes through (4, −1). What is its equation?",
+        "latex": "\\perp \\text{ to } m=\\tfrac{1}{2}, \\text{ through } (4,-1)",
+        "answers": [
+          "y = −2x + 7",
+          "y = 2x − 9",
+          "y = −2x − 9",
+          "y = (1/2)x − 3"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "Perpendicular slope: negative reciprocal of 1/2 is −2. Point-slope: y−(−1) = −2(x−4) → y+1 = −2x+8 → y = −2x+7. Check (4,−1): −2(4)+7 = −1 ✓.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A line parallel to 3x + y = 5 passes through (−2, 4). What is its equation in slope-intercept form?",
+        "latex": "\\parallel \\text{ to } 3x + y = 5, \\text{ through } (-2, 4)",
+        "answers": [
+          "y = 3x + 10",
+          "y = −3x + 4",
+          "y = −3x − 2",
+          "y = −(1/3)x + 4"
+        ],
+        "correct": 2,
+        "difficulty": 3,
+        "explanation": "Rewrite the given line: y = −3x + 5, so slope = −3. Parallel lines share the same slope. Point-slope through (−2, 4): y − 4 = −3(x − (−2)) = −3(x + 2) = −3x − 6. So y = −3x − 6 + 4 = −3x − 2. Check (−2, 4): −3(−2) − 2 = 6 − 2 = 4 ✓.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Find the y-intercept of a line with slope −4 that passes through (3, −5).",
+        "latex": "m = -4, \\; (3, -5)",
+        "answers": [
+          "b = 7",
+          "b = −17",
+          "b = 3",
+          "b = −3"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "y = −4x + b. Substitute (3, −5): −5 = −4(3) + b → −5 = −12 + b → b = 7. The y-intercept is 7. Check: y = −4(0) + 7 = 7 ✓. Verify (3,−5): −4(3)+7 = −12+7 = −5 ✓.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

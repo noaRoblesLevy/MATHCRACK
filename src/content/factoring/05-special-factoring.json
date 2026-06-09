@@ -1,0 +1,178 @@
+{
+  "id": "fact-05",
+  "title": "The Special Forms Sanctuary",
+  "kingdom": "factoring",
+  "dungeonNumber": 5,
+  "lesson": {
+    "title": "Special Factoring Formulas",
+    "body": "Three patterns appear often and should be recognized instantly: **Difference of squares**: a² − b² = (a + b)(a − b). **Perfect square trinomial**: a² + 2ab + b² = (a + b)² and a² − 2ab + b² = (a − b)². **Sum/difference of cubes**: a³ + b³ = (a + b)(a² − ab + b²) and a³ − b³ = (a − b)(a² + ab + b²). Memory trick for cubes: SOAP — Same sign, Opposite sign, Always Positive."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Factor: x² − 81",
+      "latex": "x^2 - 81",
+      "steps": [
+        "a = x, \\; b = 9",
+        "(x + 9)(x - 9)"
+      ],
+      "answers": [
+        "(x − 9)²",
+        "(x + 9)(x − 9)",
+        "(x − 81)(x + 1)",
+        "(x² − 9)²"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "x² − 81 = x² − 9² = (x+9)(x−9). Difference of squares: a²−b² = (a+b)(a−b). The (x−9)² error is a perfect square, which equals x²−18x+81, not x²−81.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Factor: 9x² − 25",
+      "latex": "9x^2 - 25",
+      "steps": [
+        "a = 3x, \\; b = 5",
+        "(3x + 5)(3x - 5)"
+      ],
+      "answers": [
+        "(3x − 5)²",
+        "(9x + 5)(x − 5)",
+        "(3x + 5)(3x − 5)",
+        "(9x − 25)(1)"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "9x² = (3x)² and 25 = 5². Difference of squares: (3x+5)(3x−5). Check: (3x)²−5² = 9x²−25 ✓. The (9x+5)(x−5) error doesn't correctly take the square root of 9x².",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Factor: x² + 12x + 36",
+      "latex": "x^2 + 12x + 36",
+      "steps": [
+        "a = x, \\; b = 6: \\quad a^2 + 2ab + b^2",
+        "= (x + 6)^2"
+      ],
+      "answers": [
+        "(x + 6)(x − 6)",
+        "(x + 6)²",
+        "(x − 6)²",
+        "(x + 4)(x + 9)"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Check: a²=x², 2ab=2(x)(6)=12x ✓, b²=36 ✓. This is a perfect square: (x+6)². The (x+6)(x−6) error gives x²−36, not x²+12x+36. When the constant is a perfect square and the middle term is exactly 2√(constant)×x, it's a perfect square trinomial.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Factor: x³ − 8",
+      "latex": "x^3 - 8",
+      "steps": [
+        "a = x, \\; b = 2: \\quad a^3 - b^3 = (a-b)(a^2+ab+b^2)",
+        "(x - 2)(x^2 + 2x + 4)"
+      ],
+      "answers": [
+        "(x − 2)³",
+        "(x − 2)(x + 2)²",
+        "(x − 2)(x² + 2x + 4)",
+        "(x + 2)(x² − 2x + 4)"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "x³ − 8 = x³ − 2³. Difference of cubes: (a−b)(a²+ab+b²) = (x−2)(x²+2x+4). Note: the second factor x²+2x+4 does NOT factor further. The (x+2) option would be sum of cubes (a+b)(a²−ab+b²) = (x+2)(x²−2x+4) for x³+8.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Identify which special pattern applies to each expression:",
+      "items": [
+        "4x² − 9 → Difference of squares",
+        "x² + 6x + 9 → Perfect square trinomial",
+        "x³ + 27 → Sum of cubes",
+        "x³ − 64 → Difference of cubes"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "Difference of squares: two perfect square terms subtracted (a²−b²). Perfect square trinomial: middle term = 2×(square root of each end). Sum of cubes: a³+b³. Difference of cubes: a³−b³. Recognizing the pattern first saves using the AC method.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Difference Specter",
+    "taunt": "Difference of squares. Sum of your failures.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Factor completely: 2x³ − 50x",
+        "latex": "2x^3 - 50x",
+        "answers": [
+          "2x(x² − 25)",
+          "2x(x + 5)(x − 5)",
+          "x(2x² − 50)",
+          "(2x − 10)(x + 5)"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "First factor GCF: 2x(x²−25). Then factor x²−25 as difference of squares: 2x(x+5)(x−5). Always factor completely — leaving 2x(x²−25) is partially factored. Check: 2x(x+5)(x−5) = 2x(x²−25) = 2x³−50x ✓.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Factor: 8x³ + 27",
+        "latex": "8x^3 + 27",
+        "answers": [
+          "(2x + 3)(4x² − 6x + 9)",
+          "(2x + 3)³",
+          "(2x − 3)(4x² + 6x + 9)",
+          "(8x + 3)(x² − 3x + 9)"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "8x³ = (2x)³ and 27 = 3³. Sum of cubes: (a+b)(a²−ab+b²) = (2x+3)((2x)²−(2x)(3)+3²) = (2x+3)(4x²−6x+9). SOAP: Same sign (+), Opposite sign (−), Always Positive. The difference of cubes version would have (2x−3)(4x²+6x+9).",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Factor: x⁴ − 16",
+        "latex": "x^4 - 16",
+        "answers": [
+          "(x² + 4)(x² − 4)",
+          "(x² + 4)(x + 2)(x − 2)",
+          "(x + 2)²(x − 2)²",
+          "(x⁴ − 16)"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "x⁴−16 = (x²)²−4². Difference of squares: (x²+4)(x²−4). Then x²−4 = (x+2)(x−2) (another difference of squares). Final: (x²+4)(x+2)(x−2). Note x²+4 cannot be factored over the reals (no real square root of −4).",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 25
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 35
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 28
+      },
+      {
+        "type": "solution-orb",
+        "weight": 12
+      }
+    ]
+  },
+  "lootTable": []
+}

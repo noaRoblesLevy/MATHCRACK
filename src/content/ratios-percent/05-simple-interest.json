@@ -1,0 +1,178 @@
+{
+  "id": "ratio-05",
+  "title": "The Interest Vaults",
+  "kingdom": "ratios-percent",
+  "dungeonNumber": 5,
+  "lesson": {
+    "title": "Simple Interest & Percent Change",
+    "body": "**Simple interest** is calculated on the original principal only: I = P × r × t, where P = principal, r = annual rate (as a decimal), t = time in years. Total amount = P + I. **Percent change** measures how much something increased or decreased relative to the original: Percent change = (New − Old) / Old × 100. Positive = increase, negative = decrease. Example: a price rising from $50 to $65 is a (65−50)/50 × 100 = 30% increase."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Calculate the simple interest on a $500 loan at 6% per year for 3 years.",
+      "latex": "I = P \\times r \\times t = 500 \\times 0.06 \\times 3",
+      "steps": [
+        "I = 500 \\times 0.06 \\times 3 = 90"
+      ],
+      "answers": [
+        "$18",
+        "$30",
+        "$90",
+        "$590"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "I = 500 × 0.06 × 3 = $90. The $590 is the total amount (P + I), not the interest alone. The $30 error comes from only multiplying $500 × 0.06 without including t = 3.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A population increased from 400 to 500. What is the percent increase?",
+      "latex": "\\frac{500 - 400}{400} \\times 100",
+      "steps": [
+        "\\text{Change: } 500 - 400 = 100",
+        "\\frac{100}{400} \\times 100 = 25\\%"
+      ],
+      "answers": [
+        "10%",
+        "20%",
+        "25%",
+        "100%"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "Percent change = (change ÷ original) × 100 = (100 ÷ 400) × 100 = 25%. The original (400) is the denominator, not the new value. The 20% error comes from dividing by 500 instead of 400.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A car's value dropped from $20,000 to $14,000. What is the percent decrease?",
+      "latex": "\\frac{20000 - 14000}{20000} \\times 100",
+      "steps": [
+        "\\text{Change: } 20000 - 14000 = 6000",
+        "\\frac{6000}{20000} \\times 100 = 30\\%"
+      ],
+      "answers": [
+        "14%",
+        "25%",
+        "30%",
+        "43%"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Percent decrease = (6000 ÷ 20000) × 100 = 30%. Always divide by the original (starting) value. Dividing by 14,000 (the new value) gives about 43% — incorrect.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "You invest $1,200 at 5% simple interest. After how many years will you have $1,500 total?",
+      "latex": "1200 + 1200 \\times 0.05 \\times t = 1500",
+      "steps": [
+        "\\text{Interest needed: } 1500 - 1200 = 300",
+        "300 = 1200 \\times 0.05 \\times t = 60t",
+        "t = 300 \\div 60 = 5"
+      ],
+      "answers": [
+        "3 years",
+        "4 years",
+        "5 years",
+        "6 years"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Interest needed = $300. Annual interest = $1200 × 0.05 = $60/year. Years = $300 ÷ $60 = 5 years. The formula I = Prt can be rearranged for any variable: t = I ÷ (Pr).",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these from largest to smallest percent change:",
+      "items": [
+        "From 50 to 75 → 50% increase",
+        "From 200 to 160 → 20% decrease",
+        "From 80 to 100 → 25% increase",
+        "From 10 to 14 → 40% increase"
+      ],
+      "correctOrder": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "difficulty": 3,
+      "explanation": "Compute: (75−50)/50=50%, (160−200)/200=−20%, (100−80)/80=25%, (14−10)/10=40%. Ordering by magnitude largest to smallest: 50% > 40% > 25% > 20%. Note: percent change depends on the original value — a small absolute change from a small base can be a large percent.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Usurer's Ghost",
+    "taunt": "Principal times rate times time. Then time's up.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A savings account earns 4% simple interest. If you want to earn $240 in interest and the rate is 4% per year, how much principal do you need for 2 years?",
+        "latex": "P \\times 0.04 \\times 2 = 240",
+        "answers": [
+          "$1,200",
+          "$2,400",
+          "$3,000",
+          "$6,000"
+        ],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "P × 0.08 = 240 → P = 240 ÷ 0.08 = $3,000. Check: $3,000 × 0.04 × 2 = $240 ✓. The $1,200 error comes from not multiplying the rate by the time (using P × 0.04 = 240 → P = $6,000 is the other common error from mixing up which side t goes on).",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A store raised a price from $80 to $92, then later from $92 to $110.40. In which period was the percent increase greater?",
+        "latex": "\\frac{12}{80} \\text{ vs } \\frac{18.40}{92}",
+        "answers": [
+          "First period ($80→$92)",
+          "Second period ($92→$110.40)",
+          "Both were equal increases",
+          "Cannot be determined"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "Period 1: (92−80)/80 = 12/80 = 15%. Period 2: (110.40−92)/92 = 18.40/92 = 20%. The second period had the greater percent increase (20% > 15%), even though $18.40 > $12 in absolute terms. When the base changes, the same percent can mean a different dollar amount.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "An item increased in price by 20%, then decreased by 20%. Is the final price the same as the original?",
+        "latex": "p \\times 1.20 \\times 0.80 = ?",
+        "answers": [
+          "Yes — the changes cancel out",
+          "No — the final price is 4% less than the original",
+          "No — the final price is 4% more than the original",
+          "No — the final price is 40% less"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "p × 1.20 × 0.80 = p × 0.96. So the final price is 96% of the original — 4% less. Example: $100 × 1.20 = $120, then $120 × 0.80 = $96. Percent changes don't simply cancel because each applies to a different base.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 25
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 35
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 28
+      },
+      {
+        "type": "solution-orb",
+        "weight": 12
+      }
+    ]
+  },
+  "lootTable": []
+}

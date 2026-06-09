@@ -1,0 +1,177 @@
+{
+  "id": "quad-06",
+  "title": "The Discriminant Dungeon",
+  "kingdom": "quadratics",
+  "dungeonNumber": 6,
+  "lesson": {
+    "title": "The Discriminant",
+    "body": "The **discriminant** is Δ = b² − 4ac (the expression under the radical in the quadratic formula). It reveals the number and type of solutions **without solving**: Δ > 0 → **two distinct real roots** (parabola crosses x-axis twice). Δ = 0 → **one real root** (double root, parabola tangent to x-axis). Δ < 0 → **no real roots** (parabola doesn't cross x-axis; complex roots). This is your shortcut for quickly classifying quadratics."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "For x² − 5x + 6 = 0, compute the discriminant and state the number of real roots.",
+      "latex": "\\Delta = b^2 - 4ac = 25 - 24",
+      "steps": [
+        "\\Delta = 25 - 24 = 1 > 0",
+        "\\text{Two distinct real roots}"
+      ],
+      "answers": [
+        "Δ = 1; two real roots",
+        "Δ = −1; no real roots",
+        "Δ = 25; two real roots",
+        "Δ = 0; one real root"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "a=1,b=−5,c=6. Δ=(−5)²−4(1)(6)=25−24=1>0. Positive discriminant → two distinct real roots. (The roots are x=2 and x=3.)",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For x² + 4x + 4 = 0, how many real roots are there?",
+      "latex": "\\Delta = 16 - 16 = 0",
+      "steps": [
+        "\\Delta = 0 \\Rightarrow \\text{one (double) root}"
+      ],
+      "answers": [
+        "Two distinct roots",
+        "One (double) root",
+        "No real roots",
+        "Infinitely many roots"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "a=1,b=4,c=4. Δ=16−16=0. One double root: x=−b/(2a)=−4/2=−2. The parabola just touches the x-axis at x=−2. This is the perfect square (x+2)²=0.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "For 2x² + x + 3 = 0, what does the discriminant tell us?",
+      "latex": "\\Delta = 1 - 24 = -23",
+      "steps": [
+        "\\Delta = 1 - 24 = -23 < 0",
+        "\\text{No real solutions}"
+      ],
+      "answers": [
+        "Two irrational real roots",
+        "One real root",
+        "No real solutions",
+        "Two rational real roots"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "a=2,b=1,c=3. Δ=1−24=−23<0. Negative discriminant → no real solutions. The parabola y=2x²+x+3 never crosses the x-axis (it sits entirely above it since a>0).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "If the discriminant of ax² + bx + 9 = 0 is zero, and b = 6, what is a?",
+      "latex": "b^2 - 4ac = 0 \\Rightarrow 36 - 36a = 0",
+      "steps": [
+        "36 = 36a",
+        "a = 1"
+      ],
+      "answers": [
+        "a = 4",
+        "a = 1",
+        "a = 6",
+        "a = 9"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Δ=0: b²−4ac=0 → 36−4a(9)=0 → 36=36a → a=1. The equation becomes x²+6x+9=0=(x+3)², confirming a single double root at x=−3.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Match each discriminant value to the correct root description — order from Δ<0 to Δ=0 to Δ>0 (perfect square) to Δ>0 (non-perfect square):",
+      "items": [
+        "Δ < 0 → No real roots (complex only)",
+        "Δ = 0 → One repeated real root",
+        "Δ > 0, perfect square → Two rational real roots",
+        "Δ > 0, non-perfect square → Two irrational real roots"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "The discriminant tells you not just how many roots, but their type. When Δ=4 (perfect square), roots are rational; when Δ=5 (non-perfect square), roots involve √5 (irrational). This helps predict the form of the answer before calculating.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Discriminant Wraith",
+    "taunt": "Positive. Zero. Negative. All bad for you.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "For which value of k does x² + kx + 9 = 0 have exactly one real root?",
+        "latex": "\\Delta = k^2 - 36 = 0",
+        "answers": [
+          "k = 3",
+          "k = ±6",
+          "k = 9",
+          "k = ±3"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "Δ=k²−36=0 → k²=36 → k=±6. Both k=6 and k=−6 give a double root. When k=6: x²+6x+9=(x+3)², root x=−3. When k=−6: x²−6x+9=(x−3)², root x=3.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "For which value of c does 3x² − 6x + c = 0 have two distinct real roots?",
+        "latex": "\\Delta = 36 - 12c > 0",
+        "answers": [
+          "c = 3",
+          "c = 4",
+          "c < 3",
+          "c > 3"
+        ],
+        "correct": 2,
+        "difficulty": 3,
+        "explanation": "Δ=36−12c>0 → 36>12c → c<3. Any value c<3 gives two distinct real roots. At c=3, the discriminant is zero (one double root). At c>3, no real roots. Example: c=2 → Δ=36−24=12>0 ✓.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A quadratic has a=2, b=−8, and the roots are rational. Which value of c is possible?",
+        "latex": "\\Delta = 64 - 8c \\geq 0, \\text{ perfect square}",
+        "answers": [
+          "c = 6",
+          "c = 9",
+          "c = 10",
+          "c = 8"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "For rational roots, Δ must be a non-negative perfect square. Δ=64−8c. Test c=6: Δ=64−48=16=4² ✓ (rational). Test c=9: Δ=64−72=−8<0 (no real roots). Test c=8: Δ=64−64=0 (double root, rational but not two distinct). c=6 gives two distinct rational roots.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 25
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 35
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 28
+      },
+      {
+        "type": "solution-orb",
+        "weight": 12
+      }
+    ]
+  },
+  "lootTable": []
+}

@@ -10,16 +10,21 @@
   "rooms": [
     {
       "type": "multiple-choice",
-      "question": "Which property justifies rewriting 3 + 7 as 7 + 3?",
-      "latex": "3 + 7 = 7 + 3",
+      "question": "A student claims 47 × 83 = 83 × 47 without calculating. Which property guarantees this?",
+      "latex": "47 \\times 83 = 83 \\times 47",
       "steps": [
-        "\\text{Order of addends is swapped.}",
-        "\\text{Commutative Property of Addition: } a + b = b + a"
+        "\\text{The two factors have been swapped in order.}",
+        "\\text{Which property allows reordering factors?}"
       ],
-      "answers": ["Associative Property", "Commutative Property", "Distributive Property", "Identity Property"],
+      "answers": [
+        "Associative Property",
+        "Commutative Property",
+        "Distributive Property",
+        "Identity Property"
+      ],
       "correct": 1,
       "difficulty": 1,
-      "explanation": "The commutative property states that changing the order of numbers in addition (or multiplication) does not change the result: a + b = b + a. Here 3 + 7 = 10 and 7 + 3 = 10. The associative property is about grouping, not order.",
+      "explanation": "The commutative property of multiplication: a × b = b × a. Switching the order of factors never changes the product. The associative property is about changing which numbers are grouped in parentheses, not about swapping order.",
       "xp": 10
     },
     {
@@ -30,7 +35,12 @@
         "4(x + 5) = 4 \\cdot x + 4 \\cdot 5",
         "= 4x + 20"
       ],
-      "answers": ["4x + 5", "4x + 9", "4x + 20", "x + 20"],
+      "answers": [
+        "4x + 5",
+        "4x + 9",
+        "4x + 20",
+        "x + 20"
+      ],
       "correct": 2,
       "difficulty": 1,
       "explanation": "The distributive property: a(b + c) = ab + ac. Multiply 4 by each term inside the parentheses: 4 × x = 4x and 4 × 5 = 20, giving 4x + 20. A common mistake is to only multiply the first term or to add 4 + 5 instead of multiplying.",
@@ -41,13 +51,18 @@
       "question": "Which property is shown by (2 + 3) + 4 = 2 + (3 + 4)?",
       "latex": "(2 + 3) + 4 = 2 + (3 + 4)",
       "steps": [
-        "\\text{The numbers are the same; only the grouping (parentheses) changed.}",
-        "\\text{Associative Property of Addition: }(a + b) + c = a + (b + c)"
+        "\\text{Count the numbers: 2, 3, and 4 appear in the same left-to-right order on both sides.}",
+        "\\text{What changed between the left side and the right side?}"
       ],
-      "answers": ["Commutative Property", "Distributive Property", "Associative Property", "Inverse Property"],
+      "answers": [
+        "Commutative Property",
+        "Distributive Property",
+        "Associative Property",
+        "Inverse Property"
+      ],
       "correct": 2,
       "difficulty": 1,
-      "explanation": "The associative property states that regrouping addends does not change the sum. The numbers stay in the same left-to-right order — only the parentheses (grouping) moved. The commutative property would require swapping the order of numbers.",
+      "explanation": "The associative property states that regrouping addends does not change the sum: (a + b) + c = a + (b + c). The numbers stay in the same left-to-right order — only which pair is inside the parentheses changed. The commutative property would require the numbers themselves to swap positions.",
       "xp": 10
     },
     {
@@ -58,7 +73,12 @@
         "\\text{Additive inverse of } a \\text{ is } -a",
         "-9 + 9 = 0"
       ],
-      "answers": ["-9", "0", "9", "\\frac{1}{9}"],
+      "answers": [
+        "-9",
+        "0",
+        "9",
+        "\\frac{1}{9}"
+      ],
       "correct": 2,
       "difficulty": 2,
       "explanation": "The additive inverse of a number is the value you add to get 0 (the additive identity). For −9, the additive inverse is +9 because −9 + 9 = 0. The multiplicative inverse (reciprocal) would be −1/9, which is a different concept.",
@@ -73,13 +93,20 @@
         "(1+2)+3 = 1+(2+3)  →  Associative",
         "2(x+4) = 2x+8  →  Distributive"
       ],
-      "correctOrder": [1, 2, 3, 0],
+      "correctOrder": [
+        1,
+        2,
+        3,
+        0
+      ],
       "difficulty": 2,
       "explanation": "Commutative = swap order; Associative = move parentheses; Distributive = multiply into the bracket; Multiplicative Identity = multiplying by 1 leaves the number unchanged. These four properties are the backbone of all algebraic manipulation.",
       "xp": 20
     }
   ],
   "boss": {
+    "name": "The Property Wraith",
+    "taunt": "Commutativity cannot save you now.",
     "questions": [
       {
         "type": "multiple-choice",
@@ -89,7 +116,12 @@
           "3(2x - 7) = 3 \\cdot 2x - 3 \\cdot 7",
           "= 6x - 21"
         ],
-        "answers": ["6x - 7", "6x - 21", "5x - 21", "6x + 21"],
+        "answers": [
+          "6x - 7",
+          "6x - 21",
+          "5x - 21",
+          "6x + 21"
+        ],
         "correct": 1,
         "difficulty": 2,
         "explanation": "Distribute 3 to both terms: 3 × 2x = 6x and 3 × (−7) = −21, giving 6x − 21. Watch the sign: distributing into a negative term keeps the minus. A common error is 3 × 2x − 7 = 6x − 7 (forgetting to multiply 7 by 3).",
@@ -122,14 +154,37 @@
           "\\text{Multiplicative inverse of } \\frac{a}{b} \\text{ is } \\frac{b}{a}",
           "\\frac{3}{4} \\times \\frac{4}{3} = \\frac{12}{12} = 1"
         ],
-        "answers": ["-\\frac{3}{4}", "\\frac{3}{4}", "\\frac{4}{3}", "-\\frac{4}{3}"],
+        "answers": [
+          "-\\frac{3}{4}",
+          "\\frac{3}{4}",
+          "\\frac{4}{3}",
+          "-\\frac{4}{3}"
+        ],
         "correct": 2,
         "difficulty": 3,
         "explanation": "The multiplicative inverse (reciprocal) of a/b is b/a, because their product is 1 (the multiplicative identity). For 3/4, the reciprocal is 4/3 and (3/4)(4/3) = 12/12 = 1. The additive inverse would be −3/4, which is a different operation.",
         "xp": 25
       }
     ],
-    "passMark": 2
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
   },
   "lootTable": []
 }

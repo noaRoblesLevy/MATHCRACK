@@ -1,0 +1,178 @@
+{
+  "id": "func-02",
+  "title": "The Notation Nexus",
+  "kingdom": "functions",
+  "dungeonNumber": 2,
+  "lesson": {
+    "title": "Function Notation",
+    "body": "**Function notation** uses f(x) (read 'f of x') instead of y. It means 'the output of function f when the input is x.' To **evaluate**: substitute the input value for x everywhere in the expression. Example: if f(x) = 2x² − 3, then f(4) = 2(16) − 3 = 29. To **find x**: set f(x) equal to a value and solve. Example: if f(x) = 5x + 1 and f(x) = 16, then 5x + 1 = 16 → x = 3."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "If f(x) = 3x − 7, find f(5).",
+      "latex": "f(x) = 3x - 7, \\quad f(5) = ?",
+      "steps": [
+        "f(5) = 3(5) - 7 = 15 - 7 = 8"
+      ],
+      "answers": [
+        "8",
+        "15",
+        "−7",
+        "22"
+      ],
+      "correct": 0,
+      "difficulty": 1,
+      "explanation": "Substitute x = 5: f(5) = 3(5) − 7 = 15 − 7 = 8. The 15 error computes 3×5 but forgets to subtract 7. The 22 error computes 3×5+7 = 22 (adds instead of subtracts).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "If g(x) = x² + 2x, find g(−3).",
+      "latex": "g(-3) = (-3)^2 + 2(-3)",
+      "steps": [
+        "(-3)^2 = 9",
+        "2(-3) = -6",
+        "9 + (-6) = 3"
+      ],
+      "answers": [
+        "−15",
+        "3",
+        "15",
+        "−3"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "g(−3) = (−3)² + 2(−3) = 9 − 6 = 3. Note: (−3)² = +9 (squaring a negative gives positive). The −15 error computes (−3)² as −9 instead of 9.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "If h(x) = 4x + 1, for what value of x does h(x) = 17?",
+      "latex": "4x + 1 = 17",
+      "steps": [
+        "4x = 16",
+        "x = 4"
+      ],
+      "answers": [
+        "3",
+        "4",
+        "5",
+        "16"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Set h(x) = 17: 4x + 1 = 17 → 4x = 16 → x = 4. Check: h(4) = 4(4)+1 = 17 ✓. The 16 error solves 4x = 17 (doesn't subtract 1 first).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "If f(x) = 2x and g(x) = x + 5, find f(g(3)).",
+      "latex": "f(g(3)) = f(3 + 5) = f(8)",
+      "steps": [
+        "g(3) = 3 + 5 = 8",
+        "f(8) = 2(8) = 16"
+      ],
+      "answers": [
+        "11",
+        "13",
+        "16",
+        "21"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Work inside out: g(3) = 8 first, then f(8) = 16. f(g(x)) is called a composition — you apply g first, then f to the result. The 11 error computes f(3) + 5 = 6+5 = 11 (applies f to the input of g, not the output).",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order the function evaluations from smallest to largest result for f(x) = x² − 4:",
+      "items": [
+        "f(0) = −4",
+        "f(2) = 0",
+        "f(3) = 5",
+        "f(−3) = 5"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "f(0)=0−4=−4; f(2)=4−4=0; f(3)=9−4=5; f(−3)=9−4=5. Order: −4 < 0 < 5 = 5. Note f(3) = f(−3) — even functions (with only even powers of x) satisfy f(x) = f(−x). Either order for the equal values is acceptable.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Notation Daemon",
+    "taunt": "f(x). f(doom). f(you).",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "If f(x) = 3x² − 2x + 1, find f(−2).",
+        "latex": "f(-2) = 3(-2)^2 - 2(-2) + 1",
+        "answers": [
+          "5",
+          "9",
+          "17",
+          "21"
+        ],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "f(−2) = 3(4) − 2(−2) + 1 = 12 + 4 + 1 = 17. Key: −2(−2) = +4 (negatives cancel). The 9 error computes 3(4) − 2(2) + 1 = 12 − 4 + 1 = 9 (treats −2 as +2 in the second term).",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Given f(x) = 5x − 3 and f(a) = 22, what is f(a + 1)?",
+        "latex": "f(a) = 22, \\quad f(a+1) = ?",
+        "answers": [
+          "23",
+          "26",
+          "27",
+          "30"
+        ],
+        "correct": 2,
+        "difficulty": 3,
+        "explanation": "From f(a) = 22: 5a − 3 = 22 → a = 5. Then f(a+1) = f(6) = 5(6) − 3 = 27. Alternatively: each unit increase in x increases f by 5 (the slope), so f(a+1) = f(a) + 5 = 22 + 5 = 27. This shortcut works because f is linear.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "For f(x) = |x − 2|, which two x-values give f(x) = 3?",
+        "latex": "|x - 2| = 3",
+        "answers": [
+          "x = 1 and x = 5",
+          "x = −1 and x = 5",
+          "x = 3 and x = −3",
+          "x = 5 only"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "|x−2| = 3 means x−2 = 3 or x−2 = −3. Solutions: x = 5 or x = −1. Check: |5−2| = 3 ✓ and |−1−2| = |−3| = 3 ✓. Absolute value equations always have two cases (unless the answer is 0).",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

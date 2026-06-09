@@ -55,9 +55,11 @@ export async function loadCloudProgress(userId) {
 // Push local state up to Supabase
 export async function saveCloudProgress(userId, progress) {
   if (!supabase) return
+  const localProgress = JSON.parse(localStorage.getItem('mathcrack_progress') || '{}')
   await supabase.from('user_progress').upsert({
     user_id: userId,
     ...progress,
+    progress: localProgress,
     updated_at: new Date().toISOString(),
   }, { onConflict: 'user_id' })
 }

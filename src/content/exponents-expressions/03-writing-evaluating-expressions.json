@@ -1,0 +1,179 @@
+{
+  "id": "exp-03",
+  "title": "The Expression Excavation",
+  "kingdom": "exponents-expressions",
+  "dungeonNumber": 3,
+  "lesson": {
+    "title": "Writing & Evaluating Expressions",
+    "body": "An **algebraic expression** combines numbers, variables, and operations — but has no equals sign. To **translate** from words: 'more than' = add, 'less than' = subtract (in reverse), 'times' = multiply, 'quotient' = divide. Example: 'five less than twice a number' = 2n − 5. To **evaluate**, substitute the given value and follow order of operations. Example: evaluate 3x² − x when x = 4 → 3(16) − 4 = 48 − 4 = 44."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Translate to an expression: 'seven more than three times a number n'",
+      "latex": "\\text{seven more than three times } n",
+      "steps": [
+        "\\text{'three times } n\\text{': } 3n",
+        "\\text{'seven more than': add 7}"
+      ],
+      "answers": [
+        "7n + 3",
+        "3n − 7",
+        "3 + 7n",
+        "3n + 7"
+      ],
+      "correct": 3,
+      "difficulty": 1,
+      "explanation": "'Three times n' = 3n. 'Seven more than' means +7. So: 3n + 7. The 7n + 3 error reverses which number is the coefficient of n. The 3n − 7 error changes 'more than' to subtraction.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Evaluate 2x + 5 when x = −3.",
+      "latex": "2x + 5 \\text{ when } x = -3",
+      "steps": [
+        "2(-3) + 5",
+        "= -6 + 5 = -1"
+      ],
+      "answers": [
+        "−11",
+        "−1",
+        "1",
+        "11"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Substitute: 2(−3) + 5 = −6 + 5 = −1. A common error is forgetting the sign: computing 2(3) + 5 = 11. Another error is evaluating as 2 + (−3) + 5 = 4 (adding the coefficient instead of multiplying).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Evaluate 4a² − 2b when a = 3, b = 5.",
+      "latex": "4a^2 - 2b \\text{ when } a=3, b=5",
+      "steps": [
+        "4(3)^2 - 2(5)",
+        "= 4(9) - 10",
+        "= 36 - 10 = 26"
+      ],
+      "answers": [
+        "26",
+        "46",
+        "56",
+        "86"
+      ],
+      "correct": 0,
+      "difficulty": 2,
+      "explanation": "Substitute then follow PEMDAS: 4(3²) − 2(5) = 4(9) − 10 = 36 − 10 = 26. A common error is computing (4a)² instead of 4(a²): (4×3)² = 144 − 10 = 134. Another is evaluating 4+9 = 13 (adding coefficient to base²).",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Translate: 'The quotient of a number and 4, decreased by 3'",
+      "latex": "\\frac{n}{4} - 3",
+      "steps": [
+        "\\text{'quotient of } n \\text{ and 4': } \\frac{n}{4}",
+        "\\text{'decreased by 3': subtract 3}"
+      ],
+      "answers": [
+        "4n − 3",
+        "3 − n/4",
+        "n/4 − 3",
+        "n/(4 − 3)"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "'Quotient of n and 4' = n ÷ 4 = n/4. 'Decreased by 3' = subtract 3. Result: n/4 − 3. The '3 − n/4' answer has the subtraction reversed — 'decreased by' means subtract 3 from the expression, not subtract the expression from 3.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Put the evaluation steps in order for: 5x² − 3x + 1 when x = 2",
+      "items": [
+        "Substitute: 5(2)² − 3(2) + 1",
+        "Compute exponent: 5(4) − 3(2) + 1",
+        "Multiply: 20 − 6 + 1",
+        "Add/subtract left to right: 15"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "Follow PEMDAS after substituting: substitute → exponents → multiplication → addition/subtraction. 5(2)² − 3(2) + 1 → 5(4) − 6 + 1 → 20 − 6 + 1 → 15. Doing the additions before the multiplications would give the wrong answer.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Expression Shade",
+    "taunt": "Variables bow to no one — except me.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Evaluate (x + y)² − xy when x = 5 and y = −2.",
+        "latex": "(x + y)^2 - xy \\text{ where } x=5, y=-2",
+        "answers": [
+          "−1",
+          "1",
+          "19",
+          "9"
+        ],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "Substitute: (5 + (−2))² − (5)(−2) = (3)² − (−10) = 9 + 10 = 19. Note: subtracting a negative becomes addition. The 9 answer forgets the −xy term. The −1 answer miscomputes (5−2)² as 9 and then incorrectly subtracts 10.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "The formula for the area of a trapezoid is A = ½h(b₁ + b₂). Find A when h = 6, b₁ = 4, b₂ = 10.",
+        "latex": "A = \\tfrac{1}{2}(6)(4 + 10)",
+        "answers": [
+          "42",
+          "84",
+          "120",
+          "48"
+        ],
+        "correct": 0,
+        "difficulty": 2,
+        "explanation": "A = ½ × 6 × (4 + 10) = ½ × 6 × 14 = 3 × 14 = 42. The 84 error doubles instead of halving. The 120 error omits the ½ and uses b₁ × b₂ instead of b₁ + b₂.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Write an expression for the total cost of n items at $8 each, plus a one-time shipping fee of $5, minus a $2 coupon.",
+        "latex": "\\text{Total cost} = ?",
+        "answers": [
+          "8n + 5 − 2",
+          "8 + 5n − 2",
+          "8n − 5 + 2",
+          "n(8 + 5 − 2)"
+        ],
+        "correct": 0,
+        "difficulty": 3,
+        "explanation": "Per-item cost: 8n (n items at $8 each). Fixed shipping: +5. Coupon: −2. Total: 8n + 5 − 2 = 8n + 3. The n(8 + 5 − 2) error makes both the shipping and coupon scale with n, but they are one-time (fixed) amounts.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

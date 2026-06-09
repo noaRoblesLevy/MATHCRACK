@@ -1,0 +1,177 @@
+{
+  "id": "ratio-03",
+  "title": "The Percent Pyramid",
+  "kingdom": "ratios-percent",
+  "dungeonNumber": 3,
+  "lesson": {
+    "title": "Percent",
+    "body": "**Percent** means 'per hundred.' To convert a percent to a decimal, divide by 100 (move the decimal point two places left): 45% = 0.45. To find a percent of a number, multiply: 30% of 80 = 0.30 × 80 = 24. To find what percent one number is of another, divide and multiply by 100: 18 is what % of 72? → 18/72 × 100 = 25%. To find the whole when you know the part and percent: whole = part ÷ percent (as decimal)."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "Convert 7.5% to a decimal.",
+      "latex": "7.5\\% = ?",
+      "steps": [
+        "\\text{Divide by 100 (move decimal two places left):}",
+        "7.5 \\div 100 = 0.075"
+      ],
+      "answers": [
+        "0.75",
+        "0.075",
+        "7.5",
+        "75"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Dividing by 100 moves the decimal point two places left: 7.5% → 0.075. A common error is moving only one place (giving 0.75, which would be 75%), or not moving it at all.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is 35% of 120?",
+      "latex": "35\\% \\times 120 = ?",
+      "steps": [
+        "0.35 \\times 120 = 42"
+      ],
+      "answers": [
+        "3.5",
+        "42",
+        "48",
+        "420"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "Convert to decimal: 35% = 0.35. Then multiply: 0.35 × 120 = 42. A shortcut: 10% of 120 = 12, so 30% = 36, and 5% = 6, giving 30% + 5% = 42.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "27 is what percent of 90?",
+      "latex": "\\frac{27}{90} \\times 100 = ?\\%",
+      "steps": [
+        "27 \\div 90 = 0.3",
+        "0.3 \\times 100 = 30\\%"
+      ],
+      "answers": [
+        "20%",
+        "27%",
+        "30%",
+        "33%"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Divide the part by the whole: 27 ÷ 90 = 0.3. Multiply by 100: 0.3 × 100 = 30%. Check: 30% of 90 = 0.30 × 90 = 27 ✓. The 27% answer is a common error from reading the number directly as a percent.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "15 is 60% of what number?",
+      "latex": "15 = 60\\% \\times n",
+      "steps": [
+        "15 = 0.60 \\times n",
+        "n = 15 \\div 0.60 = 25"
+      ],
+      "answers": [
+        "9",
+        "20",
+        "25",
+        "30"
+      ],
+      "correct": 2,
+      "difficulty": 2,
+      "explanation": "Rewrite: 15 = 0.60 × n. Divide both sides by 0.60: n = 15 ÷ 0.60 = 25. Check: 60% of 25 = 0.60 × 25 = 15 ✓. When you know the percent and the part, divide (don't multiply) to find the whole.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these from smallest to largest value:",
+      "items": [
+        "25% of 200 = 50",
+        "40% of 90 = 36",
+        "15% of 400 = 60",
+        "80% of 40 = 32"
+      ],
+      "correctOrder": [
+        3,
+        1,
+        0,
+        2
+      ],
+      "difficulty": 3,
+      "explanation": "Compute each: 0.25×200=50, 0.40×90=36, 0.15×400=60, 0.80×40=32. Order: 32 < 36 < 50 < 60. A high percentage of a small number can be less than a low percentage of a large number — always compute before comparing.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Percent Phantom",
+    "taunt": "One hundred parts. How many will break you?",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A class of 40 students got a test back. If 30% failed, how many students passed?",
+        "latex": "40 - (30\\% \\times 40) = ?",
+        "answers": [
+          "12 students",
+          "24 students",
+          "28 students",
+          "30 students"
+        ],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "30% failed: 0.30 × 40 = 12 students failed. Passed: 40 − 12 = 28 students. Alternatively: 70% passed → 0.70 × 40 = 28. Both methods give the same answer.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A survey shows 45 out of 180 people prefer option A. What percent prefer option A?",
+        "latex": "\\frac{45}{180} \\times 100",
+        "answers": [
+          "20%",
+          "25%",
+          "40%",
+          "45%"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "45 ÷ 180 = 0.25. Multiply by 100: 25%. Check: 25% of 180 = 45 ✓. The 45% answer is a distractor that confuses the part (45) with the percent.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "After a 20% discount, a jacket costs $64. What was the original price?",
+        "latex": "0.80 \\times p = 64",
+        "answers": [
+          "$76.80",
+          "$80",
+          "$84",
+          "$128"
+        ],
+        "correct": 1,
+        "difficulty": 3,
+        "explanation": "A 20% discount means you pay 80% of the original price. So 0.80 × p = 64 → p = 64 ÷ 0.80 = $80. The common error is adding 20% of $64 back, giving $76.80 — but the 20% should be taken of the original price, not the discounted price.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}

@@ -78,6 +78,7 @@ function DragAndDrop({ room, onWrong, onCorrect }) {
   const [order, setOrder] = useState(() => room.items.map((_, i) => i))
   const [dragging, setDragging] = useState(null)
   const [submitted, setSubmitted] = useState(false)
+  const [dragStyle, setDragStyle] = useState({})
 
   function handleDragStart(itemIdx) { setDragging(itemIdx) }
 
@@ -89,6 +90,34 @@ function DragAndDrop({ room, onWrong, onCorrect }) {
     next.splice(targetPos, 0, dragging)
     setOrder(next)
     setDragging(null)
+    setDragStyle({})
+  }
+
+  function handleTouchStart(e, itemIdx) {
+    e.preventDefault()
+    setDragging(itemIdx)
+  }
+
+  function handleTouchMove(e) {
+    e.preventDefault()
+    const touch = e.touches[0]
+    setDragStyle({ opacity: 0.5 })
+    const el = document.elementFromPoint(touch.clientX, touch.clientY)
+    const target = el?.closest('[data-pos]')
+    if (!target) return
+    const targetPos = parseInt(target.dataset.pos, 10)
+    if (dragging === null) return
+    const next = [...order]
+    const fromPos = next.indexOf(dragging)
+    if (fromPos === targetPos) return
+    next.splice(fromPos, 1)
+    next.splice(targetPos, 0, dragging)
+    setOrder(next)
+  }
+
+  function handleTouchEnd() {
+    setDragging(null)
+    setDragStyle({})
   }
 
   function handleSubmit() {
@@ -110,20 +139,26 @@ function DragAndDrop({ room, onWrong, onCorrect }) {
         {order.map((itemIdx, pos) => (
           <div
             key={itemIdx}
+            data-pos={pos}
             draggable
             onDragStart={() => handleDragStart(itemIdx)}
             onDragOver={(e) => e.preventDefault()}
             onDrop={() => handleDrop(pos)}
+            onTouchStart={(e) => handleTouchStart(e, itemIdx)}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
             style={{
               padding: '0.85rem 1rem',
-              background: 'var(--bg-card)',
-              border: '1.5px solid var(--border)',
+              background: dragging === itemIdx ? 'var(--bg-elevated)' : 'var(--bg-card)',
+              border: `1.5px solid ${dragging === itemIdx ? 'var(--purple)' : 'var(--border)'}`,
               borderRadius: 10,
               cursor: 'grab',
               color: 'var(--text)',
               userSelect: 'none',
+              touchAction: 'none',
               display: 'flex', alignItems: 'center', gap: '0.75rem',
               fontSize: '0.9rem', minHeight: 52,
+              ...(dragging === itemIdx ? dragStyle : {}),
             }}
           >
             <span style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>⠿</span>

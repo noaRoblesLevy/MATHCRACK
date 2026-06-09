@@ -1,0 +1,176 @@
+{
+  "id": "stat-04",
+  "title": "The Probability Palace",
+  "kingdom": "stats-probability",
+  "dungeonNumber": 4,
+  "lesson": {
+    "title": "Probability",
+    "body": "**Probability** measures how likely an event is: P(event) = favorable outcomes ÷ total outcomes. It's always between 0 and 1 (or 0% to 100%). P = 0 means impossible; P = 1 means certain. The **complement** of event A is everything that is NOT A: P(not A) = 1 − P(A). **Experimental probability** is based on observed data from trials. **Theoretical probability** assumes all outcomes are equally likely. The more trials you run, the closer experimental approaches theoretical."
+  },
+  "rooms": [
+    {
+      "type": "multiple-choice",
+      "question": "A bag has 3 red, 5 blue, and 2 green marbles. What is the probability of picking a blue marble?",
+      "latex": "P(\\text{blue}) = \\frac{5}{10}",
+      "steps": [
+        "\\text{Total marbles: } 3 + 5 + 2 = 10",
+        "P(\\text{blue}) = \\frac{5}{10} = \\frac{1}{2}"
+      ],
+      "answers": [
+        "1/3",
+        "1/2",
+        "3/5",
+        "2/5"
+      ],
+      "correct": 1,
+      "difficulty": 1,
+      "explanation": "P(blue) = 5/10 = 1/2. Total outcomes = 10 (all marbles). Favorable = 5 (blue). The 1/3 error treats each color as equally likely (3 colors → 1/3 each), ignoring the different counts.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The probability of rain tomorrow is 0.35. What is the probability it does NOT rain?",
+      "latex": "P(\\text{no rain}) = 1 - 0.35",
+      "steps": [
+        "P(\\text{no rain}) = 1 - 0.35 = 0.65"
+      ],
+      "answers": [
+        "0.30",
+        "0.35",
+        "0.65",
+        "1.35"
+      ],
+      "correct": 2,
+      "difficulty": 1,
+      "explanation": "Complement rule: P(not A) = 1 − P(A) = 1 − 0.35 = 0.65. Rain and no rain are complementary events — exactly one must occur. Their probabilities must always sum to 1.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A die is rolled 60 times. It lands on 3 exactly 8 times. What is the experimental probability of rolling a 3?",
+      "latex": "P(3) = \\frac{8}{60}",
+      "steps": [
+        "P(3) = \\frac{\\text{times landed on 3}}{\\text{total rolls}} = \\frac{8}{60} = \\frac{2}{15}"
+      ],
+      "answers": [
+        "1/6",
+        "2/15",
+        "8/60 = 2/15",
+        "1/3"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Experimental probability = 8/60 = 2/15 ≈ 0.133. The theoretical probability is 1/6 ≈ 0.167. They differ because 60 trials is not enough to guarantee the exact theoretical ratio. With millions of trials, experimental probability converges to 1/6.",
+      "xp": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A spinner has 8 equal sections: 3 red, 2 blue, 2 yellow, 1 green. What is the probability of landing on red OR yellow?",
+      "latex": "P(\\text{red or yellow}) = \\frac{3 + 2}{8}",
+      "steps": [
+        "\\text{Favorable: } 3 + 2 = 5",
+        "P = \\frac{5}{8}"
+      ],
+      "answers": [
+        "3/8",
+        "5/8",
+        "1/2",
+        "5/16"
+      ],
+      "correct": 1,
+      "difficulty": 2,
+      "explanation": "Red has 3 sections, yellow has 2. They don't overlap, so P(red or yellow) = (3+2)/8 = 5/8. This is the addition rule for mutually exclusive events: P(A or B) = P(A) + P(B) when A and B can't happen simultaneously.",
+      "xp": 10
+    },
+    {
+      "type": "drag-and-drop",
+      "question": "Order these events from least likely (lowest probability) to most likely:",
+      "items": [
+        "Rolling a 6 on a die: P = 1/6 ≈ 0.17",
+        "Flipping tails on a fair coin: P = 1/2 = 0.5",
+        "Drawing a face card from a standard deck: P = 12/52 ≈ 0.23",
+        "Drawing any card from a full deck: P = 1"
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "difficulty": 3,
+      "explanation": "Order by probability: 1/6 ≈ 0.17 < 12/52 ≈ 0.23 < 1/2 = 0.5 < 1. Note that 12/52 = 3/13 ≈ 0.23 (there are 12 face cards in a 52-card deck). The certain event (drawing any card) always has P = 1.",
+      "xp": 20
+    }
+  ],
+  "boss": {
+    "name": "The Probability Shade",
+    "taunt": "The odds are not in your favor.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "A class of 30 students: 12 play sports, 10 play instruments, 4 do both. What is the probability a randomly chosen student plays sports OR instruments?",
+        "latex": "P(S \\cup I) = P(S) + P(I) - P(S \\cap I)",
+        "answers": [
+          "18/30",
+          "22/30",
+          "18/30 = 3/5",
+          "26/30"
+        ],
+        "correct": 1,
+        "difficulty": 2,
+        "explanation": "P(sports or instruments) = P(S) + P(I) − P(both) = 12/30 + 10/30 − 4/30 = 18/30 = 3/5. Subtracting P(both) prevents double-counting the 4 students who do both. The 22/30 error adds without subtracting the overlap.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A box has 4 black and 6 white socks. You draw one without looking. What is the probability it is black, given that it is NOT white? (Interpret this as: you already know it's not white.)",
+        "latex": "P(\\text{black} \\mid \\text{not white})",
+        "answers": [
+          "4/10",
+          "4/6",
+          "1",
+          "2/5"
+        ],
+        "correct": 2,
+        "difficulty": 3,
+        "explanation": "If you already know the sock is not white, then only the 4 black socks remain as possibilities. P(black | not white) = 4/4 = 1 (certain). When you condition on 'not white,' you eliminate all 6 white socks from the sample space.",
+        "xp": 25
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A fair coin is flipped 4 times. Theoretically, how many times would you expect heads in 400 total flips?",
+        "latex": "E(\\text{heads}) = 400 \\times P(\\text{heads})",
+        "answers": [
+          "100",
+          "150",
+          "200",
+          "250"
+        ],
+        "correct": 2,
+        "difficulty": 2,
+        "explanation": "Expected value = total trials × probability = 400 × 1/2 = 200. This is the long-run average, not a guaranteed outcome. In any 400 actual flips, you might get 195 or 207 — but the average over many sets of 400 flips approaches 200.",
+        "xp": 25
+      }
+    ],
+    "passMark": 2,
+    "lootTable": [
+      {
+        "type": "hint-scroll",
+        "weight": 70
+      },
+      {
+        "type": "focus-crystal",
+        "weight": 20
+      },
+      {
+        "type": "scholars-tome",
+        "weight": 7
+      },
+      {
+        "type": "solution-orb",
+        "weight": 3
+      }
+    ]
+  },
+  "lootTable": []
+}
