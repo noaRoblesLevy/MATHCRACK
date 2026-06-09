@@ -1,0 +1,23 @@
+// Maps dungeon IDs → companion Library chapter IDs (ADR 0001)
+export const CHAPTER_REFS = {
+  'arith-01': 'ch-01', 'arith-02': 'ch-02', 'arith-03': 'ch-03',
+  'numsys-01': 'ch-04', 'numsys-02': 'ch-06', 'numsys-03': 'ch-07',
+  'numsys-04': 'ch-08', 'numsys-05': 'ch-09',
+  'ratio-01': 'ch-11', 'ratio-02': 'ch-13', 'ratio-03': 'ch-14',
+  'ratio-04': 'ch-15', 'ratio-05': 'ch-16',
+  'exp-01': 'ch-19', 'exp-02': 'ch-20', 'exp-03': 'ch-21', 'exp-04': 'ch-23',
+  'lin-01': 'ch-24', 'lin-02': 'ch-25', 'lin-03': 'ch-26', 'lin-04': 'ch-27',
+  'lin-05': 'ch-28', 'lin-06': 'ch-29', 'lin-07': 'ch-30',
+  'graph-01': 'ch-31', 'graph-02': 'ch-33', 'graph-03': 'ch-34',
+  'graph-04': 'ch-35', 'graph-05': 'ch-36', 'graph-06': 'ch-37',
+  'stat-01': 'ch-39', 'stat-02': 'ch-40', 'stat-03': 'ch-41',
+  'stat-04': 'ch-42', 'stat-05': 'ch-43', 'stat-06': 'ch-44',
+  'func-01': 'ch-45', 'func-02': 'ch-46', 'func-03': 'ch-47',
+  'poly-01': 'ch-48', 'poly-02': 'ch-49', 'poly-03': 'ch-51',
+  'fact-01': 'ch-52', 'fact-02': 'ch-53', 'fact-03': 'ch-54',
+  'fact-04': 'ch-55', 'fact-05': 'ch-56',
+  'rad-01': 'ch-57', 'rad-02': 'ch-58', 'rad-03': 'ch-59',
+  'quad-01': 'ch-61', 'quad-02': 'ch-62', 'quad-03': 'ch-63',
+  'quad-04': 'ch-64', 'quad-05': 'ch-65', 'quad-06': 'ch-66',
+  'qfunc-01': 'ch-67', 'qfunc-02': 'ch-67', 'qfunc-03': 'ch-68',
+}

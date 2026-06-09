@@ -10,6 +10,8 @@ import kingdomsData from './content/kingdoms.json'
 const courses = kingdomsData.courses
 const kingdoms = courses.flatMap(c => c.subjects)
 import { loadDungeon } from './content/loadDungeon'
+import { loadChapter } from './content/loadChapter'
+import { CHAPTER_REFS } from './content/chapterRefs'
 import OverworldMap from './components/OverworldMap'
 import KingdomView from './components/KingdomView'
 import StudyScreen from './components/StudyScreen'
@@ -188,6 +190,11 @@ export default function App() {
     goToLibrary()
   }
 
+  function handleReadChapterFromLesson(chapterId) {
+    const chapter = loadChapter(chapterId)
+    if (chapter) handleOpenChapter(chapter)
+  }
+
   const transitionKey = activeView + (openChapter ? '-reader' : '')
 
   return (
@@ -238,6 +245,7 @@ export default function App() {
               onStart={startLesson}
               onResume={handleResume}
               onBack={goToKingdom}
+              onReadChapter={handleReadChapterFromLesson}
               inventory={inventory}
               focusMode={focusMode}
               scholarActive={scholarActive}

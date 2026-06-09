@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import MathDisplay from './MathDisplay'
 import { getProgress, isDungeonComplete } from '../hooks/useProgress'
+import { CHAPTER_REFS } from '../content/chapterRefs'
 
 function renderBody(text) {
   const parts = text.split(/(\*\*[^*]+\*\*)/g)
@@ -18,7 +19,7 @@ const ITEM_META = {
   'solution-orb':  { emoji: '🔮', label: 'Orb' },
 }
 
-export default function StudyScreen({ dungeon, dungeonId, subjectTitle, subjectColor = 'var(--blue)', onStart, onResume, onBack, inventory = [], focusMode = false, scholarActive = false, onToggleFocus, onToggleScholar }) {
+export default function StudyScreen({ dungeon, dungeonId, subjectTitle, subjectColor = 'var(--blue)', onStart, onResume, onBack, onReadChapter, inventory = [], focusMode = false, scholarActive = false, onToggleFocus, onToggleScholar }) {
   const [showNotes, setShowNotes] = useState(false)
   const lesson = dungeon?.lesson
   const rooms = dungeon?.rooms ?? []
@@ -51,6 +52,8 @@ export default function StudyScreen({ dungeon, dungeonId, subjectTitle, subjectC
     primaryLabel = 'Start Quiz →'
     primaryAction = onStart
   }
+
+  const chapterId = CHAPTER_REFS[dungeonId]
 
   return (
     <div className="page-with-nav" style={{
@@ -263,6 +266,33 @@ export default function StudyScreen({ dungeon, dungeonId, subjectTitle, subjectC
               }}
             >
               {secondaryLabel}
+            </button>
+          )}
+
+          {chapterId && onReadChapter && (
+            <button
+              onClick={() => onReadChapter(chapterId)}
+              style={{
+                width: '100%',
+                padding: '0.65rem',
+                minHeight: 44,
+                background: 'var(--bg-card)',
+                border: '1px solid var(--border)',
+                borderRadius: 10,
+                color: 'var(--text-muted)',
+                fontSize: '0.78rem',
+                fontFamily: 'var(--font-mono)',
+                cursor: 'pointer',
+                letterSpacing: '0.5px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.4rem',
+              }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = subjectColor + '60'}
+              onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
+            >
+              <span>📚</span> Read Chapter →
             </button>
           )}
         </div>

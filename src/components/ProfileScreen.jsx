@@ -2,7 +2,8 @@ import { useGameStore } from '../store/gameStore'
 import { getTitle, getXPToNextLevel, getTierProgress } from '../hooks/useXP'
 import { useAuth, signOut } from '../hooks/useAuth'
 import { getProgress } from '../hooks/useProgress'
-import kingdoms from '../content/kingdoms.json'
+import kingdomsData from '../content/kingdoms.json'
+const kingdoms = (kingdomsData.courses ?? []).flatMap(c => c.subjects ?? [])
 
 const TIERS = [
   { title: 'Apprentice',  icon: '🎒', xp: 0,     next: 500,   color: '#60a5fa', desc: 'Just starting your journey' },
@@ -281,6 +282,59 @@ export default function ProfileScreen({ isDark, onToggleTheme }) {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Achievements */}
+        <div style={{
+          fontFamily: 'var(--font-mono)',
+          color: 'var(--text-muted)',
+          fontSize: '0.56rem',
+          letterSpacing: '2.5px',
+          marginBottom: '0.75rem',
+          marginTop: '1.5rem',
+        }}>
+          ACHIEVEMENTS
+        </div>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
+          gap: '0.5rem',
+          marginBottom: '1.5rem',
+        }}>
+          {subjectStats.map(s => {
+            const earned = s.completed === s.total && s.total > 0
+            return (
+              <div key={s.id} style={{
+                padding: '0.75rem 0.875rem',
+                background: earned
+                  ? `linear-gradient(135deg, ${s.color}12, var(--bg-elevated))`
+                  : 'var(--bg-card)',
+                border: `1px solid ${earned ? s.color + '40' : 'var(--border)'}`,
+                borderRadius: 10,
+                opacity: earned ? 1 : 0.38,
+                transition: 'opacity 0.2s',
+              }}>
+                <div style={{ fontSize: '1.5rem', marginBottom: '0.3rem', lineHeight: 1 }}>
+                  {earned ? s.icon : '🔒'}
+                </div>
+                <div style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.62rem',
+                  color: earned ? s.color : 'var(--text-muted)',
+                  fontWeight: earned ? 700 : 400,
+                  marginBottom: '0.15rem',
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                }}>
+                  {earned ? '✓ ' : ''}{s.title}
+                </div>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', color: 'var(--text-muted)', letterSpacing: '0.5px' }}>
+                  {earned ? 'CONQUERED' : `${s.completed}/${s.total} done`}
+                </div>
+              </div>
+            )
+          })}
         </div>
 
         {/* Account section */}
